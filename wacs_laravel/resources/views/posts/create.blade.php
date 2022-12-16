@@ -13,7 +13,13 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-12 p-3 w-100 d-flex">
-                                <img src="{{ asset('storage/user_icon/' .$user->user_icon) }}" class="rounded-circle" width="50" height="50">
+                            @if (auth()->user()->user_icon == null)
+                                {{--  デフォルトアイコン  --}}
+                            <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" width="50" height="50">
+                            @else
+                                {{--  任意のアイコン  --}}
+                            <img src="{{ asset('storage/user_icon/' .auth()->user()->user_icon) }}"  width="50" height="50">
+                            @endif
                                 <div class="ml-2 d-flex flex-column">
                                     <p class="mb-0">{{ $user->user_screen_name }}</p>
                                     <a href="{{ url('users/' .$user->id) }}" class="post_exp-secondary">{{ $user->screen_name }}</a>

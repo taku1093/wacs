@@ -11,9 +11,14 @@
                 <div class="col-md-8 mb-3">
                     <div class="card">
                         <div class="card-haeder p-3 w-100 d-flex">
-                            <img src="{{ asset('storage/user_icon/' .$timeline->user->user_icon) }}" class="rounded-circle" width="50" height="50">
+                            @if ($timeline->user->user_icon == null)
+                                {{--  デフォルトアイコン  --}}
+                            <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" width="50" height="50">
+                            @else
+                                {{--  任意のアイコン  --}}
+                                <img src="{{ asset('storage/user_icon/' .$timeline->user->user_icon) }}" class="rounded-circle" width="50" height="50">
+                            @endif
                             <img src="{{ asset('storage/post_img/' .$timeline->post_img) }}" class="rounded-circle" width="50" height="50">
-                            {{--  <img src="{{ asset('storage/post_img/' .$timeline->post_img) }}" class="rounded-circle" width="50" height="50">  --}}
                             <div class="ml-2 d-flex flex-column">
                                 <p class="mb-0">{{ $timeline->user->user_screen_name }}</p>
                                 <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary">{{ $timeline->user->screen_name }}</a>

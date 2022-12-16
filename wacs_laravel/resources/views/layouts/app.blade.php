@@ -57,7 +57,6 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     @if (auth()->user()->user_icon == null)
                                         {{--  デフォルトアイコン  --}}
-                                    {{--  <img src="{{ img/defolut_icon.png}}"  width="50" height="50">  --}}
                                     <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" width="50" height="50">
                                     @else
                                     

@@ -1,0 +1,326 @@
+@charset "utf-8";
+
+/*========= レイアウトのためのCSS ===============*/
+/* *,　//リセットCSS
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+ul,
+ol { /*リスト行頭のアイコンを非表示*/
+    list-style: none;
+}
+
+a { /*リンクの文字色と下線を無くす*/
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    font-family: sans-serif; /*サンセリフ体*/
+    font-size: 17px;
+    color: #000000;
+    line-height: 1;
+    background-color: #ffffff;
+    
+}
+
+/* img {
+    max-width: 10%; 
+} */
+
+header {
+    background: #ffffff; /* 背景色にグレーを指定 */
+    position: fixed; /* ウィンドウを基準に画面に固定 */
+    top: 0; /* 上下の固定位置を上から0pxにする */
+    left: 0; /* 左右の固定位置を左から0pxにする */
+    right: 0; /* 左右の固定位置を右から0pxにする */
+    z-index: 9999;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05); /*ヘッダーの下の影*/
+
+} 
+
+nav .header-inner {
+    max-width: 1200px;
+    height: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px; /*ヘッダーエリアの左右の余白指定*/
+    padding-right: 30px;
+    display: flex; /*ロゴとナビゲーションを横並びにする*/
+    justify-content: space-between; /*ロゴとナビゲーションを左右の端に寄せる*/
+    align-items: center; /*ロゴとナビゲーションの上下の高さを揃える*/
+}
+
+.toggle-menu-button {
+    display: none;
+}
+
+.header-logo {
+    display: block; /*ロゴのサイズ指定をできるように*/
+    width: 170px;
+}
+
+.site-menu ul {
+    display: flex; /*ナビゲーション項目を横並びにする*/
+    /* padding-left: 750px; */
+}
+
+.site-menu ul li { /*ナビゲーションの項目間の余白を設定*/
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.site-menu ul li a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    line-height: 45.5px;
+}
+
+#navline {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    /* width: 1000%; */
+}
+
+#navline::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: #ee7800;
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: transform .3s;
+}
+
+#navline:hover::after {
+    transform: scale(1, 1);
+}
+
+.footer {
+    color: #ffffff;
+    background-color: #24211b;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column; /*flexの方向をcolumnにする*/
+    align-items: center;
+}
+
+.footer-logo { /*フッターのロゴサイズを調整*/
+    display: block;
+    width: 235px;
+    margin-top: 90px;
+}
+
+.footer-tel {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 28px;
+}
+
+.footer-name {
+    font-size: 13px;
+    margin-top: 16px;
+}
+
+.copyright {
+    font-size: 14px;
+    /* font-weight: bold; */
+    margin-top: 90px;
+}
+
+.forget {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.pull-left {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+/* ログイン・お問い合わせボタンのデザイン */
+.styled-button {
+    /* background-color: #1492AF;
+    border: 3px solid #1492AF; */
+    background-color: #f4dd64;
+    border: 3px solid #f4dd64;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    padding: 10px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.styled-button:hover {
+    background-color: #fff;
+    /* color: #1492AF; */
+    color: #f4dd64;
+}
+
+p,ul{
+  margin-top:20px;  
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  color:#333;
+    outline: none;
+}
+
+/* small{
+  background:#333;
+  color:#fff;
+  display: block;
+  text-align: center;
+  padding:20px;
+} */
+
+section{
+  padding:30px;
+}
+
+section:nth-child(2n){
+  background:#f3f3f3; 
+}
+
+#app img{
+  max-width: 25%;
+  height: auto;
+}
+
+.footer img {
+  max-width: 25%;
+  height: auto;
+}
+
+span#view { /* 目のアイコン */
+  position: absolute;
+  left: 92%;
+  top: 20%;
+}
+
+/*ログイン画面のCSS*/
+body{
+background: url(http://www.timurtek.com/wp-content/uploads/2014/10/form-bg.jpg) no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover; 
+   font-family:'HelveticaNeue','Arial', sans-serif;
+ 
+ }
+ a{color:#58bff6;text-decoration: none;}
+ a:hover{color:#aaa; }
+ .pull-right{float: right;}
+ /* .pull-left{float: left;} */
+ .clear-fix{clear:both;}
+ div.logo{text-align: center; margin: 20px 20px 30px 20px; fill: #566375;}
+ div.logo svg{
+   width:160px;
+   height:90px;
+ }
+ div.logo::after {
+  content: '';
+  display: block;
+  width: 140px;
+  height: 3px;
+  background-color: #566375;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+ .logo-active{fill: #566375 !important;}
+ #formWrapper{
+   background: rgba(0,0,0,.2); 
+   width:100%; 
+   height:100%; 
+   position: absolute; 
+   top:0; 
+   left:0;
+   transition:all .3s ease;}
+ .darken-bg{background: rgba(0,0,0,.5) !important; transition:all .3s ease;}
+ 
+ div#form{
+   position: absolute;
+   /* width:360px; */
+   width: calc(100% - 700px); /* 全体から200pxを引いた幅 */
+   height:320px;
+   height:auto;
+   background-color: #f8f8ff;
+   margin:auto;
+   border-radius: 5px;
+   padding:20px;
+   left: 200px;
+   right: 200px;
+   top: 50%;
+   /* margin-left:-180px; */
+   margin-top:-200px;
+ }
+ div.form-item{position: relative; display: block; margin-bottom: 20px;}
+  input{transition: all .2s ease;}
+  input.form-style{
+   color:#8a8a8a;
+   display: block;
+   width: 90%;
+   height: 44px;
+   padding: 5px 5%;
+   border:1px solid #ccc;
+   -moz-border-radius: 27px;
+   -webkit-border-radius: 27px;
+   border-radius: 27px;
+   -moz-background-clip: padding;
+   -webkit-background-clip: padding-box;
+   background-clip: padding-box;
+   background-color: #fff;
+   font-family:'HelveticaNeue','Arial', sans-serif;
+   font-size: 105%;
+   letter-spacing: .8px;
+ }
+ div.form-item .form-style:focus{outline: none; border:1px solid #8b8b8b; color:#8b8b8b; }
+ div.form-item p.formLabel {
+   position: absolute;
+   left:26px;
+   top:2px;
+   transition:all .4s ease;
+   color:#bbb;}
+ .formTop{top:-22px !important; left:26px; background-color: #fff; padding:0 5px; font-size: 14px; color:#8b8b8b !important;}
+ .formStatus{color:#8a8a8a !important;}
+ input[type="submit"].login{
+   float:right;
+   width: 180px;
+   height: 37px;
+   -moz-border-radius: 19px;
+   -webkit-border-radius: 19px;
+   border-radius: 19px;
+   -moz-background-clip: padding;
+   -webkit-background-clip: padding-box;
+   background-clip: padding-box;
+   background-color: #f4dd64;
+   border:1px solid #f4dd64;
+   border:none;
+   color: #fff;
+   font-weight: bold;
+ }
+ input[type="submit"].login:hover{background-color: #fff; border:1px solid #f4dd64; color:#f4dd64; cursor:pointer;}
+ input[type="submit"].login:focus{outline: none;}
+
+
+

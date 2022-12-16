@@ -1,0 +1,87 @@
+#area {
+    background-color: #f8f8f8;
+    border: 1px solid #aaaaaa;
+    margin-top: 25px;
+    padding: 30px;
+    /* display: flex; */
+    flex-wrap: wrap;
+}
+
+#check {
+    margin-left: 260px;
+    margin-top: 20px;
+}
+
+#submit {
+    margin-left: 260px;
+    margin-top: 20px;
+}
+
+body h2 {
+    padding-top: 70px;
+    padding-bottom: 40px;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+}
+
+body h2::after {
+    content: '';
+    display: block;
+    width: 76px;
+    height: 3px;
+    background-color: #f4dd64;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box {
+    padding: 20px;              /* 余白指定 */
+    background-color:  #f2f2f2;    /* 背景色指定 */
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;               /* 幅指定 */
+    height: 200px;              /* 高さ指定 */
+    border: 1px solid;
+    overflow-y: scroll;
+}
+
+.section {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.subsection {
+    font-size: 12px;
+}
+
+input[type='ckeckbox'] {
+    border: 1px solid #AAA;
+    font-size: 7pt;
+}
+
+input[type='submit'] {
+    border: 1px solid #f4dd64;
+    background-color: #f4dd64;
+    color: #fff;
+    font-weight: bold;
+    min-width: 250px;
+    line-height: 48px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    cursor: pointer; /* マウスポインタの形状を指定 */
+    border: none;
+    /* font-size: 7pt; */
+}
+
+input[type='submit']:hover {
+    background-color: #d8b500;
+}
+
+.back {
+    text-align: right;
+    margin-right: 250px;
+}

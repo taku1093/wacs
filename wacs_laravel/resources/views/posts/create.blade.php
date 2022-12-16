@@ -23,7 +23,6 @@
                                 {{--  投稿記入  --}}
                                 <img src="{{ asset('public/storage/post_img/' .$post->post_img) }}" class="mr-2 rounded-circle" width="80" height="80" alt="post_img">
                                 <input type="file" name="post_img" class="@error('post_img') is-invalid @enderror" autocomplete="post_img">
-                                <input type="file" name="post_img" class="@error('post_img') is-invalid @enderror" autocomplete="post_img">
                                 <textarea class="form-control @error('post_exp') is-invalid @enderror" name="post_exp" required autocomplete="post_exp" rows="4">{{ old('post_exp') }}</textarea>
 
                                 @error('post_exp')

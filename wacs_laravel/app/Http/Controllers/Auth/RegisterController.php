@@ -194,7 +194,7 @@ class RegisterController extends Controller
             return redirect()->action("Auth\RegisterController");
         }
 
-        return view('auth\login', ["input" => $input]);
+        return view('auth.register_conf', ["input" => $input]);
     }
 
     protected function registered(Request $request, $user)

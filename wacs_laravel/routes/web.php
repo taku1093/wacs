@@ -41,4 +41,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     // ツイート関連
     Route::resource('posts', 'PostsController', ['only' => ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy']]);
+
+    //シミュレーション関連
+    Route::get('simulation', 'SimulationController@index')->name('simulation');
 });

@@ -44,14 +44,19 @@
                                 <a href="{{ route('login') }}"><button class="styled-button" type="button">ログイン</button></a>
                             </li>
                         @else
-
+                        @if (Request::is('/'))  
+                        {{--  wacsトップ画面  --}}
+                            <li><a href="{{ url('posts/create') }}"><button class="styled-button" type="button">ツイートする</button></a></li>
+                            <li><a href="{{ route('contact') }}"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
+                        @else 
                             {{--  ログイン時表示  --}}                            
                             <li><a href="./ranking.html" id="navline">ランキング</a></li>
-                            <li><a href="./simulation.html" id="navline">シミュレーション</a></li>
+                            <li><a href="{{ route('simulation') }}" id="navline">シミュレーション</a></li>
                             <li><a href="./rental.html" id="navline">レンタル</a></li>
                             <li><a href="./community.html" id="navline">Q & A</a></li>
                             <li><a href="{{ route('contact') }}"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
-                            <li><a href="{{ url('posts/create') }}" class="btn btn-md btn-primary">ツイートする</a></liclass=>
+                            <li><a href="{{ url('posts/create') }}"><button class="styled-button" type="button">ツイートする</button></a></li>
+                        @endif
                             {{--  アカウント  --}}
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -94,7 +99,7 @@
                         @auth
                             <ul>
                                 <li><a href="./ranking.html" id="">ランキング</a></li>
-                                <li><a href="./simulation.html" id="">シミュレーション</a></li>
+                                <li><a href="{{ route('simulation') }}" id="">シミュレーション</a></li>
                                 <li><a href="./rental.html" id="">レンタル</a></li>
                                 <li><a href="./community.html" id="">Q & A</a></li>
                             </ul>

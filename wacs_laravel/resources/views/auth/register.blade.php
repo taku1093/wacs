@@ -57,7 +57,7 @@
         <div class="account">
             {{--  <form id="accountform"  method="POST" action="{{ route('register') }}" > <!-- 完了画面に遷移 -->  --}}
                 <form id="accountform"  method="POST" action="{{ route('user.register_post') }}" > <!-- 完了画面に遷移 -->
-            @csrf
+                @csrf
                 <dl class="form-area">
                     <dt><span class="required">氏名(全角)</span></dt>
                     <dd><input id="user_name" class="input-text validate[required,maxSize[16]]" type="text" name="user_name" placeholder="山田太郎" value="{{ old('user_name') }}"></dd> <!--name属性はフォームを受信したプログラムが各項目を判別するための属性、requiredは必須項目なので入力がなければ警告を表示-->
@@ -92,7 +92,6 @@
                     </dd>
 
                     <dt><span class="required">住所(都道府県)</span></dt>
-                    <!-- <dd><input class="input-text validate[required,maxSize[200]]" type="text" name="address" id="address"></dd> -->
                     <dd><select name="user_pre" id="user_pre" class="input-text validate[required]">
                         <option value="" selected="selected">都道府県を選択</option>
                         <option value="北海道" data-pref-id="1">北海道</option>

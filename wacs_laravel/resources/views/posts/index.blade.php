@@ -18,7 +18,14 @@
                                 {{--  任意のアイコン  --}}
                                 <img src="{{ asset('storage/user_icon/' .$timeline->user->user_icon) }}" class="rounded-circle" width="50" height="50">
                             @endif
-                            <img src="{{ asset('storage/post_img/' .$timeline->post_img) }}" class="rounded-circle" width="50" height="50">
+
+                            <img src="{{ asset('storage/post_img/' .$timeline->post_img1) }}" class="rounded-circle" width="50" height="50">
+                            <img src="{{ asset('storage/post_img/' .$timeline->post_img2) }}" class="rounded-circle" width="50" height="50">
+                            <img src="{{ asset('storage/post_img/' .$timeline->post_img3) }}" class="rounded-circle" width="50" height="50">
+
+
+
+
                             <div class="ml-2 d-flex flex-column">
                                 <p class="mb-0">{{ $timeline->user->user_screen_name }}</p>
                                 <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary">{{ $timeline->user->screen_name }}</a>
@@ -28,7 +35,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            {!! nl2br(e($timeline->post_exp)) !!}
+                            {!! nl2br(e($timeline->method)) !!}
                         </div>
                         <div class="card-footer py-1 d-flex justify-content-end bg-white">
                             @if ($timeline->user->id === Auth::user()->id)

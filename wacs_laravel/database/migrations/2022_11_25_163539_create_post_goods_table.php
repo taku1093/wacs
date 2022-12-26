@@ -38,7 +38,8 @@ class CreatePostGoodsTable extends Migration
                 ->onUpdate('cascade');
 
             $table->foreign('post_id')
-                ->references('post_id')
+                // ->references('post_id')
+                ->references('id')
                 ->on('posts')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

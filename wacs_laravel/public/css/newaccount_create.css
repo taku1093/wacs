@@ -1,46 +1,5 @@
 @charset "utf-8";
 
-/* .title {
-    height: 160px;
-    background-image: url();
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    color: #f4dd64;
-    text-shadow: 1px 1px 10px #4b2c14;
-}
-
-.title h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 32px;
-    font-weight: bold;
-}
-
-.title p {
-    font-size: 14px;
-    margin-top: 15px;
-} */
-
-.main h2 {
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 30px;
-}
-
-.main h2::after {
-    content: '';
-    display: block;
-    width: 36px;
-    height: 3px;
-    background-color: #000000;
-    margin-top: 20px;
-}
-
 .pagetitle{
     padding-top: 70px;
     font-size: 25px;

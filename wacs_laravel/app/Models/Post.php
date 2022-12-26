@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\softDeletes;
+use phpDocumentor\Reflection\Types\String_;
 
 class Post extends Model
 {
@@ -11,8 +13,15 @@ class Post extends Model
     use SoftDeletes;
 
     protected $fillable = [
+        'post_title',
+        'post_img1',
+        'post_img2',
+        'post_img3',
         'post_exp',
-        'post_img'
+        'method',
+        'material',
+        'tool',
+        'post_tag'
     ];
 
     // リレーションの親子関係設定（親：user、子：follow）
@@ -36,6 +45,13 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function materials()
+    {
+        // return $this->hasMany('app\Models\Material');
+        return $this->hasMany(Material::class);
+    }
+
+
     public function getUserTimeLine(Int $user_id)
     {
         return $this->where('user_id', $user_id)->orderBy('created_at', 'DESC')->paginate(50);
@@ -54,12 +70,27 @@ class Post extends Model
         return $this->whereIn('user_id', $follow_ids)->orderBy('created_at', 'DESC')->paginate(50);
     }
 
-    public function postStore(Int $user_id, Array $data)
+    public function postStore(Int $user_id, Array $data, Request $request)
     {
         $this->user_id = $user_id;
+
+        $this->post_title = $data['post_title'];
+         // 投稿画像（baename:パス名除去）
+        if($request->has("post_img3")){
+            $this->post_img1 = basename($data['post_img1']->store('public/post_img/'));
+            $this->post_img2 = basename($data['post_img2']->store('public/post_img/'));
+            $this->post_img3 = basename($data['post_img3']->store('public/post_img/'));
+        }elseif($request->has("post_img2")){
+            $this->post_img1 = basename($data['post_img1']->store('public/post_img/'));
+            $this->post_img2 = basename($data['post_img2']->store('public/post_img/'));
+        }else{
+            $this->post_img1 = basename($data['post_img1']->store('public/post_img/'));
+        }
         $this->post_exp = $data['post_exp'];
-        // 投稿画像（baename:パス名除去）
-        $this->post_img = basename($data['post_img']->store('public/post_img/'));
+        $this->method = $data['method'];
+        $this->tool = $data['tool'];
+        $this->post_tag = $data['post_tag'];
+
 
         $this->save();
 

@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+.post_create {
+    width: 930px;
+    max-width: 90%;
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-area {
+    background-color: #f8f8f8;
+    border: 1px solid #aaaaaa;
+    margin-top: 25px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-area dt{
+    width: 250px;
+    padding: 15px 0;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 24px;
+    border-bottom:1px solid black;
+}
+
+.form-area dd{
+    width: calc(100% - 250px); /* 全体から250pxを引いたdd幅 */
+    padding: 15px 0;
+}
+
+#message ,#message_material, #message_tool{
+    color: red;
+}
+
+#file_1{
+    width: calc(100% - 250px); /* 全体から250pxを引いたdd幅 */
+    padding: 0 0 15px 0;
+}
+
+.material_text ,.tool_text{
+    padding: 0 0 15px 0;
+}
+
+.form-area #add{
+    background-color: #f4dd64;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 50px;
+    line-height: 25px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    /* margin-top: 20px;
+    margin-bottom: 40px; */
+    cursor: pointer; /* マウスポインタの形状を指定 */
+    border: none;
+}
+
+#add_material {
+    background-color: #f4dd64;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 50px;
+    line-height: 25px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    /* margin-top: 20px;
+    margin-bottom: 40px; */
+    cursor: pointer; /* マウスポインタの形状を指定 */
+    border: none;
+}
+
+#add_tool {
+    background-color: #f4dd64;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 50px;
+    line-height: 25px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    /* margin-top: 20px;
+    margin-bottom: 40px; */
+    cursor: pointer; /* マウスポインタの形状を指定 */
+    border: none;
+}
+
+#addbutton{
+    padding-right: 10px;
+}
+
+.border_line{
+    border-bottom:1px solid black;
+}
+
+.input-text {
+    width: 100%;
+    max-width: 280px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#post_title, #post_exp {
+    max-width: 300px;
+}
+
+.material,
+.tool{
+    width: 100%;
+    /* max-width: 280px; */
+    height: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.method {
+    width: 100%;
+    /* max-width: 280px; */
+    height: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 投稿・キャンセルボタン */
+.btn {
+    text-align: right;
+}
+
+
+
+.submit-button {
+    background-color: #f4dd64;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 230px;
+    line-height: 48px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    cursor: pointer; /* マウスポインタの形状を指定 */
+    border: none;
+}
+.post_img{
+    /* margin:0 5px 5px 0;
+    max-width:200px;
+    vertical-align:bottom;
+     */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}

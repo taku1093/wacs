@@ -29,7 +29,7 @@
     <header class="header">
     <div class="header-inner">
                 <a class="header-logo" href="{{ url('/') }}">
-                    <img src="{{ asset('./img/logo_header.png') }}" alt="WACS"> {{-- WACSのロゴ --}}
+                    <img class="logo" src="{{ asset('./img/logo_header.png') }}" alt="WACS"> {{-- WACSのロゴ --}}
                 </a>
 
                 <nav class="site-menu">
@@ -108,7 +108,7 @@
                     </nav>
                 @endif
                 <a class="footer-logo" href="{{ url('/') }}">
-                    <img src="{{ asset('./img/logo_header.png') }}" alt="WACS">
+                    <img class="icon" src="{{ asset('./img/logo_header.png') }}" alt="WACS">
                 </a>
                 <p class="footer-tel"></p>
                 <p class="footer-name"></p>

@@ -16,6 +16,7 @@ class CreateMaterialsTable extends Migration
         Schema::create('materials', function (Blueprint $table) {
             $table->increments('id')->nullable()->comment('材料ID');
             $table->unsignedInteger('post_id')->nullable()->comment('投稿ID');
+            // $table->string('material_name')->nullable()->comment('材料名');
             $table->string('material_name1')->nullable()->comment('材料名1');
             $table->string('material_name2')->nullable()->comment('材料名2');
             $table->string('material_name3')->nullable()->comment('材料名3');
@@ -27,7 +28,16 @@ class CreateMaterialsTable extends Migration
             $table->string('material_name9')->nullable()->comment('材料名9');
             $table->string('material_name10')->nullable()->comment('材料名10');
 
-            $table->integer('material_num')->nullable()->comment('数量');
+            $table->integer('material_num1')->nullable()->comment('数量1');
+            $table->integer('material_num2')->nullable()->comment('数量2');
+            $table->integer('material_num3')->nullable()->comment('数量3');
+            $table->integer('material_num4')->nullable()->comment('数量4');
+            $table->integer('material_num5')->nullable()->comment('数量5');
+            $table->integer('material_num6')->nullable()->comment('数量6');
+            $table->integer('material_num7')->nullable()->comment('数量7');
+            $table->integer('material_num8')->nullable()->comment('数量8');
+            $table->integer('material_num9')->nullable()->comment('数量9');
+            $table->integer('material_num10')->nullable()->comment('数量10個以上');
 
             $table->timestamps();
 

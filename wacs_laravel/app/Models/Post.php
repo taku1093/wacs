@@ -51,6 +51,11 @@ class Post extends Model
         return $this->hasMany(Material::class);
     }
 
+    public function tools()
+    {
+        return $this->hasMany(Tool::class);
+    }
+
 
     public function getUserTimeLine(Int $user_id)
     {
@@ -86,10 +91,22 @@ class Post extends Model
         }else{
             $this->post_img1 = basename($data['post_img1']->store('public/post_img/'));
         }
+
+        if($request->has("post_tag3")){
+            $this->post_tag3 = basename($data['post_tag3']);
+        }
+        if($request->has("post_img2")){
+            $this->post_tag2 = basename($data['post_tag2']);
+        }if($request->has("post_img1")){
+            $this->post_tag1 = basename($data['post_tag1']);
+        }
+
+
+
         $this->post_exp = $data['post_exp'];
         $this->method = $data['method'];
-        $this->tool = $data['tool'];
-        $this->post_tag = $data['post_tag'];
+        // $this->tool = $data['tool'];
+        // $this->post_tag = $data['post_tag'];
 
 
         $this->save();

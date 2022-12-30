@@ -46,8 +46,9 @@
                         @else
                         @if (Request::is('/'))  
                         {{--  wacsトップ画面  --}}
-                            <li><a href="{{ url('posts/create') }}"><button class="styled-button" type="button">ツイートする</button></a></li>
                             <li><a href="{{ route('contact') }}"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
+                            <li><a href="{{ url('posts/create') }}"><button class="styled-button_t" type="button">ツイートする</button></a></li>
+                        
                         @else 
                             {{--  ログイン時表示  --}}                            
                             <li><a href="./ranking.html" id="navline">ランキング</a></li>
@@ -55,7 +56,7 @@
                             <li><a href="./rental.html" id="navline">レンタル</a></li>
                             <li><a href="./community.html" id="navline">Q & A</a></li>
                             <li><a href="{{ route('contact') }}"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
-                            <li><a href="{{ url('posts/create') }}"><button class="styled-button" type="button">ツイートする</button></a></li>
+                            <li><a href="{{ url('posts/create') }}"><button class="styled-button_t" type="button">ツイートする</button></a></li>
                         @endif
                             {{--  アカウント  --}}
                             <li class="nav-item dropdown">

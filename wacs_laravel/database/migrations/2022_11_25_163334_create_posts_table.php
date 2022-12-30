@@ -30,7 +30,9 @@ class CreatePostsTable extends Migration
             $table->string('material')->nullable()->comment('材料');
             $table->string('tool')->nullable()->comment('道具');
             $table->string('post_genre')->nullable()->comment('ジャンル');
-            $table->string('post_tag')->nullable()->comment('タグ');
+            $table->string('post_tag1')->nullable()->comment('タグ1');
+            $table->string('post_tag2')->nullable()->comment('タグ2');
+            $table->string('post_tag3')->nullable()->comment('タグ3');
 
             $table->softDeletes();
             $table->timestamps();

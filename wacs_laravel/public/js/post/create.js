@@ -67,7 +67,23 @@ $(function () {
 
             var tr_form = '' +
                 '<dd>' +
-                '● <input id="material_name'+ num + '" class="input-text validate[required,maxSize[16]]" type="text" name="material_name'+ num + '" placeholder="材料">' +
+                '<div class="material_text">' +
+                '<input id="material_name'+ num + '" class="input-text validate[required,maxSize[16]]" type="text" name="material_name'+ num + '" placeholder="材料">' +
+                '<span><select id="material_num'+ num +'" class="validate[required] material_num" name="material_num' + num + '">'+
+                '<option value="" selected="selected">数量を選択</option>'+
+                            '<option value="1" data-pref-id="1">1</option>'+
+                            '<option value="2" data-pref-id="2">2</option>'+
+                            '<option value="3" data-pref-id="3">3</option>'+
+                            '<option value="4" data-pref-id="4">4</option>'+
+                            '<option value="5" data-pref-id="5">5</option>'+
+                            '<option value="6" data-pref-id="6">6</option>'+
+                            '<option value="7" data-pref-id="7">7</option>'+
+                            '<option value="8" data-pref-id="8">8</option>'+
+                            '<option value="9" data-pref-id="9">9</option>'+
+                            '<option value="10" data-pref-id="10">10</option>'+
+                            '<label for="material_num1"></label>'+
+                        '</select></span>'+
+                '</div>' +
                 '</dd>';
             $(tr_form).appendTo($('#material'));
             //$('#reload').html('<input type="button" value="リロードする" onclick="window.location.reload();" /><br>');
@@ -95,7 +111,9 @@ $(function () {
 
             var tr_form = '' +
                 '<dd>' +
-                '● <input id="tool" class="input-text validate[required,maxSize[16]]" type="text" name="tool" placeholder="道具">' +
+                '<div class="tool_text">'+
+                '<input id="tool_name'+ num + '" class="input-text validate[required,maxSize[16]]" type="text" name="tool_name' + num + '" placeholder="道具">' +
+                '</div>'+
                 '</dd>';
             $(tr_form).appendTo($('#tool'));
             //$('#reload').html('<input type="button" value="リロードする" onclick="window.location.reload();" /><br>');

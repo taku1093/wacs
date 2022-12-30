@@ -1,5 +1,24 @@
 @charset "utf-8";
 
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 7px;
+    color: #333333;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.title::before {
+    width: 1em;
+    height: 1em;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20fill%3D%22%23f4dd64%22%20d%3D%22M13.6%2C4.4l6%2C6l-13%2C13L1.2%2C24c-0.7%2C0.1-1.3-0.5-1.2-1.2l0.6-5.4C0.6%2C17.4%2C13.6%2C4.4%2C13.6%2C4.4z%20M23.3%2C3.5l-2.8-2.8%20c-0.9-0.9-2.3-0.9-3.2%2C0l-2.7%2C2.7l6%2C6l2.7-2.7C24.2%2C5.8%2C24.2%2C4.4%2C23.3%2C3.5z%22%2F%3E%20%3C%2Fsvg%3E');
+    content: '';
+    
+}
+
 .post_create {
     width: 930px;
     max-width: 90%;
@@ -29,6 +48,32 @@
 .form-area dd{
     width: calc(100% - 250px); /* 全体から250pxを引いたdd幅 */
     padding: 15px 0;
+    /* display: flex; */
+}
+
+.material_text {
+    display: flex;
+}
+
+.material_text1 {
+    margin-bottom: 15px;
+}
+
+.material_num {
+    width: 120px;
+    height: 40px;
+    margin-left: 40px;
+}
+
+#post_tag1 {
+    width: 130px;
+    height: 40px;
+}
+
+#post_tag2, #post_tag3 {
+    width: 130px;
+    height: 40px;
+    margin-left: 30px;
 }
 
 #message ,#message_material, #message_tool{
@@ -40,12 +85,26 @@
     padding: 0 0 15px 0;
 }
 
-.material_text ,.tool_text{
+.material_text{
     padding: 0 0 15px 0;
+    width: 460px;
 }
 
-.form-area #add{
+.tool_text{
+    padding: 0 0 15px 0;
+    width: 300px;
+}
+
+.tool_text1{
+    padding: 0 0 15px 0;
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.form-area #add, .form-area #add_material, .form-area #add_tool{
     background-color: #f4dd64;
+    border: 2px solid #f4dd64;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
     color: #fff;
     font-weight: bold;
     display: inline-block;
@@ -55,10 +114,16 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     text-align: center;
-    /* margin-top: 20px;
-    margin-bottom: 40px; */
+    position: relative;
+    text-decoration: none;
+    
     cursor: pointer; /* マウスポインタの形状を指定 */
-    border: none;
+    
+}
+.form-area #add:hover, #add_material:hover, #add_tool:hover {
+    background-color: #fff;
+    /* color: #1492AF; */
+    color: #f4dd64;
 }
 
 #add_material {
@@ -105,7 +170,7 @@
 
 .input-text {
     width: 100%;
-    max-width: 280px;
+    /* max-width: 280px; */
     height: 40px;
     padding-left: 10px;
     padding-right: 10px;
@@ -126,10 +191,9 @@
 
 .method {
     width: 100%;
-    /* max-width: 280px; */
-    height: 100px;
-    padding-left: 10px;
-    padding-right: 10px;
+    height: 260px;
+    padding: 10px;
+    line-height: 1.5; /* 行間を広く */
 }
 
 /* 投稿・キャンセルボタン */
@@ -141,6 +205,8 @@
 
 .submit-button {
     background-color: #f4dd64;
+    border: 3px solid #f4dd64;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
     color: #fff;
     font-weight: bold;
     display: inline-block;
@@ -150,10 +216,16 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     text-align: center;
+    position: relative;
+    text-decoration: none;
     margin-top: 20px;
     margin-bottom: 40px;
     cursor: pointer; /* マウスポインタの形状を指定 */
-    border: none;
+}
+.submit-button:hover {
+    background-color: #fff;
+    /* color: #1492AF; */
+    color: #f4dd64;
 }
 .post_img{
     /* margin:0 5px 5px 0;

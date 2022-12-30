@@ -38,56 +38,14 @@
 
     <main>
         <div class="post_create">
+            {{--  タイトル  --}}
+            <div class="title_area">
+                <h2 class="title">DIY投稿</h2>
+            </div>
+
             <form id="post_creat_form" method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
                 @csrf
                 <dl class="form-area">
-                    {{--  <div class="col-md-12 p-3 w-100 d-flex">
-                    @if (auth()->user()->user_icon == null)
-                        {{--  デフォルトアイコン  
-                    <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" width="50" height="50">
-                    @else
-                        {{--  任意のアイコン  
-                    <img src="{{ asset('storage/user_icon/' .auth()->user()->user_icon) }}"  width="50" height="50">
-                    @endif
-                        <div class="ml-2 d-flex flex-column">
-                            <p class="mb-0">{{ $user->user_screen_name }}</p>
-                            <a href="{{ url('users/' .$user->id) }}" class="post_exp-secondary">{{ $user->screen_name }}</a>
-                        </div>
-                    </div>  --}}
-
-                    {{--  投稿画像  --}}
-                    {{--  <table>
-                        <thead>
-                            <tr>
-                                <th>画像</th>
-                            </tr>
-                        </thead>
-                        {{--  <tr><span class="required">画像を選択</span></tr>  
-                        <tbody>
-                            <tr>
-                                <td>
-                                    {{--  <img src="{{ asset('public/storage/post_img/' .$post->post_img) }}"  width="80" height="80" alt="post_img">  
-                                    <div id="view_1"></div>
-                                    <input type="file" id="file_1" name="post_img1" accept="image/*" autocomplete="post_img">
-                                </td>
-                            </tr>
-                        </tbody>
-
-                        <tfoot>
-                            <tr>
-                                <td>
-                                    <button id="add" type="button">追加</button><span id="reload"></span>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                    <span id="message"></span>  --}}
-                    
-
-                    
-                        {{--  <tr><span class="required">画像を選択</span></tr>  --}}
-                        
-                    {{--  <img src="{{ asset('public/storage/post_img/' .$post->post_img) }}"  width="80" height="80" alt="post_img">  --}}
                     
                     <dt><span id="addbutton">画像選択</span>
                         <span id="reload"><button id="add" type="button">+ 追加</button></span>
@@ -111,7 +69,7 @@
 
                     {{--  材料  --}}
                     <dt>
-                        <span id="addbutton">材料</span>
+                        <span id="addbutton">材料・数量</span>
                         <span id="reload"><button id="add_material" type="button">+ 追加</button></span>
                         <br>
                             <span id="message_material"></span>
@@ -119,7 +77,23 @@
                     </dt>
 
                     <dd id="material" class="border_line">
-                        <div class="material_text">● <input id="material_name1" class="input-text validate[required,maxSize[16]]" type="text" name="material_name1" placeholder="材料"  value="{{ old('material') }}"></div>
+                        <div class="material_text material_text1">
+                            <input id="material_name1" class="input-text validate[required,maxSize[16]]" type="text" name="material_name1" placeholder="材料"  value="{{ old('material') }}">
+                            <span><select id="material_num1" class="validate[required] material_num" name="material_num1">
+                                <option value="" selected="selected">数量を選択</option>
+                                <option value="1" data-pref-id="1">1</option>
+                                <option value="2" data-pref-id="2">2</option>
+                                <option value="3" data-pref-id="3">3</option>
+                                <option value="4" data-pref-id="4">4</option>
+                                <option value="5" data-pref-id="5">5</option>
+                                <option value="6" data-pref-id="6">6</option>
+                                <option value="7" data-pref-id="7">7</option>
+                                <option value="8" data-pref-id="8">8</option>
+                                <option value="9" data-pref-id="9">9</option>
+                                <option value="10" data-pref-id="10">10</option>
+                                <label for="material_num1"></label>
+                            </select></span>
+                        </div>
                     </dd>
 
                     {{--  道具  --}}
@@ -132,27 +106,41 @@
                     </dt>
 
                     <dd id="tool" class="border_line">
-                        <div class="tool_text">● <input id="tool" class="input-text validate[required,maxSize[16]]" type="text" name="tool" placeholder="道具"  value="{{ old('tool') }}"></div>
+                        <div class="tool_text1"><input id="tool_name1" class="input-text validate[required,maxSize[16]]" type="text" name="tool_name1" placeholder="道具"  value="{{ old('tool') }}"></div>
                     </dd>
 
                     {{--  作り方  --}}
                     <dt><span class="required">作り方</span></dt>
                     <dd class="border_line">
-                        <textarea class="method" name="method" required autocomplete="method" rows="5">
-                            {{ old('method') }}
-                        </textarea>
+                        <textarea id="method" class="method" name="method" value="{{ old('method') }}"></textarea>
                     </dd>
 
                     {{--  タグ  --}}
                     <dt><span class="required">タグ</span></dt>
                     <dd class="border_line">
-                        <select id="post_tag" class="validate[required]" name="post_tag">
+                        <select id="post_tag1" class="validate[required]" name="post_tag1">
                             <option value="" selected="selected">タグを選択</option>
                             <option value="椅子" data-pref-id="1">椅子</option>
                             <option value="机" data-pref-id="2">机</option>
                             <option value="棚" data-pref-id="3">棚</option>
                             <option value="その他" data-pref-id="4">その他</option>
-                            <label for="post_tag"></label>
+                            <label for="post_tag1"></label>
+                        </select> 
+                        <select id="post_tag2" class="validate[required]" name="post_tag2">
+                            <option value="" selected="selected">タグを選択</option>
+                            <option value="椅子" data-pref-id="1">椅子</option>
+                            <option value="机" data-pref-id="2">机</option>
+                            <option value="棚" data-pref-id="3">棚</option>
+                            <option value="その他" data-pref-id="4">その他</option>
+                            <label for="post_tag2"></label>
+                        </select> 
+                        <select id="post_tag3" class="validate[required]" name="post_tag3">
+                            <option value="" selected="selected">タグを選択</option>
+                            <option value="椅子" data-pref-id="1">椅子</option>
+                            <option value="机" data-pref-id="2">机</option>
+                            <option value="棚" data-pref-id="3">棚</option>
+                            <option value="その他" data-pref-id="4">その他</option>
+                            <label for="post_tag3"></label>
                         </select> 
                     </dd>
                     

@@ -19,6 +19,7 @@
     <!-- Styles -->
 
     {{--  <link rel="stylesheet" type="text/css" href="./css/headder_fotter.css">  --}}
+    {{--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">  --}}
     <link rel="stylesheet" href="{{ asset('./css/headder_fotter.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -48,6 +49,7 @@
                         {{--  wacsトップ画面  --}}
                             <li><a href="{{ route('contact') }}"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
                             <li><a href="{{ url('posts/create') }}"><button class="styled-button_t" type="button">ツイートする</button></a></li>
+                            <li><a href="{{ url('posts') }}"><button class="styled-button_t" type="button">ツイート一覧</button></a></li>
                         
                         @else 
                             {{--  ログイン時表示  --}}                            
@@ -59,8 +61,8 @@
                             <li><a href="{{ url('posts/create') }}"><button class="styled-button_t" type="button">ツイートする</button></a></li>
                         @endif
                             {{--  アカウント  --}}
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li class="nav-item ">
+                                <a  class=" " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     @if (auth()->user()->user_icon == null)
                                         {{--  デフォルトアイコン  --}}
                                     <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" width="50" height="50">

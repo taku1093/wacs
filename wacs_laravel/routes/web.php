@@ -30,6 +30,10 @@ Route::post('register/confirm', 'Auth\RegisterController@register')->name('user.
 // お問い合わせ
 Route::get('contact', 'ContactController@index')->name('contact');
 
+
+// DIY
+Route::get('/DIY_home', 'HomeController@index_DIY')->name('DIY_home');
+
 // ログイン状態
 Route::group(['middleware' => 'auth'], function() {
      // ユーザ関連

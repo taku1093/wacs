@@ -82,7 +82,7 @@
         <p class="pagetitle">ようこそ！ WACSへ</p>
         <ul class="item-list">
             <li>
-                <a href="#"><img src="./img/DIY.jpg" alt="DIYのロゴ"></a>
+                <a href="{{ route('DIY_home') }}"><img src="./img/DIY.jpg" alt="DIYのロゴ"></a>
                 <dl>
                     <dt>DIY</dt>
                     <dd></dd>

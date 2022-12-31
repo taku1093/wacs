@@ -28,9 +28,7 @@ img {
 /* height: auto; */
 } 
 
-/* img {
-    max-width: 10%; 
-} */
+
 
 body .header {
     font-family: sans-serif; /*サンセリフ体*/
@@ -64,9 +62,7 @@ header {
     align-items: center; /*ロゴとナビゲーションの上下の高さを揃える*/
 }
 
-/* .toggle-menu-button {
-    display: none;
-} */
+
 
 .header-logo {
     display: block; /*ロゴのサイズ指定をできるように*/
@@ -129,36 +125,16 @@ header {
     margin-top: 50px;
 }
 
-/* .footer-tel {
-    font-size: 26px;
-    font-weight: bold;
-    margin-top: 28px;
-}
-
-.footer-name {
-    font-size: 13px;
-    margin-top: 16px;
-} */
 
 .copyright {
     font-size: 14px;
     margin-top: 90px;
 }
 
-/* .forget {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: right;
-}
 
-.pull-left {
-    margin-top: 0px;
-    margin-bottom: 10px;
-    text-align: right;
-} */
 
 /* ログイン・お問い合わせボタンのデザイン */
-.styled-button {
+.styled-button{
     /* background-color: #1492AF;
     border: 3px solid #1492AF; */
     background-color: #f4dd64;
@@ -172,6 +148,7 @@ header {
     text-align: center;
     text-decoration: none;
     transition: .3s;
+    line-height: 25px;
 }
 
 .styled-button:hover {
@@ -197,6 +174,7 @@ header {
     text-decoration: none;
     transition: .3s;
     border-radius: 24px;
+    line-height: 25px;
 }
 
 .styled-button_t:hover {

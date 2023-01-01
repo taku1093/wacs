@@ -7,7 +7,7 @@
   <title>HOME | WACS</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <!-- cssファイルの設定など -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('css\DIY_home.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css\thumne.css')}}">
   {{--  <link rel="stylesheet" href="{{ asset('./css/headder_fotter.css') }}">  --}}
 </head>
 
@@ -15,7 +15,7 @@
 
 @section('content')
 <body>
-  <!-- <header>
+  {{--  <!-- <header>
     <div class="collapse bg-dark" id="Navbar">
       <div class="container">
         <div class="row">
@@ -45,10 +45,10 @@
         </button>
       </div>
     </div>
-  </header> -->
+  </header> -->  --}}
 
   <main role="main">
-    <!-- <section class="jumbotron text-center">
+    {{--  <!-- <section class="jumbotron text-center">
       <div class="container">
         <h1>アルバムの実例</h1>
         <p class="lead text-muted">短くて、その下のコレクション、そのコンテンツ、クリエイターなどを指し示すものではない。短くて甘いですが、あまりにも短くはないので、人々はそれを完全にスキップしない。</p>
@@ -57,11 +57,12 @@
           <a href="#" class="btn btn-secondary my-2">二次的なアクション</a>
         </p>
       </div>
-    </section> -->
+    </section> -->  --}}
 
-    <div class="album py-5 bg-light">
+    {{--  <div class="album py-5 bg-light">  --}}
       <div class="container">
         <div class="row">
+          
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
 
@@ -84,16 +85,16 @@
                   </div>
                 </div>
                 <!-- ここまで (dropdown)-->
-
               </div>
               
               <div class="img_area">
-              <img src="./img/sample_thumne.jpg" class="img_position" alt="" width="300" height="200">
-              <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><title>カード画像のキャプション</title><rect fill="#55595c" width="100%" height="100%" /><text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text></svg> -->
+                <img src="./img/sample_thumne.jpg" class="img_position" alt="" width="300" height="200">
+              {{--  <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><title>カード画像のキャプション</title><rect fill="#55595c" width="100%" height="100%" /><text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text></svg> -->  --}}
               </div>
+
               <div class="card-body">
                 <p class="card-text">伊豆を作った</p>
-                <p class="card-text">これは、追加コンテンツへの自然な導入として以下のテキストをサポートする、より幅広いカード。このコンテンツはもう少し長くなる。</p>
+                <p class="card-text">これもう少し長くなる。</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
@@ -102,8 +103,10 @@
                   <small class="text-muted">9 分前</small>
                 </div>
               </div>
+
             </div>
           </div>
+
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <div class="flex">

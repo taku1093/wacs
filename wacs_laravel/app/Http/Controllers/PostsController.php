@@ -25,8 +25,10 @@ class PostsController extends Controller
         // followed_idだけ抜き出す
         $following_ids = $follow_ids->pluck('followed_id')->toArray();
 
-        $timelines = $post->getTimelines($user->id, $following_ids);
+        // $timelines = $post->getTimelines($user->id, $following_ids);
 
+        // $timelines = $post->user;
+        $timelines = $post->orderBy('created_at', 'DESC')->paginate(50);
         return view('posts.index', [
             'user'      => $user,
             'timelines' => $timelines,
@@ -250,9 +252,19 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        $user = auth()->user();
+        $posts = $post->getEditPost($user->id, $post->id);
+
+        if (!isset($posts)) {
+            return redirect('posts');
+        }
+
+        return view('posts.edit', [
+            'user'   => $user,
+            'posts' => $posts
+        ]);
     }
 
     /**

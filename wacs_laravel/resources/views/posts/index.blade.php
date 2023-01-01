@@ -1,38 +1,117 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HOME | WACS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- cssファイルの設定など -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\thumne.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\post\index.css')}}">
+    {{--  <link rel="stylesheet" href="{{ asset('./css/headder_fotter.css') }}">  --}}
+</head>
 @extends('layouts.app')
 
 @section('content')
+{{--  ページタイトル  --}}
+<p class="pagetitle">投稿一覧</p>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 mb-3 text-right">
+        {{--  <div class="col-md-8 mb-3 text-right">
             <a href="{{ url('users') }}">ユーザ一覧 <i class="fas fa-users" class="fa-fw"></i> </a>
-        </div>
+        </div>  --}}
+
+
+        
+
+        {{--  投稿情報  --}}
         @if (isset($timelines))
             @foreach ($timelines as $timeline)
-                <div class="col-md-8 mb-3">
+
+
+            {{--  <div class="album py-5 bg-light">  --}}
+                {{--  <div class="container">  --}}
+                    {{--  <div class="row">  --}}
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+    
+                            <div class="flex">
+                                {{--  アイコン  --}}
+                                <div>
+                                    {{--  <img src="./icon/50.png" width="32" height="32">  --}}
+                                    @if ($timeline->user->user_icon == null)
+                                        {{--  デフォルトアイコン  --}}
+                                    <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image">
+                                    @else
+                                        {{--  任意のアイコン  --}}
+                                        <img src="{{ asset('storage/user_icon/' .$timeline->user->user_icon) }}" class="circle-image">
+                                    @endif
+                                </div> <!--アイコン画像を丸く表示-->
+
+                                {{--  ユーザネーム  --}}
+                                <div class="user_name">
+                                    <p class="mb-0">{{ $timeline->user->user_screen_name }}</p>
+                                </div>
+    
+                                {{--  詳細  --}}
+                                <!-- ホーム画面のサムネイルの場合には以下を通報のみにしてください。マイページのサムネイルの場合には通報以外を表示するような処理が必要です。-->
+                                <div class="dropdown">
+                                <button class="dropdown__btn" id="dropdown__btn1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="64"/><circle cx="256" cy="448" r="64"/><circle cx="256" cy="64" r="64"/></svg>
+                                </button>
+                                <div class="dropdown__body">
+                                    <ul class="dropdown__list">
+                                        <li class="dropdown__item"><a href="#" class="dropdown__item-link">編集する</a></li>
+                                        <li class="dropdown__item"><a href="#" class="dropdown__item-link">共有する</a></li>
+                                        <li class="dropdown__item"><a href="#" class="dropdown__item-link">通報</a></li>
+                                        <li class="dropdown__item"><a href="#" class="dropdown__item-link red" style="color: red;">投稿を削除</a></li>
+                                    </ul>
+                                </div>
+                                </div>
+                                <!-- ここまで (dropdown)-->
+                            </div>
+                            
+                            {{--  投稿画像  --}}
+                            <div class="img_area">
+                                @if ($timeline->post_img1 == null)
+                                {{--  デフォルト画像表示  --}}
+                                    <img src="./img/DIY.jpg" class="img_position" alt="" width="300" height="200">
+                                @else
+                                <img src="{{ asset('storage/post_img/' .$timeline->post_img1) }}" class="img_position" alt="" width="300" height="200">
+                                @endif
+
+                            </div>
+    
+                            <div class="card-body">
+                                {{--  投稿タイトル  --}}
+                                <p class="card-text">{!! nl2br(e($timeline->post_title)) !!}</p>
+                                {{--  投稿説明  --}}
+                                <p class="card-text">{!! nl2br(e($timeline->post_exp)) !!}</p>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
+                                </div>
+                                <small class="text-muted">{!! nl2br(e($timeline->created_at)) !!}</small>
+                                </div>
+                            </div>
+    
+                            </div>
+                        </div>
+                    {{--  </div>  --}}
+                {{--  </div>  --}}
+            {{--  </div>  --}}
+
+
+
+
+
+
+
+                {{--  <div class="col-md-8 mb-3">
                     <div class="card">
                         <div class="card-haeder p-3 w-100 d-flex">
-                            @if ($timeline->user->user_icon == null)
-                                {{--  デフォルトアイコン  --}}
-                            <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" width="50" height="50">
-                            @else
-                                {{--  任意のアイコン  --}}
-                                <img src="{{ asset('storage/user_icon/' .$timeline->user->user_icon) }}" class="rounded-circle" width="50" height="50">
-                            @endif
-
-                            <img src="{{ asset('storage/post_img/' .$timeline->post_img1) }}" class="rounded-circle" width="50" height="50">
-                            <img src="{{ asset('storage/post_img/' .$timeline->post_img2) }}" class="rounded-circle" width="50" height="50">
-                            <img src="{{ asset('storage/post_img/' .$timeline->post_img3) }}" class="rounded-circle" width="50" height="50">
-
-
-
-
-                            <div class="ml-2 d-flex flex-column">
-                                <p class="mb-0">{{ $timeline->user->user_screen_name }}</p>
-                                <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary">{{ $timeline->user->screen_name }}</a>
-                            </div>
-                            <div class="d-flex justify-content-end flex-grow-1">
-                                <p class="mb-0 text-secondary">{{ $timeline->created_at->format('Y-m-d H:i') }}</p>
-                            </div>
+                            
                         </div>
                         <div class="card-body">
                             {!! nl2br(e($timeline->method)) !!}
@@ -64,12 +143,43 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  --}}
             @endforeach
         @endif
     </div>
     <div class="my-4 d-flex justify-content-center">
         {{ $timelines->links() }}
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!--自作のJS-->
+<script>
+    $(".openbtn").click(function () {
+        $(this).toggleClass('active');
+    });
+</script>
+
+<!-- サムネイル右上のボタンのJavascript-->
+<script>
+(function () {
+    document.addEventListener('DOMContentLoaded', function() { // HTML解析が終わったら
+    // var array_10 = [];
+    // for (var i = 1; i <= 10; i++) {
+    //   const btn = array_10.push(document.getElementById('dropdown__btn' + i)); // ボタンをidで取得
+    // }
+    const btn = document.getElementById('dropdown__btn1'); 
+    if(btn) { // ボタンが存在しないときにエラーになるのを回避
+        btn.addEventListener('click', function(){ //ボタンがクリックされたら
+        this.classList.toggle('is-open'); // is-openを付加する
+        });
+    }
+    });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js" integrity="sha384-Qg00WFl9r0Xr6rUqNLv1ffTSSKEFFCDCKVyHZ+sVt8KuvG99nWw5RNvbhuKgif9z" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </div>
+
+
 @endsection

@@ -261,7 +261,7 @@ class PostsController extends Controller
             return redirect('posts');
         }
 
-        return view('posts.edit', [
+        return view('posts.create', [
             'user'   => $user,
             'posts' => $posts
         ]);
@@ -289,4 +289,7 @@ class PostsController extends Controller
     {
         //
     }
+
+
+
 }

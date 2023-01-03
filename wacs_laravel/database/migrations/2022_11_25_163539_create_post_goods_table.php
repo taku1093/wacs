@@ -14,12 +14,13 @@ class CreatePostGoodsTable extends Migration
     public function up()
     {
         Schema::create('post_goods', function (Blueprint $table) {
-            $table->increments('good_id')->nullable()->comment('いいねID');;
+            $table->increments('id')->nullable()->comment('いいねID');
+            // $table->increments('good_id')->nullable()->comment('いいねID');;
             $table->unsignedInteger('user_id')->nullable()->comment('ユーザID');
             $table->unsignedInteger('post_id')->nullable()->comment('投稿ID');
 
             // 索引設定
-            $table->index('good_id');
+            // $table->index('good_id');
             $table->index('user_id');
             $table->index('post_id');
 

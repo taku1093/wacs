@@ -7,6 +7,8 @@
     <!-- cssファイルの設定など -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css\thumne.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\post\index.css')}}">
+    {{--  ハートマーク用  --}}
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     {{--  <link rel="stylesheet" href="{{ asset('./css/headder_fotter.css') }}">  --}}
 </head>
 @extends('layouts.app')
@@ -88,16 +90,49 @@
                                 <p class="card-text">{!! nl2br(e($timeline->post_exp)) !!}</p>
 
                                 <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
-                                </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
+                                        @if ($timeline->user_id == auth()->user()->id)
+                                            {{--  <a href="{{ url('posts/create') }}"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>  --}}
+                                            <a href="{{ url('Posts/' .$timeline->id .'/edit') }}"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>
+                                        @endif
+
+                                        {{--   いいね  --}}
+                                        @if (!in_array($user->id, array_column($timeline->post_goods->toArray(), 'user_id'), TRUE))
+                                        <form method="POST" action="{{ url('post_goods/') }}">
+                                            @csrf
+
+                                            <input type="hidden" name="post_id" value="{{ $timeline->id }}">
+                                            <button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i></button>
+                                        </form>
+
+                                        @else
+                                        <form method="POST" action="{{ url('post_goods/' .array_column($timeline->post_goods->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button type="submit" class="btn p-0 border-0 text-danger"><i class="fas fa-heart unlike-btn"></i></button>
+                                        </form>
+
+                                        @endif
+                                        <p class="mb-0 text-secondary">{{ count($timeline->post_goods) }}</p>
+
+                                    </div>
                                 <small class="text-muted">{!! nl2br(e($timeline->created_at)) !!}</small>
+                                </div>
+                                {{--  いいね  --}}
+                                <div class="d-flex align-items-center">
+                                    
                                 </div>
                             </div>
     
                             </div>
                         </div>
+
+
+
+                        
+
                     {{--  </div>  --}}
                 {{--  </div>  --}}
             {{--  </div>  --}}

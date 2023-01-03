@@ -35,7 +35,7 @@ class Post extends Model
     }
 
     // 一対多
-    public function favorites()
+    public function post_goods()
     {
         return $this->hasMany(Post_good::class);
     }

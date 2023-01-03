@@ -43,8 +43,12 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('users/{user}/follow', 'UsersController@follow')->name('follow');
     Route::delete('users/{user}/unfollow', 'UsersController@unfollow')->name('unfollow');
 
-    // ツイート関連
+    // 投稿関連
     Route::resource('posts', 'PostsController', ['only' => ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy']]);
+    // Route::get('posts/edit/', 'PostsController@edit')->name('post_edit');
+
+    // いいね関連
+    Route::resource('post_goods', 'Post_goodsController', ['only' => ['store', 'destroy']]);
 
     //シミュレーション関連
     Route::get('simulation', 'SimulationController@index')->name('simulation');

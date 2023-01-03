@@ -49,7 +49,7 @@
                         {{--  wacsトップ画面  --}}
                             <li><a href="{{ route('contact') }}"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
                             <li><a href="{{ url('posts/create') }}"><button class="styled-button_t" type="button">ツイートする</button></a></li>
-                            <li><a href="{{ url('posts') }}"><button class="styled-button_t" type="button">ツイート一覧</button></a></li>
+                            {{--  <li><a href="{{ url('posts') }}"><button class="styled-button_t" type="button">ツイート一覧</button></a></li>  --}}
                         
                         @else 
                             {{--  ログイン時表示  --}}                            

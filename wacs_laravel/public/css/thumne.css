@@ -167,6 +167,12 @@ a:hover {
   margin-left: 20px;
   }
 
+  .post_title{
+    height: 15px;
+  }
+  .post_exp{
+    height: 100px;
+  }
 /* a::after {
   position: absolute;
   bottom: 10px;

@@ -34,6 +34,9 @@ Route::get('contact', 'ContactController@index')->name('contact');
 // DIY
 Route::get('/DIY_home', 'HomeController@index_DIY')->name('DIY_home');
 
+// 投稿関連
+// Route::resource('posts/index', 'PostsController@index');
+
 // ログイン状態
 Route::group(['middleware' => 'auth'], function() {
      // ユーザ関連

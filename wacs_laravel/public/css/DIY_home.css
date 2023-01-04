@@ -24,3 +24,14 @@
     line-height: 30px;
     text-align: center;
     }
+
+.sub_title::after{
+content: '';
+display: block;
+width: 76px;
+height: 3px;
+background-color: #f4dd64;
+/* margin-top: 10px; */
+/* margin-left: auto;
+margin-right: auto; */
+}

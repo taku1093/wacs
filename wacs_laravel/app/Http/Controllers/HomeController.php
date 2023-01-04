@@ -32,7 +32,7 @@ class HomeController extends Controller
     {
 
         $user = auth()->user();
-        $timelines = $post->orderBy('created_at', 'DESC')->take(3)->get();
+        $timelines = $post->orderBy('created_at', 'DESC')->take(6)->get();
         return view('DIYhome', [
             'user'      => $user,
             'timelines' => $timelines,

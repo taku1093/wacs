@@ -21,13 +21,7 @@ class PostsController extends Controller
     public function index(Post $post, Follower $follower)
     {
         $user = auth()->user();
-        $follow_ids = $follower->followingIds($user->id);
-        // followed_idだけ抜き出す
-        $following_ids = $follow_ids->pluck('followed_id')->toArray();
-
-        // $timelines = $post->getTimelines($user->id, $following_ids);
-
-        // $timelines = $post->user;
+        
         $timelines = $post->orderBy('created_at', 'DESC')->paginate(50);
         return view('posts.index', [
             'user'      => $user,
@@ -44,7 +38,6 @@ class PostsController extends Controller
     public function create(Post $post)
     {
         $user = auth()->user();
-        // $post = 
 
         return view('posts.create', [
             'user' => $user,

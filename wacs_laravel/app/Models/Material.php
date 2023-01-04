@@ -31,7 +31,7 @@ class Material extends Model
         'material_num9',
         'material_num10',
 
-    ];
+];
 
     public function post(){
         return $this->belongsTo(Post::class);
@@ -111,5 +111,10 @@ class Material extends Model
 
         return;
     }
+
+        public function getMaterial(Int $material_id)
+        {
+                return $this->with('post')->where('post_id', $material_id)->get();
+        }
 
 }

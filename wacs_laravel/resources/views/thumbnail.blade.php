@@ -107,7 +107,7 @@
 
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
+                                        <a href="{{ url('posts/' .$timeline->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">見る</button></a>
                                         {{--    編集  --}}
                                         {{--  ログイン時  --}}
                                         @auth

@@ -119,4 +119,10 @@ class Post extends Model
         return $this->where('user_id', $user_id)->where('id', $post_id)->first();
     }
 
+        // 詳細画面
+        public function getPost(Int $post_id)
+        {
+            return $this->with('user')->where('id', $post_id)->first();
+        }
+
 }

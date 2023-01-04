@@ -66,4 +66,8 @@ class Tool extends Model
 
         return;
     }
+    public function getTool(Int $tool_id)
+    {
+            return $this->with('post')->where('post_id', $tool_id)->get();
+    }
 }

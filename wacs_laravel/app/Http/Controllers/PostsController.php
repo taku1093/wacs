@@ -234,9 +234,21 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(post $post, Comment $comment, Material $material, Tool $tool)
     {
-        //
+        $user = auth()->user();
+        $post = $post->getPost($post->id);
+        $material = $material->getMaterial($post->id);
+        $tool = $tool->getTool($post->id);
+        // $comments = $comment->getComments($post->id);
+
+        return view('posts.show', [
+            'user'     => $user,
+            'post' => $post,
+            'material' => $material,
+            'tool' => $tool
+            // 'comments' => $comments
+        ]);
     }
 
     /**

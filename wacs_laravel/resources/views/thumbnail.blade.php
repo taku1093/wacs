@@ -154,7 +154,7 @@
 
         
         <main class="py-4">
-            @yield('tumbnail')
+            @yield('thumbnail')
         </main>
 
     </div>

@@ -20,7 +20,7 @@
     <p class="sub_title">TIME LINE</p>
 
     @extends('thumbnail')
-    @section('tumbnail')
+    @section('thumbnail')
     <a href="{{ url('posts') }}"><button class="styled-button_p" type="button">もっと見る</button></a>
     {{--  @endsection  --}}
         {{--  もっと見る  --}}

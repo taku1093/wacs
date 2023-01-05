@@ -70,6 +70,11 @@ class User extends Authenticatable
         return $this->belongsToMany(self::class, 'followers', 'following_id', 'followed_id');
     }
 
+    public function evaluations()
+    {
+        return $this->hasMany(Evaluation::class);
+    }
+
     public function getAllUsers(Int $user_id)
     {
         // フォローされているユーザ情報を取得

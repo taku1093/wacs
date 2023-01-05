@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Evaluation;
 use App\Models\Post;
 use App\Models\Comment;
 use App\Models\Follower;
@@ -234,12 +235,12 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(post $post, Comment $comment, Material $material, Tool $tool)
+    public function show(post $post, Evaluation $evaluation, Comment $comment, Material $material, Tool $tool)
     {
         $user = auth()->user();
+        $evaluation = $evaluation->getEvaluation($post->user_id);
         $post = $post->getPost($post->id);
         $material = $material->getMaterial($post->id);
-        $tool = $tool->getTool($post->id);
         // $comments = $comment->getComments($post->id);
 
         return view('posts.show', [

@@ -17,6 +17,7 @@
 {{--  ページタイトル  --}}
 <p class="pagetitle">投稿一覧</p>
 <div class="container">
+    
     @extends('thumbnail')
     @section('thumbnail')
     

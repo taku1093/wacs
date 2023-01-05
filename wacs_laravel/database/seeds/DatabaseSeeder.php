@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         // 親子関係の順に中位
         $this->call([
             UsersTableSeeder::class,
+            EvaluationTableSeeder::class,
             PostsTableSeeder::class,
             MaterialsTableSeeder::class,
             CommentsTableSeeder::class,

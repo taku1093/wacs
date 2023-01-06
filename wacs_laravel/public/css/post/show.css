@@ -73,30 +73,11 @@
     background:#333;/*ドットボタンの現在地表示の色*/
 }
 
-    /*==========================その他のCSS==================================================*/
 
-.backgroundImage{
-    /* background-image: url('public/img/simulation/wood.jpg'); */
-    /* -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-}
-.moji{
-    font-size: 70px;
-    padding: 10px;
-    }
-h2{
-    position: relative;
-    padding: 0.25em 0; 
-}
-/* h2:after{
-    content: "";
-    display: block;
-    height: 4px;
-    background: -webkit-linear-gradient(to right, rgb(255,186,115), #ffb2b2);
-    background: linear-gradient(to right, rgb(255,186,115), #ffb2b2);
-    margin: auto;
-    width: 150px;
-} */
+
+
+
+
 
 /* ページレイアウト */
 .pagetitle{
@@ -107,7 +88,7 @@ h2{
     text-align: center;
     }
     
-    .pagetitle::after {
+.pagetitle::after {
     content: '';
     display: block;
     width: 76px;
@@ -116,23 +97,6 @@ h2{
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    }
-
-/* ハート */
-.like-btn {
-    width: 25px;
-    height: 30px;
-    font-size: 25px;
-    color: #808080; 
-    margin-left: 20px;
-    }
-  
-  .unlike-btn {
-    width: 25px;
-    height: 30px;
-    font-size: 25px;
-    color: #e54747;
-    margin-left: 20px;
     }
 
 dl {
@@ -145,6 +109,23 @@ dl dt {
 dl dd {
     width: 60%;
 }
+
+/* ハート */
+.like-btn {
+    width: 25px;
+    height: 30px;
+    font-size: 25px;
+    color: #808080; 
+    margin-left: 20px;
+    }
+
+.unlike-btn {
+    width: 25px;
+    height: 30px;
+    font-size: 25px;
+    color: #e54747;
+    margin-left: 20px;
+    }
 
 /* ユーザ */
 .circle-image {

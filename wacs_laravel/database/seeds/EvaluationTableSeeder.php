@@ -29,5 +29,22 @@ class EvaluationTableSeeder extends Seeder
                 'eval_number' => 4
             ]);
         }
+
+
+        for ($i = 3; $i <= 5; $i++) {
+            Evaluation::create([
+                'user_id' => 2,
+                'eval_user_id' => $i,
+                'eval_number' => 3
+            ]);
+        }
+
+        for ($i = 6; $i <= 10; $i++) {
+            Evaluation::create([
+                'user_id' => 2,
+                'eval_user_id' => $i,
+                'eval_number' => 4
+            ]);
+        }
     }
 }

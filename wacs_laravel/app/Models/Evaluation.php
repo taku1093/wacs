@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Evaluation extends Model
 {
@@ -20,5 +21,14 @@ class Evaluation extends Model
     public function getEvaluation(Int $post_id)
     {
         return $this->with('user')->where('id', $post_id)->first();
+    }
+
+    // カウント
+    public function getCountByUser()
+    {
+        return Evaluation::select('user_id')
+                ->selectRaw('AVG(eval_number) AS eval_ave')
+                ->groupBy('user_id')
+                ->get();
     }
 }

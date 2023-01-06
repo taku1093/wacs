@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+
 use App\Models\Evaluation;
 use App\Models\Post;
 use App\Models\Comment;
@@ -238,16 +239,26 @@ class PostsController extends Controller
     public function show(post $post, Evaluation $evaluation, Comment $comment, Material $material, Tool $tool)
     {
         $user = auth()->user();
-        $evaluation = $evaluation->getEvaluation($post->user_id);
         $post = $post->getPost($post->id);
+
+        // 評価数計算
+        $eval_results = $evaluation->getCountByUser();
+
+        $post_count = $post->getCountByPost();
+        // $eval_count = $eval_results->count_user;
+
+        
         $material = $material->getMaterial($post->id);
         // $comments = $comment->getComments($post->id);
 
         return view('posts.show', [
             'user'     => $user,
+            'eval_results' => $eval_results,
+            'post_count' => $post_count,
+
             'post' => $post,
             'material' => $material,
-            'tool' => $tool
+            // 'tool' => $tool
             // 'comments' => $comments
         ]);
     }

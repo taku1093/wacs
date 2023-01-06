@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\String_;
 
 class Post extends Model
@@ -124,5 +125,14 @@ class Post extends Model
         {
             return $this->with('user')->where('id', $post_id)->first();
         }
+
+        // 投稿カウント
+    public function getCountByPost()
+    {
+        return Post::select('user_id')
+                ->selectRaw('COUNT(id) AS count_post')
+                ->groupBy('user_id')
+                ->get();
+    }
 
 }

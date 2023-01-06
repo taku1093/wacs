@@ -22,6 +22,7 @@
         <div class="row justify-content-center mb-5">
             <div class="col-md-8 mb-3">
                 <div class="card">
+
                     {{--  投稿画像  --}}
                     <div class="card-img">
                         @if ($post->post_img1 == null)
@@ -29,8 +30,16 @@
                         @else
                             <ul class="slider">
                                 <li><img src="{{ asset('storage/post_img/' .$post->post_img1) }}" ></li>
-                                <li><img src="{{ asset('storage/post_img/' .$post->post_img2) }}" ></li>
-                                <li><img src="{{ asset('storage/post_img/' .$post->post_img3) }}" ></li>
+                                @if ($post->post_img2 == null)
+                                    <img src="{{ asset('storage/DIY.jpg') }}" >
+                                @else
+                                    <li><img src="{{ asset('storage/post_img/' .$post->post_img2) }}" ></li>
+                                @endif
+                                @if ($post->post_img3 == null)
+                                    <img src="{{ asset('storage/DIY.jpg') }}" >
+                                @else
+                                    <li><img src="{{ asset('storage/post_img/' .$post->post_img3) }}" ></li>
+                                @endif
                             </ul>
                         @endif
                     </div>
@@ -61,13 +70,31 @@
                                 {{--  他ユーザからの評価  --}}
                                 <div class="card-user_evaluation">
                                     <p>他ユーザからの評価</p>
+                                    @foreach ($eval_results as $eval_results)
+                                        @if($post->user->id === $eval_results->user_id)
+                                            <p>{{round($eval_results->eval_ave,1)}}</p>
+
+                                            {{--  確認用  --}}
+                                            {{--  <p>{{$eval_results->eval_ave}}</p>  --}}
+                                        @endif
+                                    @endforeach
                                     
-                                    {{--  <p class="mb-0">{{ $post->user->evaluations->eval_user_id}}</p>  --}}
                                 </div>
 
                                 {{--  投稿数  --}}
                                 <div class="card-post_num">
-                                    <p>投稿数</p>
+                                        <p>
+                                            投稿数
+                                            @foreach ($post_count as $post_count)
+                                                @if($post->user->id === $post_count->user_id)
+                                                    {{$post_count->count_post}}
+
+                                                    {{--  確認用  --}}
+                                                    {{--  <p>{{$post_count}}</p>  --}}
+                                                @endif
+                                            @endforeach
+                                            件
+                                        </p>
                                 </div>
 
                                 {{--  フォロー  --}}
@@ -108,7 +135,7 @@
                                             {{--   いいね  --}}
                                             <dd>
                                                 @auth
-                                                    @if (!in_array($post->user->id, array_column($post->post_goods->toArray(), 'user_id'), TRUE))
+                                                    @if (!in_array($user->id, array_column($post->post_goods->toArray(), 'user_id'), TRUE))
                                                         <form method="POST" action="{{ url('post_goods/') }}">
                                                             @csrf
 
@@ -151,34 +178,34 @@
                                                 <dd><h2>[数量]</h2></dd>
 
                                                 <dt>{{ $material->material_name1 }}</dt>
-                                                <dd>×{{ $material->material_num1 }}</dd>
+                                                <dd>{{ $material->material_num1 }}</dd>
 
                                                 <dt>{{ $material->material_name2 }}</dt>
-                                                <dd>×{{ $material->material_num2 }}</dd>
+                                                <dd>{{ $material->material_num2 }}</dd>
 
                                                 <dt>{{ $material->material_name3 }}</dt>
-                                                <dd>×{{ $material->material_num3 }}</dd>
+                                                <dd>{{ $material->material_num3 }}</dd>
 
                                                 <dt>{{ $material->material_name4 }}</dt>
-                                                <dd>×{{ $material->material_num4 }}</dd>
+                                                <dd>{{ $material->material_num4 }}</dd>
 
                                                 <dt>{{ $material->material_name5 }}</dt>
-                                                <dd>×{{ $material->material_num5 }}</dd>
+                                                <dd>{{ $material->material_num5 }}</dd>
 
                                                 <dt>{{ $material->material_name6 }}</dt>
-                                                <dd>×{{ $material->material_num6 }}</dd>
+                                                <dd>{{ $material->material_num6 }}</dd>
 
                                                 <dt>{{ $material->material_name7 }}</dt>
-                                                <dd>×{{ $material->material_num7 }}</dd>
+                                                <dd>{{ $material->material_num7 }}</dd>
 
                                                 <dt>{{ $material->material_name8 }}</dt>
-                                                <dd>×{{ $material->material_num8 }}</dd>
+                                                <dd>{{ $material->material_num8 }}</dd>
 
                                                 <dt>{{ $material->material_name9 }}</dt>
-                                                <dd>×{{ $material->material_num9 }}</dd>
+                                                <dd>{{ $material->material_num9 }}</dd>
 
                                                 <dt>{{ $material->material_name10 }}</dt>
-                                                <dd>×{{ $material->material_num10 }}</dd>
+                                                <dd>{{ $material->material_num10 }}</dd>
                                             @endforeach
                                         @endif
                                     </dl>
@@ -211,6 +238,7 @@
 
                                     {{--  コメント  --}}
                                     <div class="card-comment">
+                                        <h2>コメント</h2>
                                     </div>
                             </div>
                         </dd>
@@ -226,7 +254,6 @@
     
 
     {{--  javascript  --}}
-    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!--自作のJS-->

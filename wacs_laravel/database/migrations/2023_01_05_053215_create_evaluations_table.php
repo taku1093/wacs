@@ -14,12 +14,15 @@ class CreateEvaluationsTable extends Migration
     public function up()
     {
         Schema::create('evaluations', function (Blueprint $table) {
-            $table->increments('id')->nullable()->comment('評価ID');
+            $table->increments('id')->nullable()->countable(true)->comment('評価ID');
             $table->unsignedInteger('user_id')->nullable()->comment('(評価された側)ユーザID');
             $table->unsignedInteger('eval_user_id')->nullable()->comment('(評価した側)ユーザID');
             $table->integer('eval_number')->nullable()->comment('評価値');
 
             $table->timestamps();
+
+            $table->index('user_id');
+            $table->index('eval_user_id');
 
             // FK設定
             $table->foreign('user_id')//materialテーブルのpost_id

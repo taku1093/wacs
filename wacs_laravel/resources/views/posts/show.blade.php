@@ -25,29 +25,29 @@
 
                     {{--  投稿画像  --}}
                     <div class="card-img">
-                        @if ($post->post_img1 == null)
-                            <img src="{{ asset('storage/DIY.jpg') }}" >
+                        @if ($post->post_img1 === null)
+                            <img class="post_img" src="{{ asset('storage/DIY.jpg') }}" >
                         @else
-                            <ul class="slider">
-                                <li><img src="{{ asset('storage/post_img/' .$post->post_img1) }}" ></li>
-                                @if ($post->post_img2 == null)
-                                    <img src="{{ asset('storage/DIY.jpg') }}" >
-                                @else
-                                    <li><img src="{{ asset('storage/post_img/' .$post->post_img2) }}" ></li>
-                                @endif
-                                @if ($post->post_img3 == null)
-                                    <img src="{{ asset('storage/DIY.jpg') }}" >
-                                @else
-                                    <li><img src="{{ asset('storage/post_img/' .$post->post_img3) }}" ></li>
-                                @endif
-                            </ul>
+                            <img class="post_img" src="{{ asset('storage/post_img/' .$post->post_img1) }}" >
+
+                            @if ($post->post_img2 === null)
+                                <img class="post_img" src="{{ asset('storage/DIY.jpg') }}" >
+                            @else
+                                <img class="post_img" src="{{ asset('storage/post_img/' .$post->post_img2) }}" >
+                            @endif
+
+                            @if ($post->post_img3 === null)
+                                <img class="post_img" src="{{ asset('storage/DIY.jpg') }}" >
+                            @else
+                                <img class="post_img" src="{{ asset('storage/post_img/' .$post->post_img3) }}" >
+                            @endif
                         @endif
                     </div>
                     
                     <dl class="card-main">
-                        <dt>
+                        <dt class="card-user">
                             {{--  投稿ユーザ情報  --}}
-                            <div class="card-user">
+                            <div class="user_info">
 
                                 {{--  ユーザアイコン  --}}
                                 <div class="card-icon">
@@ -106,17 +106,17 @@
                                     @endif
                                     <div class="d-flex justify-content-end flex-grow-1">
                                         @if (auth()->user()->isFollowing($post->user->id))
-                                            <form action="{{ route('unfollow', ['id' => $post->user->id]) }}" method="POST">
+                                            <form action="{{ route('unfollow', ['id' => $post->user->id]) }}" method="POST" class="btn-top">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
 
-                                                <button type="submit" class="btn btn-danger">フォロー解除</button>
+                                                <button type="submit" class="btn-follow">フォロー解除</button>
                                             </form>
                                         @else
                                             <form action="{{ route('follow', ['id' => $post->user->id]) }}" method="POST">
                                                 {{ csrf_field() }}
 
-                                                <button type="submit" class="btn btn-primary">フォローする</button>
+                                                <button type="submit" class="btn-follow">フォローする</button>
                                             </form>
                                         @endif
                                     </div>
@@ -124,124 +124,128 @@
                             </div>
                         </dt>
 
-                        <dd>
+                        <dd class="card-post">
                             {{--  投稿情報  --}}
-                            <div class="card-body">
-                                    {{--  タイトル・いいね  --}}
-                                    <div class="card-header">
-                                        <dl>
-                                            {{--  投稿タイトル  --}}
-                                            <dt class="mb-0">{{ $post->post_title }}</dt>
-                                            {{--   いいね  --}}
-                                            <dd>
-                                                @auth
-                                                {{--  いいねあり  --}}
-                                                    @if (!in_array($user->id, array_column($post->post_goods->toArray(), 'user_id'), TRUE))
-                                                        <form method="POST" action="{{ url('post_goods/') }}">
-                                                            @csrf
+                            <div class="post_info"> 
+                                {{--  タイトル・いいね  --}}
+                                <div class="card-header">
+                                    <dl class="post-header">
+                                        {{--  投稿タイトル  --}}
+                                        <dt class="title"><h1 class="mb-0">{{ $post->post_title }}</h1></dt>
+                                        {{--   いいね  --}}
+                                        <dd class="post_good">
+                                            @auth
+                                            {{--  いいねあり  --}}
+                                                @if (!in_array($user->id, array_column($post->post_goods->toArray(), 'user_id'), TRUE))
+                                                    <form method="POST" action="{{ url('post_goods/') }}">
+                                                        @csrf
 
-                                                            <input type="hidden" name="post_id" value="{{ $post->id }}">
-                                                            <button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i></button>
-                                                        </form>
-                                                    @else
-                                                {{--  いいねなし  --}}
-                                                        <form method="POST" action="{{ url('post_goods/' .array_column($post->post_goods->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
-                                                            @csrf
-                                                            @method('DELETE')
+                                                        <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                                        <button type="submit" class="good-btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i></button>
+                                                        ×{{count($post->post_goods) }}
+                                                    </form>
+                                                @else
+                                            {{--  いいねなし  --}}
+                                                    <form method="POST" action="{{ url('post_goods/' .array_column($post->post_goods->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
+                                                        @csrf
+                                                        @method('DELETE')
 
-                                                            <button type="submit" class="btn p-0 border-0 text-danger"><i class="fas fa-heart unlike-btn"></i></button>
-                                                        </form>
-                                                    @endif
-                                                @endauth
-                                                        
-                                                {{--  非ログイン時  --}}
-                                                @guest
-                                                    <a href="{{ route('login') }}"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>
-                                                    <i class="far fa-heart like-btn"></i>
-                                                @endguest
-                                                {{--  いいね数  --}}
-                                                <p class="mb-0 text-secondary">{{ count($post->post_goods) }}</p>
-                                            </dd>
-                                        </dl>
-                                    </div>
+                                                        <button type="submit" class="good-btn p-0 border-0 text-danger"><i class="fas fa-heart unlike-btn"></i></button>
+                                                        ×{{count($post->post_goods) }}
+                                                    </form>
+                                                @endif
+                                            @endauth
+                                                    
+                                            {{--  非ログイン時  --}}
+                                            @guest
+                                                <a href="{{ route('login') }}"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>
+                                                <i class="far fa-heart like-btn"></i>
+                                            @endguest
+                                            
+                                        </dd>
+                                        
+                                    </dl>
+                                </div>
 
-                                    {{--  投稿説明  --}}
-                                    <div class="card-exp">
-                                        <h2>[説明]</h2>
-                                        <p class="mb-0">{{ $post->post_exp }}</p>
-                                    </div>
+                                {{--  投稿説明  --}}
+                                <div class="card-exp">
+                                    <h2>[説明]</h2>
+                                    <p class="mb-0">{{ $post->post_exp }}</p>
+                                </div>
 
-                                    {{--  投稿材料  --}}
-                                    <dl class="card-material">
+                                {{--  投稿材料  --}}
+                                <div  class="card-material">
+                                    <dl class="material-body">
                                         @if (isset($material))
                                             @foreach ($material as $material)
                                                 {{--  材料  --}}
-                                                <dt><h2>[材料]</h2></dt>
-                                                <dd><h2>[数量]</h2></dd>
+                                                <dt class="material"><h2>[材料]</h2></dt>
+                                                <dd class="material_num"><h2>[数量]</h2></dd>
 
-                                                <dt>{{ $material->material_name1 }}</dt>
-                                                <dd>{{ $material->material_num1 }}</dd>
+                                                <dt class="material">{{ $material->material_name1 }}</dt>
+                                                <dd class="material_num">{{ $material->material_num1 }}</dd>
 
-                                                <dt>{{ $material->material_name2 }}</dt>
-                                                <dd>{{ $material->material_num2 }}</dd>
+                                                <dt class="material">{{ $material->material_name2 }}</dt>
+                                                <dd class="material_num">{{ $material->material_num2 }}</dd>
 
-                                                <dt>{{ $material->material_name3 }}</dt>
-                                                <dd>{{ $material->material_num3 }}</dd>
+                                                <dt class="material">{{ $material->material_name3 }}</dt>
+                                                <dd class="material_num">{{ $material->material_num3 }}</dd>
 
-                                                <dt>{{ $material->material_name4 }}</dt>
-                                                <dd>{{ $material->material_num4 }}</dd>
+                                                <dt class="material">{{ $material->material_name4 }}</dt>
+                                                <dd class="material_num">{{ $material->material_num4 }}</dd>
 
-                                                <dt>{{ $material->material_name5 }}</dt>
-                                                <dd>{{ $material->material_num5 }}</dd>
+                                                <dt class="material">{{ $material->material_name5 }}</dt>
+                                                <dd class="material_num">{{ $material->material_num5 }}</dd>
 
-                                                <dt>{{ $material->material_name6 }}</dt>
-                                                <dd>{{ $material->material_num6 }}</dd>
+                                                <dt class="material">{{ $material->material_name6 }}</dt>
+                                                <dd class="material_num">{{ $material->material_num6 }}</dd>
 
-                                                <dt>{{ $material->material_name7 }}</dt>
-                                                <dd>{{ $material->material_num7 }}</dd>
+                                                <dt class="material">{{ $material->material_name7 }}</dt>
+                                                <dd class="material_num">{{ $material->material_num7 }}</dd>
 
-                                                <dt>{{ $material->material_name8 }}</dt>
-                                                <dd>{{ $material->material_num8 }}</dd>
+                                                <dt class="material">{{ $material->material_name8 }}</dt>
+                                                <dd class="material_num">{{ $material->material_num8 }}</dd>
 
-                                                <dt>{{ $material->material_name9 }}</dt>
-                                                <dd>{{ $material->material_num9 }}</dd>
+                                                <dt class="material">{{ $material->material_name9 }}</dt>
+                                                <dd class="material_num">{{ $material->material_num9 }}</dd>
 
-                                                <dt>{{ $material->material_name10 }}</dt>
-                                                <dd>{{ $material->material_num10 }}</dd>
+                                                <dt class="material">{{ $material->material_name10 }}</dt>
+                                                <dd class="material_num">{{ $material->material_num10 }}</dd>
                                             @endforeach
                                         @endif
                                     </dl>
+                                </div>
+                                
+                                {{--  作り方  --}}
+                                <div class="card-method">
+                                    <h2>[作り方]</h2>
+                                    <p class="mb-0">{{ $post->method }}</p>
+                                </div>
+                                
+                                {{--  投稿道具  --}}
+                                <div class="card-tool">
+                                    @if (isset($post->tools))
+                                        @foreach ($post->tools as $post->tools)
+                                            <h2>[道具]</h2>
+                                            <p class="tool">{{ $post->tools->tool_name1 }}</p>
+                                            <p class="tool">{{ $post->tools->tool_name2 }}</p>
+                                            <p class="tool">{{ $post->tools->tool_name3 }}</p>
+                                            <p class="tool">{{ $post->tools->tool_name4 }}</p>
+                                            <p class="tool">{{ $post->tools->tool_name5 }}</p>
+                                            <p class="tool">{{ $post->tools->tool_name6 }}</p>
+                                            <p class="tool">{{ $post->tools->tool_name7 }}</p>
+                                            <p class="tool">{{ $post->tools->tool_name8 }}</p>
+                                            <p class="tool">{{ $post->tools->tool_name9 }}</p>
+                                            <p class="tool">{{ $post->tools->tool_name10 }}</p>
+                                        @endforeach
+                                    @endif
                                     
-                                    {{--  作り方  --}}
-                                    <div class="card-method">
-                                        <h2>[作り方]</h2>
-                                        <p class="mb-0">{{ $post->method }}</p>
-                                    </div>
+                                </div>
 
-                                    {{--  投稿道具  --}}
-                                    <div class="card-tool">
-                                        @if (isset($post->tools))
-                                            @foreach ($post->tools as $post->tools)
-                                                <h2>[道具]</h2>
-                                                <p class="mb-0">{{ $post->tools->tool_name1 }}</p>
-                                                <p class="mb-0">{{ $post->tools->tool_name2 }}</p>
-                                                <p class="mb-0">{{ $post->tools->tool_name3 }}</p>
-                                                <p class="mb-0">{{ $post->tools->tool_name4 }}</p>
-                                                <p class="mb-0">{{ $post->tools->tool_name5 }}</p>
-                                                <p class="mb-0">{{ $post->tools->tool_name6 }}</p>
-                                                <p class="mb-0">{{ $post->tools->tool_name7 }}</p>
-                                                <p class="mb-0">{{ $post->tools->tool_name8 }}</p>
-                                                <p class="mb-0">{{ $post->tools->tool_name9 }}</p>
-                                                <p class="mb-0">{{ $post->tools->tool_name10 }}</p>
-                                            @endforeach
-                                        @endif
-                                        
-                                    </div>
-
-                                    {{--  コメント  --}}
-                                    <div class="card-comment">
-                                        <h2>コメント</h2>
-                                    </div>
+                                {{--  コメント  --}}
+                                <div class="card-comment">
+                                    <h2>コメント</h2>
+                                </div>
                             </div>
                         </dd>
 
@@ -256,10 +260,7 @@
     
 
     {{--  javascript  --}}
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!--自作のJS-->
-    <script src="{{ asset('js/post/show.js') }}" type="text/javascript"></script>  
+    
 </body>
 </html>
 @endsection

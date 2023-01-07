@@ -5,7 +5,7 @@
 .slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
     width:84%;
     margin:0 auto;
-    padding: 30px; /*余白を30pxに設定*/
+    /* padding: 30px; 余白を30pxに設定 */
 }
 
 .slider img {
@@ -103,14 +103,81 @@ dl {
     display: flex;
     flex-wrap: wrap;
 }
-dl dt {
+dl dt  {
     width: 40%;
 }
+
 dl dd {
     width: 60%;
 }
 
+dl dt.card-user {
+    width: 20%;
+}
+dl dd.card-main{
+    width: 70%;
+}
+
+dl dt.title, dt.material, .tool  {
+    width: 50%;
+    /* height: 5%; */
+    padding: 1%;
+}
+
+dl dd.post_good, dd.material_num {
+    width: 50%;
+    padding: 1%;
+}
+
+
+.card-header{
+    height: 5%;
+}
+/* 境界線 */
+
+.card-img{
+    border-bottom:solid 3px  #ececec;
+    text-align: center;
+}
+
+.card-header, .card-exp, .card-material, .card-method, .card-tool{
+    padding: 30px;
+}
+
+.card-header::after, .card-exp::after, .card-material::after, .card-method::after, .card-tool::after{
+    content: '';
+    position: absolute;
+    left: 55%;
+    display: inline-block;
+    width: 25%;/*線の長さ*/
+    height: 5px;/*線の太さ*/
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-70%);/*位置調整*/
+    border-bottom:solid 3px  #ececec;
+    border-radius: 2px;/*線の丸み*/
+}
+
+
+.card-post {
+    border-left: 3px solid #ececec;
+    padding-left: 15%;
+}
+
+.post_img{
+    border: 1px solid black;
+}
+
+p.mb-0, .post-header{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 /* ハート */
+.good-btn{
+    background-color: #fff;
+    border: #fff;
+}
+
 .like-btn {
     width: 25px;
     height: 30px;
@@ -127,10 +194,52 @@ dl dd {
     margin-left: 20px;
     }
 
+form.mb-0{
+    padding-top: 5%;
+}
+
 /* ユーザ */
 .circle-image {
     width:  150px;
     height: 150px;
     margin: 5px 15px 5px 11px;
     border-radius: 50%;
+    border: 1px solid black;
+    
 }
+
+.card-icon, .card-user_name, .card-user_evaluation, 
+.card-post_num, .card-follow{
+    text-align: center;
+    padding-top: 2%;
+}
+
+.btn-follow {
+    /* background-color: #1492AF;
+    border: 3px solid #1492AF; */
+    background-color: #f4dd64;
+    border: 3px solid #f4dd64;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    font-weight: 700px;
+    padding: 10px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    border-radius: 24px;
+    line-height: 5px;
+}
+
+.btn-follow:hover {
+    background-color: #fff;
+    /* color: #1492AF; */
+    color: #f4dd64;
+}
+
+.btn-top{
+    padding-top: 5%;
+}
+

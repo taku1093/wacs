@@ -249,7 +249,7 @@ class PostsController extends Controller
 
         
         $material = $material->getMaterial($post->id);
-        // $comments = $comment->getComments($post->id);
+        $comments = $comment->getComments($post->id);
 
         return view('posts.show', [
             'user'     => $user,
@@ -259,7 +259,7 @@ class PostsController extends Controller
             'post' => $post,
             'material' => $material,
             // 'tool' => $tool
-            // 'comments' => $comments
+            'comments' => $comments
         ]);
     }
 

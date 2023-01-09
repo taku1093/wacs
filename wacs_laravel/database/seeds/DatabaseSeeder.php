@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             PostsTableSeeder::class,
             MaterialsTableSeeder::class,
             CommentsTableSeeder::class,
+            Comment_goodsTableSeeder::class,
+            RepliesTableSeeder::class,
             Post_goodsTableSeeder::class,
             FollowsTableSeeder::class,
             FollowersTableSeeder::class,

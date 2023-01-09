@@ -120,14 +120,14 @@
                                                     @csrf
 
                                                     <input type="hidden" name="post_id" value="{{ $timeline->id }}">
-                                                    <button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i></button>
+                                                    <button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline->post_goods) }}</button>
                                                 </form>
                                             @else
                                                 <form method="POST" action="{{ url('post_goods/' .array_column($timeline->post_goods->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
                                                     @csrf
                                                     @method('DELETE')
 
-                                                    <button type="submit" class="btn p-0 border-0 text-danger"><i class="fas fa-heart unlike-btn"></i></button>
+                                                    <button type="submit" class="btn p-0 border-0 text-danger"><i class="fas fa-heart unlike-btn"></i>{{ count($timeline->post_goods) }}</button>
                                                 </form>
                                             @endif
                                         @endauth
@@ -136,10 +136,10 @@
                                         @guest
                                             <a href="{{ route('login') }}"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>
                                             {{--  いいね  --}}
-                                            <i class="far fa-heart like-btn"></i>
+                                            {{--  <i class="far fa-heart like-btn"></i>  --}}
+                                            <a href="{{ route('login') }}"<button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline->post_goods) }}</button>
                                         @endguest
                                         
-                                        <p class="mb-0 text-secondary">{{ count($timeline->post_goods) }}</p>
 
                                     </div>
                                 <small class="text-muted">{!! nl2br(e($timeline->created_at)) !!}</small>

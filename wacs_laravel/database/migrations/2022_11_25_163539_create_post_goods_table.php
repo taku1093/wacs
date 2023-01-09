@@ -15,7 +15,6 @@ class CreatePostGoodsTable extends Migration
     {
         Schema::create('post_goods', function (Blueprint $table) {
             $table->increments('id')->nullable()->comment('いいねID');
-            // $table->increments('good_id')->nullable()->comment('いいねID');;
             $table->unsignedInteger('user_id')->nullable()->comment('ユーザID');
             $table->unsignedInteger('post_id')->nullable()->comment('投稿ID');
 

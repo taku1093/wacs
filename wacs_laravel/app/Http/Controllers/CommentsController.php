@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post_good;
+use Illuminate\Support\Facades\Validator;
+use App\Models\Comment;
+use App\Models\Reply;
 
-class Post_goodsController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,17 +35,18 @@ class Post_goodsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Post_good $post_good)
+    public function store(Request $request, Comment $comment)
     {
         $user = auth()->user();
-        $post_id = $request->post_id;
-        
-        $is_post_good = $post_good->isPost_good($user->id, $post_id);
+        $data = $request->all();
+        $validator = Validator::make($data, [
+            'post_id' =>['required', 'integer'],
+            'comment_text'     => ['required', 'string', 'max:140']
+        ]);
 
-        if(!$is_post_good) {
-            $post_good->storePost_good($user->id, $post_id);
-            return back();
-        }
+        $validator->validate();
+        $comment->commentStore($user->id, $data);
+
         return back();
     }
 
@@ -53,9 +56,17 @@ class Post_goodsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comment $comment, Reply $reply)
     {
         //
+        $user = auth()->user();
+        $comments = $comment->getshowComments($comment->id);
+        $replies = $reply->getReplies($comment->id);
+        return view('posts.comment.show', [
+            'user'     => $user,
+            'comment' => $comments,
+            'replies' => $replies
+        ]);
     }
 
     /**
@@ -87,17 +98,8 @@ class Post_goodsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(post_good $post_good)
+    public function destroy($id)
     {
-        $user_id = $post_good->user_id;
-        $post_id = $post_good->post_id;
-        $post_good_id = $post_good->id;
-        $is_post_good = $post_good->isPost_good($user_id, $post_id);
-
-        if($is_post_good) {
-            $post_good->destroyPost_good($post_good_id);
-            return back();
-        }
-        return back();
+        //
     }
 }

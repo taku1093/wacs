@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Post_good;
 
-class Post_goodsController extends Controller
+use Illuminate\Http\Request;
+use App\Models\Comment_good;
+
+class Comment_goodsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,15 +34,14 @@ class Post_goodsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Post_good $post_good)
+    public function store(Request $request, Comment_good $comment_good)
     {
         $user = auth()->user();
-        $post_id = $request->post_id;
-        
-        $is_post_good = $post_good->isPost_good($user->id, $post_id);
+        $comment_id = $request->comment_id;
+        $is_comment_good = $comment_good->isComment_good($user->id, $comment_id);
 
-        if(!$is_post_good) {
-            $post_good->storePost_good($user->id, $post_id);
+        if(!$is_comment_good) {
+            $comment_good->storeComment_good($user->id, $comment_id);
             return back();
         }
         return back();
@@ -87,15 +87,15 @@ class Post_goodsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(post_good $post_good)
+    public function destroy(Comment_good $comment_good)
     {
-        $user_id = $post_good->user_id;
-        $post_id = $post_good->post_id;
-        $post_good_id = $post_good->id;
-        $is_post_good = $post_good->isPost_good($user_id, $post_id);
+        $user_id = $comment_good->user_id;
+        $comment_id = $comment_good->comment_id;
+        $comment_good_id = $comment_good->id;
+        $is_comment_good = $comment_good->isComment_good($user_id, $comment_id);
 
-        if($is_post_good) {
-            $post_good->destroyPost_good($post_good_id);
+        if($is_comment_good) {
+            $comment_good->destroyComment_good($comment_good_id);
             return back();
         }
         return back();

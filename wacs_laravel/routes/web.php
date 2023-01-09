@@ -50,6 +50,15 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('posts', 'PostsController', ['only' => ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy']]);
     // Route::get('posts/edit/', 'PostsController@edit')->name('post_edit');
 
+    // コメント関連
+    Route::resource('comments', 'CommentsController', ['only' => ['store', 'show']]);
+
+    // 返信関連
+    Route::resource('replies', 'RepliesController', ['only' => ['store']]);
+
+    // コメントいいね
+    Route::resource('comment_goods', 'Comment_goodsController', ['only' => ['store', 'destroy']]);
+
     // いいね関連
     Route::resource('post_goods', 'Post_goodsController', ['only' => ['store', 'destroy']]);
 

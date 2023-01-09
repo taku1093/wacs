@@ -8,8 +8,6 @@
 <head>
     <meta charset="UTF-8">
     <title>投稿詳細</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="{{ asset('js/post/show.js') }}" type="text/javascript"></script>
     {{--  css  --}}
     
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
@@ -133,11 +131,7 @@
                                 <div class="card-header">
                                     <dl class="post-header">
                                         {{--  投稿タイトル  --}}
-                                        @if ($post->post_title === null)
-                                        <dt class="title"><h1 class="mb-0">タイトル</h1></dt>
-                                        @else
-                                            <dt class="title"><h1 class="mb-0">{{ $post->post_title }}</h1></dt>
-                                        @endif
+                                        <dt class="title"><h1 class="mb-0">{{ $post->post_title }}</h1></dt>
                                         {{--   いいね  --}}
                                         <dd class="post_good">
                                             @auth
@@ -182,12 +176,11 @@
                                 {{--  投稿材料  --}}
                                 <div  class="card-material">
                                     <dl class="material-body">
-                                        <dt class="material"><h2>[材料]</h2></dt>
-                                        <dd class="material_num"><h2>[数量]</h2></dd>
                                         @if (isset($material))
                                             @foreach ($material as $material)
                                                 {{--  材料  --}}
-                                                
+                                                <dt class="material"><h2>[材料]</h2></dt>
+                                                <dd class="material_num"><h2>[数量]</h2></dd>
 
                                                 <dt class="material">{{ $material->material_name1 }}</dt>
                                                 <dd class="material_num">{{ $material->material_num1 }}</dd>
@@ -231,9 +224,9 @@
                                 
                                 {{--  投稿道具  --}}
                                 <div class="card-tool">
-                                    <h2>[道具]</h2>
                                     @if (isset($post->tools))
                                         @foreach ($post->tools as $post->tools)
+                                            <h2>[道具]</h2>
                                             <p class="tool">{{ $post->tools->tool_name1 }}</p>
                                             <p class="tool">{{ $post->tools->tool_name2 }}</p>
                                             <p class="tool">{{ $post->tools->tool_name3 }}</p>
@@ -281,12 +274,11 @@
 
                                     {{--  コメント情報  --}}
                                     <div class="comment-area">
-                                        <ul class="comment-list ">
+                                        <ul class="comment-list">
                                             @forelse ($comments as $comment)
                                                 <li class="list-group-item">
                                                     {{--  コメントユーザ情報  --}}
-                                                    <div class="comment-user">  
-                                                            {{-- コメント投稿情報   --}}
+                                                    <div class="comment-user">          
                                                         <dl class="comment-layout">
                                                             {{--  コメントユーザアイコン  --}}
                                                             <dt class="comment-layout">
@@ -303,89 +295,64 @@
                                                                 </div>
                                                             </dt>
 
-                                                            {{--  コメント情報  --}}
+                                                            {{--  コメントユーザ情報  --}}
                                                             <dd class="comment-layout">
-                                                                <div id="comment-layout-info">
+                                                                <div class="comment-layout-info">
                                                                     {{--  コメントユーザ  --}}
                                                                     <p class="comment-user_name">{{ $comment->user->user_screen_name }}</p>
                                                                     
                                                                     {{--  投稿コメント  --}}
                                                                     <p class="comment-post_text">{!! nl2br(e($comment->comment_text)) !!}</p>
                                                                 
-                                                                    {{--  返信  --}}
-                                                                    <dl class="comment-reply">
-                                                                        <dt class="reply">
-                                                                            <a href="{{ url('comments/' .$comment->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">コメント詳細</button></a>
-                                                                        </dt>
-                                                                        {{--  <dd class="reply-list">
-                                                                            返信を見る
-                                                                        </dd>  --}}
-                                                                    </dl>
+                                                                    {{--   いいね  --}}
+                                                                    <dd class="comment_good">
+                                                                        @auth
+                                                                            @if (!in_array($user->id, array_column($comment->comment_goods->toArray(), 'user_id'), TRUE))
+                                                                                <form class="comment_good" method="POST" action="{{ url('comment_goods/') }}">
+                                                                                    @csrf
+
+                                                                                    <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                                                                                    <button type="submit" class="good-btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i></button>
+                                                                                    ×{{count($comment->comment_goods) }}
+                                                                                </form>
+                                                                            @else
+                                                                                <form class="comment_good" method="POST" action="{{ url('comment_goods/' .array_column($comment->comment_goods->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
+                                                                                    @csrf
+                                                                                    @method('DELETE')
+
+                                                                                    <button type="submit" class="good-btn p-0 border-0 text-danger"><i class="fas fa-heart unlike-btn"></i></button>
+                                                                                    ×{{count($comment->comment_goods) }}
+                                                                                </form>
+                                                                            @endif
+                                                                        @endauth
+                                                                                
+                                                                        @guest
+                                                                            <a href="{{ route('login') }}"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>
+                                                                            <i class="far fa-heart like-btn"></i>
+                                                                        @endguest
+                                                                        
+                                                                    </dd>
+                                                                    
                                                                 </div>
                                                             </dd>
-
-                                                        
-                                                            {{--   いいね情報  --}}
-                                                            <dd class="comment_good">
-                                                                @auth
-                                                                    @if (!in_array($user->id, array_column($comment->comment_goods->toArray(), 'user_id'), TRUE))
-                                                                        <form class="comment_good" method="POST" action="{{ url('comment_goods/') }}">
-                                                                            @csrf
-
-                                                                            <input type="hidden" name="comment_id" value="{{ $comment->id }}">
-                                                                            <button type="submit" class="good-btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i></button>
-                                                                            ×{{count($comment->comment_goods) }}
-                                                                        </form>
-                                                                    @else
-                                                                        <form class="comment_good" method="POST" action="{{ url('comment_goods/' .array_column($comment->comment_goods->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
-                                                                            @csrf
-                                                                            @method('DELETE')
-
-                                                                            <button type="submit" class="good-btn p-0 border-0 text-danger"><i class="fas fa-heart unlike-btn"></i></button>
-                                                                            ×{{count($comment->comment_goods) }}
-                                                                        </form>
-                                                                    @endif
-                                                                @endauth
-                                                                        
-                                                                @guest
-                                                                    <a href="{{ route('login') }}"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>
-                                                                    <i class="far fa-heart like-btn"></i>
-                                                                @endguest
-                                                            </dd>
-
-                                                        
-                                                            
-                                                        
                                                         </dl>
-                                                        
-                                                        {{--  返信  --}}
-                                                        {{--  <div class="comment-reply">
-                                                            <dl class="reply-area">
-                                                                <dt class="reply">
-                                                                    返信する
-                                                                </dt>
-                                                                <dd class="replt-list">
-                                                                    返信を見る
-                                                                </dd>
-                                                            </dl>
-                                                            <p class="reply">返信する</p>
-                                                        </div>  --}}
                                                     </div>
                                                 </li>
-                                            
+
                                             {{--  コメント0件  --}}
                                             @empty
                                                 <li class="list-group-item">
                                                     <p class="mb-0 text-secondary">コメントはまだありません。</p>
                                                 </li>
                                             @endforelse
-                                    
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </dd>
+
                     </dl>   
+
                 </div>
             </div>
         </div>

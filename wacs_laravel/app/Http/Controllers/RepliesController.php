@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post_good;
+use Illuminate\Support\Facades\Validator;
+use App\Models\Reply;
 
-class Post_goodsController extends Controller
+class RepliesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,17 +34,18 @@ class Post_goodsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Post_good $post_good)
+    public function store(Request $request, Reply $reply)
     {
         $user = auth()->user();
-        $post_id = $request->post_id;
-        
-        $is_post_good = $post_good->isPost_good($user->id, $post_id);
+        $data = $request->all();
+        $validator = Validator::make($data, [
+            'comment_id' =>['required', 'integer'],
+            'reply_text'     => ['required', 'string', 'max:140']
+        ]);
 
-        if(!$is_post_good) {
-            $post_good->storePost_good($user->id, $post_id);
-            return back();
-        }
+        $validator->validate();
+        $reply->replyStore($user->id, $data);
+
         return back();
     }
 
@@ -87,17 +89,8 @@ class Post_goodsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(post_good $post_good)
+    public function destroy($id)
     {
-        $user_id = $post_good->user_id;
-        $post_id = $post_good->post_id;
-        $post_good_id = $post_good->id;
-        $is_post_good = $post_good->isPost_good($user_id, $post_id);
-
-        if($is_post_good) {
-            $post_good->destroyPost_good($post_good_id);
-            return back();
-        }
-        return back();
+        //
     }
 }

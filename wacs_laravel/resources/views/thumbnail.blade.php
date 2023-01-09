@@ -107,7 +107,7 @@
 
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="{{ url('posts/' .$timeline->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">見る</button></a>
+                                        <a href="{{ url('posts/' .$timeline->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">詳細</button></a>
                                         {{--    編集  --}}
                                         {{--  ログイン時  --}}
                                         @auth
@@ -134,7 +134,7 @@
                                                 
                                         {{--  非ログイン時  --}}
                                         @guest
-                                            <a href="{{ route('login') }}"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>
+                                            <a href="{{ route('login') }}"><button type="button" class="btn btn-sm btn-outline-secondary">詳細</button></a>
                                             {{--  いいね  --}}
                                             {{--  <i class="far fa-heart like-btn"></i>  --}}
                                             <a href="{{ route('login') }}"<button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline->post_goods) }}</button>

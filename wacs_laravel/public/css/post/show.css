@@ -74,10 +74,113 @@
 }
 
 
+/* 投稿画像 */
+.flex-container {
+    display: flex;
+    /* margin-left: auto;
+    margin-left: auto; */
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+}
 
+.image-wrap{
+    margin: 10px 10px;
+}
 
+.image-wrap img {
+    height: 300px;
+    width: 400px;
+    
+}
 
+/* ポップアップウインドウの設定 */
+.pu {
+    background-color: #efefef;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, .8);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    overflow-y: scroll;
+    z-index: 10000;
+  }
+  /* チェックボックスの初期設定 */
+  #pu-on{
+    display: none;
+  }
+  /* チェックされたらポップアップウインドウを開く */
+  #pu-on:checked + .pu{
+    display: block;
+  }
 
+  /* チェックボックスの初期設定 */
+  #pu-on2{
+    display: none;
+  }
+  /* チェックされたらポップアップウインドウを開く */
+  #pu-on2:checked + .pu{
+    display: block;
+  }
+
+  /* チェックボックスの初期設定 */
+  #pu-on3{
+    display: none;
+  }
+  /* チェックされたらポップアップウインドウを開く */
+  #pu-on3:checked + .pu{
+    display: block;
+  }
+  
+  /* 閉じるアイコン（右上） */
+  .icon-close{
+    background: #000;
+    color: #fff;
+    font-size: 30px;
+    padding: 0 10px;
+    position: absolute;
+    right: 0;
+  }
+  
+  /* 開くボタン */
+  .btn-open{
+    background: #fff;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px auto;
+    width: 95%;
+    text-align: center;
+  }
+  
+  /* ポップアップの内容 */
+  .pu-content{
+    /* margin: 40px auto 40px auto;
+    width: 90%;
+    justify-content: center; */
+    display: flex;
+    /* margin-left: auto;
+    margin-left: auto; */
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* ポップアップ画像 */
+  .pop-post_img{
+    object-fit: cover;
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    /* height: 430px;
+    width: 400px; */
+}
 
 /* ページレイアウト */
 .pagetitle{
@@ -86,6 +189,7 @@
     font-weight: bold;
     line-height: 30px;
     text-align: center;
+    padding-bottom: 50px;
     }
     
 .pagetitle::after {
@@ -172,6 +276,8 @@ p.mb-0, .post-header{
     padding-bottom: 10px;
 }
 
+
+
 /* ハート */
 .good-btn{
     background-color: #fff;
@@ -239,11 +345,39 @@ form.mb-0{
     color: #f4dd64;
 }
 
+.btn-post-edit {
+    
+    background-color: #bbbbbb;
+    border: 3px solid #bbbbbb;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    font-weight: 700px;
+    padding: 10px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    border-radius: 24px;
+    line-height: 5px;
+}
+
+.btn-post-edit:hover {
+    background-color: #fff;
+    color: #bbbbbb;
+}
+
 .btn-top{
     padding-top: 5%;
 }
 
 /* コメント */
+
+.comment-area{
+    padding-bottom: 50px;
+    padding-top: 4px;
+}
 
 .comment-user{
     border: 1px solid black;
@@ -284,8 +418,12 @@ dd.comment_good{
     padding-right: 10px;
 }
 
-
-
+h2.comment{
+    padding-bottom: 10px;
+}
+.button-comment{
+    padding-top: 10px;
+}
 .btn-comment {
     background-color: #f4dd64;
     border: 3px solid #f4dd64;
@@ -301,6 +439,7 @@ dd.comment_good{
     transition: .3s;
     border-radius: 24px;
     line-height: 5px;
+
 }
 
 .btn-comment:hover {
@@ -316,6 +455,10 @@ dd.comment_good{
     max-width: 10%;
 } */
 
+.comment_good{
+    padding-top: 20px;
+}
+
 /* 返信 */
 dl.comment-reply {
     display: flex;
@@ -324,8 +467,36 @@ dl.comment-reply {
 
 dl dt.reply {
     width: 50%;
+    padding-bottom: 10px;
 }
 dl dd.reply-list{
     width: 25%;
     vertical-align: middle;
 }
+
+/* 返信 */
+.btn-comment-show {
+    background-color: #3399ff;
+    border: 3px solid #3399ff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    font-weight: 700px;
+    padding: 10px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    border-radius: 24px;
+    line-height: 5px;
+}
+
+.btn-comment-show:hover {
+    background-color: #fff;
+    /* color: #1492AF; */
+    color: #3399ff;
+}
+
+/* 文字フォント */
+.text { font-family: "M PLUS Rounded 1c"; }

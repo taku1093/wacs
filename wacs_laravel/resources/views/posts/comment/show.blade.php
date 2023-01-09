@@ -136,34 +136,28 @@
                                         {{--  投稿コメント  --}}
                                         <p class="reply-post_text">{!! nl2br(e($reply->reply_text)) !!}</p>
                                     
-                                        {{--  返信  --}}
-                                        {{--  <dl class="comment-reply">
-                                            <dt class="reply">
-                                                <a href="{{ url('comments/' .$comment->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">コメント詳細</button></a>
-                                            </dt>
-                                        </dl>  --}}
                                     </div>
                                 </dd>
 
                             
                                 {{--   いいね情報  --}}
-                                {{--  <dd class="comment_good">
+                                <dd class="reply_good">
                                     @auth
-                                        @if (!in_array($user->id, array_column($comment->comment_goods->toArray(), 'user_id'), TRUE))
-                                            <form class="comment_good" method="POST" action="{{ url('comment_goods/') }}">
+                                        @if (!in_array($user->id, array_column($reply->reply_goods->toArray(), 'user_id'), TRUE))
+                                            <form class="reply_good" method="POST" action="{{ url('reply_goods/') }}">
                                                 @csrf
 
-                                                <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                                                <input type="hidden" name="reply_id" value="{{ $reply->id }}">
                                                 <button type="submit" class="good-btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i></button>
-                                                ×{{count($comment->comment_goods) }}
+                                                ×{{count($reply->reply_goods) }}
                                             </form>
                                         @else
-                                            <form class="comment_good" method="POST" action="{{ url('comment_goods/' .array_column($comment->comment_goods->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
+                                            <form class="reply_good" method="POST" action="{{ url('reply_goods/' .array_column($reply->reply_goods->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
                                                 @csrf
                                                 @method('DELETE')
 
                                                 <button type="submit" class="good-btn p-0 border-0 text-danger"><i class="fas fa-heart unlike-btn"></i></button>
-                                                ×{{count($comment->comment_goods) }}
+                                                ×{{count($reply->reply_goods) }}
                                             </form>
                                         @endif
                                     @endauth
@@ -172,14 +166,14 @@
                                         <a href="{{ route('login') }}"><button type="button" class="btn btn-sm btn-outline-secondary"></button></a>
                                         <i class="far fa-heart like-btn"></i>
                                     @endguest
-                                </dd>  --}}
+                                </dd>
 
                             </dl>
                             
                         </div>
                     </li>
                 
-                {{--  コメント0件  --}}
+                {{--  返信0件  --}}
                 @empty
                     <li class="list-group-item">
                         <p class="mb-0 text-secondary">返信はまだありません。</p>

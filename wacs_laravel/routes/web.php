@@ -59,6 +59,9 @@ Route::group(['middleware' => 'auth'], function() {
     // コメントいいね
     Route::resource('comment_goods', 'Comment_goodsController', ['only' => ['store', 'destroy']]);
 
+    // 返信いいね
+    Route::resource('reply_goods', 'Reply_goodsController', ['only' => ['store', 'destroy']]);
+
     // いいね関連
     Route::resource('post_goods', 'Post_goodsController', ['only' => ['store', 'destroy']]);
 

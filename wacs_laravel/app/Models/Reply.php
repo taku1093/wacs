@@ -19,6 +19,11 @@ class Reply extends Model
         return $this->belongsTo(Comment::class);
     }
 
+    public function reply_goods()
+    {
+        return $this->hasMany(Reply_good::class);
+    }
+
     public function getReplies(Int $comment_id)
     {
         return $this->with('comment')->where('comment_id', $comment_id)->get();

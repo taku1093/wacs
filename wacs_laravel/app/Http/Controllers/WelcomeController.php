@@ -15,4 +15,12 @@ class WelcomeController extends Controller
             'user'  => $all_users
         ]);
     }
+
+    public function maintenance()
+    {
+        // $all_users = $user;
+        return view('maintenance', [
+            // 'user'  => $all_users
+        ]);
+    }
 }

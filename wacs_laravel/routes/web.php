@@ -14,6 +14,7 @@
 use App\Http\Controllers\contactController;
 
 Route::get('/', 'WelcomeController@index')->name('welcome');;
+Route::get('maintenance', 'WelcomeController@maintenance')->name('maintenance');;
 
 
 // ログイン認証

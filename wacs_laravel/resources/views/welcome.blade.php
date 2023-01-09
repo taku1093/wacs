@@ -27,7 +27,7 @@
     <body>
     {{--  <header class="header">
         <div class="header-inner"> <!--スマホ表示時にスタイリングしやすくするためのもの-->
-        <a class="header-logo" href="#"> <!--ロゴにトップページのリンクを貼る-->
+        <a class="header-logo" href="{{ route('maintenance') }}"> <!--ロゴにトップページのリンクを貼る-->
             <img src="./img/logo_header.png" alt="WACS">
         </a>
         <button class="toggle-menu-button"></button> <!--スマホ用のメニューボタンの設定-->
@@ -43,14 +43,14 @@
                             <li><a href="./simulation.html" id="navline">シミュレーション</a></li>
                             <li><a href="./rental.html" id="navline">レンタル</a></li>
                             <li><a href="./community.html" id="navline">Q ＆ A</a></li>
-                            <li><a href="#"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
+                            <li><a href="{{ route('maintenance') }}"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
                             <li><a href="{{route('login')}}"><button class="styled-button" type="button">アイコン</button></a></li>
                             
                         </ul>
                     @else
                         <!-- <a href="{{ route('login') }}">ログイン</a> -->
                         <ul>
-                            <li><a href="#"><button class="styled-button" type="button">お問い合わせ</button></a></li>
+                            <li><a href="{{ route('maintenance') }}"><button class="styled-button" type="button">お問い合わせ</button></a></li>
                             <li><a href="{{route('login')}}"><button class="styled-button" type="button">ログイン</button></a></li>
                         </ul>
                         <!-- @if (Route::has('register'))
@@ -91,7 +91,7 @@
                 <p class="item-label">DIY</p>
             </li>
             <li>
-                <a href="#"><img src="./img/pramodel.jpg" alt="プラモデルのロゴ"></a>
+                <a href="{{ route('maintenance') }}"><img src="./img/pramodel.jpg" alt="プラモデルのロゴ"></a>
                 <dl>
                     <dt>プラモデル</dt>
                     <dd></dd>
@@ -99,7 +99,7 @@
                 <p class="item-label">PLASTIC MODEL</p>
             </li>
             <li>
-                <a href="#"><img src="./img/shugei.jpg" alt="手芸のロゴ"></a>
+                <a href="{{ route('maintenance') }}"><img src="./img/shugei.jpg" alt="手芸のロゴ"></a>
                 <dl>
                     <dt>手芸</dt>
                     <dd></dd>
@@ -107,7 +107,7 @@
                 <p class="item-label">HANDICRAFT</p>
             </li>
             <li>
-                <a href="#"><img src="./img/programming.jpg" alt="プログラミングのロゴ"></a>
+                <a href="{{ route('maintenance') }}"><img src="./img/programming.jpg" alt="プログラミングのロゴ"></a>
                 <dl>
                     <dt>プログラミング</dt>
                     <dd></dd>
@@ -115,7 +115,7 @@
                 <p class="item-label">PROGRAMMING</p>
             </li>
             <li>
-                <a href="#"><img src="./img/art.jpg" alt="アートのロゴ"></a>
+                <a href="{{ route('maintenance') }}"><img src="./img/art.jpg" alt="アートのロゴ"></a>
                 <dl>
                     <dt>美術</dt>
                     <dd></dd>
@@ -123,7 +123,7 @@
                 <p class="item-label">ART</p>
             </li>
             <li>
-                <a href="#"><img src="./img/other.jpg" alt="その他のロゴ"></a>
+                <a href="{{ route('maintenance') }}"><img src="./img/other.jpg" alt="その他のロゴ"></a>
                 <dl>
                     <dt>その他</dt>
                     <dd></dd>

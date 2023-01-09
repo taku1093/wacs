@@ -45,6 +45,7 @@
                             <li><a href="./community.html" id="navline">Q ＆ A</a></li>
                             <li><a href="#"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
                             <li><a href="{{route('login')}}"><button class="styled-button" type="button">アイコン</button></a></li>
+                            
                         </ul>
                     @else
                         <!-- <a href="{{ route('login') }}">ログイン</a> -->

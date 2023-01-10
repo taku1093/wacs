@@ -278,7 +278,7 @@ class PostsController extends Controller
             return redirect('posts');
         }
 
-        return view('posts.create', [
+        return view('posts.edit', [
             'user'   => $user,
             'posts' => $posts
         ]);
@@ -291,9 +291,17 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $data = $request->all();
+        $validator = Validator::make($data, [
+            'post_exp' => ['required', 'string', 'max:140']
+        ]);
+
+        $validator->validate();
+        $post->postUpdate($post->id, $data);
+
+        return redirect('posts');
     }
 
     /**

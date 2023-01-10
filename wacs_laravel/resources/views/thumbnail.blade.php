@@ -112,7 +112,10 @@
                                         {{--  ログイン時  --}}
                                         @auth
                                             @if ($timeline->user_id == auth()->user()->id)
-                                                <a href="{{ url('Posts/' .$timeline->id .'/edit') }}"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>
+                                                {{--  <a href="{{ url('posts/' .$timeline->id .'/edit') }"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>  --}}
+                                                <a href="{{ url('posts/' .$timeline->id .'/edit') }}" >
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
+                                                </a>
                                             @endif
                                             {{--   いいね  --}}
                                             @if (!in_array($user->id, array_column($timeline->post_goods->toArray(), 'user_id'), TRUE))

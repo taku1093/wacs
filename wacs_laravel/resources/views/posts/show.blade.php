@@ -184,9 +184,11 @@
                                 {{--  フォロー  --}}
                                 <div class="card-follow">
                                     @if (auth()->user()->id === $post->user->id)
-                                    <form action="#" method="POST" class="post-edit">
-                                        <button type="submit" class="btn-post-edit">編集</button>
-                                    </form>
+                                    {{--  <form action="" method="POST" class="post-edit">  --}}
+                                        <a href="{{ url('posts/' .$post->id .'/edit') }}" class="dropdown-item">
+                                            <button type="submit" class="btn-post-edit">編集</button>
+                                        </a>
+                                    {{--  </form>  --}}
                                     @else
                                         @if (auth()->user()->isFollowed($post->user->id))
                                             <div class="px-2">

@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         // 親子関係の順に中位
         $this->call([
+            QapostsTableSeeder::class,
+            QacategoriesTableSeeder::class,
             UsersTableSeeder::class,
             EvaluationTableSeeder::class,
             PostsTableSeeder::class,

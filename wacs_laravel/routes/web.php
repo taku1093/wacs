@@ -70,3 +70,12 @@ Route::group(['middleware' => 'auth'], function() {
     //シミュレーション関連
     Route::get('simulation', 'SimulationController@index')->name('simulation');
 });
+
+//Q&A
+Route::get('qanda', 'QapostsController@index');
+
+//詳細画面(Q&A)
+Route::resource('qanda', 'QapostsController', ['only' => ['index', 'show', 'create', 'store', 'edit', 'update', 'destroy']]);
+
+//コメント(Q&A)
+Route::resource('qacomment', 'QacommentsController', ['only' => ['store']]);

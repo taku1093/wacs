@@ -58,6 +58,7 @@ class Post extends Model
     }
 
 
+
     public function getUserTimeLine(Int $user_id)
     {
         return $this->where('user_id', $user_id)->orderBy('created_at', 'DESC')->paginate(50);
@@ -115,16 +116,27 @@ class Post extends Model
         return;
     }
 
+    // 編集
     public function getEditPost(Int $user_id, Int $post_id)
     {
         return $this->where('user_id', $user_id)->where('id', $post_id)->first();
     }
 
-        // 詳細画面
-        public function getPost(Int $post_id)
-        {
-            return $this->with('user')->where('id', $post_id)->first();
-        }
+    public function postUpdate(Int $post_id, Array $data)
+    {
+        $this->id = $post_id;
+        $this->post_exp = $data['post_exp'];
+        $this->update();
+
+        return;
+    }
+    
+
+    // 詳細画面
+    public function getPost(Int $post_id)
+    {
+        return $this->with('user')->where('id', $post_id)->first();
+    }
 
         // 投稿カウント
     public function getCountByPost()

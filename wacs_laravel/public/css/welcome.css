@@ -17,6 +17,15 @@ a { /*リンクの文字色と下線を無くす*/
     text-decoration: none;
 }
 
+.home-img {
+    max-width: 100%; /*img要素の最大値*/
+    /* width: 350px; */
+    height: 175px; 
+    object-fit: cover;
+    /* max-width: 100%;  */
+/* height: auto; */
+} 
+
 body {
     font-family: sans-serif; /*サンセリフ体*/
     font-size: 16px;

@@ -172,14 +172,24 @@
     align-items: center;
   }
 
-  /* ポップアップ画像 */
-  .pop-post_img{
-    object-fit: cover;
-    /* position: absolute; */
-    width: 100%;
-    height: 100%;
-    /* height: 430px;
-    width: 400px; */
+
+
+.pop-post_img {
+	display: block;
+	margin: 0 auto 20px;
+    height: 444px; 
+}
+@media screen and (max-width:768px) { 
+	/*縦長の画像*/
+	.pop-post_img.vertical{
+		width:auto;
+		max-height:360px;
+	}
+	/*横長の画像*/
+	.pop-post_img.oblong{
+		width:100%;
+		max-width:480px;
+	}
 }
 
 /* ページレイアウト */

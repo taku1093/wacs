@@ -33,7 +33,7 @@
     <header class="header">
     <div class="header-inner">
                 <a class="header-logo" href="{{ url('/') }}">
-                    <img class="logo" src="{{ asset('./img/logo_header.png') }}" alt="WACS"> {{-- WACSのロゴ --}}
+                    <img class="hf-img"class="logo" src="{{ asset('./img/logo_header.png') }}" alt="WACS"> {{-- WACSのロゴ --}}
                 </a>
 
                 <nav class="site-menu">
@@ -68,10 +68,10 @@
                                 <a  class=" " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     @if (auth()->user()->user_icon == null)
                                         {{--  デフォルトアイコン  --}}
-                                    <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" width="50" height="50">
+                                    <img class="hf-img"src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" width="50" height="50">
                                     @else
                                     
-                                    <img src="{{ asset('storage/user_icon/' .auth()->user()->user_icon) }}"  width="50" height="50">
+                                    <img class="hf-img"src="{{ asset('storage/user_icon/' .auth()->user()->user_icon) }}"  width="50" height="50">
                                     @endif
                                 </a>
                             </li>
@@ -136,7 +136,7 @@
                     </nav>
                 @endif
                 <a class="footer-logo" href="{{ url('/') }}">
-                    <img class="icon" src="{{ asset('./img/logo_header.png') }}" alt="WACS">
+                    <img class="hf-img"class="icon" src="{{ asset('./img/logo_header.png') }}" alt="WACS">
                 </a>
                 <p class="footer-tel"></p>
                 <p class="footer-name"></p>

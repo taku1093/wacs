@@ -14,9 +14,9 @@ class Reply extends Model
         'reply_text'
     ];
 
-    public function comment()
+    public function user()
     {
-        return $this->belongsTo(Comment::class);
+        return $this->belongsTo(User::class);
     }
 
     public function reply_goods()
@@ -26,7 +26,7 @@ class Reply extends Model
 
     public function getReplies(Int $comment_id)
     {
-        return $this->with('comment')->where('comment_id', $comment_id)->get();
+        return $this->with('user')->where('comment_id', $comment_id)->get();
     }
 
     public function replyStore(Int $user_id, Array $data)

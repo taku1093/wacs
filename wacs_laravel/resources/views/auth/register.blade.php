@@ -176,7 +176,7 @@
                     <!-- <dd id="repass_chk" style="display: none; color: red;">パスワードが最初と違っています</dd> -->  --}}
 
                     <dt><span class="required">利用規約</span></dt>
-                    <dd><input type="checkbox" class="validate[minCheckbox[1]]" name="kiyaku" id="mincheck1" value="yes"> <a href="newaccount_terms.html" id="kiyaku">利用規約</a>に同意します。 </dd>
+                    <dd><input type="checkbox" class="validate[minCheckbox[1]]" name="kiyaku" id="mincheck1" value="yes"> <a href="{{ route('terms') }}" id="kiyaku">利用規約</a>に同意します。 </dd>
                 </dl>
 
                     <script type="text/javascript">
@@ -192,8 +192,8 @@
                     </script>
                 
                 <div class="btn">
-                    <p class="confirm-text">ご入力内容をご確認の上、お間違いがなければ [登録] ボタンを押してください。</p>
-                    <button class="submit-button" type="submit" id="touroku">登録</button>
+                    <p class="confirm-text">ご入力内容をご確認の上、お間違いがなければ 確認 ボタンを押してください。</p>
+                    <button class="submit-button" type="submit" id="touroku">確認</button>
                 </div>
                 <!-- <input type="submit" value="会員登録を行う" id="touroku"> -->
             </form>

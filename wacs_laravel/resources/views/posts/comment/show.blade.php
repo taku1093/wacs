@@ -81,7 +81,7 @@
         </div>
         {{--  新規コメントテキスト  --}}
         <div class="comment-input">
-            <h2>[返信]</h2>
+            <h2 class="reply">[返信]</h2>
             <form method="POST" action="{{ route('replies.store') }}">
                 @csrf
                 {{-- コメントユーザ --}}
@@ -91,8 +91,9 @@
                 <input id="reply_text" class="input-text validate[required,maxSize[16]]" type="text" name="reply_text" placeholder="返信する"  value="{{ old('reply_text') }}">
 
                 {{--  送信ボタン --}}
-                <button type="submit" class="btn-comment">送信</button>
-
+                <div class="button-comment">
+                    <button type="submit" class="btn-comment">送信</button>
+                </div>
                 {{--  エラー  --}}
                 @error('reply_text')
                     <span class="invalid-feedback" role="alert">
@@ -104,7 +105,7 @@
 
         {{--  返信コメント  --}}
         <div class="reply-area">
-            <h2>[返信コメント]</h2>
+            <h2 class="reply">[返信コメント]</h2>
             <ul class="reply-list ">
                 @forelse ($replies as $reply)
                     <li class="list-group-item">
@@ -116,12 +117,12 @@
                                 <dt class="reply-layout">
                                     <div class="reply-icon">
                                         <a  class="" href="#" >
-                                            @if ($reply->comment->user->user_icon == null)
+                                            @if ($reply->user->user_icon == null)
                                                 {{--  デフォルトアイコン  --}}
                                             <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image">
                                             @else
                                                 {{--  任意アイコン  --}}
-                                            <img src="{{ asset('storage/user_icon/' .$reply->comment->user->user_icon) }}"  class="circle-image">
+                                            <img src="{{ asset('storage/user_icon/' .$reply->user->user_icon) }}"  class="circle-image">
                                             @endif
                                         </a>
                                     </div>
@@ -131,7 +132,7 @@
                                 <dd class="reply-layout">
                                     <div id="reply-layout-info">
                                         {{--  コメントユーザ  --}}
-                                        <p class="reply-user_name">{{ $reply->comment->user->user_screen_name }}</p>
+                                        <p class="reply-user_name">{{ $reply->user->user_screen_name }}</p>
                                         
                                         {{--  投稿コメント  --}}
                                         <p class="reply-post_text">{!! nl2br(e($reply->reply_text)) !!}</p>
@@ -141,7 +142,7 @@
 
                             
                                 {{--   いいね情報  --}}
-                                <dd class="reply_good">
+                                <dd class="reply-good">
                                     @auth
                                         @if (!in_array($user->id, array_column($reply->reply_goods->toArray(), 'user_id'), TRUE))
                                             <form class="reply_good" method="POST" action="{{ url('reply_goods/') }}">

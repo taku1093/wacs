@@ -5,6 +5,7 @@
     <title>利用規約 | WACS</title>
     <meta name="description" content="利用規約ページです。">
     <link href="./newaccount_terms.css" rel="stylesheet">
+    <link href="{{ asset('css/newaccount_terms.css') }}" rel="stylesheet" type="text/css">  
 </head>
 <body>
     <h2>利用規約</h2>
@@ -17,7 +18,7 @@
         <p class="section">第3条(道具レンタルについて)</p>
         <p class="subsection">あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお</p>
     </div>
-    <form action="newaccount_create.html" method="get">     
+    <form action="{{ route('register') }}" method="get">     
         <dl class="form-area">
             <dt><input id="check" type="checkbox" name="kiyaku" disabled> 利用規約に同意する</dt>
             <div class="back"><dt><input id="submit" type="submit" value="アカウント情報登録ページへ"></dt></div>

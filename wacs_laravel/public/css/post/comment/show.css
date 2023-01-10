@@ -18,6 +18,18 @@
     margin-right: auto;
     }
 
+
+/* レイアウト */
+.comment-area{
+    border: 2px solid black;
+    max-width: 60%;
+    /* justify-content: center;
+    align-items: center; */
+    margin-left: 20%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 /* ハート */
 .good-btn{
     background-color: #fff;
@@ -49,6 +61,11 @@ form.mb-0{
 
 .comment-user{
     border: 1px solid black;
+    margin: 5% 5%;
+}
+
+.comment-input{
+    margin: 5% 5%;
 }
 
 .comment-icon .circle-image {
@@ -88,6 +105,12 @@ dd.comment_good{
 
 
 
+h2.reply{
+    padding-bottom: 10px;
+}
+.button-comment{
+    padding-top: 10px;
+}
 .btn-comment {
     background-color: #f4dd64;
     border: 3px solid #f4dd64;
@@ -103,6 +126,7 @@ dd.comment_good{
     transition: .3s;
     border-radius: 24px;
     line-height: 5px;
+
 }
 
 .btn-comment:hover {
@@ -110,6 +134,7 @@ dd.comment_good{
     /* color: #1492AF; */
     color: #f4dd64;
 }
+
 
 .comment-input{
     padding-bottom: 10px;
@@ -130,4 +155,41 @@ dl dt.reply {
 dl dd.reply-list{
     width: 25%;
     vertical-align: middle;
+}
+
+/* 返信コメント */
+.reply-area{
+    margin: 5% 5%;
+}
+
+.reply-user{
+    border: 1px solid black;
+    /* margin: 5% 5%; */
+}
+
+.reply-icon .circle-image {
+    width:  50px;
+    height: 50px;
+    margin: 5px 15px 5px 11px;
+    border-radius: 50%;
+    border: 1px solid black;
+    
+}
+
+dl.reply-layout {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+dl dt.reply-layout {
+    width: 15%;
+}
+dl dd.reply-layout{
+    width: 60%;
+}
+
+dd.reply-good{
+    width: 25%;
+    vertical-align: middle;
+    height: 50%;
 }

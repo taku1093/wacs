@@ -189,4 +189,13 @@ class RegisterController extends Controller
     {
         //
     }
+
+    // 利用規約
+    public function terms()
+    {
+        // $all_users = $user;
+        return view('auth.newaccount_terms', [
+            // 'user'  => $all_users
+        ]);
+    }
 }

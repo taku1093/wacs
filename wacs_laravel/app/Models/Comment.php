@@ -29,10 +29,7 @@ class Comment extends Model
         return $this->hasMany(Comment_good::class);
     }
 
-    public function replies()
-    {
-        return $this->hasMany(Reply::class);
-    }
+    
 
     public function getComments(Int $post_id)
     {

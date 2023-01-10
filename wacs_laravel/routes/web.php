@@ -27,6 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('register', 'Auth\RegisterController@post')->name('user.register_post');
 Route::get('register/confirm', 'Auth\RegisterController@confirm')->name('user.register_confirm');
 Route::post('register/confirm', 'Auth\RegisterController@register')->name('user.resister_resister');
+Route::get('terms', 'Auth\RegisterController@terms')->name('terms');;
 
 // お問い合わせ
 Route::get('contact', 'ContactController@index')->name('contact');

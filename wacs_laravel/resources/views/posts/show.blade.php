@@ -41,8 +41,13 @@
                                                 <img class="post_img" src="{{ asset('storage/post_img/' .$post->post_img1) }}" >
                                             @endif
                                         </div>    
-                                        {{--  画像クリック判定  --}}
-                                        <input type="checkbox" id="pu-on">
+
+                                        @if ($post->post_img1 === null)
+                                        @else
+                                            {{--  画像クリック判定  --}}
+                                            <input type="checkbox" id="pu-on">
+                                        @endif
+                                        
 
                                         {{--  ポップアップ  --}}
                                         <div class="pu">
@@ -66,10 +71,15 @@
                                                 <img class="post_img" src="{{asset('img/noimage.png') }}" >
                                             @else
                                                 <img class="post_img" src="{{ asset('storage/post_img/' .$post->post_img2) }}" >
+                                                        
                                             @endif 
                                         </div>    
-                                        {{--  画像クリック判定  --}}
-                                        <input type="checkbox" id="pu-on2">
+                                        
+                                        @if ($post->post_img2 === null)
+                                        @else
+                                            {{--  画像クリック判定  --}}
+                                            <input type="checkbox" id="pu-on2">
+                                        @endif
 
                                         {{--  ポップアップ  --}}
                                         <div class="pu">
@@ -93,11 +103,15 @@
                                                 <img class="post_img" src="{{asset('img/noimage.png') }}" >
                                             @else
                                                 <img class="post_img" src="{{ asset('storage/post_img/' .$post->post_img3) }}" >
+                                            
                                             @endif
                                         </div>
 
-                                        {{--  画像クリック判定  --}}
-                                        <input type="checkbox" id="pu-on3">
+                                        @if ($post->post_img3 === null)
+                                        @else
+                                            {{--  画像クリック判定  --}}
+                                            <input type="checkbox" id="pu-on3">
+                                        @endif
 
                                         {{--  ポップアップ  --}}
                                         <div class="pu">

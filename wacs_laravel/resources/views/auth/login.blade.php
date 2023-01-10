@@ -39,12 +39,12 @@
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <div class="form-item"> {{--ログインのためのアイテム--}}
-                <p class="formLabel">メールアドレス</p>
+            <div class="form-item-login"> {{--ログインのためのアイテム--}}
+                <p class="formLabel-login">メールアドレス</p>
                 <input type="email" name="email" id="email" class="form-style" autocomplete="off"/>
             </div>
-            <div class="form-item">
-                <p class="formLabel">パスワード</p>
+            <div class="form-item-login">
+                <p class="formLabel-login">パスワード</p>
                 <input type="password" name="password" id="password" class="form-style" />
                 <span id="view">
                     <i class="far fa-eye-slash"></i>

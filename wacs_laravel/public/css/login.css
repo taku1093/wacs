@@ -1,13 +1,14 @@
 @charset "utf-8";
 
 /*========= レイアウトのためのCSS ===============*/
-/* *,　//リセットCSS
+*,
+/* //リセットCSS */
 ::before,
 ::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-} */
+}
 
 
 
@@ -88,7 +89,7 @@ background: url(http://www.timurtek.com/wp-content/uploads/2014/10/form-bg.jpg) 
    /* margin-left:-180px; */
    margin-top:-200px;
  }
- div.form-item{position: relative; display: block; margin-bottom: 20px;}
+ div.form-item-login{position: relative; display: block; margin-bottom: 30px;}
   /* input{transition: all .2s ease;} */
   input.form-style{
    color:#8a8a8a;
@@ -108,15 +109,17 @@ background: url(http://www.timurtek.com/wp-content/uploads/2014/10/form-bg.jpg) 
    font-size: 105%;
    letter-spacing: .8px;
  }
- /* div.form-item .form-style:focus{outline: none; border:1px solid #8b8b8b; color:#8b8b8b; } */
- div.form-item p.formLabel {
+ /* div.form-item-login .form-style:focus{outline: none; border:1px solid #8b8b8b; color:#8b8b8b; } */
+ div.form-item-login p.formLabel-login {
    position: absolute;
    left:26px;
-   top:10px;
+   top:5px;
    transition:all .4s ease;
-   color:#bbb;}
+   color:#bbb;
+  }
+
  .formTop{
-  top:-10px !important; 
+  top:-23px !important; 
   left:26px; 
   background-color: #fff; 
   padding:0 5px; 

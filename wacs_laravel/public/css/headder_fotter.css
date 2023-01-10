@@ -13,6 +13,7 @@
 ul,
 ol { /*リスト行頭のアイコンを非表示*/
     list-style: none;
+    margin-bottom: 0ex;
 }
 
 a { /*リンクの文字色と下線を無くす*/
@@ -258,7 +259,7 @@ body {
     margin: 5px 0 0 auto;
     position: relative; /* 絶対配置の基準を設定 */
   }
-  .dropdown__btn {
+  .dropdown__btn-logout {
     display: block;
     width: 1.5em;
     padding: 0.2em;
@@ -270,7 +271,7 @@ body {
   }
   
   /* 画面のどこをクリックしても元の状態に戻るように*/
-  .dropdown__btn.is-open::after {
+  .dropdown__btn-logout.is-open::after {
     content: "";
     width: 100%;
     height: 100%;
@@ -281,7 +282,7 @@ body {
     z-index: 4;
   }
   
-  .dropdown__btn.is-open + .dropdown__body {
+  .dropdown__btn-logout.is-open + .dropdown__body {
     display: block;
     z-index: 5;
   }

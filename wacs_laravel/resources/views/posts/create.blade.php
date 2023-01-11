@@ -145,16 +145,7 @@
                     </dd>
                     
 
-                    {{--  <dt><span class="required">作り方</span></dt>
-                    <dd class="border_line">
-                        <textarea class="post_exp @error('post_exp') is-invalid @enderror" name="post_exp" required autocomplete="post_exp" rows="5">{{ old('post_exp') }}</textarea>
-
-                        @error('post_exp')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </dd>  --}}
+                
                     
                 </dl>
                 <div class="btn">
@@ -165,14 +156,7 @@
                         投稿する
                     </button>
                 </div>
-                {{--  <div class="form-group row mb-0">
-                    <div class="col-md-12 post_exp-right">
-                        <p class="mb-4 post_exp-danger">140文字以内</p>
-                        <button type="submit" class="btn btn-primary">
-                            ツイートする
-                        </button>
-                    </div>
-                </div>  --}}
+                
             </form>
         </div>
     </main>

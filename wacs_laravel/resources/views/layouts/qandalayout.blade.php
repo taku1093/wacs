@@ -20,13 +20,13 @@
 </head>
 <body>
  
-@yield('header')
+{{--  @yield('header')  --}}
  
-<div class="container">
+{{--  <div class="">  --}}
     @yield('content')
-</div><!--//container-->
+{{--  </div><!--//container-->  --}}
  
-@yield('footer')
+{{--  @yield('footer')  --}}
  
 </body>
 </html>

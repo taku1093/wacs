@@ -144,7 +144,11 @@ class PostsController extends Controller
                     'material_name1'=> ['required', 'string', 'max:140'],
                     'material_num1'  => ['required', 'integer', 'max:140'],
                 ]);
+            // $material->materialStore($post->id, $data, $request);
         }
+
+
+
         
         // 材料数
         if ($request->has("tool_name10")){
@@ -199,6 +203,7 @@ class PostsController extends Controller
                 $validator = Validator::make($data, [
                     'tool_name1'=> ['required', 'integer', 'max:140']
                 ]);
+                // $tool->toolStore($post->id, $data, $request);
         }
 
         // タグ
@@ -224,8 +229,15 @@ class PostsController extends Controller
 
         $validator->validate();
         $post->postStore($user->id, $data, $request);
-        $material->materialStore($post->id, $data, $request);
-        $tool->toolStore($post->id, $data, $request);
+        if($request->has("material_name1")){
+            $material->materialStore($post->id, $data, $request);
+        }
+        if($request->has("tool_name1")){
+            $tool->toolStore($post->id, $data, $request);
+        }
+        
+        
+        
 
         return redirect('posts');
     }
@@ -269,10 +281,12 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Post $post, Material $material)
     {
+        $material_id = $material->post_id;
         $user = auth()->user();
         $posts = $post->getEditPost($user->id, $post->id);
+        // $materials = $material->getEditMaterial($post->id, $post->materials->id);
 
         if (!isset($posts)) {
             return redirect('posts');
@@ -280,7 +294,8 @@ class PostsController extends Controller
 
         return view('posts.edit', [
             'user'   => $user,
-            'posts' => $posts
+            'posts' => $posts,
+            // 'materials' => $materials
         ]);
     }
 
@@ -310,9 +325,12 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $user = auth()->user();
+        $post->postDestroy($user->id, $post->id);
+
+        return redirect('posts');
     }
 
 

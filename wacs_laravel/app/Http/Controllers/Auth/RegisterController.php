@@ -184,6 +184,18 @@ class RegisterController extends Controller
     /*
      * 確認画面出力
      */
+    public function confirm(Request $request)
+    {
+        //セッションから値を取り出す
+        $input = $request->session()->get("form_input");
+
+        //セッションに値が無い時はフォームに戻る
+        if (!$input) {
+            return redirect()->action("Auth\RegisterController");
+        }
+
+        return view('auth.register_conf', ["input" => $input]);
+    }
     
     protected function registered(Request $request, $user)
     {

@@ -184,11 +184,25 @@
                                 {{--  フォロー  --}}
                                 <div class="card-follow">
                                     @if (auth()->user()->id === $post->user->id)
-                                    {{--  <form action="" method="POST" class="post-edit">  --}}
-                                        <a href="{{ url('posts/' .$post->id .'/edit') }}" class="dropdown-item">
-                                            <button type="submit" class="btn-post-edit">編集</button>
-                                        </a>
-                                    {{--  </form>  --}}
+                                    <dl class="follow-area">
+                                        <dd class="follow-btn">
+                                            <a href="{{ url('posts/' .$post->id .'/edit') }}" class="dropdown-item">
+                                                <button type="submit" class="btn-post-edit">編集</button>
+                                            </a>
+                                        </dd>
+                                        <dd class="delete-btn">
+                                            {{--  <a href="{{ url('posts/' .$post->id .'/destroy') }}" class="dropdown-item">
+                                                <button type="submit" class="btn-post-delete">削除</button>
+                                            </a>  --}}
+                                            <form method="POST" action="{{ url('posts/' .$post->id) }}" class="mb-0">
+                                                @csrf
+                                                @method('DELETE')
+    
+                                                <button type="submit" class="btn-post-delete">削除</button>
+                                            </form>
+    
+                                        </dd>
+                                    </dl>
                                     @else
                                         @if (auth()->user()->isFollowed($post->user->id))
                                             <div class="px-2">

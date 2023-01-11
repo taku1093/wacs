@@ -147,4 +147,8 @@ class Post extends Model
                 ->get();
     }
 
+    public function postDestroy(Int $user_id, Int $post_id)
+    {
+        return $this->where('user_id', $user_id)->where('id', $post_id)->delete();
+    }
 }

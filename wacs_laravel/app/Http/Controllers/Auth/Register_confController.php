@@ -34,6 +34,6 @@ class Register_confController extends Controller
     // 入力データの取得
     protected function validator(array $data)
     {
-        return view('auth\register_conf');
+        return view('auth.register_conf');
     }
 }

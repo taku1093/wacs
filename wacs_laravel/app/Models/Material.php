@@ -71,7 +71,7 @@ class Material extends Model
                 $this->material_name2 = $data['material_name2'];
         }
         if($request->has("material_name1")){
-            $this->material_name1 = $data['material_name1'];
+                $this->material_name1 = $data['material_name1'];
         }
         // 数量
         if ($request->has("material_num10")){
@@ -116,5 +116,11 @@ class Material extends Model
         {
                 return $this->with('post')->where('post_id', $material_id)->get();
         }
+
+        // 編集
+    public function getEditMaterial(Int $post_id, Int $material_id)
+    {
+        return $this->where('post_id', $post_id)->where('id', $material_id)->first();
+    }
 
 }

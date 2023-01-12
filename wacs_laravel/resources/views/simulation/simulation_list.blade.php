@@ -18,7 +18,7 @@
     {{--  椅子  --}}
     <h2 style="text-align:center">Chair</h2>
     <ul class="slider">
-        <li><a href="simu_test.html"><img  src="img/simulation/sikakuisu.jpg" alt=""></a></li>
+        <li><a href="{{ route('simulation') }}"><img  src="img/simulation/sikakuisu.jpg" alt=""></a></li>
         <li><img  src="img/simulation/sikakuisu.jpg" alt=""></li>
         <li><img  src="img/simulation/sikakuisu.jpg" alt=""></li>
         <li><img  src="img/simulation/sikakuisu.jpg" alt=""></li>
@@ -55,7 +55,7 @@
     </ul>
 
     <!-- その他 -->
-    <h2 style="text-align:center">Onothr</h2>
+    <h2 style="text-align:center">Another</h2>
     <ul class="slider">
         <li><a href="simu_test.html"><img  src="img/simulation/sikakuisu.jpg" alt=""></a></li>
         <li><img  src="img/simulation/sikakuisu.jpg" alt=""></li>

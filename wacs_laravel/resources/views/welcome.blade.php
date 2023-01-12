@@ -88,7 +88,7 @@
                     <dt>DIY</dt>
                     <dd></dd>
                 </dl>
-                <p class="item-label">DIYuuu</p>
+                <p class="item-label">DIY</p>
             </li>
             <li>
                 <a href="{{ route('maintenance') }}"><img class="home-img"src="./img/pramodel.jpg" alt="プラモデルのロゴ"></a>

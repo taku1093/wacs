@@ -57,9 +57,9 @@ class PostsController extends Controller
         $user = auth()->user();
         $data = $request->all();
         $validator = Validator::make($data, [
-            'post_title' => ['required', 'string', 'max:140'],
-            'post_exp' => ['required', 'string', 'max:140'],
-            'method' => ['required', 'string', 'max:140'],
+            'post_title' => ['required', 'string', 'max:30'],
+            'post_exp' => ['required', 'string', 'max:100'],
+            'method' => ['required', 'string', 'max:1000'],
         ]);
         if ($request->has("post_img3")) {
             // 画像3枚保存時
@@ -84,65 +84,65 @@ class PostsController extends Controller
         // 材料
         if ($request->has("material_name10")){
                 $validator = Validator::make($data, [
-                    'material_name10'  => ['required', 'string', 'max:140'],
-                    'material_num10'  => ['required', 'integer', 'max:140']
+                    'material_name10'  => ['required', 'string', 'max:20'],
+                    'material_num10'  => ['required', 'integer', 'max:20']
                 ]);
         }
         if($request->has("material_name9")){
                 $validator = Validator::make($data, [
-                    'material_name9'  => ['required', 'string', 'max:140'],
-                    'material_num9'  => ['required', 'integer', 'max:140'],
+                    'material_name9'  => ['required', 'string', 'max:20'],
+                    'material_num9'  => ['required', 'integer', 'max:20'],
                 ]);
         }
         if($request->has("material_name8")){
                 $validator = Validator::make($data, [
-                    'material_name8'  => ['required', 'string', 'max:140'],
-                    'material_num8'  => ['required', 'integer', 'max:140'],
+                    'material_name8'  => ['required', 'string', 'max:20'],
+                    'material_num8'  => ['required', 'integer', 'max:20'],
                 ]);
             
         }
         if($request->has("material_name7")){
                 $validator = Validator::make($data, [
-                    'material_name7' => ['required', 'string', 'max:140'],
-                    'material_num7'  => ['required', 'integer', 'max:140'],
+                    'material_name7' => ['required', 'string', 'max:20'],
+                    'material_num7'  => ['required', 'integer', 'max:20'],
                 ]);
             
         }
         if($request->has("material_name6")){
                 $validator = Validator::make($data, [
-                    'material_name6'  => ['required', 'string', 'max:140'],
-                    'material_num6'  => ['required', 'integer', 'max:140'],
+                    'material_name6'  => ['required', 'string', 'max:20'],
+                    'material_num6'  => ['required', 'integer', 'max:20'],
                 ]);
             
         }
         if($request->has("material_name5")){
                 $validator = Validator::make($data, [
-                    'material_name5' => ['required', 'string', 'max:140'],
-                    'material_num5'  => ['required', 'integer', 'max:140'],
+                    'material_name5' => ['required', 'string', 'max:20'],
+                    'material_num5'  => ['required', 'integer', 'max:20'],
                 ]);
         }
         if($request->has("material_name4")){
                 $validator = Validator::make($data, [
-                    'material_name4' => ['required', 'string', 'max:140'],
-                    'material_num4'  => ['required', 'integer', 'max:140'],
+                    'material_name4' => ['required', 'string', 'max:20'],
+                    'material_num4'  => ['required', 'integer', 'max:20'],
                 ]);
         }
         if($request->has("material_name3")){
                 $validator = Validator::make($data, [
-                    'material_name3' => ['required', 'string', 'max:140'],
-                    'material_num3'  => ['required', 'integer', 'max:140'],
+                    'material_name3' => ['required', 'string', 'max:20'],
+                    'material_num3'  => ['required', 'integer', 'max:20'],
                 ]);
         }
         if($request->has("material_name2")){
                 $validator = Validator::make($data, [
-                    'material_name2' => ['required', 'string', 'max:140'],
-                    'material_num2'  => ['required', 'integer', 'max:140'],
+                    'material_name2' => ['required', 'string', 'max:20'],
+                    'material_num2'  => ['required', 'integer', 'max:20'],
                 ]);
         }
         if($request->has("material_name1")){
                 $validator = Validator::make($data, [
-                    'material_name1'=> ['required', 'string', 'max:140'],
-                    'material_num1'  => ['required', 'integer', 'max:140'],
+                    'material_name1'=> ['required', 'string', 'max:20'],
+                    'material_num1'  => ['required', 'integer', 'max:20'],
                 ]);
             // $material->materialStore($post->id, $data, $request);
         }
@@ -153,55 +153,55 @@ class PostsController extends Controller
         // 材料数
         if ($request->has("tool_name10")){
                 $validator = Validator::make($data, [
-                    'tool_name10'  => ['required', 'integer', 'max:140']
+                    'tool_name10'  => ['required', 'integer', 'max:20']
                 ]);
         }
         if($request->has("tool_name9")){
                 $validator = Validator::make($data, [
-                    'tool_name9'  => ['required', 'integer', 'max:140']
+                    'tool_name9'  => ['required', 'integer', 'max:20']
                 ]);
         }
         if($request->has("tool_name8")){
                 $validator = Validator::make($data, [
-                    'tool_name8'  => ['required', 'integer', 'max:140']
+                    'tool_name8'  => ['required', 'integer', 'max:20']
                 ]);
             
         }
         if($request->has("tool_name7")){
                 $validator = Validator::make($data, [
-                    'tool_name7' => ['required', 'integer', 'max:140']
+                    'tool_name7' => ['required', 'integer', 'max:20']
                 ]);
             
         }
         if($request->has("tool_name6")){
                 $validator = Validator::make($data, [
-                    'tool_name6'  => ['required', 'integer', 'max:140']
+                    'tool_name6'  => ['required', 'integer', 'max:20']
                 ]);
             
         }
         if($request->has("tool_name5")){
                 $validator = Validator::make($data, [
-                    'tool_name5' => ['required', 'integer', 'max:140']
+                    'tool_name5' => ['required', 'integer', 'max:20']
                 ]);
         }
         if($request->has("tool_name4")){
                 $validator = Validator::make($data, [
-                    'tool_name4' => ['required', 'integer', 'max:140']
+                    'tool_name4' => ['required', 'integer', 'max:20']
                 ]);
         }
         if($request->has("tool_name3")){
                 $validator = Validator::make($data, [
-                    'tool_name3' => ['required', 'integer', 'max:140']
+                    'tool_name3' => ['required', 'integer', 'max:20']
                 ]);
         }
         if($request->has("tool_name2")){
                 $validator = Validator::make($data, [
-                    'tool_name2' => ['required', 'integer', 'max:140']
+                    'tool_name2' => ['required', 'integer', 'max:20']
                 ]);
         }
         if($request->has("tool_name1")){
                 $validator = Validator::make($data, [
-                    'tool_name1'=> ['required', 'integer', 'max:140']
+                    'tool_name1'=> ['required', 'integer', 'max:20']
                 ]);
                 // $tool->toolStore($post->id, $data, $request);
         }
@@ -209,19 +209,19 @@ class PostsController extends Controller
         // タグ
         if($request->has("post_tag3")){
             $validator = Validator::make($data, [
-                'post_tag3'=> ['required', 'string', 'max:140']
+                'post_tag3'=> ['required', 'string', 'max:20']
             ]);
         }
 
         if($request->has("post_tag2")){
             $validator = Validator::make($data, [
-                'post_tag2'=> ['required', 'string', 'max:140']
+                'post_tag2'=> ['required', 'string', 'max:20']
             ]);
         }
 
         if($request->has("post_tag1")){
             $validator = Validator::make($data, [
-                'post_tag1'=> ['required', 'string', 'max:140']
+                'post_tag1'=> ['required', 'string', 'max:20']
             ]);
         }
 
@@ -310,7 +310,7 @@ class PostsController extends Controller
     {
         $data = $request->all();
         $validator = Validator::make($data, [
-            'post_exp' => ['required', 'string', 'max:140']
+            'post_exp' => ['required', 'string', 'max:100']
         ]);
 
         $validator->validate();

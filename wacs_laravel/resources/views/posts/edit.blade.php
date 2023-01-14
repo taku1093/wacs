@@ -68,128 +68,23 @@
                             <dd class="border_line"><input id="post_exp" class="input-text validate[required,maxSize[16]]" type="text" name="post_exp" placeholder="投稿の説明"  value="{{ old('post_exp') ? : $posts->post_exp }}"></dd>
         
                             {{--  材料  --}}
-                    
-                            @if (isset($materials->material_name1))
-                                <dt>
-                                    <span id="addbutton">材料・数量</span>
-                                </dt>
-                                
+                            <dt>
+                                <span id="addbutton">材料・数量</span>
+                                {{--  <span id="reload"><button id="add_material" type="button">+ 追加</button></span>
+                                <br>
+                                    <span id="message_material"></span>
+                                </br>  --}}
+                            </dt>
+                            @if (isset($posts->materials))
+                                @foreach ($posts->materials as $posts->materials)
                                 <dd id="material" class="border_line">
-                                    {{--  材料1  --}}
-                                    @if (isset($materials->material_name1))
-                                        <div class="material_text material_text1">
-                                                <input id="material_name1" class="input-text validate[required,maxSize[16]]" type="text" name="material_name1" placeholder="材料"  value="{{ old('material_name1') ? : $materials->material_name1 }}">
-                                                <span><select id="material_num1" class="validate[required] material_num" name="material_num1" value="{{ old('material_num1') ? : $materials->material_num1 }}">
-                                                    <option value="" selected="selected">{{ old('material_num1') ? : $materials->material_num1 }}</option>
-                                                    <option value="1" data-pref-id="1">1</option>
-                                                    <option value="2" data-pref-id="2">2</option>
-                                                    <option value="3" data-pref-id="3">3</option>
-                                                    <option value="4" data-pref-id="4">4</option>
-                                                    <option value="5" data-pref-id="5">5</option>
-                                                    <option value="6" data-pref-id="6">6</option>
-                                                    <option value="7" data-pref-id="7">7</option>
-                                                    <option value="8" data-pref-id="8">8</option>
-                                                    <option value="9" data-pref-id="9">9</option>
-                                                    <option value="10" data-pref-id="10">10</option>
-                                                    <label for="material_num1"></label>
-                                                </select></span>
-                                        </div>
-                                    @endif
-
-                                    {{--  材料2  --}}
-                                    @if (isset($materials->material_name2))
-                                        <div class="material_text material_text1">
-                                                <input id="material_name2" class="input-text validate[required,maxSize[16]]" type="text" name="material_name2" placeholder="材料"  value="{{ old('material_name2') ? : $materials->material_name2 }}">
-                                                <span><select id="material_num2" class="validate[required] material_num" name="material_num2" value="{{ old('material_num2') ? : $materials->material_num2 }}">
-                                                    <option value="" selected="selected">{{ old('material_num2') ? : $materials->material_num2 }}</option>
-                                                    <option value="1" data-pref-id="1">1</option>
-                                                    <option value="2" data-pref-id="2">2</option>
-                                                    <option value="3" data-pref-id="3">3</option>
-                                                    <option value="4" data-pref-id="4">4</option>
-                                                    <option value="5" data-pref-id="5">5</option>
-                                                    <option value="6" data-pref-id="6">6</option>
-                                                    <option value="7" data-pref-id="7">7</option>
-                                                    <option value="8" data-pref-id="8">8</option>
-                                                    <option value="9" data-pref-id="9">9</option>
-                                                    <option value="10" data-pref-id="10">10</option>
-                                                    <label for="material_num2"></label>
-                                                </select></span>
-                                        </div>
-                                    @endif
-
-                                    {{--  材料3  --}}
-                                    @if (isset($materials->material_name3))
-
-                                        <div class="material_text material_text1">
-                                                <input id="material_name3" class="input-text validate[required,maxSize[16]]" type="text" name="material_name3" placeholder="材料"  value="{{ old('material_name3') ? : $materials->material_name3 }}">
-                                                <span><select id="material_num3" class="validate[required] material_num" name="material_num3" value="{{ old('material_num3') ? : $materials->material_num3 }}">
-                                                    <option value="" selected="selected">{{ old('material_num3') ? : $materials->material_num3 }}</option>
-                                                    <option value="1" data-pref-id="1">1</option>
-                                                    <option value="2" data-pref-id="2">2</option>
-                                                    <option value="3" data-pref-id="3">3</option>
-                                                    <option value="4" data-pref-id="4">4</option>
-                                                    <option value="5" data-pref-id="5">5</option>
-                                                    <option value="6" data-pref-id="6">6</option>
-                                                    <option value="7" data-pref-id="7">7</option>
-                                                    <option value="8" data-pref-id="8">8</option>
-                                                    <option value="9" data-pref-id="9">9</option>
-                                                    <option value="10" data-pref-id="10">10</option>
-                                                    <label for="material_num3"></label>
-                                                </select></span>
-                                        </div>
-                                    @endif
-
-                                    {{--  材料4  --}}
-                                    @if (isset($materials->material_name4))
-
-                                        <div class="material_text material_text1">
-                                                <input id="material_name4" class="input-text validate[required,maxSize[16]]" type="text" name="material_name4" placeholder="材料"  value="{{ old('material_name4') ? : $materials->material_name4 }}">
-                                                <span><select id="material_num4" class="validate[required] material_num" name="material_num4" value="{{ old('material_num4') ? : $materials->material_num4 }}">
-                                                    <option value="" selected="selected">{{ old('material_num4') ? : $materials->material_num4 }}</option>
-                                                    <option value="1" data-pref-id="1">1</option>
-                                                    <option value="2" data-pref-id="2">2</option>
-                                                    <option value="3" data-pref-id="3">3</option>
-                                                    <option value="4" data-pref-id="4">4</option>
-                                                    <option value="5" data-pref-id="5">5</option>
-                                                    <option value="6" data-pref-id="6">6</option>
-                                                    <option value="7" data-pref-id="7">7</option>
-                                                    <option value="8" data-pref-id="8">8</option>
-                                                    <option value="9" data-pref-id="9">9</option>
-                                                    <option value="10" data-pref-id="10">10</option>
-                                                    <label for="material_num4"></label>
-                                                </select></span>
-                                        </div>
-                                    @endif
-
-                                    {{--  材料5  --}}
-                                    @if (isset($materials->material_name5))
-
-                                        <div class="material_text material_text1">
-                                                <input id="material_name5" class="input-text validate[required,maxSize[16]]" type="text" name="material_name5" placeholder="材料"  value="{{ old('material_name5') ? : $materials->material_name5 }}">
-                                                <span><select id="material_num5" class="validate[required] material_num" name="material_num5" value="{{ old('material_num5') ? : $materials->material_num5 }}">
-                                                    <option value="" selected="selected">{{ old('material_num5') ? : $materials->material_num5 }}</option>
-                                                    <option value="1" data-pref-id="1">1</option>
-                                                    <option value="2" data-pref-id="2">2</option>
-                                                    <option value="3" data-pref-id="3">3</option>
-                                                    <option value="4" data-pref-id="4">4</option>
-                                                    <option value="5" data-pref-id="5">5</option>
-                                                    <option value="6" data-pref-id="6">6</option>
-                                                    <option value="7" data-pref-id="7">7</option>
-                                                    <option value="8" data-pref-id="8">8</option>
-                                                    <option value="9" data-pref-id="9">9</option>
-                                                    <option value="10" data-pref-id="10">10</option>
-                                                    <label for="material_num5"></label>
-                                                </select></span>
-                                        </div>
-                                    @endif
-
-                                    {{--  材料6  --}}
-                                    @if (isset($materials->material_name6))
-
-                                        <div class="material_text material_text1">
-                                            <input id="material_name6" class="input-text validate[required,maxSize[16]]" type="text" name="material_name6" placeholder="材料"  value="{{ old('material_name6') ? : $materials->material_name6 }}">
-                                            <span><select id="material_num6" class="validate[required] material_num" name="material_num6" value="{{ old('material_num6') ? : $materials->material_num6 }}">
-                                                <option value="" selected="selected">{{ old('material_num6') ? : $materials->material_num6 }}</option>
+                                    
+                                    <div class="material_text material_text1">
+                                        
+                                        @if (isset($posts->materials->material_name1))
+                                            <input id="material_name1" class="input-text validate[required,maxSize[16]]" type="text" name="material_name1" placeholder="材料"  value="{{ old('material_name1') ? : $posts->materials->material_name1 }}">
+                                            <span><select id="material_num1" class="validate[required] material_num" name="material_num1" value="{{ old('material_num1') ? : $posts->materials_material_num1 }}">
+                                                <option value="" selected="selected">数量を選択</option>
                                                 <option value="1" data-pref-id="1">1</option>
                                                 <option value="2" data-pref-id="2">2</option>
                                                 <option value="3" data-pref-id="3">3</option>
@@ -200,112 +95,9 @@
                                                 <option value="8" data-pref-id="8">8</option>
                                                 <option value="9" data-pref-id="9">9</option>
                                                 <option value="10" data-pref-id="10">10</option>
-                                                <label for="material_num6"></label>
+                                                <label for="material_num1"></label>
                                             </select></span>
-                                        </div>
-                                    @endif
-
-                                    {{--  材料7  --}}
-                                    @if (isset($materials->material_name7))
-
-                                        <div class="material_text material_text1">
-                                                <input id="material_name7" class="input-text validate[required,maxSize[16]]" type="text" name="material_name7" placeholder="材料"  value="{{ old('material_name7') ? : $materials->material_name7 }}">
-                                                <span><select id="material_num7" class="validate[required] material_num" name="material_num7" value="{{ old('material_num7') ? : $materials->material_num7 }}">
-                                                    <option value="" selected="selected">{{ old('material_num7') ? : $materials->material_num7 }}</option>
-                                                    <option value="1" data-pref-id="1">1</option>
-                                                    <option value="2" data-pref-id="2">2</option>
-                                                    <option value="3" data-pref-id="3">3</option>
-                                                    <option value="4" data-pref-id="4">4</option>
-                                                    <option value="5" data-pref-id="5">5</option>
-                                                    <option value="6" data-pref-id="6">6</option>
-                                                    <option value="7" data-pref-id="7">7</option>
-                                                    <option value="8" data-pref-id="8">8</option>
-                                                    <option value="9" data-pref-id="9">9</option>
-                                                    <option value="10" data-pref-id="10">10</option>
-                                                    <label for="material_num7"></label>
-                                                </select></span>
-                                        </div>
-                                    @endif
-
-                                    {{--  材料8  --}}
-                                    @if (isset($materials->material_name8))
-
-                                        <div class="material_text material_text1">
-                                                <input id="material_name8" class="input-text validate[required,maxSize[16]]" type="text" name="material_name8" placeholder="材料"  value="{{ old('material_name8') ? : $materials->material_name8 }}">
-                                                <span><select id="material_num8" class="validate[required] material_num" name="material_num8" value="{{ old('material_num8') ? : $materials->material_num8 }}">
-                                                    <option value="" selected="selected">{{ old('material_num8') ? : $materials->material_num8 }}</option>
-                                                    <option value="1" data-pref-id="1">1</option>
-                                                    <option value="2" data-pref-id="2">2</option>
-                                                    <option value="3" data-pref-id="3">3</option>
-                                                    <option value="4" data-pref-id="4">4</option>
-                                                    <option value="5" data-pref-id="5">5</option>
-                                                    <option value="6" data-pref-id="6">6</option>
-                                                    <option value="7" data-pref-id="7">7</option>
-                                                    <option value="8" data-pref-id="8">8</option>
-                                                    <option value="9" data-pref-id="9">9</option>
-                                                    <option value="10" data-pref-id="10">10</option>
-                                                    <label for="material_num8"></label>
-                                                </select></span>
-                                        </div>
-                                    @endif
-
-                                    {{--  材料9  --}}
-                                    @if (isset($materials->material_name9))
-
-                                        <div class="material_text material_text1">
-                                                <input id="material_name9" class="input-text validate[required,maxSize[16]]" type="text" name="material_name9" placeholder="材料"  value="{{ old('material_name9') ? : $materials->material_name9 }}">
-                                                <span><select id="material_num9" class="validate[required] material_num" name="material_num9" value="{{ old('material_num9') ? : $materials->material_num9 }}">
-                                                    <option value="" selected="selected">{{ old('material_num9') ? : $materials->material_num9 }}</option>
-                                                    <option value="1" data-pref-id="1">1</option>
-                                                    <option value="2" data-pref-id="2">2</option>
-                                                    <option value="3" data-pref-id="3">3</option>
-                                                    <option value="4" data-pref-id="4">4</option>
-                                                    <option value="5" data-pref-id="5">5</option>
-                                                    <option value="6" data-pref-id="6">6</option>
-                                                    <option value="7" data-pref-id="7">7</option>
-                                                    <option value="8" data-pref-id="8">8</option>
-                                                    <option value="9" data-pref-id="9">9</option>
-                                                    <option value="10" data-pref-id="10">10</option>
-                                                    <label for="material_num9"></label>
-                                                </select></span>
-                                        </div>
-                                    @endif
-
-                                    {{--  材料10  --}}
-                                    @if (isset($materials->material_name10))
-
-                                        <div class="material_text material_text1">
-                                                <input id="material_name10" class="input-text validate[required,maxSize[16]]" type="text" name="material_name10" placeholder="材料"  value="{{ old('material_name10') ? : $materials->material_name10 }}">
-                                                <span><select id="material_num10" class="validate[required] material_num" name="material_num10" value="{{ old('material_num10') ? : $materials->material_num10 }}">
-                                                    <option value="" selected="selected">{{ old('material_num10') ? : $materials->material_num10 }}</option>
-                                                    <option value="1" data-pref-id="1">1</option>
-                                                    <option value="2" data-pref-id="2">2</option>
-                                                    <option value="3" data-pref-id="3">3</option>
-                                                    <option value="4" data-pref-id="4">4</option>
-                                                    <option value="5" data-pref-id="5">5</option>
-                                                    <option value="6" data-pref-id="6">6</option>
-                                                    <option value="7" data-pref-id="7">7</option>
-                                                    <option value="8" data-pref-id="8">8</option>
-                                                    <option value="9" data-pref-id="9">9</option>
-                                                    <option value="10" data-pref-id="10">10</option>
-                                                    <label for="material_num10"></label>
-                                                </select></span>
-                                        </div>
-                                    @endif
-                                </dd>
-                            @else
-                                <div class="material-false">
-                                    {{--  最初から未入力の場合  --}}
-                                    <dt>
-                                        <span id="addbutton">材料・数量</span>
-                                        <span id="reload"><button id="add_material" type="button">+ 追加</button></span>
-                                        <br>
-                                            <span id="message_material"></span>
-                                        </br>
-                                    </dt>
-                
-                                    <dd id="material" class="border_line">
-                                        <div class="material_text material_text1">
+                                        @else
                                             <input id="material_name1" class="input-text validate[required,maxSize[16]]" type="text" name="material_name1" placeholder="材料"  value="{{ old('material') }}">
                                             <span><select id="material_num1" class="validate[required] material_num" name="material_num1">
                                                 <option value="" selected="selected">数量を選択</option>
@@ -321,14 +113,49 @@
                                                 <option value="10" data-pref-id="10">10</option>
                                                 <label for="material_num1"></label>
                                             </select></span>
-                                        </div>
-                                    </dd>
-                                </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="material_text material_text1">
+                                        <input id="material_name2" class="input-text validate[required,maxSize[16]]" type="text" name="material_name2" placeholder="材料"  value="{{ old('material_name2') ? : $posts->materials->material_name2 }}">
+                                        <span><select id="material_num2" class="validate[required] material_num" name="material_num2" value="{{ old('material_num2') ? : $posts->materials_material_num2 }}">
+                                            <option value="" selected="selected">数量を選択</option>
+                                            <option value="1" data-pref-id="1">1</option>
+                                            <option value="2" data-pref-id="2">2</option>
+                                            <option value="3" data-pref-id="3">3</option>
+                                            <option value="4" data-pref-id="4">4</option>
+                                            <option value="5" data-pref-id="5">5</option>
+                                            <option value="6" data-pref-id="6">6</option>
+                                            <option value="7" data-pref-id="7">7</option>
+                                            <option value="8" data-pref-id="8">8</option>
+                                            <option value="9" data-pref-id="9">9</option>
+                                            <option value="10" data-pref-id="10">10</option>
+                                            <label for="material_num2"></label>
+                                        </select></span>
+                                    </div>
+                                        
+                                        
+                                
+                                </dd>
+                                @endforeach
+                            @else
+                                <input id="material_name1" class="input-text validate[required,maxSize[16]]" type="text" name="material_name1" placeholder="材料"  value="{{ old('material_name1') ? : $posts->materials->material_name1 }}">
+                                <span><select id="material_num1" class="validate[required] material_num" name="material_num1" value="{{ old('material_num1') ? : $posts->materials_material_num1 }}">
+                                    <option value="" selected="selected">数量を選択</option>
+                                    <option value="1" data-pref-id="1">1</option>
+                                    <option value="2" data-pref-id="2">2</option>
+                                    <option value="3" data-pref-id="3">3</option>
+                                    <option value="4" data-pref-id="4">4</option>
+                                    <option value="5" data-pref-id="5">5</option>
+                                    <option value="6" data-pref-id="6">6</option>
+                                    <option value="7" data-pref-id="7">7</option>
+                                    <option value="8" data-pref-id="8">8</option>
+                                    <option value="9" data-pref-id="9">9</option>
+                                    <option value="10" data-pref-id="10">10</option>
+                                    <label for="material_num1"></label>
+                                </select></span>
                             @endif
-
-
-
-                            
+                                        
                             
                             {{--  道具  --}}
                             <dt>

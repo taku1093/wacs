@@ -135,7 +135,7 @@
 
                                 {{--  ユーザアイコン  --}}
                                 <div class="card-icon">
-                                    <a  class="" href="#" >
+                                    <a  class="" href="{{ url('users/' .$post->user->id) }}" >
                                         @if ($post->user->user_icon == null)
                                             {{--  デフォルトアイコン  --}}
                                         <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image">
@@ -180,7 +180,6 @@
                                             件
                                         </p>
                                 </div>
-                                {{ $post->id }}
 
                                 {{--  フォロー  --}}
                                 <div class="card-follow">

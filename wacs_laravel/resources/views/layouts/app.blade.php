@@ -65,7 +65,7 @@
                         @endif
                             {{--  アカウント  --}}
                             <li class="nav-item ">
-                                <a  class=" " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a  class=" " href="{{ url('users/' .auth()->user()->id) }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     @if (auth()->user()->user_icon == null)
                                         {{--  デフォルトアイコン  --}}
                                     <img class="hf-img"src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" width="50" height="50">

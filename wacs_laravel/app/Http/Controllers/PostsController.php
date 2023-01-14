@@ -229,6 +229,7 @@ class PostsController extends Controller
 
         $validator->validate();
         $post->postStore($user->id, $data, $request);
+
         if($request->has("material_name1")){
             $material->materialStore($post->id, $data, $request);
         }
@@ -283,10 +284,10 @@ class PostsController extends Controller
      */
     public function edit(Post $post, Material $material)
     {
-        $material_id = $material->post_id;
         $user = auth()->user();
         $posts = $post->getEditPost($user->id, $post->id);
-        // $materials = $material->getEditMaterial($post->id, $post->materials->id);
+        $materials = $material->getEditMaterial($post->id);
+
 
         if (!isset($posts)) {
             return redirect('posts');
@@ -295,7 +296,7 @@ class PostsController extends Controller
         return view('posts.edit', [
             'user'   => $user,
             'posts' => $posts,
-            // 'materials' => $materials
+            'materials' => $materials
         ]);
     }
 
@@ -306,16 +307,34 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Post $post, Material $material, Tool $tool)
     {
         $data = $request->all();
+        $materials = $material->getEditMaterial($post->id);
+        
         $validator = Validator::make($data, [
-            'post_exp' => ['required', 'string', 'max:100']
+            'post_title' => ['required', 'string', 'max:30'],
+            'post_exp' => ['required', 'string', 'max:100'],
+            'method' => ['required', 'string', 'max:1000'],
         ]);
+
+        if($request->has("material_name1")){
+            $validator = Validator::make($data, [
+                'material_name1'=> ['required', 'string', 'max:20'],
+                // 'material_num1'  => ['required', 'integer', 'max:20'],
+            ]);
+    }
+    // $validator = Validator::make($data, [
+    //     'tool_name1'=> ['required', 'string', 'max:20'],
+    //     // 'material_num1'  => ['required', 'integer', 'max:20'],
+    // ]);
 
         $validator->validate();
         $post->postUpdate($post->id, $data);
-
+        // if($request->has("material_name1")){
+            $material->materialUpdate($material->id, $data);
+        // }
+        // $tool->toolUpdate($tool->id, $data);
         return redirect('posts');
     }
 

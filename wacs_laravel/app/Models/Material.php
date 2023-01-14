@@ -4,12 +4,17 @@ namespace App\Models;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\String_;
 
 class Material extends Model
 {
     //
+    use SoftDeletes;
+
     protected $fillable = [
-        'material_id',
+        // 'material_id',
         'material_name1',
         'material_name2',
         'material_name3',
@@ -117,10 +122,20 @@ class Material extends Model
                 return $this->with('post')->where('post_id', $material_id)->get();
         }
 
-        // 編集
-    public function getEditMaterial(Int $post_id, Int $material_id)
+        public function materialUpdate(Int $material_id, Array $data)
     {
-        return $this->where('post_id', $post_id)->where('id', $material_id)->first();
+        $this->id = $material_id;
+        
+        $this->material_name1 = $data['material_name1'];
+        $this->update();
+
+        return;
+    }
+
+        // 編集
+    public function getEditMaterial(Int $post_id)
+    {
+        return $this->where('post_id', $post_id)->first();
     }
 
 }

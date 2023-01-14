@@ -180,6 +180,7 @@
                                             件
                                         </p>
                                 </div>
+                                {{ $post->id }}
 
                                 {{--  フォロー  --}}
                                 <div class="card-follow">

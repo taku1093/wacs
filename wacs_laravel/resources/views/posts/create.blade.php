@@ -71,6 +71,7 @@
                     <dt>
                         <span id="addbutton">材料・数量</span>
                         <span id="reload"><button id="add_material" type="button">+ 追加</button></span>
+                        <span id="reload"><button id="delete_material" type="button">- 削除</button></span>
                         <br>
                             <span id="message_material"></span>
                         </br>
@@ -100,6 +101,7 @@
                     <dt>
                         <span id="addbutton">道具</span>
                         <span id="reload"><button id="add_tool" type="button">+ 追加</button></span>
+                        <span id="reload"><button id="delete_tool" type="button">- 削除</button></span>
                         <br>
                             <span id="message_tool"></span>
                         </br>

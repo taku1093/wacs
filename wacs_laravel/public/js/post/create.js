@@ -92,6 +92,24 @@ $(function () {
         }
     });
 
+    $('button#delete_material').click(function () {
+
+        if(view_count === 10 ){
+            $('#message_material').html('');
+        }
+
+        if(view_count !== 1 ){
+
+            num = num - 1;
+            view_count = view_count - 1;
+
+            var list_element = document.getElementById("material");
+            var remove_element = list_element.removeChild(list_element.lastChild);
+
+            imgView(num);
+        }
+    });
+
 });
 
 //テキスト 道具
@@ -101,6 +119,7 @@ $(function () {
 
 
     $('button#add_tool').click(function () {
+
 
         if(view_count === 10 ){
                 $('#message_tool').html('※ 追加フォームは' + view_count + '個までです。<br>');
@@ -115,8 +134,26 @@ $(function () {
                 '<input id="tool_name'+ num + '" class="input-text validate[required,maxSize[16]]" type="text" name="tool_name' + num + '" placeholder="道具">' +
                 '</div>'+
                 '</dd>';
-            $(tr_form).appendTo($('#tool'));
+            $(tr_form).appendTo($('#tool')); 
             //$('#reload').html('<input type="button" value="リロードする" onclick="window.location.reload();" /><br>');
+
+            imgView(num);
+        }
+    });
+
+    $('button#delete_tool').click(function () {
+
+        if(view_count === 10 ){
+            $('#message_tool').html('');
+        }
+
+        if(view_count !== 1 ){
+
+            num = num - 1;
+            view_count = view_count - 1;
+
+            var list_element = document.getElementById("tool");
+            var remove_element = list_element.removeChild(list_element.lastChild);
 
             imgView(num);
         }

@@ -6,8 +6,8 @@
     <title>アカウント登録 | WACS</title>
     <meta name="description" content="アカウントページです。">
     <meta name="viewport" content="width=device-width"> <!-- スマホ表示用 -->
-    {{--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="{{ asset('js/post/create.js') }}" type="text/javascript"></script>  --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ asset('js/post/create.js') }}" type="text/javascript"></script>
     <link href="./common.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -83,8 +83,8 @@
                                         
                                         @if (isset($posts->materials->material_name1))
                                             <input id="material_name1" class="input-text validate[required,maxSize[16]]" type="text" name="material_name1" placeholder="材料"  value="{{ old('material_name1') ? : $posts->materials->material_name1 }}">
-                                            <span><select id="material_num1" class="validate[required] material_num" name="material_num1" value="{{ old('material_num1') ? : $posts->materials_material_num1 }}">
-                                                <option value="" selected="selected">数量を選択</option>
+                                            <span><select id="material_num1" class="validate[required] material_num" name="material_num1" value="">
+                                                <option value="" selected="selected">{{ old('material_num1') ? : $posts->materials->material_num1 }}</option>
                                                 <option value="1" data-pref-id="1">1</option>
                                                 <option value="2" data-pref-id="2">2</option>
                                                 <option value="3" data-pref-id="3">3</option>

@@ -106,9 +106,11 @@ class QapostsController extends Controller
     /**
      * 編集実行
      */
-    public function update(QapostRequest $request)
+    public function update(QapostRequest $request, $id)
     {
+        $qapost = Qapost::findOrFail($id);
         $savedata = [
+            // 'id' => $id,
             'name' => $request->name,
             'subject' => $request->subject,
             'message' => $request->message,

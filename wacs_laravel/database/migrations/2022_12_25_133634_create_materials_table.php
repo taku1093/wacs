@@ -39,8 +39,11 @@ class CreateMaterialsTable extends Migration
             $table->integer('material_num9')->nullable()->comment('数量9');
             $table->integer('material_num10')->nullable()->comment('数量10個以上');
 
+            $table->softDeletes();
             $table->timestamps();
 
+            $table->index('id');
+            $table->index('post_id');
             // FK設定
             $table->foreign('post_id')//materialテーブルのpost_id
                 ->references('id')//postテーブルのpost_id

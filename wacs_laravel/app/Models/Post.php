@@ -125,7 +125,10 @@ class Post extends Model
     public function postUpdate(Int $post_id, Array $data)
     {
         $this->id = $post_id;
+        $this->post_title = $data['post_title'];
         $this->post_exp = $data['post_exp'];
+        $this->method = $data['method'];
+        // $this->materials->material_name1 = $data['material_name1'];
         $this->update();
 
         return;

@@ -17,6 +17,12 @@
     line-height: 25px;
 }
 
+.styled-button_p:hover {
+    background-color: #fff;
+    /* color: #1492AF; */
+    color: #f4dd64;
+}
+
 .pagetitle{
     padding-top: 120px;
     font-size: 25px;

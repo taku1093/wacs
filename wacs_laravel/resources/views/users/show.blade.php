@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HOME | WACS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- cssファイルの設定など -->
+    {{--  <link rel="stylesheet" type="text/css" href="{{ asset('css\thumne.css')}}">  --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\user\show.css')}}">
+    {{--  ハートマーク用  --}}
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    {{--  <link rel="stylesheet" href="{{ asset('./css/headder_fotter.css') }}">  --}}
+</head>
+<p class="pagetitle">投稿詳細</p>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mb-3">
@@ -62,57 +76,14 @@
             </div>
         </div>
         {{--  投稿関連  --}}
-        @if (isset($timelines))
-            @foreach ($timelines as $timeline)
-                <div class="col-md-8 mb-3">
-                    <div class="card">
-                        <div class="card-haeder p-3 w-100 d-flex" >
-                            <img src="{{ asset('storage/user_icon/' .$user->user_icon) }}" class="rounded-circle" width="50" height="50">
-                            <img src="{{ asset('storage/post_img/' .$timeline->post_img) }}" >
-                            <div class="ml-2 d-flex flex-column flex-grow-1">
-                                <p class="mb-0">{{ $timeline->user->user_screen_name }}</p>
-                                <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary">{{ $timeline->user->screen_name }}</a>
-                            </div>
-                            <div class="d-flex justify-content-end flex-grow-1">
-                                <p class="mb-0 text-secondary">{{ $timeline->created_at->format('Y-m-d H:i') }}</p>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            {{ $timeline->post_exp }}
-                        </div>
-                        <div class="card-footer py-1 d-flex justify-content-end bg-white">
-                            @if ($timeline->user->id === Auth::user()->id)
-                                <div class="dropdown mr-3 d-flex align-items-center">
-                                    <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-v fa-fw"></i>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <form method="POST" action="{{ url('Posts/' .$timeline->id) }}" class="mb-0">
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <a href="{{ url('Posts/' .$timeline->id .'/edit') }}" class="dropdown-item">編集</a>
-                                            <button type="submit" class="dropdown-item del-btn">削除</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            @endif
-                            <div class="mr-3 d-flex align-items-center">
-                                <a href="#"><i class="far fa-comment fa-fw"></i></a>
-                                <p class="mb-0 text-secondary">{{ count($timeline->comments) }}</p>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <a href="#"><i class="far fa-comment fa-fw"></i></a>
-                                <p class="mb-0 text-secondary">{{ count($timeline->favorites) }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        @endif
+        @extends('thumbnail')
+        @section('thumbnail')
     </div>
     <div class="my-4 d-flex justify-content-center">
         {{ $timelines->links() }}
     </div>
 </div>
+
+
+
 @endsection

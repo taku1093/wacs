@@ -66,6 +66,18 @@ class Tool extends Model
 
         return;
     }
+
+    public function toolUpdate(Int $tool_id, Array $data)
+    {
+        $this->id = $tool_id;
+        
+        $this->tool_name1 = $data['tool_name1'];
+        $this->update();
+
+        return;
+    }
+
+
     public function getTool(Int $tool_id)
     {
             return $this->with('post')->where('post_id', $tool_id)->get();

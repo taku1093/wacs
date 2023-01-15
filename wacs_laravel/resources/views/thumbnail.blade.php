@@ -55,14 +55,16 @@
                             <div class="flex">
                                 {{--  アイコン  --}}
                                 <div>
-                                    {{--  <img src="./icon/50.png" width="32" height="32">  --}}
-                                    @if ($timeline->user->user_icon == null)
-                                        {{--  デフォルトアイコン  --}}
-                                    <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image">
-                                    @else
-                                        {{--  任意のアイコン  --}}
-                                        <img src="{{ asset('storage/user_icon/' .$timeline->user->user_icon) }}" class="circle-image">
-                                    @endif
+                                    <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary">
+                                        {{--  <img src="./icon/50.png" width="32" height="32">  --}}
+                                        @if ($timeline->user->user_icon == null)
+                                            {{--  デフォルトアイコン  --}}
+                                        <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image">
+                                        @else
+                                            {{--  任意のアイコン  --}}
+                                            <img src="{{ asset('storage/user_icon/' .$timeline->user->user_icon) }}" class="circle-image">
+                                        @endif
+                                    </a>
                                 </div> <!--アイコン画像を丸く表示-->
 
                                 {{--  ユーザネーム  --}}
@@ -92,7 +94,7 @@
                             <div class="img_area">
                                 @if ($timeline->post_img1 == null)
                                 {{--  デフォルト画像表示  --}}
-                                    <img src="./img/DIY.jpg" class="img_position" alt="" width="300" height="200">
+                                    <img src="{{asset('img/DIY.jpg') }}" class="img_position" alt="" width="300" height="200">
                                 @else
                                 <img src="{{ asset('storage/post_img/' .$timeline->post_img1) }}" class="img_position" alt="" width="300" height="200">
                                 @endif

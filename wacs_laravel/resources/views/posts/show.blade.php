@@ -1,3 +1,5 @@
+{{ Breadcrumbs::render('show')}}
+
 @extends('layouts.app')
 
 @section('content')

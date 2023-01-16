@@ -39,7 +39,7 @@
 </head>
 {{--  ページタイトル  --}}
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-flex-start">
 
         {{--  投稿情報  --}}
         {{--  <p class="">TIME LINE</p>  --}}

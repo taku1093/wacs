@@ -49,6 +49,7 @@
                     
                     <dt><span id="addbutton">画像選択</span>
                         <span id="reload"><button id="add" type="button">+ 追加</button></span>
+                        <span id="reload"><button id="delete" type="button">- 削除</button></span>
                         <br>
                             <span id="message"></span>
                         </br>

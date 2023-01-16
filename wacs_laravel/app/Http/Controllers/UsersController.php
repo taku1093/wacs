@@ -52,6 +52,7 @@ class UsersController extends Controller
             $login_user = auth()->user();
             $is_following = $login_user->isFollowing($user->id);
             $is_followed = $login_user->isFollowed($user->id);
+            $is_good = $login_user->isGood($user->id);
             $timelines = $post->getUserTimeLine($user->id);
             $post_count = $post->getPostCount($user->id);
             $follow_count = $follower->getFollowCount($user->id);
@@ -62,6 +63,7 @@ class UsersController extends Controller
                 'user'           => $user,
                 'is_following'   => $is_following,
                 'is_followed'    => $is_followed,
+                'is_good'       => $is_good,
                 'timelines'      => $timelines,
                 'post_count'    => $post_count,
                 'follow_count'   => $follow_count,

@@ -75,6 +75,16 @@ class User extends Authenticatable
         return $this->hasMany(Evaluation::class);
     }
 
+    // public function posts()
+    // {
+    //     return $this->hasMany(Post::class);
+    // }
+
+    public function post_goods()
+    {
+        return $this->hasMany(Post_good::class);
+    }
+
     public function replies()
     {
         return $this->hasMany(Reply::class);
@@ -108,6 +118,12 @@ class User extends Authenticatable
     public function isFollowed(Int $user_id) 
     {
         return (boolean) $this->followers()->where('following_id', $user_id)->first(['id']);
+    }
+
+    // いいねしているか
+    public function isGood(Int $user_id) 
+    {
+        return (boolean) $this->post_goods()->where('user_id', $user_id)->get();
     }
 
     // マイページ編集

@@ -101,7 +101,7 @@
     margin-bottom: 15px;
 }
 
-.form-area #add, .form-area #add_material, .form-area #add_tool, .form-area #delete_material, .form-area #delete_tool{
+.form-area #add, .form-area #add_material, .form-area #add_tool, .form-area #delete_material, .form-area #delete_tool, .form-area #delete {
     background-color: #f4dd64;
     border: 2px solid #f4dd64;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
@@ -120,7 +120,7 @@
     cursor: pointer; /* マウスポインタの形状を指定 */
     
 }
-.form-area #add:hover, #add_material:hover, #add_tool:hover, #delete_material:hover, #delete_tool:hover {
+.form-area #add:hover, #add_material:hover, #add_tool:hover, #delete_material:hover, #delete_tool:hover, #delete:hover{
     background-color: #fff;
     /* color: #1492AF; */
     color: #f4dd64;
@@ -178,6 +178,23 @@
 }
 
 #delete_tool {
+    background-color: #f4dd64;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 50px;
+    line-height: 25px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    /* margin-top: 20px;
+    margin-bottom: 40px; */
+    cursor: pointer; /* マウスポインタの形状を指定 */
+    border: none;
+}
+
+#delete {
     background-color: #f4dd64;
     color: #fff;
     font-weight: bold;

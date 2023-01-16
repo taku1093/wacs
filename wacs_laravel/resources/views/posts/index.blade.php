@@ -14,6 +14,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+{{ Breadcrumbs::render('DIY_home') }}
+
 {{--  ページタイトル  --}}
 <p class="pagetitle">投稿一覧</p>
 <div class="container">

@@ -6,8 +6,11 @@
     <html>
     <head>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/sim_model.css') }}">
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
     </head>
   
     <body>
@@ -19,7 +22,7 @@
     "exposure"は露出の制御、明るさが変わる。
     "auto-rotate"は自動的に回転表示。
     poster="hoge.png"は、3Dが読み込まれるまで、画像のhoge.pngを表示する設定-->
-    <h2 class="pagetitle">四角い椅子</h2>
+    <h2 class="pagetitle">モデル</h2>
 
     <model-viewer 
       ar
@@ -35,20 +38,36 @@
       alt="" >
     </model-viewer>
 
+    <!--1. テキストを含む一般的なモーダル-->
+    <!-- <ul class="info-list">
+        <li> -->
+        <div class="info-list">
+            <a href="#info-1" class="info"><!--リンク先は表示させたいエリアのid名を指定-->
+                 <div class="AR_position"><button class="AR-button" type="button">AR</button></div>
+            </a>
+        </div>
+        <!-- </li>
+    </ul> -->
+    <section id="info-1" class="hide-area"><!--表示エリアのHTML。id名にリンク先と同じ名前を指定。非表示にするためhide-areaというクラス名も指定。-->
+        <h2 class="AR_title">AR用QRコード</h2>
+        <p class="AR_exp">以下のQRコードをスマートフォンで読み込んでください。</p>
+    <img class="QRcode" src="{{ asset('img/simulation/sikakuisuQR.png') }}" alt="QRコード">
+    </section>
+
     {{--  投稿情報  --}}
       <div class="model-info"> 
           {{--  タイトル・いいね  --}}
           <div class="card-header">
               <dl class="post-header">
                   {{--  投稿タイトル  --}}
-                  <dt class="title"><h1 class="mb-0">タイトル</h1></dt>
+                  <dt class="title"><h1 class="mb-0 res-mb-0">四角い青い椅子</h1></dt>
               </dl>
           </div>
 
           {{--  投稿説明  --}}
           <div class="card-exp">
               <h2>[説明]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">マクドナルドに置いてありそうな椅子の紹介をします。</p>
           </div>
 
           {{--  投稿材料  --}}
@@ -67,11 +86,21 @@
           {{--  投稿道具  --}}
           <div class="card-tool">
             <h2>[道具]</h2>
+            <p class="mb-0">
+                ・のこぎり<br>
+                ・インパクトドライバー<br>
+                ・定規<br>
+                ・
+            </p>
           </div>
 
           
       </div>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
+    <!--自作のJS-->
+    <script src="{{ asset('js/model_modaal.js') }}"></script>
 
     </body>
     </html>

@@ -38,15 +38,15 @@
                 <nav class="site-menu">
                     @auth
                         <!-- <a href="{{ url('/home') }}">ホーム</a> -->
-                        <ul>
+                        <!-- <ul>
                             <li><a href="./ranking.html" id="navline">ランキング</a></li>
                             <li><a href="./simulation.html" id="navline">シミュレーション</a></li>
-                            <li><a href="./rental.html" id="navline">レンタル</a></li>
+                            <li><a href="./rental.html" id="navline">レンタル</a></li> 
                             <li><a href="./community.html" id="navline">Q ＆ A</a></li>
                             <li><a href="{{ route('maintenance') }}"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
                             <li><a href="{{route('login')}}"><button class="styled-button" type="button">アイコン</button></a></li>
                             
-                        </ul>
+                        </ul> -->
                     @else
                         <!-- <a href="{{ route('login') }}">ログイン</a> -->
                         <ul>

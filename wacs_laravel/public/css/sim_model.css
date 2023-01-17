@@ -255,13 +255,13 @@ dl {
     display: flex;
     flex-wrap: wrap;
 }
-dl dt  {
+/* dl dt  {
     width: 40%;
 }
 
 dl dd {
     width: 60%;
-}
+} */
 
 dl dt.card-user {
     width: 20%;
@@ -324,36 +324,152 @@ p.mb-0, .post-header{
     padding-bottom: 10px;
 }
 
-
-
-/* ハート */
-.good-btn{
-    background-color: #fff;
-    border: #fff;
-}
-
-.like-btn {
-    width: 25px;
-    height: 30px;
-    font-size: 25px;
-    color: #808080; 
-    margin-left: 20px;
-    }
-
-.unlike-btn {
-    width: 25px;
-    height: 30px;
-    font-size: 25px;
-    color: #e54747;
-    margin-left: 20px;
-    }
-
 form.mb-0{
     padding-top: 5%;
 }
 
 
-
-
 /* 文字フォント */
 .text { font-family: "M PLUS Rounded 1c"; }
+
+/* ARボタン */
+.AR_position {
+    width: 1000px;
+    height: 70px;
+    background-color: #f8f8ff;
+    margin: 0 auto;
+}
+
+.AR-button {
+    background-color: #f4dd64;
+    border: 3px solid #f4dd64;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+    color: #fff;
+    width: 150px;
+    font-weight: bold;
+    display: inline-block;
+    font-weight: 700px;
+    padding: 10px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    border-radius: 24px;
+    line-height: 25px;
+    margin-left: 425px;
+    margin-bottom: 20px;
+}
+
+.AR-button:hover {
+    background-color: #fff;
+    /* color: #1492AF; */
+    color: #f4dd64;
+}
+
+/* モーダルウィンドウ */
+/*全て共通：hideエリアをはじめは非表示*/
+.hide-area{
+	display: none;
+}
+
+/*全て共通：モーダルのボタンの色を変更したい場合*/
+.modaal-close:after, 
+.modaal-close:before{
+	background:#ccc;	
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before{
+	background:#666;
+}
+
+.AR_title {
+    text-align: center;
+}
+
+.AR_exp {
+    text-align: center;
+}
+
+/* QRコード　*/
+.QRcode {
+    width: 200px;
+    margin-left: 368px;
+    margin-top: 20px;
+}
+
+/*  レスポンシブデザイン */
+@media screen and (max-width:480px) {
+ 
+	/*　画面サイズが480px以下の場合ここの記述が適用される　*/
+    model-viewer.main {
+        width: 390px;
+        height: 220px;
+        background-color: #f8f8ff;
+        margin: 0 auto;
+      }
+    
+    /* ARボタン */
+    .AR_position {
+        display: none;
+    }
+
+    .AR-button {
+        display: none;
+    }
+
+    .styled-button{
+        display: none;
+    }
+
+    .header-logo {
+        display: block; /*ロゴのサイズ指定をできるように*/
+        width: 100px;
+        margin-left: 100px;
+        pointer-events: none;
+    }
+
+    .footer-logo { /*フッターのロゴサイズを調整*/
+        display: none;
+    }
+
+    .model-info {
+        padding: 0;
+    }
+
+    p .mb-0 {
+        width: 200px;
+        margin: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 100%;
+    }
+
+    p.mb-0, .post-header{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 40px;
+    }
+
+    dl dt.title {
+        width: 100%;
+        /* height: 5%; */
+        /* padding: 1%; */
+    }
+    
+    .card-header::after, .card-exp::after, .card-material::after, .card-method::after, .card-tool::after{
+        content: '';
+        position: absolute;
+        left: 67%;
+        display: inline-block;
+        width: 85%;/*線の長さ*/
+        height: 5px;/*線の太さ*/
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-70%);/*位置調整*/
+        border-bottom:solid 3px  #ececec;
+        border-radius: 2px;/*線の丸み*/
+    }
+ 
+}

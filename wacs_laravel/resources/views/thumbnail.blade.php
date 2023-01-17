@@ -10,7 +10,7 @@
     {{--  ハートマーク用  --}}
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     {{--  <link rel="stylesheet" href="{{ asset('./css/headder_fotter.css') }}">  --}}
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    {{--  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <!--自作のJS-->
     <script>
@@ -23,10 +23,7 @@
     <script>
         (function () {
         document.addEventListener('DOMContentLoaded', function() { // HTML解析が終わったら
-        // var array_10 = [];
-        // for (var i = 1; i <= 10; i++) {
-        //   const btn = array_10.push(document.getElementById('dropdown__btn' + i)); // ボタンをidで取得
-        // }
+        
             const btn = document.getElementById('dropdown__btn1'); 
         if(btn) { // ボタンが存在しないときにエラーになるのを回避
             btn.addEventListener('click', function(){ //ボタンがクリックされたら
@@ -38,11 +35,11 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js" integrity="sha384-Qg00WFl9r0Xr6rUqNLv1ffTSSKEFFCDCKVyHZ+sVt8KuvG99nWw5RNvbhuKgif9z" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>  --}}
 </head>
 {{--  ページタイトル  --}}
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-flex-start">
 
         {{--  投稿情報  --}}
         {{--  <p class="">TIME LINE</p>  --}}

@@ -36,6 +36,24 @@ $(function () {
             }
         });
 
+        $('button#delete').click(function () {
+
+            if(view_count === 3 ){
+                $('#message').html('');
+            }
+    
+            if(view_count !== 1 ){
+    
+                num = num - 1;
+                view_count = view_count - 1;
+    
+                var list_element = document.getElementById("img");
+                var remove_element = list_element.removeChild(list_element.lastChild);
+    
+                imgView(num);
+            }
+        });
+
 });
 
 //テキスト 材料

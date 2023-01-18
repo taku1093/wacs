@@ -15,7 +15,7 @@
 
 @section('content')
 
-{{ Breadcrumbs::render('DIY_home') }}
+{{ Breadcrumbs::render('post_all') }}
 
 {{--  ページタイトル  --}}
 <p class="pagetitle">投稿一覧</p>

@@ -1,3 +1,5 @@
+{{ Breadcrumbs::render('post_create') }}
+
 @extends('layouts.app')
 
 @section('content')
@@ -34,10 +36,13 @@
     
 </head>
 
+
+
 <body>
 
     <main>
         <div class="post_create">
+        
             {{--  タイトル  --}}
             <div class="title_area">
                 <h2 class="title">DIY投稿</h2>

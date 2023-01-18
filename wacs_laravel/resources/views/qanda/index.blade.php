@@ -1,3 +1,5 @@
+{{ Breadcrumbs::render('QA') }}
+
 @extends('layouts.app')
 
 @extends('layouts.qandalayout')

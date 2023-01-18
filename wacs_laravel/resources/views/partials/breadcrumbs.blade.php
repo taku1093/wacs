@@ -1,4 +1,8 @@
+
+
 @unless ($breadcrumbs->isEmpty())
+
+
 
     <ol class="breadcrumb">
         @foreach ($breadcrumbs as $breadcrumb)
@@ -14,7 +18,7 @@
 
 @endunless
 
-<style>
+{{--  <style>
     
     .breadcrumb {
         position: relative;
@@ -43,4 +47,4 @@
         color: #6c757d;
     }
     
-</style>
+</style>  --}}

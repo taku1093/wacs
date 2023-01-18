@@ -314,17 +314,11 @@ h1{
 
 /*ここからプロフィール欄*/ 
 
-dl {
-  display: flex;
-  flex-wrap: wrap;
-}
-dl dd.sub-user-info   {
-  width: 40%;
-}
 
-dl dd.user-info {
-  width: 500%;
-}
+
+/* dl dd.user-info {
+  width: 50%;
+} */
 
 .border-bottom {
   border-bottom: 3px solid #f4dd64;
@@ -424,17 +418,28 @@ height:40px;
 
 .user-card-sub{
   position: relative;
-  top: 80px;
-  left: 60%;
+  top: 60px;
+  left: 28%;
 }
 
-.post-num{
+dl.user-card-sub {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+dl dd.post-num {
+  width: 30%;
+}
+
+/* .post-num{
   position:absolute;
   padding-top: 80px;
   
-}
+} */
+
 
 .user-text{
+  padding-top: 30px;
   font-size:35px;
 }
 

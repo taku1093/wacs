@@ -86,10 +86,22 @@
 
       {{--  投稿数など  --}}
       <div class="user-card-sub">
-        <div class="post-num">
-          <h2>投稿</h2>
-          <p class="user-text">46件</p>
-        </div>
+        <dl class="user-card-sub">
+          <dd class="post-num">
+            <h2>投稿</h2>
+            <p class="user-text">46件</p>
+          </dd>
+
+          <dd class="post-num">
+            <h2>フォロワー</h2>
+            <p class="user-text">46</p>
+          </dd>
+
+          <dd class="post-num">
+            <h2>フォロー中</h2>
+            <p class="user-text">46</p>
+          </dd>
+        </dl>
       </div>
 
     </div> 

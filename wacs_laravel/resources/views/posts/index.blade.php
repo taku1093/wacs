@@ -10,12 +10,13 @@
     {{--  ハートマーク用  --}}
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     {{--  <link rel="stylesheet" href="{{ asset('./css/headder_fotter.css') }}">  --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
 </head>
 @extends('layouts.app')
 
 @section('content')
 
-{{ Breadcrumbs::render('DIY_home') }}
+{{ Breadcrumbs::render('post_all') }}
 
 {{--  ページタイトル  --}}
 <p class="pagetitle">投稿一覧</p>

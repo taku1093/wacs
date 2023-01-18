@@ -49,6 +49,7 @@
      text-align:center;
      margin:20px 0 0 0;
      padding-right: 40px;
+     margin-left: 44px;
  }
  
  .slick-dots li {
@@ -79,9 +80,13 @@
     -webkit-text-fill-color: transparent; */
 }
  .moji{
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
     padding-top: 90px;
     padding-bottom: 50px;
+
 }
 
 .moji::after {
@@ -102,9 +107,14 @@ h2{
 h2:after{
     content: "";
     display: block;
-    height: 4px;
+    height: 3px;
     background: -webkit-linear-gradient(to right, rgb(255,186,115), #ffb2b2);
     background: linear-gradient(to right, rgb(255,186,115), #ffb2b2);
     margin: auto;
-    width: 150px;
+    width: 80px;
+}
+
+.slider img {
+    width: 100%;
+    height: 260px;
 }

@@ -1,3 +1,5 @@
+{{ Breadcrumbs::render('edit') }}
+
 @extends('layouts.app')
 
 @section('content')
@@ -13,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="{{ asset('css/post/create.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
 
 </head>
 <div class="container">

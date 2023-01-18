@@ -82,3 +82,18 @@ Route::resource('qacomment', 'QacommentsController', ['only' => ['store']]);
 //シミュレーション関連
     Route::get('simulation', 'SimulationController@index')->name('simulation');
     Route::get('simulation/model1', 'SimulationController@model1')->name('simu_model1');
+    Route::get('simulation/model2', 'SimulationController@model2')->name('simu_model2');
+    Route::get('simulation/model3', 'SimulationController@model3')->name('simu_model3');
+    Route::get('simulation/model4', 'SimulationController@model4')->name('simu_model4');
+    Route::get('simulation/model5', 'SimulationController@model5')->name('simu_model5');
+    Route::get('simulation/model6', 'SimulationController@model6')->name('simu_model6');
+    Route::get('simulation/model7', 'SimulationController@model7')->name('simu_model7');
+    Route::get('simulation/model8', 'SimulationController@model8')->name('simu_model8');
+    Route::get('simulation/model9', 'SimulationController@model9')->name('simu_model9');
+    Route::get('simulation/model10', 'SimulationController@model10')->name('simu_model10');
+    Route::get('simulation/model11', 'SimulationController@model11')->name('simu_model11');
+    Route::get('simulation/model12', 'SimulationController@model12')->name('simu_model12');
+    Route::get('simulation/model13', 'SimulationController@model13')->name('simu_model13');
+    Route::get('simulation/model14', 'SimulationController@model14')->name('simu_model14');
+    Route::get('simulation/model15', 'SimulationController@model15')->name('simu_model15');
+    Route::get('simulation/model16', 'SimulationController@model16')->name('simu_model16');

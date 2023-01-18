@@ -1,3 +1,5 @@
+{{ Breadcrumbs::render('post_create') }}
+
 @extends('layouts.app')
 
 @section('content')
@@ -14,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="{{ asset('css/post/create.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
     
 
     {{--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css" type="text/css"/>
@@ -34,10 +37,13 @@
     
 </head>
 
+
+
 <body>
 
     <main>
         <div class="post_create">
+        
             {{--  タイトル  --}}
             <div class="title_area">
                 <h2 class="title">DIY投稿</h2>

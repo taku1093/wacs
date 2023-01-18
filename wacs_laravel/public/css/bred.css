@@ -8,7 +8,7 @@
     list-style: none;
     background-color: #e9ecef;
     border-radius: .25rem;
-    padding-top: 50%;
+    /* padding-top: 50%; */
 }
 .breadcrumb-item {
     list-style: none;

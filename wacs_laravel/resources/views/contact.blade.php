@@ -14,11 +14,11 @@
         <meta name="description" content="アカウントページです。">
         <meta name="viewport" content="width=device-width"> <!-- スマホ表示用 -->
         <script src="./js/toggle-menu.js"></script>
-        <!-- <link href="./css/top_test.css" rel="stylesheet"> -->
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
         <link href="./css/contact.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
     </head>
 
     <body>

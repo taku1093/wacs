@@ -13,6 +13,7 @@
 
 <header>
     <link rel="stylesheet" type="text/css" href="{{ asset('css\qanda\index.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
 </header>
 {{--  ページタイトル  --}}
 <p class="pagetitle">Q&A</p>

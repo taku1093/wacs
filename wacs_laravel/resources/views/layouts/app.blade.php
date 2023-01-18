@@ -55,10 +55,11 @@
                             {{--  <li><a href="{{ url('posts') }}"><button class="styled-button_t" type="button">ツイート一覧</button></a></li>  --}}
                         
                         @else 
-                            {{--  ログイン時表示  --}}                            
+                            {{--  ログイン時表示  --}}
+                            <li><a href="{{ route('DIY_home') }}" id="navline">ホーム</a></li>
                             <li><a href="./ranking.html" id="navline">ランキング</a></li>
                             <li><a href="{{ route('simulation') }}" id="navline">シミュレーション</a></li>
-                            <li><a href="./rental.html" id="navline">レンタル</a></li>
+                            <!-- <li><a href="./rental.html" id="navline">レンタル</a></li> -->
                             <li><a href="{{ url('qanda') }}" id="navline">Q & A</a></li>
                             <li><a href="{{ route('contact') }}"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
                             <li><a href="{{ url('posts/create') }}"><button class="styled-button_t" type="button">新規投稿</button></a></li>
@@ -125,13 +126,16 @@
                 @if (Route::has('login'))
                     <nav class="site-menu">
                         @auth
+                            @if (Request::is('/')) 
+                            @else 
                             <ul>
-                                <li><a href="./ranking.html" id="">ランキング</a></li>
-                                <li><a href="{{ route('simulation') }}" id="">シミュレーション</a></li>
-                                <!-- <li><a href="./rental.html" id="">レンタル</a></li> -->
-                                <li><a href="./community.html" id="">Q & A</a></li>
+                                <li><a href="{{ route('DIY_home') }}" id="navline">ホーム</a></li>
+                                <li><a href="./ranking.html" id="navline">ランキング</a></li>
+                                <li><a href="{{ route('simulation') }}" id="navline">シミュレーション</a></li>
+                                <!-- <li><a href="./rental.html" id="navline">レンタル</a></li> -->
+                                <li><a href="{{ url('qanda') }}" id="navline">Q & A</a></li>
                             </ul>
-                        @else
+                            @endif
                         @endauth
                     </nav>
                 @endif

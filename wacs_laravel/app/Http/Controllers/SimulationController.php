@@ -9,6 +9,10 @@ class SimulationController extends Controller
     //
     public function index()
     {
-        return view('simulation.AR_test');
+        return view('simulation.simulation_list');
+    }
+
+    public function model1() {
+        return view('simulation.model1');
     }
 }

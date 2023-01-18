@@ -18,36 +18,19 @@ a { /*リンクの文字色と下線を無くす*/
     text-decoration: none;
 }
 
+html {
+  overflow-x: hidden; /*横スクロールを禁止する*/
+}
+
 body {
     font-family: sans-serif; /*サンセリフ体*/
     font-size: 16px;
     color: #000000;
     line-height: 1;
     background-color: #ffffff;
-    /* padding-top: 110px; */
+    padding-top: 110px; /*ヘッダー・フッターを入れる際にはここを調整する*/
+    padding-bottom: 0;
 }
-
-/* header {
-    background: #ffffff; 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05); 
-    z-index: 9999;
-}  */
-
-/*.header-inner {
-    max-width: 1200px;
-    height: 110px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 10px; 
-    padding-right: 10px;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-} */
 
 .toggle-menu-button {
     display: none;
@@ -173,7 +156,7 @@ body {
       color: black;                   /* タブの文字色：黒色 */
       background-color: #e0e0e0;      /* タブの(非選択状態の)背景色：灰色 */
       height: auto;
-      width: calc((100% / 4) - 4.1px);/* タブの位置 */
+      width: calc(calc(100% / 4) - 4.1px);/* タブの位置 */
       margin-bottom: 0;
    }
 
@@ -223,8 +206,6 @@ body {
 
   /*
   ここから中のスクロール領域
-  ここから中のスクロール領域
-  ここから中のスクロール領域
   コンテンツ幅を設定するための共通クラス
   */
 
@@ -255,8 +236,6 @@ body {
   }
 
   /*
-  ここから投稿欄
-  ここから投稿欄
   ここから投稿欄
   コンテンツ幅を設定するための共通クラス
   */
@@ -418,8 +397,6 @@ body {
 
   
   /*ここからプロフィール欄*/ 
-  /*ここからプロフィール欄*/  
-  /*ここからプロフィール欄*/
 
   .border-bottom {
     border-bottom: 3px solid #f4dd64;
@@ -601,63 +578,53 @@ body {
     display: none;
 }
 
-/* .menu-content {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 80;
-    background-color: #3584bb;
-} */
+.menu-content {
+  width: 20%;
+  height: 38%;
+  top: 310px;
+  right: -382px;
+  position:absolute;
+  z-index: 80;
+  background-color: #3584bb;
+  transition: all 0.5s;/*アニメーション設定*/
+}
+
+#menu-btn-check:checked ~ .menu-content {
+  left: 80%;/*メニューを画面内へ*/
+}
+
 .menu-content ul {
     padding: 70px 10px 0;
 }
+
 .menu-content ul li {
     border-bottom: solid 1px #ffffff;
     list-style: none;
 }
+
 .menu-content ul li a {
     display: block;
-    width: 100%;
-    font-size: 15px;
+    width: 95%;
+    font-size: 16px;
     box-sizing: border-box;
     color:#ffffff;
     text-decoration: none;
-    padding: 9px 15px 10px 0;
+    padding: 25px 0 25px 0;
     position: relative;
 }
 .menu-content ul li a::before {
     content: "";
-    width: 7px;
-    height: 7px;
+    width: 10px;
+    height: 10px;
     border-top: solid 2px #ffffff;
     border-right: solid 2px #ffffff;
     transform: rotate(45deg);
     position: absolute;
-    right: 11px;
-    top: 16px;
+    right: 0;
+    top: 28px;
 }
-
-.menu-content {
-    width: 100%;
-    height: 50%;
-    /* top: 200px; */
-    left: 100%;/*leftの値を変更してメニューを画面外へ*/
-    position:absolute;
-    z-index: 80;
-    background-color: #3584bb;
-    transition: all 0.5s;/*アニメーション設定*/
-}
-
-#menu-btn-check:checked ~ .menu-content {
-    left: 70%;/*メニューを画面内へ*/
-}
-
 
   /*ここからフォローボタン*/
-  /*ここからフォローボタン*/ 
-  /*ここからフォローボタン*/ 
 
 p.folow {
   margin-left:auto;   /*一旦右寄せ*/ 
@@ -741,24 +708,3 @@ p.folow {
         button.more.on-click::after{
         content: "閉じる";
         }
-
-        .pagetitle{
-          padding-top: 180px;
-          font-size: 25px;
-          font-weight: bold;
-          line-height: 30px;
-          text-align: center;
-          padding-bottom: 50px;
-          }
-          
-      .pagetitle::after {
-          content: '';
-          display: block;
-          width: 76px;
-          height: 3px;
-          background-color: #f4dd64;
-          margin-top: 20px;
-          margin-left: auto;
-          margin-right: auto;
-          }
-      

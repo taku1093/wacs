@@ -18,7 +18,7 @@
     {{--  椅子  --}}
     <h2 style="text-align:center">Chair</h2>
     <ul class="slider">
-        <li><a href="{{ route('simulation') }}"><img  src="img/simulation/sikakuisu.jpg" alt=""></a></li>
+        <li><a href="{{ route('simu_model1') }}"><img  src="img/simulation/sikakuisu.jpg" alt=""></a></li>
         <li><img  src="img/simulation/sikakuisu.jpg" alt=""></li>
         <li><img  src="img/simulation/sikakuisu.jpg" alt=""></li>
         <li><img  src="img/simulation/sikakuisu.jpg" alt=""></li>

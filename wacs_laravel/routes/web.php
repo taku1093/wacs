@@ -67,8 +67,7 @@ Route::group(['middleware' => 'auth'], function() {
     // いいね関連
     Route::resource('post_goods', 'Post_goodsController', ['only' => ['store', 'destroy']]);
 
-    //シミュレーション関連
-    Route::get('simulation', 'SimulationController@index')->name('simulation');
+    
 });
 
 //Q&A
@@ -79,3 +78,7 @@ Route::resource('qanda', 'QapostsController', ['only' => ['index', 'show', 'crea
 
 //コメント(Q&A)
 Route::resource('qacomment', 'QacommentsController', ['only' => ['store']]);
+
+//シミュレーション関連
+    Route::get('simulation', 'SimulationController@index')->name('simulation');
+    Route::get('simulation/model1', 'SimulationController@model1')->name('simu_model1');

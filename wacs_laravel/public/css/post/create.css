@@ -245,6 +245,7 @@
     height: 260px;
     padding: 10px;
     line-height: 1.5; /* 行間を広く */
+    resize: none;
 }
 
 /* 投稿・キャンセルボタン */

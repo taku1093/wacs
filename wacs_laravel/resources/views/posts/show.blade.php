@@ -170,18 +170,18 @@
 
                                 {{--  投稿数  --}}
                                 <div class="card-post_num">
-                                        <p>
-                                            投稿数
-                                            @foreach ($post_count as $post_count)
-                                                @if($post->user->id === $post_count->user_id)
-                                                    {{$post_count->count_post}}
+                                    <p>
+                                        投稿数
+                                        @foreach ($post_count as $post_count)
+                                            @if($post->user->id === $post_count->user_id)
+                                                {{$post_count->count_post}}
 
-                                                    {{--  確認用  --}}
-                                                    {{--  <p>{{$post_count}}</p>  --}}
-                                                @endif
-                                            @endforeach
-                                            件
-                                        </p>
+                                                {{--  確認用  --}}
+                                                {{--  <p>{{$post_count}}</p>  --}}
+                                            @endif
+                                        @endforeach
+                                        件
+                                    </p>
                                 </div>
 
                                 {{--  フォロー  --}}

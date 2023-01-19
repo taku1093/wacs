@@ -10,9 +10,14 @@
     border-radius: .25rem;
     /* padding-top: 50%; */
 }
+
 .breadcrumb-item {
     list-style: none;
     margin-left: 12px;
+}
+
+.breadcrumb-item:hover{
+    text-decoration: underline;
 }
 
 .breadcrumb-item+.breadcrumb-item::before {
@@ -24,4 +29,5 @@
 
 .breadcrumb-item.active {
     color: #6c757d;
+    text-decoration: none;
 }

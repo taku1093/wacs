@@ -123,12 +123,14 @@
     height: 260px;
     padding: 10px;
     line-height: 1.5; /* 行間を広く */
+    resize: none;
 }
 
 .confirm-text {
     font-size: 14px;
     line-height: 22px;
     margin-top: 30px;
+    text-align: right;
 }
 
 .submit-button {
@@ -142,11 +144,18 @@
     text-align: center;
     margin-top: 20px;
     cursor: pointer; /* マウスポインタの形状を指定 */
-    border: none;
+    border: 3px solid #f4dd64;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+    color: #fff;
+    transition: .3s;
+    font-weight: bold;
+    font-weight: 700px;
+    text-decoration: none;
 }
 
 .submit-button:hover {
-    background-color: #d8b500;
+    background-color: #fff;
+    color: #f4dd64;
 }
 
 .footer {
@@ -174,3 +183,8 @@
         width: 100%;
     }
 }
+
+.cen {
+    width: 100%;
+    text-align: right;
+  }

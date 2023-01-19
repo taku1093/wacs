@@ -74,11 +74,11 @@
 
  /*==========================その他のCSS==================================================*/
 
-  .backgroundImage{
+  /* .backgroundImage{
     /* background-image: url('public/img/simulation/wood.jpg'); */
     /* -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-}
+    -webkit-text-fill-color: transparent; 
+} */
  .moji{
     font-size: 25px;
     font-weight: bold;

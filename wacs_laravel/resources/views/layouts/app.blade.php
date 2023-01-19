@@ -129,11 +129,11 @@
                             @if (Request::is('/')) 
                             @else 
                             <ul>
-                                <li><a href="{{ route('DIY_home') }}" id="navline">ホーム</a></li>
-                                <li><a href="./ranking.html" id="navline">ランキング</a></li>
-                                <li><a href="{{ route('simulation') }}" id="navline">シミュレーション</a></li>
+                                <li><a href="{{ route('DIY_home') }}" id="navline-f">ホーム</a></li>
+                                <li><a href="./ranking.html" id="navline-f">ランキング</a></li>
+                                <li><a href="{{ route('simulation') }}" id="navline-f">シミュレーション</a></li>
                                 <!-- <li><a href="./rental.html" id="navline">レンタル</a></li> -->
-                                <li><a href="{{ url('qanda') }}" id="navline">Q & A</a></li>
+                                <li><a href="{{ url('qanda') }}" id="navline-f">Q & A</a></li>
                             </ul>
                             @endif
                         @endauth

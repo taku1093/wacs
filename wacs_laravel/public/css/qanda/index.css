@@ -26,3 +26,60 @@
         margin-right: auto;
         margin-left: auto;
     }
+
+    .QA_create {
+    
+        background-color: dodgerblue;
+        border: 3px solid dodgerblue;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+        color: #fff;
+        font-weight: bold;
+        display: inline-block;
+        font-weight: 700px;
+        padding: 10px 20px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        transition: .3s;
+        border-radius: 24px;
+        line-height: 5px;
+    }
+    
+    .QA_create:hover {
+        background-color: #fff;
+        color: dodgerblue;
+    }
+
+    .serch_area {
+        padding-top: 2%;
+    }
+
+    .form-inline {
+        display: flex;
+    }
+
+    .form-group {
+        height: 30px;
+    }
+
+    .form-control {
+        height: 30px;
+    }
+
+    .serch_btn {
+        background-color: rgb(25, 122, 108);
+        border: 3px solid rgb(25, 122, 108);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+        color: #fff;
+        width: 40px;
+        margin-left: 10px;
+    }
+
+    .serch_result {
+        padding-top: 2%;
+    }
+
+    .pagination {
+        display: flex;
+        text-align: center;
+    }

@@ -127,9 +127,6 @@
                         </div>
             @endforeach
         @endif
-
-
-        
         <main class="py-4">
             @yield('thumbnail')
         </main>

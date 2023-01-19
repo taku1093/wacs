@@ -60,7 +60,9 @@
                         <dd><textarea class="message" name="message" required></textarea></dd>
                     </dl>
                     <p class="confirm-text">ご入力内容をご確認の上、お間違いがなければ [送信] ボタンを押してください。</p>
-                    <button class="submit-button" type="submit">送信</button>
+                    <div class="cen">
+                        <button class="submit-button" type="submit">送信</button>
+                    </div>
                 </form>
             </div>
         </main>

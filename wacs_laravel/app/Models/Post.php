@@ -64,6 +64,12 @@ class Post extends Model
         return $this->where('user_id', $user_id)->orderBy('created_at', 'DESC')->paginate(50);
     }
 
+    // 言い値した投稿取得
+    public function getUsergoodTimeLine(Array $user_id)
+    {
+        return $this->whereIn('user_id', $user_id)->orderBy('created_at', 'DESC')->get();
+    }
+
     public function getPostCount(Int $user_id)
     {
         return $this->where('user_id', $user_id)->count();

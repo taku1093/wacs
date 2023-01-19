@@ -14,6 +14,12 @@ class Post_good extends Model
         return $this->belongsTo(Post::class);
     }
 
+    // いいねユーザ取得
+    public function goodIds(Int $user_id)
+    {
+        return $this->where('user_id', $user_id)->get();
+    }
+
      // いいねしているかどうかの判定処理
     public function isPost_good(Int $user_id, Int $post_id) 
     {

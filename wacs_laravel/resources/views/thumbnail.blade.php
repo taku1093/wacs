@@ -27,7 +27,7 @@
 
 
 <div class="container">
-    <div class="row justify-content-flex-start">
+    <div class="row">
 
         {{--  投稿情報  --}}
         {{--  <p class="">TIME LINE</p>  --}}
@@ -93,8 +93,8 @@
                                                     @csrf
 
                                                     <input type="hidden" name="post_id" value="{{ $timeline->id }}">
+                                                    <div class="wowo">
                                                     <button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline->post_goods) }}</button>
-
                                                 </form>
                                                 
 
@@ -127,6 +127,9 @@
                         </div>
             @endforeach
         @endif
+
+
+        
         <main class="py-4">
             @yield('thumbnail')
         </main>

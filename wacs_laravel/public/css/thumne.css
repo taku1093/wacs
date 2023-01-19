@@ -218,24 +218,5 @@ a:hover {
 a:hover::after{
   width: 50%;
 } */
-
-.sub_title_rank {
-  font-size: 25px;
-  font-weight: bold;
-  line-height: 30px;
-  text-align: center;
-}
-
-.sub_title_rank::after {
-content: '';
-display: block;
-width: 76px;
-height: 3px;
-background-color: #f4dd64;
-margin-top: 10px;
-margin-bottom: 40px;
-margin-left: auto;
-margin-right: auto;
-}
  
 

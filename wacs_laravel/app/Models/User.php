@@ -111,13 +111,13 @@ class User extends Authenticatable
     // フォローしているか
     public function isFollowing(Int $user_id) 
     {
-        return (boolean) $this->follows()->where('followed_id', $user_id)->first(['id']);
+        return (boolean) $this->follows()->where('followed_id', $user_id)->first();
     }
 
     // フォローされているか
     public function isFollowed(Int $user_id) 
     {
-        return (boolean) $this->followers()->where('following_id', $user_id)->first(['id']);
+        return (boolean) $this->followers()->where('following_id', $user_id)->first();
     }
 
     // いいねしているか
@@ -125,6 +125,12 @@ class User extends Authenticatable
     {
         return (boolean) $this->post_goods()->where('user_id', $user_id)->get();
     }
+
+    // フォローユーザ情報取得
+    public function getUserInfo(Int $user_id, Array $following_ids){
+        // $following_ids[] = $user_id;
+        return $this->whereIn('id', $following_ids)->orderBy('created_at', 'DESC')->get();
+    } 
 
     // マイページ編集
     public function updateProfile(Array $params)
@@ -149,5 +155,10 @@ class User extends Authenticatable
         }
 
         return;
+    }
+
+    public function userDestroy(Int $user_id)
+    {
+        return $this->where('id', $user_id)->delete();
     }
 }

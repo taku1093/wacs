@@ -56,281 +56,361 @@ body {
     line-height: 45.5px;
 }
 
-/* ここからタブ */
-/* ここからタブ */
-/* ここからタブ */
-p#vw {
-          font-size: 1.5vw;          /* 横幅のウィンドウサイズの1.5％に対する文字サイズへ随時変更 */
-      }
+/* #navline {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+} */
 
-.character {
-  text-align: center;
+/* #navline::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: #ee7800;
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: transform .3s;
+} */
+
+/* #navline:hover::after {
+    transform: scale(1, 1);
+} */
+
+/* .footer {
+    color: #ffffff;
+    background-color: #24211b;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+} */
+
+/* .footer-logo { 
+    display: block;
+    width: 235px;
+    margin-top: 90px;
+} */
+
+/* .footer-tel {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 28px;
+} */
+
+/* .footer-name {
+    font-size: 13px;
+    margin-top: 16px;
+} */
+
+/* .copyright {
+    font-size: 14px;
+    /* font-weight: bold; 
+    margin-top: 90px;
+} */
+
+/* ログイン・お問い合わせボタンのデザイン */
+/* .styled-button {
+    /* background-color: #1492AF;
+    border: 3px solid #1492AF; 
+    background-color: #f4dd64;
+    border: 3px solid #f4dd64;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    padding: 10px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
 }
 
-  .tab {
-    display: inline-block;          /* インラインブロック化 */
-    border-width: 1px 1px 0px 1px;  /* 上側と左右に枠線を引く */
-    border-color: black;            /* 枠線の色は「黒」 */
-    border-radius: 0.75em 0.75em 0px 0px;  /* 左上と右上の角だけを丸くする */
-    padding: 2.5em 6vw;             /* 内側の余白量 */
-    font-weight: bold;              /* タブの文字を太字にする */
-    color: black;                   /* タブの文字色：黒色 */
-    background-color: #e0e0e0;      /* タブの(非選択状態の)背景色：灰色 */
-    height: auto;
-    width: calc(calc(100% / 4) - 4.1px);/* タブの位置 */
-    margin-bottom: 0;
+.styled-button:hover {
+    background-color: #fff;
+    /* color: #1492AF; 
+    color: #f4dd64;
+} */
+
+/* ここからタブ */
+/* ここからタブ */
+/* ここからタブ */
+  p#vw {
+            font-size: 1.5vw;          /* 横幅のウィンドウサイズの1.5％に対する文字サイズへ随時変更 */
+        }
+
+  .character {
+    text-align: center;
   }
+
+   .tab {
+      display: inline-block;          /* インラインブロック化 */
+      border-width: 1px 1px 0px 1px;  /* 上側と左右に枠線を引く */
+      border-color: black;            /* 枠線の色は「黒」 */
+      border-radius: 0.75em 0.75em 0px 0px;  /* 左上と右上の角だけを丸くする */
+      padding: 2.5em 6vw;             /* 内側の余白量 */
+      font-weight: bold;              /* タブの文字を太字にする */
+      color: black;                   /* タブの文字色：黒色 */
+      background-color: #e0e0e0;      /* タブの(非選択状態の)背景色：灰色 */
+      height: auto;
+      width: calc(calc(100% / 4) - 4.1px);/* タブの位置 */
+      margin-bottom: 0;
+   }
 
    /* ▼タブにマウスポインタが載った際の装飾 */
+   /* .tab:hover {
+      color: black;                /* タブの文字色：緑色 */
+      /*background-color: #f4ed64;   /* タブの背景色：淡い緑色 */
+      /*cursor: pointer;             /* マウスポインタの形状を「指(指し示す形)」にする */
+   /*} */
 
    /* ▼選択状態のタブ(＝チェックが入っているラジオボタンの隣にあるタブの装飾) */
-  input:checked + .tab {
-    color: red;                  /* タブの文字色：赤色 */
-    background-color: #f4dd64;   /* タブの背景色：淡い黄色 */
-  }
+   input:checked + .tab {
+      color: red;                  /* タブの文字色：赤色 */
+      background-color: #f4dd64;   /* タブの背景色：淡い黄色 */
+   }
 
   /* ▼タブ機能を制御するラジオボタン(非表示にする) */
   .tabbox input { display: none; }
 
    /* ▼タブの中身(共通装飾＋非選択状態の装飾) */
-  .tabcontent {
-    display: none;             /* 標準では非表示にする */
-    /*border: 1px solid black;   /* 枠線を引く：黒色で1ピクセルの実線 */
-    padding: 1em;              /* 内側の余白量 */
-    background-color: #f4dd64; /* 背景色：淡い黄色(※選択中のタブの背景色と合わせます) */
-  }
+   .tabcontent {
+      display: none;             /* 標準では非表示にする */
+      /*border: 1px solid black;   /* 枠線を引く：黒色で1ピクセルの実線 */
+      padding: 1em;              /* 内側の余白量 */
+      background-color: #f4dd64; /* 背景色：淡い黄色(※選択中のタブの背景色と合わせます) */
+   }
 
    /* ▼チェックが入っているラジオボタンに対応するタブの中身を表示する */
-  #tabcheck1:checked ~ #tabcontent1 { display: block; }
-  #tabcheck2:checked ~ #tabcontent2 { display: block; }
-  #tabcheck3:checked ~ #tabcontent3 { display: block; }
-  #tabcheck4:checked ~ #tabcontent4 { display: block; }
+   #tabcheck1:checked ~ #tabcontent1 { display: block; }
+   #tabcheck2:checked ~ #tabcontent2 { display: block; }
+   #tabcheck3:checked ~ #tabcontent3 { display: block; }
+   #tabcheck4:checked ~ #tabcontent4 { display: block; }
 
    /* ▼チェックが入っているラジオボタンの隣にあるタブの装飾(＝選択状態のタブ) */
-input:checked + .tab {
-  z-index: 10;         /* ※2A */
-  position: relative;  /* ※3 */
-}
+   input:checked + .tab {
+      z-index: 10;         /* ※2A */
+      position: relative;  /* ※3 */
+   }
 
 
    /* ▼タブの中身(共通装飾＋非選択状態の装飾) */
-.tabcontent {
-  margin-top: -1px;    /* ※1 */
-  z-index: 0;          /* ※2B */
-  position: relative;  /* ※3 */
-}
+   .tabcontent {
+      margin-top: -1px;    /* ※1 */
+      z-index: 0;          /* ※2B */
+      position: relative;  /* ※3 */
+   }
 
   /*
   ここから中のスクロール領域
   コンテンツ幅を設定するための共通クラス
   */
 
-h1{
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+  h1{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
-.infobox {
-    height: auto;               /* 高さを制限(※) */
-    width: calc(100% - 500px);
-    overflow: auto;             /* 横のみにスクロール付与 */
-    border: 1px solid black;    /* 枠線を引く：黒色で1ピクセルの実線 */
-    background-color: #ffffff;  /* 背景色を追加 */
-    font-size:30px;
-    border-radius: 24px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .infobox {
+     height: auto;               /* 高さを制限(※) */
+     width: calc(100% - 500px);
+     overflow: auto;             /* 横のみにスクロール付与 */
+     border: 1px solid black;    /* 枠線を引く：黒色で1ピクセルの実線 */
+     background-color: #ffffff;  /* 背景色を追加 */
+     font-size:30px;
+     border-radius: 24px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.imgposition{
-  margin-left: 30px;
-  margin-top: 20px;
-  width: 30px;                /* 画像の大きさ*/
-  height: 30px;
-  border-radius: 50%;         /* 角丸半径を50%にする(=円形にする) */
-}
+  .imgposition{
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 30px;                /* 画像の大きさ*/
+    height: 30px;
+    border-radius: 50%;         /* 角丸半径を50%にする(=円形にする) */
+  }
+
+
 
   /*
   ここから投稿欄
   コンテンツ幅を設定するための共通クラス
   */
-.wrapper {
-  width: 100%;
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
+  .wrapper {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
 
-#top {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+  #top {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 
-.product-list {
-  display: flex;              /* 四角を横並び */
-  flex-wrap: wrap;            /* 四角を折り返す */
-  justify-content: start;     /* 四角を右詰めにする */
-}
+  .product-list {
+    display: flex;              /* 四角を横並び */
+    flex-wrap: wrap;            /* 四角を折り返す */
+    justify-content: start;     /* 四角を右詰めにする */
+  }
 
-.product-list li {
-  width: 32%;
-  margin-bottom: 30px;
-  background-color: #ffffff;   /* 背景色を追加 */
-  border: 0.1px solid black;   /* 枠線を引く：黒色で1ピクセルの実線 */
-  margin: 5px;                   /* 四角同士の間隔 */
-  box-shadow: 0 0 50px #ccc inset;  /* 影 */
-  position: relative;
-  text-align: center;
-}
+  .product-list li {
+    width: 32%;
+    margin-bottom: 30px;
+    background-color: #ffffff;   /* 背景色を追加 */
+    border: 0.1px solid black;   /* 枠線を引く：黒色で1ピクセルの実線 */
+    margin: 5px;                   /* 四角同士の間隔 */
+    box-shadow: 0 0 50px #ccc inset;  /* 影 */
+    position: relative;
+    text-align: center;
+  }
 
   /*
   vertical-align: top;
   画像の下にできる隙間を消す
   */
 
-.product-list img {         /* 投稿一覧画像設定 */
-  margin-bottom: 20px;
-  width: 50%;               /*img要素の最大値*/
-}
-
-
-#g-nav{
-  /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
-  position:fixed;
-  z-index: -1;
-  opacity: 0;/*はじめは透過0*/
-  /*ナビの位置と形状*/
-  top:0;
-  width:100%;
-  height: 100vh;/*ナビの高さ*/
-  background:#999;
-  /*動き*/
-  transition: all 0.3s;
-}
-
-/*アクティブクラスがついたら透過なしにして最前面へ*/
-#g-nav.panelactive{
-  opacity: 1;
-  z-index:999;
-}
-
-/*ナビゲーションの縦スクロール*/
-#g-nav.panelactive #g-nav-list{
-  /*ナビの数が増えた場合縦スクロール*/
-  position: fixed;
-  z-index: 999; 
-  width: 100%;
-  height: 100vh;/*表示する高さ*/
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-/*ナビゲーション*/
-#g-nav ul {
-    display: none;
-    /*ナビゲーション天地中央揃え*/
-    position: absolute;
-    z-index: 999;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-}
-
-#g-nav.panelactive ul {
-    display: block;
-}
-
-/*リストのレイアウト設定*/
-
-#g-nav li{
-  list-style: none;
-    text-align: center; 
-}
-
-#g-nav li a{
-  color: #333;
-  text-decoration: none;
-  padding:10px;
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: bold;
-}
-
-/*========= ボタンのためのCSS ===============*/
-.openbtn1{
-  position:fixed;
-  z-index: 9999;/*ボタンを最前面に*/
-  top:10px;
-  right: 10px;
-  cursor: pointer;
-  width: 50px;
-  height:50px;
-}
-
-/*×に変化*/  
-.openbtn1 span{
-    display: inline-block;
-    transition: all .4s;
-    position: absolute;
-    left: 14px;
-    height: 3px;
-    border-radius: 2px;
-    background-color: #666;
-    width: 45%;
+  .product-list img {         /* 投稿一覧画像設定 */
+    margin-bottom: 20px;
+    width: 50%;               /*img要素の最大値*/
   }
 
-.openbtn1 span:nth-of-type(1) {
-  top:15px; 
-}
 
-.openbtn1 span:nth-of-type(2) {
-  top:23px;
-}
+  #g-nav{
+    /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
+    position:fixed;
+    z-index: -1;
+    opacity: 0;/*はじめは透過0*/
+    /*ナビの位置と形状*/
+    top:0;
+    width:100%;
+    height: 100vh;/*ナビの高さ*/
+    background:#999;
+    /*動き*/
+    transition: all 0.3s;
+  }
 
-.openbtn1 span:nth-of-type(3) {
-  top:31px;
-}
+  /*アクティブクラスがついたら透過なしにして最前面へ*/
+  #g-nav.panelactive{
+    opacity: 1;
+    z-index:999;
+  }
 
-.openbtn1.active span:nth-of-type(1) {
-    top: 18px;
-    left: 18px;
-    transform: translateY(6px) rotate(-45deg);
-    width: 30%;
-}
+  /*ナビゲーションの縦スクロール*/
+  #g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 
-.openbtn1.active span:nth-of-type(2) {
-  opacity: 0;
-}
+  /*ナビゲーション*/
+  #g-nav ul {
+      display: none;
+      /*ナビゲーション天地中央揃え*/
+      position: absolute;
+      z-index: 999;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+  }
 
-.openbtn1.active span:nth-of-type(3){
-    top: 30px;
-    left: 18px;
-    transform: translateY(-6px) rotate(45deg);
-    width: 30%;
-}
+  #g-nav.panelactive ul {
+      display: block;
+  }
 
+  /*リストのレイアウト設定*/
 
-/*ここからプロフィール欄*/ 
+  #g-nav li{
+    list-style: none;
+      text-align: center; 
+  }
 
+  #g-nav li a{
+    color: #333;
+    text-decoration: none;
+    padding:10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+  }
 
+  /*========= ボタンのためのCSS ===============*/
+  .openbtn1{
+    position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+    top:10px;
+    right: 10px;
+    cursor: pointer;
+    width: 50px;
+    height:50px;
+  }
 
-/* dl dd.user-info {
-  width: 50%;
-} */
+  /*×に変化*/  
+  .openbtn1 span{
+      display: inline-block;
+      transition: all .4s;
+      position: absolute;
+      left: 14px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: #666;
+      width: 45%;
+    }
 
-.border-bottom {
-  border-bottom: 3px solid #f4dd64;
-}
+  .openbtn1 span:nth-of-type(1) {
+    top:15px; 
+  }
+
+  .openbtn1 span:nth-of-type(2) {
+    top:23px;
+  }
+
+  .openbtn1 span:nth-of-type(3) {
+    top:31px;
+  }
+
+  .openbtn1.active span:nth-of-type(1) {
+      top: 18px;
+      left: 18px;
+      transform: translateY(6px) rotate(-45deg);
+      width: 30%;
+  }
+
+  .openbtn1.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .openbtn1.active span:nth-of-type(3){
+      top: 30px;
+      left: 18px;
+      transform: translateY(-6px) rotate(45deg);
+      width: 30%;
+  }
+
+  
+  /*ここからプロフィール欄*/ 
+
+  .border-bottom {
+    border-bottom: 3px solid #f4dd64;
+  }
 
 
 .box1{
-display: flex;
-width:auto;
-height:40px;
-  margin:30px auto;
-
+  display: flex;
+  width:auto;
+  height:40px;
+   margin:30px auto;
+  
 }
 
 .mypage{
@@ -390,35 +470,30 @@ height:40px;
     height: 250px;       /* ※縦横を同値に */
 }
 
-.user-card{
-  position: relative;
-  left: 30%;
-}
-
 .username{
   position:absolute;
-  /* left: 41%; */
+  left: 41%;
   top:80px;
   font-size:25px;
 }
 
 .userbirth{
   position:absolute;
-  /* left: 41%; */
+  left: 41%;
   top:130px;
   font-size:25px;
 }
 
 .usercomment{
   position:absolute;
-  /* left: 41%; */
+  left: 41%;
   top:180px;
   font-size:25px;
 }
 
 .user-card-sub{
   position: relative;
-  top: 60px;
+  top: 40px;
   left: 28%;
 }
 
@@ -431,19 +506,66 @@ dl dd.post-num {
   width: 30%;
 }
 
-/* .post-num{
-  position:absolute;
-  padding-top: 80px;
-  
-} */
-
-
 .user-text{
   padding-top: 30px;
   font-size:35px;
 }
 
+.user-card{
+  position: relative;
+  right: 10%;
+}
 
+h5 {
+  padding-top: 19px;
+  padding-left: 25px;
+}
+
+
+.circle-image {
+  width:  50px;
+  height: 50px;
+  margin: 5px 15px 5px 11px;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  
+}
+
+.card-follow{
+  text-align: center;
+  padding-top: 1%;
+  padding-left: 63%;
+}
+.btn-follow {
+  /* background-color: #1492AF;
+  border: 3px solid #1492AF; */
+  background-color: #f4dd64;
+  border: 3px solid #f4dd64;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+  color: #fff;
+  font-weight: bold;
+  display: inline-block;
+  font-weight: 700px;
+  padding: 10px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: .3s;
+  border-radius: 24px;
+  line-height: 5px;
+}
+
+.btn-follow:hover {
+  background-color: #fff;
+  /* color: #1492AF; */
+  color: #f4dd64;
+}
+
+.follow-message{
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
 .menu-btn {
     /*position: fixed;*/
@@ -492,7 +614,7 @@ dl dd.post-num {
 
 .menu-content {
   width: 20%;
-  height: 38%;
+  height: 20%;
   top: 310px;
   right: -382px;
   position:absolute;
@@ -506,7 +628,7 @@ dl dd.post-num {
 }
 
 .menu-content ul {
-    padding: 70px 10px 0;
+    padding: 10px 10px 0;
 }
 
 .menu-content ul li {
@@ -556,5 +678,70 @@ p.folow {
   transition: background-color 0.5s, box-shadow 0.5s;
 }
 
+.follow_button:hover { 
+  background-color: #ff6347; 
+  box-shadow: 2px 3px 2px rgba(0,0,0,0.3) 
+}
+ 
+        .follow_bottun.active {
+            background-color: #ccc;
+        }
+ 
+        .follow_button > span:last-of-type,
+        .follow_button.active > span:first-of-type
+        {
+            display: none;
+        }
+ 
+        .follow_button.active > span:last-of-type {
+            display: inline;
+        }
 
-/* ユーザレイアウト */
+      .flex-container {       /* アイコン、名前、フォローボタンを横並び */
+        display: flex;
+        padding-top: 15px;
+        border-bottom:solid 3px  #ececec;
+      }
+
+      
+
+      .more-btn {
+        padding-top: 20px;
+      }
+      
+      .txt-hide{
+        display: none;
+        }
+        
+        button.more {
+        width: 120px;
+        height: 45px;
+        margin: 20px auto;
+        display: block;
+        background-color: #fff;
+        color: #f4dd64;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+        font-weight: bold;
+        padding:10px 15px;
+        border: none;
+        outline: 0;
+        transition: .5s;
+        -erbkit-transition: .5s;
+        border-radius: 24px;
+        }
+
+        button.more:hover {
+          background-color: #f4dd64;
+          /* color: #1492AF; */
+          color: #fff;
+      }
+         
+        button.more::after {
+        content: "もっと見る";
+        transition: .2s;
+        -erbkit-transition: .2s;
+        }
+        
+        button.more.on-click::after{
+        content: "閉じる";
+        }

@@ -8,6 +8,7 @@ use Illuminate\Validation\Rule;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Follower;
+use App\Models\Post_good;
 
 class UsersController extends Controller
 {
@@ -47,13 +48,29 @@ class UsersController extends Controller
             }
         }
 
-        public function show(User $user, Post $post, Follower $follower)
+        public function show(User $user, Post $post, Follower $follower, Post_good $post_good)
         {
             $login_user = auth()->user();
             $is_following = $login_user->isFollowing($user->id);
             $is_followed = $login_user->isFollowed($user->id);
             $is_good = $login_user->isGood($user->id);
             $timelines = $post->getUserTimeLine($user->id);
+
+            // フォローユーザ
+            $following_id = $follower->followingIds($user->id);
+            $following_ids = $following_id->pluck('followed_id')->toArray();
+            $user_following = $user->getUserInfo($user->id, $following_ids);
+
+            // フォロワーユーザ
+            $follower_id = $follower->followerIds($user->id);
+            $follower_ids = $follower_id->pluck('following_id')->toArray();
+            $user_follower = $user->getUserInfo($user->id, $follower_ids);
+
+            // いいねユーザ
+            $good_id = $post_good->goodIds($user->id);
+            $goods_id = $good_id->pluck('post_id')->toArray();
+            $timeline_goods = $post->getUsergoodTimeLine($goods_id);
+
             $post_count = $post->getPostCount($user->id);
             $follow_count = $follower->getFollowCount($user->id);
             $follower_count = $follower->getFollowerCount($user->id);
@@ -65,6 +82,12 @@ class UsersController extends Controller
                 'is_followed'    => $is_followed,
                 'is_good'       => $is_good,
                 'timelines'      => $timelines,
+                'timeline_goods' => $timeline_goods,
+                'following_ids' => $following_ids,
+                'follower_ids' => $follower_ids,
+                'user_followings' => $user_following,
+                'user_followers' => $user_follower,
+                // 'following_ids' => $following_ids,
                 'post_count'    => $post_count,
                 'follow_count'   => $follow_count,
                 'follower_count' => $follower_count,
@@ -92,4 +115,26 @@ class UsersController extends Controller
     
             return redirect('DIY_home');
         }
+
+        public function destroy(User $user)
+        {
+            $user = auth()->user();
+            $user->userDestroy($user->id);
+
+            return redirect('DIY_home');
+        }
+
+        // 確認画面
+        public function confirm()
+    {
+        //セッションから値を取り出す
+        // $input = $request->session()->get("form_input");
+
+        //セッションに値が無い時はフォームに戻る
+        // if (!$input) {
+        //     return redirect()->action("Auth\RegisterController");
+        // }
+
+        return view('users.conf');
+    }
 }

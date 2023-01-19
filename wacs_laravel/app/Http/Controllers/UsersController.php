@@ -116,10 +116,16 @@ class UsersController extends Controller
             return redirect('DIY_home');
         }
 
-        public function destroy(User $user)
+        public function destroy(User $user, Post $post, Follower $follower, Post_good $post_good)
         {
             $user = auth()->user();
             $user->userDestroy($user->id);
+
+            // $post_id = $post->postIds($user->id);
+            // $post_ids = $post_id->pluck('followed_id')->toArray();
+            // $user_following = $user->getUserInfo($user->id, $following_ids);
+
+            // $post->postDestroy($user->id, $post->id);
 
             return redirect('DIY_home');
         }
@@ -127,14 +133,6 @@ class UsersController extends Controller
         // 確認画面
         public function confirm()
     {
-        //セッションから値を取り出す
-        // $input = $request->session()->get("form_input");
-
-        //セッションに値が無い時はフォームに戻る
-        // if (!$input) {
-        //     return redirect()->action("Auth\RegisterController");
-        // }
-
         return view('users.conf');
     }
 }

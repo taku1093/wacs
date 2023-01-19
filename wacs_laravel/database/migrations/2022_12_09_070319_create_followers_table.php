@@ -21,10 +21,24 @@ class CreateFollowersTable extends Migration
             $table->index('following_id');
             $table->index('followed_id');
 
+            $table->timestamps();
+
             $table->unique([
                 'following_id',
                 'followed_id'
             ]);
+
+            $table->foreign('following_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
+            $table->foreign('followed_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 

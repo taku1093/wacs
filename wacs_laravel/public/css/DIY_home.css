@@ -1,3 +1,8 @@
+.more-button-area {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
 .styled-button_p{
     display: flex;
     justify-content: center;
@@ -6,7 +11,7 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
     color: #fff;
     font-weight: bold;
-    display: inline-block;
+    display: block;
     font-weight: 700px;
     padding: 10px 20px;
     position: relative;
@@ -15,6 +20,7 @@
     transition: .3s;
     border-radius: 24px;
     line-height: 25px;
+    margin: 0 auto;
 }
 
 .styled-button_p:hover {
@@ -31,13 +37,23 @@
     text-align: center;
     }
 
-.sub_title::after{
+.sub_title {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+}
+
+.sub_title::after {
 content: '';
 display: block;
 width: 76px;
 height: 3px;
 background-color: #f4dd64;
-/* margin-top: 10px; */
-/* margin-left: auto;
-margin-right: auto; */
+margin-top: 10px;
+margin-bottom: 40px;
+margin-left: auto;
+margin-right: auto;
 }
+
+

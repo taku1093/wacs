@@ -60,7 +60,7 @@
           <div class="card-header">
               <dl class="post-header">
                   {{--  投稿タイトル  --}}
-                  <dt class="title"><h1 class="mb-0 res-mb-0">子供用タンス</h1></dt>
+                  <dt class="title"><h2 class="mb-0 res-mb-0">子供用タンス</h2></dt>
               </dl>
           </div>
 

@@ -410,7 +410,7 @@ form.mb-0{
         background-color: #f8f8ff;
         margin: 0 auto;
       }
-    
+
     /* ARボタン */
     .AR_position {
         display: none;
@@ -450,7 +450,7 @@ form.mb-0{
     p.mb-0, .post-header{
         padding-top: 10px;
         padding-bottom: 10px;
-        padding-left: 40px;
+        /* padding-left: 9px; */
     }
 
     dl dt.title {

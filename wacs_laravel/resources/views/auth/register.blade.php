@@ -14,20 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="./css/newaccount_create.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css" type="text/css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/languages/jquery.validationEngine-ja.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery.validationEngine.min.js" type="text/javascript" charset="utf-8"></script>
-    <!-- 1行目は、jQuery-Validation-Engineのスタイルシートを読み込んでいます。
-    2行目は、jQuery本体を読み込んでいます。既に別の用途でjQuery本体を読み込み済みなら、この記述は省略して下さい。
-    3行目は、jQuery-Validation-Engineの日本語化スクリプトを読み込んでいます。エラーメッセージを日本語で表示させたい場合に必要です。
-    4行目は、jQuery-Validation-Engineの本体スクリプトを読み込んでいます。 -->
     
-    <script type="text/javascript">
-        jQuery(document).ready(function(){
-        jQuery("#accountform").validationEngine();
-        });
-    </script>
 
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js?ver=1.12.4' id='jquery-core-js'></script>
     {{--  <script src='./garlic.js'></script>  --}}
@@ -55,21 +42,20 @@
         <p class="pagesubtitle">WACSの利用に当たってアカウント情報の登録をお願いします。</p>
         <p class="pagesubtitle2">個人情報に関して、他のユーザに対し、公開することはありません。</p>
         <div class="account">
-            {{--  <form id="accountform"  method="POST" action="{{ route('register') }}" > <!-- 完了画面に遷移 -->  --}}
-                <form id="accountform"  method="POST" action="{{ route('user.register_post') }}" > <!-- 完了画面に遷移 -->
+            <!-- {{--  <form id="accountform"  method="POST" action="{{ route('register') }}" > 完了画面に遷移  --}} -->
+            <form id="accountform"  method="POST" action="{{ route('user.register_post') }}" > <!-- 完了画面に遷移 -->
                 @csrf
                 <dl class="form-area">
                     <dt><span class="required">氏名(全角)</span></dt>
-                    <dd><input id="user_name" class="input-text validate[required,maxSize[16]]" type="text" name="user_name" placeholder="山田太郎" value="{{ old('user_name') }}"></dd> <!--name属性はフォームを受信したプログラムが各項目を判別するための属性、requiredは必須項目なので入力がなければ警告を表示-->
-                    <!-- <dd id="name_chk" style="display: none; color: red;">名前が漢字になっていません</dd> -->
+                    <dd><input id="user_name" class="input-text validate[required,maxSize[10]]" type="text" name="user_name" placeholder="10文字以内" value="{{ old('user_name') }}"></dd> <!--name属性はフォームを受信したプログラムが各項目を判別するための属性、requiredは必須項目なので入力がなければ警告を表示-->
 
                     <dt><span class="required">氏名(ふりがな)</span></dt>
-                    <dd><input id="user_name_kana" class="input-text validate[required,maxSize[16]]" type="text" name="user_name_kana" placeholder="やまだたろう"  value="{{ old('user_name_kana') }}"></dd>
-                    <!-- <dd id="name_huri_chk" style="display: none; color: red;">名前(ふりがな)がひらがなになっていません</dd> -->
+                    <dd><input id="user_name_kana" class="input-text validate[required,maxSize[20]]" type="text" name="user_name_kana" placeholder="20文字以内"  value="{{ old('user_name_kana') }}"></dd>
+
 
                     <dt><span class="required">ユーザネーム</span></dt>
-                    <dd><input class="input-text validate[required,maxSize[256]]" type="text" name="user_screen_name" id="user_screen_name" value="{{ old('user_screen_name') }}"></dd>
-                    <!-- <dd id="mail_chk" style="display: none; color: red;">メールアドレスが形式に沿っていません</dd> -->
+                    <dd><input class="input-text validate[required,maxSize[30]]" type="text" name="user_screen_name" placeholder="30文字以内" id="user_screen_name" value="{{ old('user_screen_name') }}"></dd>
+
 
                     <dt><span class="required">性別</span></dt>
                     <dd>
@@ -145,20 +131,19 @@
                     </select></dd>
 
                     <dt><span class="required">住所(市区町村)</span></dt>
-                    <dd><input class="input-text validate[required,maxSize[16]]" type="text" name="user_city" placeholder="市区町村のみ入力" id="user_city" value="{{ old('user_city') }}"></dd>
+                    <dd><input class="input-text validate[required,maxSize[30]]" type="text" name="user_city" placeholder="市区町村のみ入力" id="user_city" value="{{ old('user_city') }}"></dd>
 
                     <dt><span class="required">電話番号</span></dt>
                     <dd><input class="input-text validate[required,custom[phone],maxSize[21]]" type="user_tell" name="user_tell" pattern="[\d-]*" placeholder="ハイフンなし" id="user_tell" value="{{ old('user_tell') }}"></dd>
-                    <!-- <dd id="phone_chk" style="display: none; color: red;">電話番号が形式に沿っていません</dd> -->
+
 
                     <dt><span class="required">メールアドレス</span></dt>
-                    <dd><input class="input-text validate[required,custom[email],maxSize[256]]" type="text" name="email" id="email" value="{{ old('email') }}"></dd>
-                    <!-- <dd id="mail_chk" style="display: none; color: red;">メールアドレスが形式に沿っていません</dd> -->  
+                    <dd><input class="input-text validate[required,custom[email],maxSize[255]]" type="text" name="email" id="email" value="{{ old('email') }}"></dd> 
 
                     {{--  パスワード  --}}
                     <dt><span class="required"><label for="password" class=""></label>パスワード</span></dt>
                     <dd>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror input-text" name="password" required autocomplete="new-password">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror input-text validate[required, minSize[8], maxSize[16]]" name="password" required placeholder="8～16文字以内" autocomplete="new-password">
 
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -169,11 +154,8 @@
                     {{--  パスワード確認  --}}
                     <dt><span class="required"><label for="password-confirm" class=""></label>パスワード(確認)</span></dt>
                     <dd>
-                            <input id="password-confirm" type="password" class="form-control input-text" name="password_confirmation" required autocomplete="new-password">
+                            <input id="password-confirm" type="password" class="form-control input-text validate[required,equals[password]]" name="password_confirmation" required autocomplete="new-password">
                     </dd>
-                    {{--  <dt><span class="required">パスワード(確認)</span></dt>
-                    <dd><input class="input-text validate[required,equals[pass],minSize[8],maxSize[16]]" type="password" name="password" placeholder="半角英数8文字以上" id="password"></dd>
-                    <!-- <dd id="repass_chk" style="display: none; color: red;">パスワードが最初と違っています</dd> -->  --}}
 
                     <dt><span class="required">利用規約</span></dt>
                     <dd><input type="checkbox" class="validate[minCheckbox[1]]" name="kiyaku" id="mincheck1" value="yes"> <a href="{{ route('terms') }}" id="kiyaku">利用規約</a>に同意します。 </dd>
@@ -299,6 +281,22 @@
 
                 });
     </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/languages/jquery.validationEngine-ja.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery.validationEngine.min.js" type="text/javascript" charset="utf-8"></script>
+    <!-- 1行目は、jQuery-Validation-Engineのスタイルシートを読み込んでいます。
+    2行目は、jQuery本体を読み込んでいます。既に別の用途でjQuery本体を読み込み済みなら、この記述は省略して下さい。
+    3行目は、jQuery-Validation-Engineの日本語化スクリプトを読み込んでいます。エラーメッセージを日本語で表示させたい場合に必要です。
+    4行目は、jQuery-Validation-Engineの本体スクリプトを読み込んでいます。 -->
+    
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+        jQuery("#accountform").validationEngine();
+        });
+    </script>
+
 </body>
 </html>
 @endsection

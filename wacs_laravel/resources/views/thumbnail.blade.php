@@ -6,38 +6,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- cssファイルの設定など -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css\thumne.css')}}">
-    {{--  <link rel="stylesheet" type="text/css" href="{{ asset('css\DIY_home.css')}}">  --}}
+    <!-- {{--  <link rel="stylesheet" type="text/css" href="{{ asset('css\DIY_home.css')}}">  --}} -->
     {{--  ハートマーク用  --}}
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    {{--  <link rel="stylesheet" href="{{ asset('./css/headder_fotter.css') }}">  --}}
-    {{--  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- {{--  <link rel="stylesheet" href="{{ asset('./css/headder_fotter.css') }}">  --}} -->
+    <!-- {{--  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
 
     <!--自作のJS-->
-    <script>
+    <!-- <script>
         $(".openbtn").click(function () {
             $(this).toggleClass('active');
         });
-    </script>
+    </script> -->
 
-    <!-- サムネイル右上のボタンのJavascript-->
-    <script>
-        (function () {
-        document.addEventListener('DOMContentLoaded', function() { // HTML解析が終わったら
-        
-            const btn = document.getElementById('dropdown__btn1'); 
-        if(btn) { // ボタンが存在しないときにエラーになるのを回避
-            btn.addEventListener('click', function(){ //ボタンがクリックされたら
-            this.classList.toggle('is-open'); // is-openを付加する
-                });
-            }
-            });
-        });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js" integrity="sha384-Qg00WFl9r0Xr6rUqNLv1ffTSSKEFFCDCKVyHZ+sVt8KuvG99nWw5RNvbhuKgif9z" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>  --}}
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js" integrity="sha384-Qg00WFl9r0Xr6rUqNLv1ffTSSKEFFCDCKVyHZ+sVt8KuvG99nWw5RNvbhuKgif9z" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>  --}} -->
 </head>
 {{--  ページタイトル  --}}
+
+
 <div class="container">
     <div class="row justify-content-flex-start">
 
@@ -68,23 +56,6 @@
                                 <div class="user_name">
                                     <p class="mb-0">{{ $timeline->user->user_screen_name }}</p>
                                 </div>
-
-                                {{--  詳細  --}}
-                                <!-- ホーム画面のサムネイルの場合には以下を通報のみにしてください。マイページのサムネイルの場合には通報以外を表示するような処理が必要です。-->
-                                <div class="dropdown">
-                                <button class="dropdown__btn" id="dropdown__btn1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="64"/><circle cx="256" cy="448" r="64"/><circle cx="256" cy="64" r="64"/></svg>
-                                </button>
-                                <div class="dropdown__body">
-                                    <ul class="dropdown__list">
-                                        <li class="dropdown__item"><a href="#" class="dropdown__item-link">編集する</a></li>
-                                        <li class="dropdown__item"><a href="#" class="dropdown__item-link">共有する</a></li>
-                                        <li class="dropdown__item"><a href="#" class="dropdown__item-link">通報</a></li>
-                                        <li class="dropdown__item"><a href="#" class="dropdown__item-link red" style="color: red;">投稿を削除</a></li>
-                                    </ul>
-                                </div>
-                                </div>
-                                <!-- ここまで (dropdown)-->
                             </div>
                             
                             {{--  投稿画像  --}}
@@ -123,7 +94,11 @@
 
                                                     <input type="hidden" name="post_id" value="{{ $timeline->id }}">
                                                     <button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline->post_goods) }}</button>
+
                                                 </form>
+                                                
+
+
                                             @else
                                                 <form method="POST" action="{{ url('post_goods/' .array_column($timeline->post_goods->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
                                                     @csrf
@@ -139,7 +114,7 @@
                                             <a href="{{ route('login') }}"><button type="button" class="btn btn-sm btn-outline-secondary">詳細</button></a>
                                             {{--  いいね  --}}
                                             {{--  <i class="far fa-heart like-btn"></i>  --}}
-                                            <a href="{{ route('login') }}"<button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline->post_goods) }}</button>
+                                            <a href="{{ route('login') }}"><button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline->post_goods) }}</button><a>
                                         @endguest
                                         
 
@@ -152,9 +127,6 @@
                         </div>
             @endforeach
         @endif
-
-
-        
         <main class="py-4">
             @yield('thumbnail')
         </main>

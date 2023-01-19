@@ -105,11 +105,15 @@
     margin-top: 20px;
     margin-bottom: 40px;
     cursor: pointer; /* マウスポインタの形状を指定 */
-    border: none;
+    border: 3px solid #f4dd64;
+    min-width: 250px;
+    transition: .3s;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
 }
 
 .submit-button:hover {
-    background-color: #d8b500;
+    background-color: #fff;
+    color: #f4dd64;
 }
 
 /* .footer {

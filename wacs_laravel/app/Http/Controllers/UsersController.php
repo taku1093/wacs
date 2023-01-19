@@ -115,4 +115,26 @@ class UsersController extends Controller
     
             return redirect('DIY_home');
         }
+
+        public function destroy(User $user)
+        {
+            $user = auth()->user();
+            $user->userDestroy($user->id);
+
+            return redirect('DIY_home');
+        }
+
+        // 確認画面
+        public function confirm()
+    {
+        //セッションから値を取り出す
+        // $input = $request->session()->get("form_input");
+
+        //セッションに値が無い時はフォームに戻る
+        // if (!$input) {
+        //     return redirect()->action("Auth\RegisterController");
+        // }
+
+        return view('users.conf');
+    }
 }

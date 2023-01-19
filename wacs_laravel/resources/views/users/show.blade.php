@@ -12,12 +12,15 @@
   
       
       <!-- cssファイルの設定など -->
-      {{--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">  --}}
-      {{--  <link rel="stylesheet" type="text/css" href="{{ asset('css\thumne.css')}}">  --}}
+      {{--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="{{ asset('css\thumne.css')}}">  --}}
       {{--  ハートマーク用  --}}
       <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="{{ asset('css\user\Mypage.css')}}">
       
+      {{--  確認css  --}}
+      <link rel="stylesheet" href="{{ asset('css\kakunin.css')}}">
+      <link rel="stylesheet" href="{{ asset('css\ress.css')}}">
   </head>
   
   <body>
@@ -36,15 +39,43 @@
           <label for="menu-btn-check" class="menu-btn"><span></span></label>
           <div class="menu-content">
             <ul>
+                  {{--  退会  --}}
                 <li>
-                    <a href="https://www.kochi-tech.ac.jp/index.html">退会</a>
+                  <form method="POST" action="{{ url('users/' .$user->id) }}" class="mb-0">
+                    @csrf
+                    @method('DELETE')
+                      <label class="open btn btn-primar" for="pop-up"><a class="check">退会</a></label>
+                      <input type="checkbox" id="pop-up">
+                      <div class="overlay">
+                        <div class="window">
+                            <label class="close" for="pop-up">×</label>
+                            <div class="text">
+                                <div style="text-align: center">
+                                  <h1>
+                                      確認画面                        
+                                  </h1>
+                                  <h4>
+                                      本当に退会しますか
+                                  </h4>
+                                  <ul>
+                                    <li class="kakunin_item">
+                                      <button class="check" type="submit">退会する</button>
+                                    </li>
+                                  </ul>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </form>
                 </li>
+
                 <li>
-                    <a href="https://www.kochi-tech.ac.jp/index.html">マイページ情報編集</a>
+                    <a href="{{ url('users/' .$user->id .'/edit') }}" >マイページ情報編集</a>
                 </li>
-                <li>
+
+                {{--  <li>
                     <a href="https://www.kochi-tech.ac.jp/index.html">アカウント編集</a>
-                </li>
+                </li>  --}}
                 {{--  <li>
                     <a href="https://www.kochi-tech.ac.jp/index.html">レンタル一覧</a>
                 </li>  --}}
@@ -129,29 +160,29 @@
               <div class="container">
                 <div class="row justify-content-flex-start">
                   {{--  投稿情報  --}}
-                  @if (isset($timeline_goods))
-                    @foreach ($timeline_goods as $timeline_good)
+                  @if (isset($timelines))
+                    @foreach ($timelines as $timeline)
                       <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
 
                           <div class="flex">
                             {{--  アイコン  --}}
                             <div>
-                                <a href="{{ url('users/' .$timeline_good->user->id) }}" class="text-secondary">
+                                <a href="{{ url('users/' .$timeline->user->id) }}" class="text-secondary">
                                     {{--  <img src="./icon/50.png" width="32" height="32">  --}}
-                                    @if ($timeline_good->user->user_icon == null)
+                                    @if ($timeline->user->user_icon == null)
                                         {{--  デフォルトアイコン  --}}
                                     <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image">
                                     @else
                                         {{--  任意のアイコン  --}}
-                                        <img src="{{ asset('storage/user_icon/' .$timeline_good->user->user_icon) }}" class="circle-image">
+                                        <img src="{{ asset('storage/user_icon/' .$timeline->user->user_icon) }}" class="circle-image">
                                     @endif
                                 </a>
                             </div> <!--アイコン画像を丸く表示-->
         
                             {{--  ユーザネーム  --}}
                             <div class="user_name">
-                                <p class="mb-0">{{ $timeline_good->user->user_screen_name }}</p>
+                                <p class="mb-0">{{ $timeline->user->user_screen_name }}</p>
                             </div>
 
                             {{--  詳細  --}}
@@ -174,46 +205,46 @@
                                     
                           {{--  投稿画像  --}}
                           <div class="img_area">
-                            @if ($timeline_good->post_img1 == null)
+                            @if ($timeline->post_img1 == null)
                             {{--  デフォルト画像表示  --}}
                                 <img src="{{asset('img/DIY.jpg') }}" class="img_position" alt="" width="300" height="200">
                             @else
-                              <img src="{{ asset('storage/post_img/' .$timeline_good->post_img1) }}" class="img_position" alt="" width="300" height="200">
+                              <img src="{{ asset('storage/post_img/' .$timeline->post_img1) }}" class="img_position" alt="" width="300" height="200">
                             @endif
                           </div>
         
                           <div class="card-body">
                             {{--  投稿タイトル  --}}
-                            <p class="card-text post_title">{!! nl2br(e($timeline_good->post_title)) !!}</p>
+                            <p class="card-text post_title">{!! nl2br(e($timeline->post_title)) !!}</p>
                             {{--  投稿説明  --}}
-                            <p class="card-text post_exp">{!! nl2br(e($timeline_good->post_exp)) !!}</p>
+                            <p class="card-text post_exp">{!! nl2br(e($timeline->post_exp)) !!}</p>
 
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="{{ url('posts/' .$timeline_good->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">詳細</button></a>
+                                    <a href="{{ url('posts/' .$timeline->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">詳細</button></a>
                                     {{--    編集  --}}
                                     {{--  ログイン時  --}}
                                     @auth
-                                        @if ($timeline_good->user_id == auth()->user()->id)
-                                            {{--  <a href="{{ url('posts/' .$timeline_good->id .'/edit') }"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>  --}}
-                                            <a href="{{ url('posts/' .$timeline_good->id .'/edit') }}" >
+                                        @if ($timeline->user_id == auth()->user()->id)
+                                            {{--  <a href="{{ url('posts/' .$timeline->id .'/edit') }"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>  --}}
+                                            <a href="{{ url('posts/' .$timeline->id .'/edit') }}" >
                                                 <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
                                             </a>
                                         @endif
                                         {{--   いいね  --}}
-                                        @if (!in_array($user->id, array_column($timeline_good->post_goods->toArray(), 'user_id'), TRUE))
+                                        @if (!in_array($user->id, array_column($timeline->post_goods->toArray(), 'user_id'), TRUE))
                                             <form method="POST" action="{{ url('post_goods/') }}">
                                                 @csrf
 
-                                                <input type="hidden" name="post_id" value="{{ $timeline_good->id }}">
-                                                <button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline_good->post_goods) }}</button>
+                                                <input type="hidden" name="post_id" value="{{ $timeline->id }}">
+                                                <button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline->post_goods) }}</button>
                                             </form>
                                         @else
-                                            <form method="POST" action="{{ url('post_goods/' .array_column($timeline_good->post_goods->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
+                                            <form method="POST" action="{{ url('post_goods/' .array_column($timeline->post_goods->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
                                                 @csrf
                                                 @method('DELETE')
 
-                                                <button type="submit" class="btn p-0 border-0 text-danger"><i class="fas fa-heart unlike-btn"></i>{{ count($timeline_good->post_goods) }}</button>
+                                                <button type="submit" class="btn p-0 border-0 text-danger"><i class="fas fa-heart unlike-btn"></i>{{ count($timeline->post_goods) }}</button>
                                             </form>
                                         @endif
                                     @endauth
@@ -223,10 +254,10 @@
                                         <a href="{{ route('login') }}"><button type="button" class="btn btn-sm btn-outline-secondary">詳細</button></a>
                                         {{--  いいね  --}}
                                         {{--  <i class="far fa-heart like-btn"></i>  --}}
-                                        <a href="{{ route('login') }}"<button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline_good->post_goods) }}</button>
+                                        <a href="{{ route('login') }}"<button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline->post_goods) }}</button>
                                     @endguest
                                   </div>
-                                  <small class="text-muted">{!! nl2br(e($timeline_good->created_at)) !!}</small>
+                                  <small class="text-muted">{!! nl2br(e($timeline->created_at)) !!}</small>
                             </div>
                             <div class="d-flex align-items-center"></div>
                           </div>
@@ -327,8 +358,8 @@
         </div>
         
         {{--  タブフォロワー  --}}
-        <div class="tabcontent" id="tabcontent3"><!-- タブフォローの中身 -->
-          <h1>フォロー中</h1>
+        <div class="tabcontent" id="tabcontent3">
+          <h1>フォロワー</h1>
           <div class="infobox"><!-- 内部スクロール化 -->
             @if (empty($follower_ids))
               <p class="follow-message">まだフォロワーはいません</p>
@@ -358,7 +389,7 @@
                     @else
                       @if (auth()->user()->isFollowed($user_follower->id))
                           <div class="px-2">
-                              <span class="px-1 bg-secondary text-light">フォローされています</span>
+                              <p class="px-1 bg-secondary text-light">フォローされています</p>
                           </div>
                       @endif
                         <div class="d-flex justify-content-end flex-grow-1">

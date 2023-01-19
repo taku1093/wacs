@@ -614,7 +614,7 @@ h5 {
 
 .menu-content {
   width: 20%;
-  height: 38%;
+  height: 20%;
   top: 310px;
   right: -382px;
   position:absolute;
@@ -628,7 +628,7 @@ h5 {
 }
 
 .menu-content ul {
-    padding: 70px 10px 0;
+    padding: 10px 10px 0;
 }
 
 .menu-content ul li {

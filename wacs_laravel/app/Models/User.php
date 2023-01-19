@@ -156,4 +156,9 @@ class User extends Authenticatable
 
         return;
     }
+
+    public function userDestroy(Int $user_id)
+    {
+        return $this->where('id', $user_id)->delete();
+    }
 }

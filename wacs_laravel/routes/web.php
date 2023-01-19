@@ -42,7 +42,8 @@ Route::get('/DIY_home', 'HomeController@index_DIY')->name('DIY_home');
 // ログイン状態
 Route::group(['middleware' => 'auth'], function() {
      // ユーザ関連
-    Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'edit', 'update']]);
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'edit', 'update', 'destroy']]);
+    Route::post('users/conf', 'UsersController@confirm')->name('user.conf');
 
     // フォロー/フォロー解除を追加
     Route::post('users/{user}/follow', 'UsersController@follow')->name('follow');

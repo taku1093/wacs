@@ -20,23 +20,23 @@
 
 <div class="container">
 
-    <div class="mt-4 mb-4">
+    <div class="QA_create_area">
         <a href="{{ route('qanda.create') }}" class="btn btn-primary">
-            投稿の新規作成
+        <button type="submit" class="QA_create">投稿の新規作成</button>
         </a>
     </div>
 
     <!-- 検索フォーム -->
-    <div class="mt-4 mb-4">
+    <div class="serch_area">
         <form class="form-inline" method="GET" action="{{ route('qanda.index') }}">
             <div class="form-group">
                 <input type="text" name="searchword" value="{{$searchword}}" class="form-control" placeholder="名前を入力してください">
             </div>
-            <input type="submit" value="検索" class="btn btn-info ml-2">
+            <input type="submit" value="検索" class="serch_btn">
         </form>
     </div>
 
-    <div class="mt-4 mb-4">
+    <div class="serch_result">
         <p>{{ $qaposts->total() }}件が見つかりました。</p>
     </div>
 
@@ -54,7 +54,7 @@
     @endif
 
     <div class="table-responsive">
-        <table class="table table-hover">
+        <table>
             <thead>
             <tr>
                 <th>ID</th>
@@ -102,12 +102,13 @@
     <!-- <div class="d-flex justify-content-center mb-5">
         {{ $qaposts->links() }}
     </div> -->
-    <div class="d-flex justify-content-center mb-5">
+    <div>
         {{ $qaposts->appends([
             'qacategory_id' => $qacategory_id,
             'searchword' => $searchword,
         ])->links() }}
     </div>
+    <!-- {{ $qaposts->links() }} -->
 </div>
 @endsection
  

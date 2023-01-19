@@ -13,8 +13,10 @@
 @section('content')
 
 <header>
+    <link rel="stylesheet" href="{{('css\app.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\qanda\index.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
+    
 </header>
 {{--  ページタイトル  --}}
 <p class="pagetitle">Q&A</p>
@@ -22,7 +24,7 @@
 <div class="container">
 
     <div class="QA_create_area">
-        <a href="{{ route('qanda.create') }}" class="btn btn-primary">
+        <a href="{{ route('qanda.create') }}">
         <button type="submit" class="QA_create">投稿の新規作成</button>
         </a>
     </div>

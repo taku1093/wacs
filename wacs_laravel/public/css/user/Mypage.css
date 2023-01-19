@@ -745,3 +745,33 @@ p.folow {
         button.more.on-click::after{
         content: "閉じる";
         }
+
+        .card-follow-sub{
+          padding-top: 80px;
+          padding-left: 30px;
+        }
+
+        .btn-follow-sub {
+          /* background-color: #1492AF;
+          border: 3px solid #1492AF; */
+          background-color: #f4dd64;
+          border: 3px solid #f4dd64;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+          color: #fff;
+          font-weight: bold;
+          display: inline-block;
+          font-weight: 700px;
+          padding: 10px 170px;
+          position: relative;
+          text-align: center;
+          text-decoration: none;
+          transition: .3s;
+          border-radius: 24px;
+          line-height: 25px;
+        }
+        
+        .btn-follow:hover {
+          background-color: #fff;
+          /* color: #1492AF; */
+          color: #f4dd64;
+        }

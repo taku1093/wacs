@@ -93,7 +93,6 @@
                                                     @csrf
 
                                                     <input type="hidden" name="post_id" value="{{ $timeline->id }}">
-                                                    <div class="wowo">
                                                     <button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline->post_goods) }}</button>
                                                 </form>
                                                 

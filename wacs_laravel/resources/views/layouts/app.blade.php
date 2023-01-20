@@ -140,7 +140,7 @@
                     </nav>
                 @endif
                 <a class="footer-logo" href="{{ url('/') }}">
-                    <img class="hf-img"class="icon" src="{{ asset('./img/logo_header.png') }}" alt="WACS">
+                    <img class="hf-img"class="icon" src="{{ asset('img/logo_footer.png') }}" alt="WACS">
                 </a>
                 <p class="footer-tel"></p>
                 <p class="footer-name"></p>

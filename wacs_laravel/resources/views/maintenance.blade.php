@@ -12,10 +12,11 @@
     <h1 class="text-center text-2xl font-bold">ただいまメンテナンス中です</h1>
     <dl class="text-center text-lg font-bold mt-4">
       <dt>【メンテナンス日時】</dt>
-      <dd class="mt-2 text-red-600">2023年2月3日 0:00〜2023年2月10日 23:59</dd>
+      <dd class="mt-2 text-red-600">2023年2月1日 0:00〜2023年2月28日 23:59</dd>
     </dl>
     <p class="text-center mt-4">ご利用の皆様にはご迷惑をおかけし、申し訳ございません。<br>メンテナンス終了までしばらくお待ちください。</p>
     <img src="./img/kouzichuu.png" alt="img_position" width="300" height="200">
+    <p class="text-center mt-4 font-bold">株式会社 LA</p>
   </div>
 </body>
 </html>

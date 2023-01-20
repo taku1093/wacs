@@ -51,6 +51,20 @@
     /* display: flex; */
 }
 
+.form-area dt .required::after {
+    content: '必須';
+    font-size: 11px;
+    color: #eb4f32;
+    margin-left: 10px;
+}
+
+.form-area dt .required-tag::after {
+    content: '1つ以上必須';
+    font-size: 11px;
+    color: #eb4f32;
+    margin-left: 10px;
+}
+
 .material_text {
     display: flex;
 }

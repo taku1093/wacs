@@ -57,7 +57,7 @@
     @endif
 
     <div class="table-responsive">
-        <table>
+        <table class="table">
             <thead>
             <tr>
                 <th>ID</th>
@@ -105,7 +105,7 @@
     <!-- <div class="d-flex justify-content-center mb-5">
         {{ $qaposts->links() }}
     </div> -->
-    <div>
+    <div class="pagination">
         {{ $qaposts->appends([
             'qacategory_id' => $qacategory_id,
             'searchword' => $searchword,

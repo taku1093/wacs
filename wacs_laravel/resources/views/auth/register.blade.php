@@ -21,28 +21,11 @@
     
 </head>
 <body>
-    {{--  <header class="header">
-        <div class="header-inner"> <!--スマホ表示時にスタイリングしやすくするためのもの-->
-            <a class="header-logo" href="./common.html"> <!--ロゴにトップページのリンクを貼る-->
-                <img src="logo_header.png" alt="WACS">
-            </a>
-            <button class="toggle-menu-button"></button> <!--スマホ用のメニューボタンの設定-->
-            <div class="header-site-menu"> <!--ナビゲーションエリアの設定-->
-                <nav class="site-menu">
-                    <ul>
-                        <li><a href="./inquiry.html"><button class="styled-button" type="button">お問い合わせ</button></a></li>
-                    </ul>
-                </nav>
-            </div> 
-        </div> 
-    </header>  --}}
-
     <main class="main">
         <p class="pagetitle">アカウント情報登録</p>
         <p class="pagesubtitle">WACSの利用に当たってアカウント情報の登録をお願いします。</p>
         <p class="pagesubtitle2">個人情報に関して、他のユーザに対し、公開することはありません。</p>
         <div class="account">
-            <!-- {{--  <form id="accountform"  method="POST" action="{{ route('register') }}" > 完了画面に遷移  --}} -->
             <form id="accountform"  method="POST" action="{{ route('user.register_post') }}" > <!-- 完了画面に遷移 -->
                 @csrf
                 <dl class="form-area">

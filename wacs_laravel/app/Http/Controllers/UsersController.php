@@ -98,6 +98,7 @@ class UsersController extends Controller
         // マイページ編集
         public function edit(User $user)
         {
+            $user = auth()->user();
             return view('users.edit', ['user' => $user]);
         }
     

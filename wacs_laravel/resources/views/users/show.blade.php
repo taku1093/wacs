@@ -71,15 +71,8 @@
                   </li>
 
                   <li>
-                      <a href="{{ url('users/' .$user->id .'/edit') }}" >マイページ情報編集</a>
+                      <a href="{{ url('users/' .$user->id .'/edit') }}" >アカウント・マイページ情報編集</a>
                   </li>
-
-                  {{--  <li>
-                      <a href="https://www.kochi-tech.ac.jp/index.html">アカウント編集</a>
-                  </li>  --}}
-                  {{--  <li>
-                      <a href="https://www.kochi-tech.ac.jp/index.html">レンタル一覧</a>
-                  </li>  --}}
               </ul>
             </div>
           </div>

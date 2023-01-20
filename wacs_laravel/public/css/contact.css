@@ -95,14 +95,14 @@
     padding-right: 10px;
 }
 
-.select-box {
+.select-box-contact {
     width: 200px;
     height: 40px;
 }
 
 .radio-button {
     display: block;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .radio-button:first-child { /* 一つ目の項目の上部余白を無くす */

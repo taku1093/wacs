@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-
+<head>
+    <meta charset="UTF-8">
+    <title>新規アカウント確認 | WACS</title> 
+</head>
 <body>
 <div class="card-text">
     <form method="POST" action="{{ route('user.resister_resister') }}">

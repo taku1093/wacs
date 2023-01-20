@@ -1,3 +1,5 @@
+{{ Breadcrumbs::render('login') }}
+
 @extends('layouts.app')
 
 @section('content')
@@ -13,6 +15,7 @@
 {{--  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">  --}}
  {{-- 独自のCSS --}} 
 <link rel="stylesheet" type="text/css" href="./css/login.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
 </head>
 <body id=login>
     <main class="main">

@@ -2,10 +2,17 @@
 
 // これを追加してね
 // {{ Breadcrumbs::render('') }}
+//<link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
 
 // Home
 Breadcrumbs::for('home', function ($trail) {
     $trail->push('TOP', url('/'));
+});
+
+// Home > ログイン
+Breadcrumbs::for('login', function ($trail) {
+    $trail->parent('home');
+    $trail->push('ログイン', route('DIY_home'));
 });
 
 // Home > DIYhome
@@ -42,6 +49,18 @@ Breadcrumbs::for('post_create', function ($trail) {
 Breadcrumbs::for('contact', function ($trail) {
     $trail->parent('home');
     $trail->push('お問い合わせ', route('DIY_home'));
+});
+
+// Home > シミュレーション
+Breadcrumbs::for('simulation', function ($trail) {
+    $trail->parent('DIY_home');
+    $trail->push('シミュレーション', route('simulation'));
+});
+
+// Home > シミュレーション > モデル
+Breadcrumbs::for('simulation_model', function ($trail) {
+    $trail->parent('simulation');
+    $trail->push('モデル', route('DIY_home'));
 });
 
 // Home > Q&A

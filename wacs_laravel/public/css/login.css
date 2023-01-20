@@ -42,8 +42,10 @@ background: url(http://www.timurtek.com/wp-content/uploads/2014/10/form-bg.jpg) 
  
  }
 
- a{color:#58bff6;text-decoration: none;}
- a:hover{color:#aaa; }
+ .forget a {color:#58bff6;text-decoration: none;}
+ .pull-left a {color:#58bff6;text-decoration: none;}
+ .forget a:hover {color:#aaa; }
+ .pull-left a:hover{color:#aaa; }
  .pull-right{float: right;}
  /* .pull-left{float: left;} */
  .clear-fix{clear:both;}
@@ -75,6 +77,8 @@ background: url(http://www.timurtek.com/wp-content/uploads/2014/10/form-bg.jpg) 
  
  div#form{
    position: absolute;
+   /* position: relative; */
+    /* top: 120px; */
    /* width:360px; */
    width: calc(100% - 700px); /* 全体から200pxを引いた幅 */
    height:320px;
@@ -85,7 +89,7 @@ background: url(http://www.timurtek.com/wp-content/uploads/2014/10/form-bg.jpg) 
    padding:20px;
    left: 200px;
    right: 200px;
-   top: 50%;
+   top: 52%;
    /* margin-left:-180px; */
    margin-top:-200px;
  }

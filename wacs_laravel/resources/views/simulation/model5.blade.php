@@ -1,3 +1,5 @@
+{{ Breadcrumbs::render('simulation_model') }}
+
 @extends('layouts.app')
 @section('content')
 
@@ -8,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/sim_model.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
         <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->

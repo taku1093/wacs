@@ -10,6 +10,9 @@
     
 } 
 
+html {
+  overflow-x: hidden; /*横スクロールを禁止する*/
+}
 
 ul,
 ol { /*リスト行頭のアイコンを非表示*/
@@ -268,7 +271,7 @@ body {
     border: 0; /* デフォルトスタイル リセット */
     position: fixed;
     right: 50px;
-    top: 35px;
+    top: 30px;
   }
   
   /* 画面のどこをクリックしても元の状態に戻るように*/

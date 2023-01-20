@@ -140,17 +140,35 @@ class User extends Authenticatable
 
             $this::where('id', $this->id)
                 ->update([
-                    'user_screen_name'   => $params['user_screen_name'],
-                    'screen_name'          => $params['screen_name'],
                     'user_icon' => basename($file_name),
-                    'email'         => $params['email'],
+                    'user_name' => $params['user_name'],
+                    'user_name_kana' => $params['user_name_kana'],
+                    'user_screen_name' => $params['user_screen_name'],
+                    'user_gen' => $params['user_gen'],
+                    'year' => $params['year'],
+                    'month' => $params['month'],
+                    'date' => $params['date'],
+                    'user_pre' => $params['user_pre'],
+                    'user_city' => $params['user_city'],
+                    'user_tell' => $params['user_tell'],
+                    'email' => $params['email'],
+                    'user_intro' => $params['user_intro']
                 ]);
         } else {
             $this::where('id', $this->id)
                 ->update([
-                    'user_screen_name'   => $params['user_screen_name'],
-                    'screen_name'          => $params['screen_name'],
-                    'email'         => $params['email'],
+                    'user_name' => $params['user_name'],
+                    'user_name_kana' => $params['user_name_kana'],
+                    'user_screen_name' => $params['user_screen_name'],
+                    'user_gen' => $params['user_gen'],
+                    'year' => $params['year'],
+                    'month' => $params['month'],
+                    'date' => $params['date'],
+                    'user_pre' => $params['user_pre'],
+                    'user_city' => $params['user_city'],
+                    'user_tell' => $params['user_tell'],
+                    'email' => $params['email'],
+                    'user_intro' => $params['user_intro']
                 ]); 
         }
 

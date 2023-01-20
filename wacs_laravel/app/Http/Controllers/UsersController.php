@@ -106,10 +106,19 @@ class UsersController extends Controller
         {
             $data = $request->all();
             $validator = Validator::make($data, [
-                'user_screen_name'   => ['required', 'string', 'max:50', Rule::unique('users')->ignore($user->id)],
-                'screen_name'          => ['required', 'string', 'max:255'],
                 'user_icon' => ['file', 'mimes:jpeg,png,jpg', 'max:2048'],
-                'email'         => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)]
+                'user_name'   => ['required', 'string', 'max:50'],
+                'user_name_kana'   => ['required', 'string', 'max:50'],
+                'user_screen_name'   => ['required', 'string', 'max:50', Rule::unique('users')->ignore($user->id)],
+                'user_gen' => ['required', 'string', 'max:255'],
+                'year' => ['required', 'string', 'max:255'],
+                'month' => ['required', 'string', 'max:255'],
+                'date' => ['required', 'string', 'max:255'],
+                'user_pre' => ['required', 'string', 'max:255'],
+                'user_city' => ['required', 'string', 'max:255'],
+                'user_tell' => ['required', 'string'],
+                'email'         => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
+                'user_intro' =>['required', 'string', 'max:255']
             ]);
             $validator->validate();
             $user->updateProfile($data);

@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+.title{
+    padding-top: 70px;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+    
+    border-bottom: 10px solid #f4dd64;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.card-text{/*全体的に中央に*/
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 3em;
+    max-width: 700px;
+}
+
+dl{
+    
+}
+
+dt.item{/*項目*/
+    
+    float: left;
+    clear: left;
+    margin-right: 0em;
+    width: 120px;
+    padding: 15.8px;
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: solid 1px gray;
+    
+}
+
+dd.input-item{ /*入力文字*/
+    float: left;
+    width: calc(100% - 250px);
+    padding: 15px;
+    padding-left: 5em;
+    margin-right: 0em;
+    display: flex;
+    text-align: right;
+    margin-left: 0em;
+    border-bottom: solid 1px gray;
+}
+
+/*dd.option1{/*修正ボタン*/
+    
+    /*float: left;
+    clear: left;
+    margin-right: 0em;
+    
+    padding: 15.8px;
+    font-size: 15px;
+    font-weight: bold;
+}*/
+
+/* dd.option2{ /*アカウント作成ボタン
+    float: left;
+    
+    padding: 15px;
+    
+    text-align: right;
+    margin-left: 0em;
+} */
+
+.btn {
+    text-align: right;
+}
+
+.submit-button {
+    background-color: #f4dd64;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 230px;
+    line-height: 48px;
+    border-radius: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    cursor: pointer; /* マウスポインタの形状を指定 */
+    border: none;
+
+}
+
+.submit-button:hover {
+    background-color: #d8b500;
+}
+
+/*ボタンのデザイン*/
+button.btn1{
+    margin: 0 auto;
+    width: 10em;
+    padding: 1em 2em;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #f2ce1b;
+    color: #fff; 
+}
+
+button.btn1:hover {
+    color: #fff;
+    background: #f4dd64;
+  }
+
+button.btn2{
+    margin: 0 auto;
+    padding: 1em 2em;
+    
+    
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #f2ce1b;
+    color: #fff;
+    
+}
+
+button.btn2:hover {
+    color: #fff;
+    background: #f4dd64;
+    
+  }
+

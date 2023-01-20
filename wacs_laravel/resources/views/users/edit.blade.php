@@ -34,22 +34,6 @@
                     <dl class="form-area">
                         <dt><span class="">アイコン</span></dt>
                         {{--  アイコン  --}}
-                        {{--  <dd>
-                            <div class="form-group row align-items-center">
-                                <label for="user_icon" class="col-md-4 col-form-label text-md-right">{{ __('user_icon') }}</label>
-                
-                                <div class="col-md-6 d-flex align-items-center">
-                                    <img src="{{ asset('storage/user_icon/' .$user->user_icon) }}" class="mr-2 rounded-circle" width="80" height="80" alt="user_icon">
-                                    <input type="file" name="user_icon" class="@error('user_icon') is-invalid @enderror" autocomplete="user_icon">
-                
-                                    @error('user_icon')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                        </dd>  --}}
                         <dd id="img" class="border_line">
                             <div id="view_1"></div>
                             <input type="file" id="file_1" name="post_img1" accept="image/*" autocomplete="post_img">

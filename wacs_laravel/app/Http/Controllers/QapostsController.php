@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
 use App\Models\Qapost, App\Models\Qacategory;
 use App\Http\Requests\QapostRequest; // class宣言の外に追記
 
 class QapostsController extends Controller
 {
-    //
-    // public function index()
+    
+    // public function index(Request $request)
     // {
-    //     // $qaposts = Qapost::orderBy('created_at', 'desc')->get();
-    //     $qaposts = Qapost::orderBy('created_at', 'desc')->paginate(10);
-    //     return view('qanda.index', ['qaposts' => $qaposts]);
+    //     // $sort = $request->sort;
+    //     $qaposts = Qapost::paginate(10);
+    //     // return view('list', ['qaposts' => $qaposts]);
+    //     return view('qaposts',compact('data'));
     // }
 
     /**

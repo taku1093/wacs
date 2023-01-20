@@ -34,55 +34,57 @@
         </div>
 
         {{--  ハンバーガーメニュー  --}}
-        <div class="hamburger-menu">
-          <input type="checkbox" id="menu-btn-check">
-          <label for="menu-btn-check" class="menu-btn"><span></span></label>
-          <div class="menu-content">
-            <ul>
-                  {{--  退会  --}}
-                <li>
-                  <form method="POST" action="{{ url('users/' .$user->id) }}" class="mb-0">
-                    @csrf
-                    @method('DELETE')
-                      <label class="open btn btn-primar" for="pop-up"><a class="check">退会</a></label>
-                      <input type="checkbox" id="pop-up">
-                      <div class="overlay">
-                        <div class="window">
-                            <label class="close" for="pop-up">×</label>
-                            <div class="text">
-                                <div style="text-align: center">
-                                  <h1>
-                                      確認画面                        
-                                  </h1>
-                                  <h4>
-                                      本当に退会しますか
-                                  </h4>
-                                  <ul>
-                                    <li class="kakunin_item">
-                                      <button class="check" type="submit">退会する</button>
-                                    </li>
-                                  </ul>
-                                </div>
-                            </div>
+        @if (auth()->user()->id === $user->id)
+          <div class="hamburger-menu">
+            <input type="checkbox" id="menu-btn-check">
+            <label for="menu-btn-check" class="menu-btn"><span></span></label>
+            <div class="menu-content">
+              <ul>
+                    {{--  退会  --}}
+                  <li>
+                    <form method="POST" action="{{ url('users/' .$user->id) }}" class="mb-0">
+                      @csrf
+                      @method('DELETE')
+                        <label class="open btn btn-primar" for="pop-up"><a class="check">退会</a></label>
+                        <input type="checkbox" id="pop-up">
+                        <div class="overlay">
+                          <div class="window">
+                              <label class="close" for="pop-up">×</label>
+                              <div class="text">
+                                  <div style="text-align: center">
+                                    <h1>
+                                        確認画面                        
+                                    </h1>
+                                    <h4>
+                                        本当に退会しますか
+                                    </h4>
+                                    <ul>
+                                      <li class="kakunin_item">
+                                        <button class="check" type="submit">退会する</button>
+                                      </li>
+                                    </ul>
+                                  </div>
+                              </div>
+                          </div>
                         </div>
-                      </div>
-                  </form>
-                </li>
+                    </form>
+                  </li>
 
-                <li>
-                    <a href="{{ url('users/' .$user->id .'/edit') }}" >マイページ情報編集</a>
-                </li>
+                  <li>
+                      <a href="{{ url('users/' .$user->id .'/edit') }}" >マイページ情報編集</a>
+                  </li>
 
-                {{--  <li>
-                    <a href="https://www.kochi-tech.ac.jp/index.html">アカウント編集</a>
-                </li>  --}}
-                {{--  <li>
-                    <a href="https://www.kochi-tech.ac.jp/index.html">レンタル一覧</a>
-                </li>  --}}
-            </ul>
+                  {{--  <li>
+                      <a href="https://www.kochi-tech.ac.jp/index.html">アカウント編集</a>
+                  </li>  --}}
+                  {{--  <li>
+                      <a href="https://www.kochi-tech.ac.jp/index.html">レンタル一覧</a>
+                  </li>  --}}
+              </ul>
+            </div>
           </div>
-        </div>
-
+        @endif
+        
       </div>
       
       {{--  ユーザ  --}}
@@ -140,6 +142,35 @@
               <p class="user-text">{{$follow_count}}</p>
             </dd>
           </dl>
+
+          {{--  フォロー  --}}
+          <div class="card-follow-sub">
+            @if (auth()->user()->id === $user->id)
+            
+            @else
+              @if (auth()->user()->isFollowed($user->id))
+                  <div class="px-2">
+                      <p class="px-1 bg-secondary text-light">フォローされています</p>
+                  </div>
+              @endif
+                <div class="d-flex justify-content-end flex-grow-1">
+                    @if (auth()->user()->isFollowing($user->id))
+                        <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="POST" class="btn-top">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+
+                            <button type="submit" class="btn-follow-sub">フォロー解除</button>
+                        </form>
+                    @else
+                        <form action="{{ route('follow', ['id' => $user->id]) }}" method="POST">
+                            {{ csrf_field() }}
+
+                            <button type="submit" class="btn-follow-sub">フォローする</button>
+                        </form>
+                    @endif
+                </div>
+              @endif
+          </div>
         </div>
 
       </div> 

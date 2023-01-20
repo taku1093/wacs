@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>CONTACT | WACS</title>
+        <title>お問い合わせ | WACS</title>
         <meta name="description" content="アカウントページです。">
         <meta name="viewport" content="width=device-width"> <!-- スマホ表示用 -->
         <script src="./js/toggle-menu.js"></script>
@@ -24,10 +24,9 @@
     <body>
         
         <main class="main">
-            <div class="title">
-                <h1>CONTACT</h1>
-                <p>お問い合わせ</p>
-            </div>
+
+        <p class="pagetitle">お問い合わせ</p>
+
             <div class="map">
                 <h2>アクセスマップ</h2>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.4071146931665!2d133.71762991507362!3d33.62068458072555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3551fea409c4f4f5%3A0xb58b5ba34875c748!2z6auY55-l5bel56eR5aSn5a2mIOmmmee-juOCreODo-ODs-ODkeOCuQ!5e0!3m2!1sja!2sjp!4v1668000492853!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

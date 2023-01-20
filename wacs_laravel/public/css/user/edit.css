@@ -141,3 +141,15 @@
         width: 100%;
     }
 }
+
+.prof {
+    width: 100%;
+    max-width: 400px;
+    height: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.gen-text{
+    font-weight: 100;
+}

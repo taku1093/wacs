@@ -27,7 +27,7 @@
     <p class="pagetitle">アカウント・マイページ情報編集</p>
         <div class="card-text">
             <div class="account">
-                <form method="POST" action="{{ url('users/' .$user->id) }}" enctype="multipart/form-data">
+                <form id="edit-account" method="POST" action="{{ url('users/' .$user->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -66,15 +66,21 @@
                         <dd><input class="input-text validate[,maxSize[30]]" type="text" name="user_screen_name" placeholder="30文字以内" id="user_screen_name" value="{{ old('user_screen_name') ? : $user->user_screen_name }}"></dd>
 
 
-                        <dt><span class="">性別</span></dt>
+                        <dt><p class="">性別</p>
+                            <span class="gen-text">現在選択：</span>
+                            <span>{{ $user->user_gen}}</span>
+                        </dt>
                         <dd>
-                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="男姓" @if('男性' == $user->user_gen)checked @endif>
+                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="男姓" @if('男性' === $user->user_gen)checked @endif>
                                 <label for="user_gen">男性</label>
-                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="女性" @if('女性' == $user->user_gen) checked @endif>
+                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="女性" @if('女性' === $user->user_gen) checked @endif>
                                 <label for="user_gen">女性</label>
-                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="回答しない" @if('回答しない' == $user->user_gen) checked @endif>
+                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="回答しない" @if('回答しない' === $user->user_gen) checked @endif>
                                 <label for="user_gen">回答しない</label>
                         </dd>
+                    
+                        
+
 
                         <dt><span for="birth" class="">生年月日</span></dt>
                         <dd>
@@ -149,17 +155,19 @@
                         <dt><span class="">メールアドレス</span></dt>
                         <dd><input class="input-text validate[,custom[email],maxSize[255]]" type="text" name="email" id="email" value="{{ old('email') ? : $user->email }}"></dd> 
 
-                        <dt><span class="">プロフィール文</span></dt>
-                        <dd><input class="input-text validate[,custom[email],maxSize[255]]" type="text" name="email" id="email" value="{{ old('user_intro') ? : $user->user_intro }}"></dd> 
+                        <dt><span class="">自己紹介文</span></dt>
+                        <dd>
+                            <textarea class=" prof validate[maxSize[255]]" type="text" name="email" id="email" value="{{ old('user_intro') ? : $user->user_intro }}"></textarea>
+                        </dd> 
 
                         
                     </dl>
                     <div class="btn">
                         <button type="submit" name="cancel" class="btn submit-button">
-                            キャンセルする
+                            キャンセル
                         </button>
                         <button type="submit" class="btn submit-button">
-                            更新する
+                            更新
                         </button>
                     </div>
                 </form>
@@ -261,7 +269,7 @@
     
     <script type="text/javascript">
         jQuery(document).ready(function(){
-        jQuery("#accountform").validationEngine();
+        jQuery("#edit-account").validationEngine();
         });
     </script>
     <main class="main">

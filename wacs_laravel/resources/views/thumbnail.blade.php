@@ -104,6 +104,7 @@
                                                     @method('DELETE')
 
                                                     <button type="submit" class="btn p-0 border-0 text-danger"><i class="fas fa-heart unlike-btn"></i>{{ count($timeline->post_goods) }}</button>
+                                                    
                                                 </form>
                                             @endif
                                         @endauth

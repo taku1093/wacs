@@ -36,7 +36,7 @@
                         {{--  アイコン  --}}
                         <dd id="img" class="border_line">
                             <div id="view_1"></div>
-                            <input type="file" id="file_1" name="post_img1" accept="image/*" autocomplete="post_img">
+                            <input type="file" id=" file_1" name="user_icon" accept="image/*" autocomplete="user_icon">
                         </dd>
 
                         <dt><span class="">氏名(全角)</span></dt>
@@ -136,12 +136,12 @@
                         <dd><input class="input-text validate[,custom[phone],maxSize[21]]" type="user_tell" name="user_tell" pattern="[\d-]*" placeholder="ハイフンなし" id="user_tell" value="{{ old('user_tell') ? : $user->user_tell }}"></dd>
 
 
-                        <dt><span class="">メールアドレス</span></dt>
-                        <dd><input class="input-text validate[,custom[email],maxSize[255]]" type="text" name="email" id="email" value="{{ old('email') ? : $user->email }}"></dd> 
+                        {{--  <dt><span class="">メールアドレス</span></dt>
+                        <dd><input class="input-text validate[,custom[email],maxSize[255]]" type="text" name="email" id="email" value="{{ old('email') ? : $user->email }}"></dd>   --}}
 
                         <dt><span class="">自己紹介文</span></dt>
                         <dd>
-                            <textarea class=" prof validate[maxSize[255]]" type="text" name="email" id="email" value="{{ old('user_intro') ? : $user->user_intro }}"></textarea>
+                            <textarea class=" prof validate[maxSize[255]]" type="text" name="user_intro" id="user_intro" value="">{{ old('user_intro') ? : $user->user_intro }}</textarea>
                         </dd> 
 
                         

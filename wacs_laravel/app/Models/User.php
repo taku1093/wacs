@@ -151,7 +151,7 @@ class User extends Authenticatable
                     'user_pre' => $params['user_pre'],
                     'user_city' => $params['user_city'],
                     'user_tell' => $params['user_tell'],
-                    'email' => $params['email'],
+                    // 'email' => $params['email'],
                     'user_intro' => $params['user_intro']
                 ]);
         } else {
@@ -167,7 +167,7 @@ class User extends Authenticatable
                     'user_pre' => $params['user_pre'],
                     'user_city' => $params['user_city'],
                     'user_tell' => $params['user_tell'],
-                    'email' => $params['email'],
+                    // 'email' => $params['email'],
                     'user_intro' => $params['user_intro']
                 ]); 
         }

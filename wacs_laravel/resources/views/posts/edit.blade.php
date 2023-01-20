@@ -5,7 +5,7 @@
 @section('content')
 <head>
     <meta charset="UTF-8">
-    <title>アカウント登録 | WACS</title>
+    <title>投稿編集 | WACS</title>
     <meta name="description" content="アカウントページです。">
     <meta name="viewport" content="width=device-width"> <!-- スマホ表示用 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

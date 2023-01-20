@@ -96,7 +96,7 @@ class Post extends Model
         }elseif($request->has("post_img2")){
             $this->post_img1 = basename($data['post_img1']->store('public/post_img/'));
             $this->post_img2 = basename($data['post_img2']->store('public/post_img/'));
-        }else{
+        }elseif($request->has("post_img1")){
             $this->post_img1 = basename($data['post_img1']->store('public/post_img/'));
         }
 

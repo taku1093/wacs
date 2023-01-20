@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>アカウント登録 | WACS</title>
+    <title>新規アカウント登録 | WACS</title>
     <meta name="description" content="アカウントページです。">
     <meta name="viewport" content="width=device-width"> <!-- スマホ表示用 -->
     <script src="./js/toggle-menu.js"></script>

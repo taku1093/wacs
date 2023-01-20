@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             RepliesTableSeeder::class,
             Reply_goodsTableSeeder::class,
             Post_goodsTableSeeder::class,
-            FollowsTableSeeder::class,
+            // FollowsTableSeeder::class,
             FollowersTableSeeder::class,
         ]);
     }

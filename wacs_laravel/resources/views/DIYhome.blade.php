@@ -28,6 +28,60 @@
     <p>ホーム</P>
 </div>
 
+<!-- ニュース -->
+<div class="inner">
+    <p class="sub_title_rank">NEWS</p>
+
+     <!-- ここからニュース記事 -->
+     <ul class="news_list">
+              <li class="news_list_item">
+                <a href="">
+                  <div class="news_list_date">
+                    <time>2023.02.01</time>
+                    <p class="news_item">お知らせ</p>
+                  </div>
+                  <p>2023年2月2日(木)に高知工科大学の講義で「WACS」が紹介されます。</p>
+                  <!-- <span class="arrow"></span> -->
+                </a>
+              </li>
+              <li class="news_list_item">
+                <a href="">
+                  <div class="news_list_date">
+                    <time>2023.01.27</time>
+                    <p class="news_item">お知らせ</p>
+                  </div>
+                  <p>プラモデル・手芸・プログラミング・美術・その他のコンテンツページをメンテナンスいたします。<br>
+                     ユーザの皆様には大変ご迷惑をおかけいたします。<br>
+                     期間：2023年2月1日(水)～2023年2月28日(火)まで
+                  </p>
+                  <!-- <span class="arrow"></span> -->
+                </a>
+              </li>
+              <li class="news_list_item">
+                <a href="">
+                  <div class="news_list_date">
+                    <time>2023.01.24</time>
+                    <p class="news_item_contact">お問い合わせ返信</p>
+                  </div>
+                  <p>お問い合わせ内容：アカウントに公式マークを追加してほしい。<br>
+                     回答：今後の協議を重ねて検討いたします。
+                  </p>
+                  <!-- <span class="arrow"></span> -->
+                </a>
+              </li>
+              <li class="news_list_item">
+                <a href="">
+                  <div class="news_list_date">
+                    <time>2023.01.20</time>
+                    <p class="news_item">お知らせ</p>
+                  </div>
+                  <p>コンテンツ共有システムアプリケーション「WACS」がオープンしました。</p>
+                  <!-- <span class="arrow"></span> -->
+                </a>
+              </li>
+        </ul>
+</div>
+
 <div class="container">
     <!-- タイムライン -->
     <p class="sub_title">TIME LINE</p>

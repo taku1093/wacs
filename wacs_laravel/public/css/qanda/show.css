@@ -1,0 +1,14 @@
+.container {
+    position: relative;
+    top: 45px;
+}
+
+.list_return {
+    position: relative;
+    left: 205px;
+    top: 30px;
+}
+
+.border{ 
+    border:1px solid #dee2e6;
+}

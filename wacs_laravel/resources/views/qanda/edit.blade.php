@@ -1,7 +1,14 @@
-
+{{ Breadcrumbs::render('QA_edit') }}
 @extends('layouts.app')
 
 @section('content')
+
+<header>
+    <link rel="stylesheet" href="{{asset('css\app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
+    <link rel="stylesheet" href="{{asset('css\qanda\edit.css')}}">
+</header>
+
 <div class="container mt-4">
     <div class="border p-4">
         <h1 class="h4 mb-4 font-weight-bold">

@@ -1,7 +1,14 @@
+{{ Breadcrumbs::render('QA_show') }}
 
 @extends('layouts.app')
 
 @section('content')
+
+<header>
+    <link rel="stylesheet" href="{{asset('css\app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
+    <link rel="stylesheet" href="{{asset('css\qanda\show.css')}}">
+</header>
 
 <div class="container mt-4">  
 
@@ -130,11 +137,10 @@
     </div>
 </div>
 
-<div class="mt-4 mb-4">
+<div class="list_return mt-4 mb-4">
     <a href="{{ route('qanda.index') }}" class="btn btn-info">
         一覧に戻る
     </a>
 </div>
 @endsection
  
-{{--  @include('layouts.qandafooter')  --}}

@@ -64,21 +64,21 @@ class PostsController extends Controller
         if ($request->has("post_img3")) {
             // 画像3枚保存時
             $validator = Validator::make($data, [
-                'post_img1' => [ 'file',  'mimes:jpeg,png,jpg', 'max:2048'],
-                'post_img2' => [ 'file',  'mimes:jpeg,png,jpg', 'max:2048'],
-                'post_img3' => [ 'file',  'mimes:jpeg,png,jpg', 'max:2048'],
+                'post_img1' => [ 'file',  'mimes:jpeg,png,jpg', 'max:4096'],
+                'post_img2' => [ 'file',  'mimes:jpeg,png,jpg', 'max:4096'],
+                'post_img3' => [ 'file',  'mimes:jpeg,png,jpg', 'max:4096'],
             ]);
         }
         if($request->has("post_img2")) {
             // 画像2枚保存時
             $validator = Validator::make($data, [
-                'post_img1' => ['file',  'mimes:jpeg,png,jpg', 'max:2048'],
-                'post_img2' => ['file',  'mimes:jpeg,png,jpg', 'max:2048'],
+                'post_img1' => ['file',  'mimes:jpeg,png,jpg', 'max:4096'],
+                'post_img2' => ['file',  'mimes:jpeg,png,jpg', 'max:4096'],
             ]);
         }if($request->has("post_img1")){
             // 画像1枚保存時
             $validator = Validator::make($data, [
-                'post_img1' => ['file',  'mimes:jpeg,png,jpg', 'max:2048'],
+                'post_img1' => ['file',  'mimes:jpeg,png,jpg', 'max:4096'],
             ]);
         }
         // 材料

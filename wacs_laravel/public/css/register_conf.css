@@ -96,6 +96,7 @@ dd.input-item{ /*入力文字*/
     cursor: pointer;
     margin-top: 40px;
     margin-bottom: 40px;
+    min-width: 200px;
 }
 
 .submit-button:hover {
@@ -112,7 +113,6 @@ button.btn1{
     font-weight: 600;
     background-color: #f2ce1b;
     color: #fff; 
-    min-width: 250px;
 }
 
 button.btn1:hover {
@@ -136,5 +136,9 @@ button.btn2:hover {
     color: #fff;
     background: #f4dd64;
     
+  }
+
+  button {
+    font-size: inherit;
   }
 

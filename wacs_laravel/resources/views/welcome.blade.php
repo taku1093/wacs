@@ -21,8 +21,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-        <link href="./css/welcome.css" rel="stylesheet">
-
+        @auth
+        <link href="{{ asset('css/welcome_in.css') }}" rel="stylesheet">
+        @endauth
+        @guest
+        <link href="{{ asset('css/welcome_out.css') }}" rel="stylesheet">
+        @endguest
     </head>
     <body>
     {{--  <header class="header">

@@ -473,3 +473,7 @@ form.mb-0{
     }
  
 }
+
+button {
+    font-size: inherit;
+  }

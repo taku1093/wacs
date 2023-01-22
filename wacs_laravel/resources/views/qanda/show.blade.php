@@ -1,3 +1,15 @@
+@extends('layouts.qandalayout')
+ 
+@section('title', 'LaravelPjt Q&A 投稿の詳細ページ')
+@section('keywords', 'キーワード1,キーワード2,キーワード3')
+@section('description', '投稿詳細ページの説明文')
+@section('pageCss')
+<link href="/css/qanda/style.css" rel="stylesheet">
+@endsection
+ 
+{{--  @include('layouts.qandaheader')
+ 
+@section('content')  --}}
 
 @extends('layouts.app')
 

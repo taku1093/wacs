@@ -31,7 +31,8 @@ class User extends Authenticatable
         'date',
         'user_pre', 
         'user_city',
-        'password'
+        'password',
+        'user_intro'
     ];
 
     /**
@@ -140,7 +141,7 @@ class User extends Authenticatable
 
             $this::where('id', $this->id)
                 ->update([
-                    'user_icon' => basename($file_name),
+                    // 'user_icon' => basename($file_name),
                     'user_name' => $params['user_name'],
                     'user_name_kana' => $params['user_name_kana'],
                     'user_screen_name' => $params['user_screen_name'],
@@ -151,8 +152,8 @@ class User extends Authenticatable
                     'user_pre' => $params['user_pre'],
                     'user_city' => $params['user_city'],
                     'user_tell' => $params['user_tell'],
-                    // 'email' => $params['email'],
-                    'user_intro' => $params['user_intro']
+                    'email' => $params['email'],
+                    // 'user_intro' => $params['user_intro']
                 ]);
         } else {
             $this::where('id', $this->id)
@@ -167,8 +168,8 @@ class User extends Authenticatable
                     'user_pre' => $params['user_pre'],
                     'user_city' => $params['user_city'],
                     'user_tell' => $params['user_tell'],
-                    // 'email' => $params['email'],
-                    'user_intro' => $params['user_intro']
+                    'email' => $params['email'],
+                    // 'user_intro' => $params['user_intro']
                 ]); 
         }
 

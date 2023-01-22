@@ -33,7 +33,6 @@
 
                     <dl class="form-area">
                         <dt><span class="">アイコン</span></dt>
-                        {{--  アイコン  --}}
                         <dd id="img" class="border_line">
                             <div id="view_1"></div>
                             <input type="file" id=" file_1" name="user_icon" accept="image/*" autocomplete="user_icon">
@@ -61,6 +60,7 @@
                                 <label for="user_gen">女性</label>
                             <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="回答しない" @if('回答しない' === $user->user_gen) checked @endif>
                                 <label for="user_gen">回答しない</label>
+
                         </dd>
                     
                         
@@ -130,19 +130,18 @@
                         </select></dd>
 
                         <dt><span class="">住所(市区町村)</span></dt>
-                        <dd><input class="input-text validate[,maxSize[30]]" type="text" name="user_city" placeholder="市区町村のみ入力" id="user_city" value="{{ old('user_city') ? : $user->user_city }}"></dd>
-
+                        <dd><input class="input-text validate[maxSize[30]]" type="text" name="user_city" placeholder="30文字以内" id="user_city" value="{{ old('user_city') ? : $user->user_city }}"></dd>
                         <dt><span class="">電話番号</span></dt>
                         <dd><input class="input-text validate[,custom[phone],maxSize[21]]" type="user_tell" name="user_tell" pattern="[\d-]*" placeholder="ハイフンなし" id="user_tell" value="{{ old('user_tell') ? : $user->user_tell }}"></dd>
 
 
-                        {{--  <dt><span class="">メールアドレス</span></dt>
-                        <dd><input class="input-text validate[,custom[email],maxSize[255]]" type="text" name="email" id="email" value="{{ old('email') ? : $user->email }}"></dd>   --}}
+                        <dt><span class="">メールアドレス</span></dt>
+                        <dd><input class="input-text validate[,custom[email],maxSize[255]]" type="text" name="email" id="email" value="{{ old('email') ? : $user->email }}"></dd>
 
-                        <dt><span class="">自己紹介文</span></dt>
+                        {{--  <dt><span class="">自己紹介文</span></dt>
                         <dd>
                             <textarea class=" prof validate[maxSize[255]]" type="text" name="user_intro" id="user_intro" value="">{{ old('user_intro') ? : $user->user_intro }}</textarea>
-                        </dd> 
+                        </dd>   --}}
 
                         
                     </dl>

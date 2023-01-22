@@ -145,15 +145,15 @@ class User extends Authenticatable
                     'user_name' => $params['user_name'],
                     'user_name_kana' => $params['user_name_kana'],
                     'user_screen_name' => $params['user_screen_name'],
-                    // 'user_gen' => $params['user_gen'],
-                    // 'year' => $params['year'],
-                    // 'month' => $params['month'],
-                    // 'date' => $params['date'],
+                    'user_gen' => $params['user_gen'],
+                    'year' => $params['year'],
+                    'month' => $params['month'],
+                    'date' => $params['date'],
                     'user_pre' => $params['user_pre'],
-                    // 'user_city' => $params['user_city'],
-                    // 'user_tell' => $params['user_tell'],
-                    // 'email' => $params['email'],
-                    // 'user_intro' => $params['user_intro']
+                    'user_city' => $params['user_city'],
+                    'user_tell' => $params['user_tell'],
+                    'email' => $params['email'],
+                    'user_intro' => $params['user_intro']
                 ]);
         } else {
             $this::where('id', $this->id)
@@ -161,15 +161,15 @@ class User extends Authenticatable
                     'user_name' => $params['user_name'],
                     'user_name_kana' => $params['user_name_kana'],
                     'user_screen_name' => $params['user_screen_name'],
-                    // 'user_gen' => $params['user_gen'],
-                    // 'year' => $params['year'],
-                    // 'month' => $params['month'],
-                    // 'date' => $params['date'],
+                    'user_gen' => $params['user_gen'],
+                    'year' => $params['year'],
+                    'month' => $params['month'],
+                    'date' => $params['date'],
                     'user_pre' => $params['user_pre'],
-                    // 'user_city' => $params['user_city'],
-                    // 'user_tell' => $params['user_tell'],
-                    // 'email' => $params['email'],
-                    // 'user_intro' => $params['user_intro']
+                    'user_city' => $params['user_city'],
+                    'user_tell' => $params['user_tell'],
+                    'email' => $params['email'],
+                    'user_intro' => $params['user_intro']
                 ]); 
         }
 

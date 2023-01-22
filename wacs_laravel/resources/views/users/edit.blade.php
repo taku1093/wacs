@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HOME | WACS</title>
     {{--  css  --}}
-    <link href="./common.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ asset('js/post/create.js') }}" type="text/javascript"></script>
@@ -35,7 +33,7 @@
                         <dt><span class="">アイコン</span></dt>
                         <dd id="img" class="border_line">
                             <div id="view_1"></div>
-                            <input type="file" id=" file_1" name="user_icon" accept="image/*" autocomplete="user_icon">
+                            <input type="file" id="file_1" name="user_icon" accept="image/*" autocomplete="user_icon">
                         </dd>
 
                         <dt><span class="">氏名(全角)</span></dt>

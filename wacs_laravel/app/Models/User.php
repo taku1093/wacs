@@ -76,10 +76,10 @@ class User extends Authenticatable
         return $this->hasMany(Evaluation::class);
     }
 
-    // public function posts()
-    // {
-    //     return $this->hasMany(Post::class);
-    // }
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 
     public function post_goods()
     {

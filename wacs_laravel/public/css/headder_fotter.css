@@ -193,7 +193,8 @@ header {
 
 header img{
   /* max-width: 25%; */
-  height: auto;
+  height: 51px;
+  border-radius: 50%;
 }
 
 footer img {
@@ -273,7 +274,7 @@ body {
     border: 0; /* デフォルトスタイル リセット */
     position: fixed;
     right: 50px;
-    top: 30px;
+    top: 39px;
   }
   
   /* 画面のどこをクリックしても元の状態に戻るように*/

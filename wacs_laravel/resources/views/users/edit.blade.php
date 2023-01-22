@@ -49,7 +49,7 @@
                         <dd><input class="input-text validate[,maxSize[30]]" type="text" name="user_screen_name" placeholder="30文字以内" id="user_screen_name" value="{{ old('user_screen_name') ? : $user->user_screen_name }}"></dd>
 
 
-                        <dt><p class="">性別</p>
+                        {{--  <dt><p class="">性別</p>
                             <span class="gen-text">現在選択：</span>
                             <span>{{ $user->user_gen}}</span>
                         </dt>
@@ -62,7 +62,7 @@
                                 <label for="user_gen">回答しない</label>
 
                         </dd>
-                    
+                      --}}
                         
 
 

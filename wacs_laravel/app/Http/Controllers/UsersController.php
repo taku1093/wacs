@@ -111,7 +111,7 @@ class UsersController extends Controller
                 'user_name'   => ['required', 'string', 'max:50'],
                 'user_name_kana'   => ['required', 'string', 'max:50'],
                 'user_screen_name'   => ['required', 'string', 'max:50'],
-                'user_gen' => ['required', 'string', 'max:255'],
+                // 'user_gen' => ['required', 'string', 'max:255'],
                 // 'year' => ['required', 'string', 'max:255'],
                 // 'month' => ['required', 'string', 'max:255'],
                 // 'date' => ['required', 'string', 'max:255'],

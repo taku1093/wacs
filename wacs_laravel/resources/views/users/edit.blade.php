@@ -66,7 +66,7 @@
                         
 
 
-                        <dt><span for="birth" class="">生年月日</span></dt>
+                        {{--  <dt><span for="birth" class="">生年月日</span></dt>
                         <dd>
                             <select id="year" class="validate[]" name="year"><option value="">{{ old('year') ? : $user->year }}</option></select> 
                                 <label for="year">年</label>
@@ -74,7 +74,7 @@
                                 <label for="month">月</label>
                             <select id="date" class="validate[]" name="date"><option value="">{{ old('date') ? : $user->date }}</option></select> 
                                 <label for="date">日</label>
-                        </dd>
+                        </dd>  --}}
 
                         <dt><span class="">住所(都道府県)</span></dt>
                         <dd><select name="user_pre" id="user_pre" class="input-text validate[]">
@@ -129,14 +129,14 @@
                             <label for="user_pre"></label>
                         </select></dd>
 
-                        <dt><span class="">住所(市区町村)</span></dt>
+                        {{--  <dt><span class="">住所(市区町村)</span></dt>
                         <dd><input class="input-text validate[maxSize[30]]" type="text" name="user_city" placeholder="30文字以内" id="user_city" value="{{ old('user_city') ? : $user->user_city }}"></dd>
                         <dt><span class="">電話番号</span></dt>
-                        <dd><input class="input-text validate[,custom[phone],maxSize[21]]" type="user_tell" name="user_tell" pattern="[\d-]*" placeholder="ハイフンなし" id="user_tell" value="{{ old('user_tell') ? : $user->user_tell }}"></dd>
+                        <dd><input class="input-text validate[,custom[phone],maxSize[21]]" type="user_tell" name="user_tell" pattern="[\d-]*" placeholder="ハイフンなし" id="user_tell" value="{{ old('user_tell') ? : $user->user_tell }}"></dd>  --}}
 
 
-                        <dt><span class="">メールアドレス</span></dt>
-                        <dd><input class="input-text validate[,custom[email],maxSize[255]]" type="text" name="email" id="email" value="{{ old('email') ? : $user->email }}"></dd>
+                        {{--  <dt><span class="">メールアドレス</span></dt>
+                        <dd><input class="input-text validate[,custom[email],maxSize[255]]" type="text" name="email" id="email" value="{{ old('email') ? : $user->email }}"></dd>  --}}
 
                         {{--  <dt><span class="">自己紹介文</span></dt>
                         <dd>
@@ -181,7 +181,7 @@
                     }
 
                     // 日(初期): 1~31 の値を設定
-                    for (var k = 1; k <= 32; k++) {
+                    for (var k = 1; k <= 31; k++) {
                         $('#date').append('<option value="' + k + '">' + k + '</option>');
                     }
 

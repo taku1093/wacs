@@ -155,5 +155,10 @@ background: url(http://www.timurtek.com/wp-content/uploads/2014/10/form-bg.jpg) 
  input[type="submit"].login:hover{background-color: #fff; border:1px solid #f4dd64; color:#f4dd64; cursor:pointer;}
  input[type="submit"].login:focus{outline: none;}
 
+ button {
+  font-size: inherit;
+}
+
+
 
 

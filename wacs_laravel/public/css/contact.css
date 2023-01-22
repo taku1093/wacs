@@ -183,3 +183,9 @@
     width: 100%;
     text-align: right;
   }
+
+
+  button {
+    font-size: inherit;
+  }
+  

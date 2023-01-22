@@ -209,3 +209,8 @@ margin-top: 45px;
 row-gap: 40px;
 }
 }
+
+button {
+    font-size: inherit;
+  }
+  

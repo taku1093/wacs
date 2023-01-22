@@ -84,7 +84,15 @@
         </div>
         </header>  --}}
         <main class="main">
-        <p class="pagetitle">ようこそ！ WACSへ</p>
+        <p class="pagetitle">ようこそ！ 
+            @auth
+            {{ auth()->user()->user_screen_name }}様
+            @endauth
+
+            @guest
+                WACSへ
+            @endguest
+        </p>  
         <ul class="item-list">
             <li>
                 <a href="{{ route('DIY_home') }}"><img class="home-img"src="./img/DIY.jpg" alt="DIYのロゴ"></a>

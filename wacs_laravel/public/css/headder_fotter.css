@@ -69,9 +69,11 @@ header {
 
 
 
-.header-logo {
+.header-logo img{
     display: block; /*ロゴのサイズ指定をできるように*/
     width: 170px;
+    height: 64px;
+    border-radius: 100px;
 }
 
 .site-menu ul {

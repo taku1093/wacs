@@ -155,7 +155,7 @@
                                 </div>
 
                                 {{--  他ユーザからの評価  --}}
-                                <div class="card-user_evaluation">
+                                <!-- <div class="card-user_evaluation">
                                     <p>他ユーザからの評価</p>
                                     @foreach ($eval_results as $eval_results)
                                         @if($post->user->id === $eval_results->user_id)
@@ -166,7 +166,7 @@
                                         @endif
                                     @endforeach
                                     
-                                </div>
+                                </div> -->
 
                                 {{--  投稿数  --}}
                                 <div class="card-post_num">

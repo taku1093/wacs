@@ -82,7 +82,7 @@
         <main class="main">
         <p class="pagetitle">ようこそ！ 
             @auth
-            {{ auth()->user()->user_screen_name }}様
+            {{ auth()->user()->user_screen_name }}さん
             @endauth
 
             @guest

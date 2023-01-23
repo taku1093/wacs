@@ -1,19 +1,15 @@
-@extends('layouts.qandalayout')
- 
-@section('title', 'LaravelPjt Q&A 投稿の詳細ページ')
-@section('keywords', 'キーワード1,キーワード2,キーワード3')
-@section('description', '投稿詳細ページの説明文')
-@section('pageCss')
-<link href="/css/qanda/style.css" rel="stylesheet">
-@endsection
- 
-{{--  @include('layouts.qandaheader')
- 
-@section('content')  --}}
+
+{{ Breadcrumbs::render('QA_show') }}
 
 @extends('layouts.app')
 
 @section('content')
+
+<header>
+    <link rel="stylesheet" href="{{asset('css\app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
+    <link rel="stylesheet" href="{{asset('css\qanda\show.css')}}">
+</header>
 
 <div class="container mt-4">  
 
@@ -140,13 +136,14 @@
             @endforelse
         </section>
     </div>
-</div>
 
-<div class="mt-4 mb-4">
+    <div class="list_return mt-4 mb-4">
     <a href="{{ route('qanda.index') }}" class="btn btn-info">
         一覧に戻る
     </a>
+    </div>
 </div>
+
+
 @endsection
  
-{{--  @include('layouts.qandafooter')  --}}

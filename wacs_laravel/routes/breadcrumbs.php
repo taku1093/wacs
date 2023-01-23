@@ -66,5 +66,23 @@ Breadcrumbs::for('simulation_model', function ($trail) {
 // Home > Q&A
 Breadcrumbs::for('QA', function ($trail) {
     $trail->parent('DIY_home');
-    $trail->push('Q&A', route('DIY_home'));
+    $trail->push('Q&A', route('qanda.index'));
+});
+
+// Home > Q&A > QA詳細
+Breadcrumbs::for('QA_show', function ($trail) {
+    $trail->parent('QA');
+    $trail->push('Q&A詳細', route('DIY_home'));
+});
+
+// Home > Q&A > QA編集
+Breadcrumbs::for('QA_edit', function ($trail) {
+    $trail->parent('QA');
+    $trail->push('Q&A編集', route('DIY_home'));
+});
+
+// Home > Q&A > QA新規作成
+Breadcrumbs::for('QA_create', function ($trail) {
+    $trail->parent('QA');
+    $trail->push('Q&A新規作成', route('DIY_home'));
 });

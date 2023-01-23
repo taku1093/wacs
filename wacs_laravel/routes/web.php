@@ -68,7 +68,10 @@ Route::group(['middleware' => 'auth'], function() {
     // いいね関連
     Route::resource('post_goods', 'Post_goodsController', ['only' => ['store', 'destroy']]);
 
-    
+    // ランキング
+    Route::get('ranking_all', 'RankingController@all')->name('ranking_all');
+    Route::get('ranking_week', 'RankingController@week')->name('ranking_week');
+    Route::get('ranking_month', 'RankingController@month')->name('ranking_month');
 });
 
 //Q&A
@@ -98,3 +101,4 @@ Route::resource('qacomment', 'QacommentsController', ['only' => ['store']]);
     Route::get('simulation/model14', 'SimulationController@model14')->name('simu_model14');
     Route::get('simulation/model15', 'SimulationController@model15')->name('simu_model15');
     Route::get('simulation/model16', 'SimulationController@model16')->name('simu_model16');
+

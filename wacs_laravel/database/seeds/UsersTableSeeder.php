@@ -35,5 +35,17 @@ class UsersTableSeeder extends Seeder
                 // 'updated_at'     => now()
             ]);
         }
+
+        // 管理者
+        User::create([
+            'screen_name'    => '管理者',
+            'user_screen_name'=> 'TEST-ADMIN',
+            'email'          => 'test0@test.com',
+            'password'       => Hash::make('12345678'),
+            'user_admin'     => 1,
+            'remember_token' => str_random(10),
+            'created_at'     => now(),
+            'updated_at'     => now()
+        ]);
     }
 }

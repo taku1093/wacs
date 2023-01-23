@@ -25,7 +25,7 @@
 
     <div class="QA_create_area">
         <a href="{{ route('qanda.create') }}">
-        <button type="submit" class="QA_create">投稿の新規作成</button>
+        <button type="submit" class="QA_create">質問の新規作成</button>
         </a>
     </div>
 
@@ -33,14 +33,14 @@
     <div class="serch_area">
         <form class="form-inline" method="GET" action="{{ route('qanda.index') }}">
             <div class="form-group">
-                <input type="text" name="searchword" value="{{$searchword}}" class="form-control" placeholder="名前を入力してください">
+                <input type="text" name="searchword" value="{{$searchword}}" class="form-control" placeholder="キーワードを入力">
             </div>
             <input type="submit" value="検索" class="serch_btn">
         </form>
     </div>
 
     <div class="serch_result">
-        <p>{{ $qaposts->total() }}件が見つかりました。</p>
+        <p>検索結果：{{ $qaposts->total() }}件が見つかりました。</p>
     </div>
 
     <div class="mt-4 mb-4">

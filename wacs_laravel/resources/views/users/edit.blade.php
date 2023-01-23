@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HOME | WACS</title>
     {{--  css  --}}
-    <link href="./common.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ asset('js/post/create.js') }}" type="text/javascript"></script>
@@ -33,10 +31,9 @@
 
                     <dl class="form-area">
                         <dt><span class="">アイコン</span></dt>
-                        {{--  アイコン  --}}
                         <dd id="img" class="border_line">
                             <div id="view_1"></div>
-                            <input type="file" id=" file_1" name="user_icon" accept="image/*" autocomplete="user_icon">
+                            <input type="file" id="file_1" name="user_icon" accept="image/*" autocomplete="user_icon">
                         </dd>
 
                         <dt><span class="">氏名(全角)</span></dt>
@@ -61,24 +58,25 @@
                                 <label for="user_gen">女性</label>
                             <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="回答しない" @if('回答しない' === $user->user_gen) checked @endif>
                                 <label for="user_gen">回答しない</label>
+
                         </dd>
-                    
+                        
                         
 
 
                         <dt><span for="birth" class="">生年月日</span></dt>
                         <dd>
-                            <select id="year" class="validate[]" name="year"><option value="">{{ old('year') ? : $user->year }}</option></select> 
+                            <select id="year" class="validate[]" name="year"><option value="{{ old('year') ? : $user->year }}">{{ old('year') ? : $user->year }}</option></select> 
                                 <label for="year">年</label>
-                            <select id="month" class="validate[]" name="month"><option value="">{{ old('month') ? : $user->month }}</option></select> 
+                            <select id="month" class="validate[]" name="month"><option value="{{ old('month') ? : $user->month }}">{{ old('month') ? : $user->month }}</option></select> 
                                 <label for="month">月</label>
-                            <select id="date" class="validate[]" name="date"><option value="">{{ old('date') ? : $user->date }}</option></select> 
+                            <select id="date" class="validate[]" name="date"><option value="{{ old('date') ? : $user->date }}">{{ old('date') ? : $user->date }}</option></select> 
                                 <label for="date">日</label>
                         </dd>
 
                         <dt><span class="">住所(都道府県)</span></dt>
                         <dd><select name="user_pre" id="user_pre" class="input-text validate[]">
-                            <option value="" selected="selected">{{ old('user_pre') ? : $user->user_pre }}</option>
+                            <option value="{{ old('user_pre') ? : $user->user_pre }}" selected="selected">{{ old('user_pre') ? : $user->user_pre }}</option>
                             <option value="北海道" data-pref-id="1">北海道</option>
                             <option value="青森県" data-pref-id="2">青森県</option>
                             <option value="岩手県" data-pref-id="3">岩手県</option>
@@ -130,14 +128,13 @@
                         </select></dd>
 
                         <dt><span class="">住所(市区町村)</span></dt>
-                        <dd><input class="input-text validate[,maxSize[30]]" type="text" name="user_city" placeholder="市区町村のみ入力" id="user_city" value="{{ old('user_city') ? : $user->user_city }}"></dd>
-
+                        <dd><input class="input-text validate[maxSize[30]]" type="text" name="user_city" placeholder="30文字以内" id="user_city" value="{{ old('user_city') ? : $user->user_city }}"></dd>
                         <dt><span class="">電話番号</span></dt>
                         <dd><input class="input-text validate[,custom[phone],maxSize[21]]" type="user_tell" name="user_tell" pattern="[\d-]*" placeholder="ハイフンなし" id="user_tell" value="{{ old('user_tell') ? : $user->user_tell }}"></dd>
 
 
-                        {{--  <dt><span class="">メールアドレス</span></dt>
-                        <dd><input class="input-text validate[,custom[email],maxSize[255]]" type="text" name="email" id="email" value="{{ old('email') ? : $user->email }}"></dd>   --}}
+                        <dt><span class="">メールアドレス</span></dt>
+                        <dd><input class="input-text validate[,custom[email],maxSize[255]]" type="text" name="email" id="email" value="{{ old('email') ? : $user->email }}"></dd>
 
                         <dt><span class="">自己紹介文</span></dt>
                         <dd>
@@ -182,7 +179,7 @@
                     }
 
                     // 日(初期): 1~31 の値を設定
-                    for (var k = 1; k <= 32; k++) {
+                    for (var k = 1; k <= 31; k++) {
                         $('#date').append('<option value="' + k + '">' + k + '</option>');
                     }
 

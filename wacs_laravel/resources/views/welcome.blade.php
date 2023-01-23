@@ -21,8 +21,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-        <link href="./css/welcome.css" rel="stylesheet">
-
+        @auth
+        <link href="{{ asset('css/welcome_in.css') }}" rel="stylesheet">
+        @endauth
+        @guest
+        <link href="{{ asset('css/welcome_out.css') }}" rel="stylesheet">
+        @endguest
     </head>
     <body>
     {{--  <header class="header">
@@ -80,7 +84,15 @@
         </div>
         </header>  --}}
         <main class="main">
-        <p class="pagetitle">ようこそ！ WACSへ</p>
+        <p class="pagetitle">ようこそ！ 
+            @auth
+            {{ auth()->user()->user_screen_name }}さん
+            @endauth
+
+            @guest
+                WACSへ
+            @endguest
+        </p>  
         <ul class="item-list">
             <li>
                 <a href="{{ route('DIY_home') }}"><img class="home-img"src="./img/DIY.jpg" alt="DIYのロゴ"></a>

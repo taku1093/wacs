@@ -12,8 +12,8 @@
   
       
       <!-- cssファイルの設定など -->
-      {{--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-      <link rel="stylesheet" type="text/css" href="{{ asset('css\thumne.css')}}">  --}}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="{{ asset('css\thumne.css')}}">
       {{--  ハートマーク用  --}}
       <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="{{ asset('css\user\Mypage.css')}}">
@@ -30,7 +30,7 @@
       <div class="box1">
         <div class="back"></div>
         <div class="mypage">
-          <div class="border border-bottom">マイページ</div>                
+          <div class=" border-bottom">マイページ</div>                
         </div>
 
         {{--  ハンバーガーメニュー  --}}
@@ -143,10 +143,10 @@
             @else
               @if (auth()->user()->isFollowed($user->id))
                   <div class="px-2">
-                      <p class="px-1 bg-secondary text-light">フォローされています</p>
+                      <p class=" text-light">フォローされています</p>
                   </div>
               @endif
-                <div class="d-flex justify-content-end flex-grow-1">
+                <div class="">
                     @if (auth()->user()->isFollowing($user->id))
                         <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="POST" class="btn-top">
                             {{ csrf_field() }}
@@ -351,8 +351,9 @@
                     @else
                         @if (auth()->user()->isFollowed($user_following->id))
                             <div class="px-2">
-                                <span class="px-1 bg-secondary text-light">フォローされています</span>
+                                <span class="">フォローされています</span>
                             </div>
+                            
                         @endif
                         <div class="d-flex justify-content-end flex-grow-1">
                             @if (auth()->user()->isFollowing($user_following->id))
@@ -360,13 +361,13 @@
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <button type="submit" class="btn-follow">フォロー解除</button>
+                                    <button type="submit" class="follow">フォロー解除</button>
                                 </form>
                             @else
                                 <form action="{{ route('follow', ['id' => $user_following->id]) }}" method="POST">
                                     {{ csrf_field() }}
 
-                                    <button type="submit" class="btn-follow">フォローする</button>
+                                    <button type="submit" class="follow">フォローする</button>
                                 </form>
                             @endif
                         </div>
@@ -377,69 +378,14 @@
               @endforeach
             @endif
             
-           
+          
           </div>
         </div>
         
         {{--  タブフォロワー  --}}
         <div class="tabcontent" id="tabcontent3">
           <h1>フォロワー</h1>
-          <div class="infobox"><!-- 内部スクロール化 -->
-            @if (empty($follower_ids))
-              <p class="follow-message">まだフォロワーはいません</p>
-            @else
-              @foreach ($user_followers as $user_follower)
-                <div class="flex-container">
-                  {{--  アイコン  --}}
-                  <div class="card-icon">
-                    <a  class="" href="{{ url('users/' .$user_follower->id) }}" >
-                        @if ($user_follower->user_icon == null)
-                            {{--  デフォルトアイコン  --}}
-                        <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image">
-                        @else
-                            {{--  任意アイコン  --}}
-                        <img src="{{ asset('storage/user_icon/' .$user_follower->user_icon) }}"  class="circle-image">
-                        @endif
-                    </a>
-                  </div>
-
-                  {{--  ユーザネーム  --}}
-                  <h5>{{$user_follower->user_screen_name }}</h5>
-
-                  {{--  フォロー  --}}
-                  <div class="card-follow">
-                    @if (auth()->user()->id === $user_follower->id)
-                    
-                    @else
-                      @if (auth()->user()->isFollowed($user_follower->id))
-                          <div class="px-2">
-                              <p class="px-1 bg-secondary text-light">フォローされています</p>
-                          </div>
-                      @endif
-                        <div class="d-flex justify-content-end flex-grow-1">
-                            @if (auth()->user()->isFollowing($user_follower->id))
-                                <form action="{{ route('unfollow', ['id' => $user_follower->id]) }}" method="POST" class="btn-top">
-                                    {{ csrf_field() }}
-                                    {{ method_field('DELETE') }}
-
-                                    <button type="submit" class="btn-follow">フォロー解除</button>
-                                </form>
-                            @else
-                                <form action="{{ route('follow', ['id' => $user_follower->id]) }}" method="POST">
-                                    {{ csrf_field() }}
-
-                                    <button type="submit" class="btn-follow">フォローする</button>
-                                </form>
-                            @endif
-                        </div>
-                      @endif
-                  </div>
-                </div>
-              @endforeach
-            @endif
-            
-           
-          </div>
+        <!-- 中身あると表示されないので一旦消してます -->
         </div>
         
         {{--  タブいいね  --}}

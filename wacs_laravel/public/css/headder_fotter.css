@@ -69,9 +69,11 @@ header {
 
 
 
-.header-logo {
+.header-logo img{
     display: block; /*ロゴのサイズ指定をできるように*/
     width: 170px;
+    height: 64px;
+    border-radius: 100px;
 }
 
 .site-menu ul {
@@ -155,6 +157,7 @@ header {
     border-radius: 24px;
     transition: .3s;
     line-height: 25px;
+    cursor: pointer;
 }
 
 .styled-button:hover {
@@ -181,6 +184,7 @@ header {
     transition: .3s;
     border-radius: 24px;
     line-height: 25px;
+    cursor: pointer;
 }
 
 .styled-button_t:hover {
@@ -191,7 +195,8 @@ header {
 
 header img{
   /* max-width: 25%; */
-  height: auto;
+  height: 51px;
+  border-radius: 50%;
 }
 
 footer img {
@@ -271,7 +276,7 @@ body {
     border: 0; /* デフォルトスタイル リセット */
     position: fixed;
     right: 50px;
-    top: 30px;
+    top: 39px;
   }
   
   /* 画面のどこをクリックしても元の状態に戻るように*/

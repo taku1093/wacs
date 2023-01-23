@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\softDeletes;
 class Reply extends Model
 {
     //
-    use SoftDeletes;
+    // use SoftDeletes;
 
     protected $fillable = [
         'reply_text'

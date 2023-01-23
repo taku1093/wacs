@@ -1,3 +1,4 @@
+
 {{ Breadcrumbs::render('QA_show') }}
 
 @extends('layouts.app')

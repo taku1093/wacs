@@ -120,6 +120,16 @@
     margin-top: 100px;
 } */
 
+.user_icon{
+    /* margin:0 5px 5px 0;
+    max-width:200px;
+    vertical-align:bottom;
+     */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
 /* ここからレスポンシブデザイン */
 @media (max-width: 800px) {
     .map,

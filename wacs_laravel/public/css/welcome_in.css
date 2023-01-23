@@ -209,3 +209,16 @@ margin-top: 45px;
 row-gap: 40px;
 }
 }
+
+/* ヘッダーの調整コード */
+.site-menu ul li {
+    margin-top: 19px;
+  }
+  
+  button {
+    font-size: inherit;
+  }
+  
+  .dropdown__list { /* デフォルトスタイル リセット */
+    margin-top: -19px;
+  }

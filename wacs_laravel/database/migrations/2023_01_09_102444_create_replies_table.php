@@ -21,7 +21,7 @@ class CreateRepliesTable extends Migration
             $table->string('reply_text')->nullable()->comment('返信内容');
             $table->integer('reply_count')->default(0)->nullable()->comment('通報回数');
 
-            $table->softDeletes();
+            // $table->softDeletes();
             $table->timestamps();
 
             // 索引設定

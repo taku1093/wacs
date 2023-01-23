@@ -31,7 +31,8 @@ class User extends Authenticatable
         'date',
         'user_pre', 
         'user_city',
-        'password'
+        'password',
+        'user_intro'
     ];
 
     /**
@@ -75,10 +76,10 @@ class User extends Authenticatable
         return $this->hasMany(Evaluation::class);
     }
 
-    // public function posts()
-    // {
-    //     return $this->hasMany(Post::class);
-    // }
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 
     public function post_goods()
     {
@@ -151,7 +152,7 @@ class User extends Authenticatable
                     'user_pre' => $params['user_pre'],
                     'user_city' => $params['user_city'],
                     'user_tell' => $params['user_tell'],
-                    // 'email' => $params['email'],
+                    'email' => $params['email'],
                     'user_intro' => $params['user_intro']
                 ]);
         } else {
@@ -167,7 +168,7 @@ class User extends Authenticatable
                     'user_pre' => $params['user_pre'],
                     'user_city' => $params['user_city'],
                     'user_tell' => $params['user_tell'],
-                    // 'email' => $params['email'],
+                    'email' => $params['email'],
                     'user_intro' => $params['user_intro']
                 ]); 
         }

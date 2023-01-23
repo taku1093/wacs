@@ -85,6 +85,10 @@
     width: 100%;
 }
 
+.img_area img {
+  height: 210px; /* サムネ画像の大きさ変更 */
+}
+
 .flex {
   display: flex;
 }
@@ -200,7 +204,9 @@ a:hover {
 
   .post_title{
     height: 15px;
+    font-weight: bold;
   }
+  
   .post_exp{
     height: 100px;
   }
@@ -238,4 +244,14 @@ margin-bottom: 40px;
 margin-left: auto;
 margin-right: auto;
 }
+
+.text-primary {
+  color: #808080!important;
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 

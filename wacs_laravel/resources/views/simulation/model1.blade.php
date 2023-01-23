@@ -76,7 +76,10 @@
           {{--  投稿材料  --}}
           <div  class="card-material">
               <h2>[材料]</h2></dt>
-              <p class="mb-0"></p>
+              <p class="mb-0">
+                ・木材30cm <br>
+                ・釘200本
+              </p>
 
           </div>
           

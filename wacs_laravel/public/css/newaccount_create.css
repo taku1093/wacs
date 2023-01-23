@@ -22,13 +22,19 @@
 .pagesubtitle {
     padding-top: 20px;
     text-align: center;
-    color: #aaaaaa;
+    color: #808080;
 }
 
 .pagesubtitle2 {
     padding-top: 7px;
     text-align: center;
-    color: #aaaaaa;
+    color: #808080;
+}
+
+.pagesubtitle3 {
+    padding-top: 7px;
+    text-align: center;
+    color: red;
 }
 
 .account {

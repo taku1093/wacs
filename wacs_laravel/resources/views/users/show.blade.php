@@ -182,6 +182,7 @@
               {{--  サムネイル  --}}
               <div class="container">
                 <div class="row justify-content-flex-start">
+                  {{--  <div class="txt-hide">  --}}
                   {{--  投稿情報  --}}
                   @if (isset($timelines))
                     @foreach ($timelines as $timeline)
@@ -288,12 +289,13 @@
                       </div>
                     @endforeach
                   @endif
+                  {{--  </div>  --}}
                 </div>
               </div>
             </div>
           
 
-            {{--  <div class="txt-hide">
+            <div class="txt-hide">
               <ul class="product-list">
             
                 <li><!-- 1つのliが1つの投稿を指す -->
@@ -311,7 +313,7 @@
                   </a>
                 </li>
               </ul>
-            </div>  --}}
+            </div>
             <button class="more"></button>
               
           </div>
@@ -558,25 +560,9 @@
               </div>
             </div>
           
-            {{--  <div class="txt-hide">
-              <ul class="product-list">
+            <div class="txt-hide">
               
-                <li><!-- 1つのliが1つの投稿を指す -->
-                  <a href="https://www.kochi-tech.ac.jp/index.html"><!-- 閲覧画面 -->
-                    <img src="https://3.bp.blogspot.com/-shGNRiV5CTw/WTd4lpwf2eI/AAAAAAABEoo/bpVr6YyILvkUcFqwHtDn5UOt8JfexPiDQCLcB/s800/gakkou_isu_chair.png" alt=""><!-- 画像 -->
-                    <p>タイトル</p>
-                    <p>文章</p>
-                  </a>
-                </li>
-                <li><!-- 1つのliが1つの投稿を指す -->
-                  <a href="https://www.kochi-tech.ac.jp/index.html"><!-- 閲覧画面 -->
-                    <img src="https://3.bp.blogspot.com/-shGNRiV5CTw/WTd4lpwf2eI/AAAAAAABEoo/bpVr6YyILvkUcFqwHtDn5UOt8JfexPiDQCLcB/s800/gakkou_isu_chair.png" alt=""><!-- 画像 -->
-                    <p>タイトル</p>
-                    <p>文章</p>
-                  </a>
-                </li>
-              </ul>
-            </div>  --}}
+            </div>
             <button class="more"></button>
           </div>
         </div>

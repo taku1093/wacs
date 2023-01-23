@@ -739,7 +739,10 @@ p.folow {
       
       .txt-hide{
         display: none;
-        }
+      }
+      .col-md-4{
+        max-width: 100%;
+      }
         
         button.more {
         width: 120px;

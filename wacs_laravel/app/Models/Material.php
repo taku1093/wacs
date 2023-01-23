@@ -11,7 +11,7 @@ use phpDocumentor\Reflection\Types\String_;
 class Material extends Model
 {
     //
-    use SoftDeletes;
+//     use SoftDeletes;
 
     protected $fillable = [
         // 'material_id',

@@ -25,6 +25,10 @@
         <p class="pagetitle">アカウント情報登録</p>
         <p class="pagesubtitle">WACSの利用に当たってアカウント情報の登録をお願いします。</p>
         <p class="pagesubtitle2">個人情報に関して、他のユーザに対し、公開することはありません。</p>
+        <p class="pagesubtitle3">
+            ※同一のメールアドレスでアカウント作成する場合には一度アカウントの退会をお願いします。<br>
+            &emsp;&emsp;メールアドレスを重複させてのアカウント作成はできかねますのでご理解のほどお願いします。
+        </p>
         <div class="account">
             <form id="accountform"  method="POST" action="{{ route('user.register_post') }}" > <!-- 完了画面に遷移 -->
                 @csrf

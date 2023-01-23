@@ -144,9 +144,9 @@
                         
                     </dl>
                     <div class="btn">
-                        <button type="submit" name="cancel" class="btn submit-button">
+                        {{--  <button type="submit" name="back" class="btn submit-button">
                             キャンセル
-                        </button>
+                        </button>  --}}
                         <button type="submit" class="btn submit-button">
                             更新
                         </button>

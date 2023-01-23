@@ -13,6 +13,7 @@ use App\Models\Post_good;
 class UsersController extends Controller
 {
     //
+    // private $form_show = 'UsersController@show';
     public function index(User $user)
     {
         $all_users = $user->getAllUsers(auth()->user()->id);
@@ -104,6 +105,20 @@ class UsersController extends Controller
     
         public function update(Request $request, User $user)
         {
+
+            // $input = $request->session()->get("form_input");
+
+            // // 戻るボタン
+            // if ($request->has("back")) {
+            //     return redirect()->action($this->form_show)
+            //         ->withInput($input);
+            // }
+
+            // //セッションに値が無い時はフォームに戻る
+            // if (!$input) {
+            //     return redirect()->action($this->form_show);
+            // }
+
             $data = $request->all();
             $validator = Validator::make($data, [
                 

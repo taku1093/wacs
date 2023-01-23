@@ -331,7 +331,7 @@ class PostsController extends Controller
         $validator->validate();
         $post->postUpdate($post->id, $data);
         // if($request->has("material_name1")){
-            $material->materialUpdate($material->id, $data);
+        $material->materialUpdate($material->id, $data);
         // }
         // $tool->toolUpdate($tool->id, $data);
         return redirect('posts');

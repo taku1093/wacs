@@ -385,62 +385,7 @@
         {{--  タブフォロワー  --}}
         <div class="tabcontent" id="tabcontent3">
           <h1>フォロワー</h1>
-          <div class="infobox"><!-- 内部スクロール化 -->
-            @if (empty($follower_ids))
-              <p class="follow-message">まだフォロワーはいません</p>
-            @else
-              @foreach ($user_followers as $user_follower)
-                <div class="flex-container">
-                  {{--  アイコン  --}}
-                  <div class="card-icon">
-                    <a  class="" href="{{ url('users/' .$user_follower->id) }}" >
-                        @if ($user_follower->user_icon == null)
-                            {{--  デフォルトアイコン  --}}
-                        <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image">
-                        @else
-                            {{--  任意アイコン  --}}
-                        <img src="{{ asset('storage/user_icon/' .$user_follower->user_icon) }}"  class="circle-image">
-                        @endif
-                    </a>
-                  </div>
-
-                  {{--  ユーザネーム  --}}
-                  <h5>{{$user_follower->user_screen_name }}</h5>
-
-                  {{--  フォロー  --}}
-                  <div class="card-follow">
-                    @if (auth()->user()->id === $user_follower->id)
-                    
-                    @else
-                      @if (auth()->user()->isFollowed($user_follower->id))
-                        <div class="px-2">
-                          <span class="">フォローされています</span>
-                        </div>
-                      @endif
-                        <div class="d-flex justify-content-end flex-grow-1">
-                            @if (auth()->user()->isFollowing($user_follower->id))
-                                <form action="{{ route('unfollow', ['id' => $user_follower->id]) }}" method="POST" class="btn-top">
-                                    {{ csrf_field() }}
-                                    {{ method_field('DELETE') }}
-                                    
-                                    {{--  <button type="submit" class="btn-follow">フォロー解除</button>  --}}
-                                </form>
-                            @else
-                            <form action="{{ route('follow', ['id' => $user_following->id]) }}" method="POST">
-                              {{ csrf_field() }}
-
-                              <button type="submit" class="follow">フォローする</button>
-                            </form>
-                            @endif
-                        </div>
-                      @endif
-                  </div>
-                </div>
-              @endforeach
-            @endif
-            
-           
-          </div>
+        <!-- 中身あると表示されないので一旦消してます -->
         </div>
         
         {{--  タブいいね  --}}

@@ -21,7 +21,7 @@ class CreateCommentsTable extends Migration
             $table->string('comment_text')->nullable()->comment('コメント内容');
             $table->integer('comment_count')->default(0)->nullable()->comment('通報回数');
 
-            $table->softDeletes();
+            // $table->softDeletes();
             $table->timestamps();
 
             // 索引設定

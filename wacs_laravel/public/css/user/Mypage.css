@@ -221,14 +221,14 @@ body {
 
   .infobox {
      height: auto;               /* 高さを制限(※) */
-     width: calc(100% - 500px);
+     width: calc(100% - 1000px);
      overflow: auto;             /* 横のみにスクロール付与 */
      border: 1px solid black;    /* 枠線を引く：黒色で1ピクセルの実線 */
      background-color: #ffffff;  /* 背景色を追加 */
      font-size:30px;
      border-radius: 24px;
-    margin-left: auto;
-    margin-right: auto;
+     margin-left: auto;
+     margin-right: auto;
   }
 
   .imgposition{
@@ -496,7 +496,7 @@ body {
 .user-card-sub{
   position: relative;
   top: 40px;
-  left: 28%;
+  left: 26%;
 }
 
 dl.user-card-sub {
@@ -536,10 +536,11 @@ h5 {
 
 .card-follow{
   text-align: center;
-  padding-top: 1%;
-  padding-left: 30%;
-  
+  display:flex;
+  margin-left: auto;
+  margin-right: 20px;
 }
+
 button.follow {
   /* background-color: #1492AF;
   border: 3px solid #1492AF; */
@@ -621,7 +622,7 @@ button.follow {
 .menu-content {
   width: 20%;
   height: 20%;
-  top: 310px;
+  top: 170px;
   right: -382px;
   position:absolute;
   z-index: 80;
@@ -753,7 +754,7 @@ p.folow {
         }
 
         .card-follow-sub{
-          padding-top: 80px;
+          padding-top: auto;
           padding-left: 30px;
         }
 
@@ -794,4 +795,12 @@ button {
 
 .dropdown__list { /* デフォルトスタイル リセット */
   margin-top: -19px;
+}
+
+.hamburger-menu {
+  padding: 0px 97%;
+}
+
+.follow-character {
+  font-size: 20px;
 }

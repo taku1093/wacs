@@ -8,7 +8,7 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Mypage</title>
+      <title>HOME | WACS</title>
   
       
       <!-- cssファイルの設定など -->
@@ -25,10 +25,12 @@
   
   <body>
     <main class="main">
-      
+      <p class="pagetitle">マイページ</p>
       {{--  ハンバーガーなど  --}}
       <div class="box1">
         <div class="back"></div>
+        <div class="mypage">             
+        </div>
 
         {{--  ハンバーガーメニュー  --}}
         @if (auth()->user()->id === $user->id)
@@ -38,11 +40,11 @@
             <div class="menu-content">
               <ul>
                     {{--  退会  --}}
-                  <li>
-                    <form method="POST" action="{{ url('users/' .$user->id) }}" class="mb-0">
+                  <li class="delete">
+                    <label class="" for="pop-up"><a class="check">退会</a></label>
+                    <form method="POST" action="{{ url('users/' .$user->id) }}" class="delete">
                       @csrf
                       @method('DELETE')
-                        <label class="open btn btn-primar" for="pop-up"><a class="check">退会</a></label>
                         <input type="checkbox" id="pop-up">
                         <div class="overlay">
                           <div class="window">
@@ -74,13 +76,8 @@
             </div>
           </div>
         @endif
+        
       </div>
-
-      @if (auth()->user()->id === $user->id)
-      <div class="mypage">
-          <div class=" border-bottom">マイページ</div>                
-      </div>
-      @endif
       
       {{--  ユーザ  --}}
       <div class="user">
@@ -99,7 +96,7 @@
         <div class="user-card">
           {{--  ユーザネーム  --}}
           <div class="username">
-            <h2>{{$user->user_screen_name }}</h2>
+            <h2 class="user-name">{{$user->user_screen_name }}</h2>
           </div>
 
           {{--  生年月日  --}}
@@ -128,13 +125,13 @@
             </dd>
 
             <dd class="post-num">
-              <h2>フォロワー</h2>
-              <p class="user-text">{{$follower_count}}</p>
+              <h2>フォロー中</h2>
+              <p class="user-text">{{$follow_count}}</p>
             </dd>
 
             <dd class="post-num">
-              <h2>フォロー中</h2>
-              <p class="user-text">{{$follow_count}}</p>
+              <h2>フォロワー</h2>
+              <p class="user-text">{{$follower_count}}</p>
             </dd>
           </dl>
 
@@ -145,15 +142,15 @@
             @else
               @if (auth()->user()->isFollowed($user->id))
                   <div class="px-2">
-                      <p class=" text-light">フォローされています</p>
+                      <p class="messege-followed">フォローされています</p>
                   </div>
               @endif
-                <div class="btn-set">
+                <div class="">
                     @if (auth()->user()->isFollowing($user->id))
                         <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="POST" class="btn-top">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-
+                            
                             <button type="submit" class="btn-follow-sub">フォロー解除</button>
                         </form>
                     @else
@@ -164,7 +161,7 @@
                         </form>
                     @endif
                 </div>
-              @endif
+            @endif
           </div>
         </div>
 
@@ -213,7 +210,20 @@
 
                             {{--  詳細  --}}
                             <!-- ホーム画面のサムネイルの場合には以下を通報のみにしてください。マイページのサムネイルの場合には通報以外を表示するような処理が必要です。-->
-
+                            <div class="dropdown">
+                              {{--  <button class="dropdown__btn" id="dropdown__btn1">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="64"/><circle cx="256" cy="448" r="64"/><circle cx="256" cy="64" r="64"/></svg>
+                              </button>  --}}
+                              <div class="dropdown__body">
+                                  <ul class="dropdown__list">
+                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link">編集する</a></li>
+                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link">共有する</a></li>
+                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link">通報</a></li>
+                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link red" style="color: red;">投稿を削除</a></li>
+                                  </ul>
+                              </div>
+                            </div>
+                            <!-- ここまで (dropdown)-->
                           </div>
                                     
                           {{--  投稿画像  --}}
@@ -300,9 +310,9 @@
                     <p>文章</p>
                   </a>
                 </li>
-
               </ul>
             </div>  --}}
+            <button class="more"></button>
               
           </div>
         </div>
@@ -321,10 +331,10 @@
                     <a  class="" href="{{ url('users/' .$user_following->id) }}" >
                         @if ($user_following->user_icon == null)
                             {{--  デフォルトアイコン  --}}
-                        <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image">
+                        <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image-follow">
                         @else
                             {{--  任意アイコン  --}}
-                        <img src="{{ asset('storage/user_icon/' .$user_following->user_icon) }}"  class="circle-image">
+                        <img src="{{ asset('storage/user_icon/' .$user_following->user_icon) }}"  class="circle-image-follow">
                         @endif
                     </a>
                   </div>
@@ -338,24 +348,23 @@
                     
                     @else
                         @if (auth()->user()->isFollowed($user_following->id))
-                            <div class="px-2">
-                                <span class="follow-character">フォローされています</span>
+                            <div class="">
+                                <p class="auth-followed">フォローされています</p>
                             </div>
-                            
                         @endif
-                        <div class="d-flex justify-content-end flex-grow-1">
+                        <div class="btn-following">
                             @if (auth()->user()->isFollowing($user_following->id))
                                 <form action="{{ route('unfollow', ['id' => $user_following->id]) }}" method="POST" class="btn-top">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <button type="submit" class="follow">フォロー解除</button>
+                                    <button type="submit" class="btn-follow">フォロー解除</button>
                                 </form>
                             @else
                                 <form action="{{ route('follow', ['id' => $user_following->id]) }}" method="POST">
                                     {{ csrf_field() }}
 
-                                    <button type="submit" class="follow">フォローする</button>
+                                    <button type="submit" class="btn-follow">フォローする</button>
                                 </form>
                             @endif
                         </div>
@@ -366,7 +375,7 @@
               @endforeach
             @endif
             
-          
+           
           </div>
         </div>
         
@@ -374,59 +383,60 @@
         <div class="tabcontent" id="tabcontent3">
           <h1>フォロワー</h1>
           <div class="infobox"><!-- 内部スクロール化 -->
-          @if (empty($follower_ids))
-            <p class="follow-message">まだフォロワーはいません</p>
-          @else
-            @foreach ($user_followers as $user_follower)
-              <div class="flex-container">
-                {{--  アイコン  --}}
-                <div class="card-icon">
-                  <a  class="" href="{{ url('users/' .$user_follower->id) }}" >
-                      @if ($user_follower->user_icon == null)
-                          {{--  デフォルトアイコン  --}}
-                      <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image">
-                      @else
-                          {{--  任意アイコン  --}}
-                      <img src="{{ asset('storage/user_icon/' .$user_follower->user_icon) }}"  class="circle-image">
+            @if (empty($follower_ids))
+              <p class="follow-message">まだフォロワーはいません</p>
+            @else
+              @foreach ($user_followers as $user_follower)
+                <div class="flex-container">
+                  {{--  アイコン  --}}
+                  <div class="card-icon">
+                    <a  class="follow-icon" href="{{ url('users/' .$user_follower->id) }}" >
+                        @if ($user_follower->user_icon == null)
+                            {{--  デフォルトアイコン  --}}
+                        <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image-follow">
+                        @else
+                            {{--  任意アイコン  --}}
+                        <img src="{{ asset('storage/user_icon/' .$user_follower->user_icon) }}"  class="circle-image-follow">
+                        @endif
+                    </a>
+                  </div>
+
+                  {{--  ユーザネーム  --}}
+                  <h5>{{$user_follower->user_screen_name }}</h5>
+
+                  {{--  フォロー  --}}
+                  <div class="card-follow">
+                    @if (auth()->user()->id === $user_follower->id)
+                    
+                    @else
+                      @if (auth()->user()->isFollowed($user_follower->id))
+                          <div class="">
+                              <p class="auth-followed">フォローされています</p>
+                          </div>
                       @endif
-                  </a>
+                        <div class="btn-following">
+                            @if (auth()->user()->isFollowing($user_follower->id))
+                                <form action="{{ route('unfollow', ['id' => $user_follower->id]) }}" method="POST" class="btn-top">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+
+                                    <button type="submit" class="btn-follow">フォロー解除</button>
+                                </form>
+                            @else
+                                <form action="{{ route('follow', ['id' => $user_follower->id]) }}" method="POST">
+                                    {{ csrf_field() }}
+
+                                    <button type="submit" class="btn-follow">フォローする</button>
+                                </form>
+                            @endif
+                        </div>
+                      @endif
+                  </div>
                 </div>
-
-                {{--  ユーザネーム  --}}
-                <h5>{{$user_follower->user_screen_name }}</h5>
-
-                {{--  フォロー  --}}
-                <div class="card-follow">
-                  @if (auth()->user()->id === $user_follower->id)
-                  
-                  @else
-                    @if (auth()->user()->isFollowed($user_follower->id))
-                      <div class="px-2">
-                        <span class="follow-character">フォローされています</span>
-                      </div>
-                    @endif
-                      <div class="d-flex justify-content-end flex-grow-1">
-                          @if (auth()->user()->isFollowing($user_follower->id))
-                              <form action="{{ route('unfollow', ['id' => $user_follower->id]) }}" method="POST" class="btn-top">
-                                  {{ csrf_field() }}
-                                  {{ method_field('DELETE') }}
-                                  
-                                  {{--  <button type="submit" class="btn-follow">フォロー解除</button>  --}}
-                              </form>
-                          @else
-                          <form action="{{ route('follow', ['id' => $user_following->id]) }}" method="POST">
-                            {{ csrf_field() }}
-
-                            <button type="submit" class="follow">フォローする</button>
-                          </form>
-                          @endif
-                      </div>
-                    @endif
-                </div>
-              </div>
-            @endforeach
-          @endif
-
+              @endforeach
+            @endif
+            
+           
           </div>
         </div>
         
@@ -466,6 +476,20 @@
 
                             {{--  詳細  --}}
                             <!-- ホーム画面のサムネイルの場合には以下を通報のみにしてください。マイページのサムネイルの場合には通報以外を表示するような処理が必要です。-->
+                            <div class="dropdown">
+                              {{--  <button class="dropdown__btn" id="dropdown__btn1">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="64"/><circle cx="256" cy="448" r="64"/><circle cx="256" cy="64" r="64"/></svg>
+                              </button>  --}}
+                              <div class="dropdown__body">
+                                  <ul class="dropdown__list">
+                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link">編集する</a></li>
+                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link">共有する</a></li>
+                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link">通報</a></li>
+                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link red" style="color: red;">投稿を削除</a></li>
+                                  </ul>
+                              </div>
+                            </div>
+                            <!-- ここまで (dropdown)-->
                           </div>
                                     
                           {{--  投稿画像  --}}
@@ -551,13 +575,11 @@
                     <p>文章</p>
                   </a>
                 </li>
-
               </ul>
             </div>  --}}
             <button class="more"></button>
           </div>
         </div>
-        
       </div>
     </main>
 

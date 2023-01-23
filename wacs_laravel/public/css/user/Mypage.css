@@ -7,7 +7,24 @@
     margin: 0;
     box-sizing: border-box;
 }
+.pagetitle{
+  padding-top: 70px;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+}
 
+.pagetitle::after {
+  content: '';
+  display: block;
+  width: 76px;
+  height: 3px;
+  background-color: #f4dd64;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
 ul,
 ol { /*リスト行頭のアイコンを非表示*/
     list-style: none;
@@ -221,7 +238,7 @@ body {
 
   .infobox {
      height: auto;               /* 高さを制限(※) */
-     width: calc(100% - 1000px);
+     width: calc(100% - 750px);
      overflow: auto;             /* 横のみにスクロール付与 */
      border: 1px solid black;    /* 枠線を引く：黒色で1ピクセルの実線 */
      background-color: #ffffff;  /* 背景色を追加 */
@@ -491,11 +508,14 @@ body {
   left: 41%;
   top:180px;
   font-size:25px;
+  white-space: pre-wrap;
 }
-
+/* .user-card{
+  z-index: 999999;
+} */
 .user-card-sub{
   position: relative;
-  top: 40px;
+  top: 20px;
   left: 26%;
 }
 
@@ -518,11 +538,11 @@ dl dd.post-num {
   right: 10%;
 }
 
-h5 {
+/* h5 {
   padding-top: 19px;
   padding-left: 25px;
   padding-right: 10%;
-}
+} */
 
 
 .circle-image-mypage {
@@ -570,6 +590,7 @@ button.follow {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-bottom: 0;
 }
 
 
@@ -622,7 +643,7 @@ button.follow {
 .menu-content {
   width: 20%;
   height: 20%;
-  top: 170px;
+  top: 323px;
   right: -382px;
   position:absolute;
   z-index: 80;
@@ -768,7 +789,7 @@ p.folow {
           font-weight: bold;
           display: inline-block;
           font-weight: 700px;
-          padding: 10px 170px;
+          padding: 10px 90px;
           position: relative;
           text-align: center;
           text-decoration: none;
@@ -776,6 +797,32 @@ p.folow {
           border-radius: 24px;
           line-height: 25px;
           font-size: 28px;
+        }
+        
+        .btn-follow-sub:hover {
+          background-color: #fff;
+          /* color: #1492AF; */
+          color: #f4dd64;
+        }
+
+        .btn-follow {
+          /* background-color: #1492AF;
+          border: 3px solid #1492AF; */
+          background-color: #f4dd64;
+          border: 3px solid #f4dd64;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+          color: #fff;
+          font-weight: bold;
+          display: inline-block;
+          font-weight: 700px;
+          padding: 10px 0px;
+          position: relative;
+          text-align: center;
+          text-decoration: none;
+          transition: .3s;
+          border-radius: 24px;
+          line-height: 25px;
+          font-size: 25px;
         }
         
         .btn-follow:hover {
@@ -798,9 +845,68 @@ button {
 }
 
 .hamburger-menu {
-  padding: 0px 97%;
+  padding: 10px 0%;
 }
 
 .follow-character {
   font-size: 20px;
+}
+
+/* form.delete{
+  width: 0px;
+} */
+
+a.check{
+  width: 55px !important;
+  height: 55px;
+}
+
+.messege-followed{
+  padding-top: 7px;
+  font-size: 25px;
+}
+
+h2.user-name{
+  position: relative;
+  top: -35px;
+  left: -50px;
+}
+
+p.birth{
+  position: relative;
+  top: -5px;
+  left: -50px;
+}
+
+p.user_intro{
+  position: relative;
+  top: -60px;
+  left: -50px;
+  width: 350px;
+  height: 120px;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+.auth-followed{
+  font-size: 25px;
+  padding-top: 15px;
+  padding-right: 30px;
+}
+
+.btn-following{
+  /* padding-left: 10px; */
+  padding-bottom: 15px;
+}
+
+h5{
+  padding-top: 15px;
+  padding-left: 50px;
+}
+
+.circle-image-follow{
+  width: 50px;
+  height: 50px;
+  margin: 0px 0px 10px 25px;
+  border-radius: 50%;
+ 
 }

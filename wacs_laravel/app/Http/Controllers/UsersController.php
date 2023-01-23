@@ -111,7 +111,7 @@ class UsersController extends Controller
                 'user_name'   => ['string', 'max:50'],
                 'user_name_kana'   => [ 'string', 'max:50'],
                 'user_screen_name'   => ['string', 'max:50'],
-                'user_gen' => ['required', 'string', 'max:255'],
+                // 'user_gen' => ['required', 'string', 'max:255'],
                 'year' => ['required', 'string', 'max:255'],
                 'month' => ['required', 'string', 'max:255'],
                 'date' => ['required', 'string', 'max:255'],
@@ -121,6 +121,12 @@ class UsersController extends Controller
                 'email'         => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
                 'user_intro' =>['required', 'string', 'max:255']
             ]);
+
+            if($request->has("user_gen")){
+                $validator = Validator::make($data, [
+                    'user_gen' => ['required', 'string', 'max:255'],
+                ]);
+            }
             $validator->validate();
             $user->updateProfile($data);
     

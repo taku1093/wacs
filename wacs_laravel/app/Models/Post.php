@@ -65,9 +65,9 @@ class Post extends Model
     }
 
     // 言い値した投稿取得
-    public function getUsergoodTimeLine(Array $user_id)
+    public function getUsergoodTimeLine(Array $post_id)
     {
-        return $this->whereIn('user_id', $user_id)->orderBy('created_at', 'DESC')->get();
+        return $this->whereIn('id', $post_id)->orderBy('created_at', 'DESC')->get();
     }
 
     public function getPostCount(Int $user_id)

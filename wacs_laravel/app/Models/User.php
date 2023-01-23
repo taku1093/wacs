@@ -145,7 +145,7 @@ class User extends Authenticatable
                     'user_name' => $params['user_name'],
                     'user_name_kana' => $params['user_name_kana'],
                     'user_screen_name' => $params['user_screen_name'],
-                    'user_gen' => $params['user_gen'],
+                    // 'user_gen' => $params['user_gen'],
                     'year' => $params['year'],
                     'month' => $params['month'],
                     'date' => $params['date'],
@@ -155,13 +155,21 @@ class User extends Authenticatable
                     'email' => $params['email'],
                     'user_intro' => $params['user_intro']
                 ]);
+
+                if (isset($params['user_gen'])) {
+                    $this::where('id', $this->id)
+                    ->update([
+                        'user_gen' => $params['user_gen'],
+                    ]);
+                }
+
         } else {
             $this::where('id', $this->id)
                 ->update([
                     'user_name' => $params['user_name'],
                     'user_name_kana' => $params['user_name_kana'],
                     'user_screen_name' => $params['user_screen_name'],
-                    'user_gen' => $params['user_gen'],
+                    // 'user_gen' => $params['user_gen'],
                     'year' => $params['year'],
                     'month' => $params['month'],
                     'date' => $params['date'],
@@ -171,6 +179,13 @@ class User extends Authenticatable
                     'email' => $params['email'],
                     'user_intro' => $params['user_intro']
                 ]); 
+
+                if (isset($params['user_gen'])) {
+                    $this::where('id', $this->id)
+                    ->update([
+                        'user_gen' => $params['user_gen'],
+                    ]);
+                }
         }
 
         return;

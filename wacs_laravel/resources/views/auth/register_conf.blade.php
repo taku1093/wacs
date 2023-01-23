@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>新規アカウント確認 | WACS</title> 
     <link rel="stylesheet" href="{{ asset('./css/register_conf.css') }}">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
 <p class="pagetitle">アカウント情報の確認</p>
@@ -76,12 +77,12 @@
             <input class="form-control" type="hidden" id="email" name="email"  value="{{ $input["email"] }}">
         </div>
 
-        <div class="md-form">
-            <!-- <label for="password">パスワード</label> -->
-            <label for="password"><dt class="item"><span>パスワード</span></dt></label>
-            <dd class="input-item">{{ $input["password"] }}</dd>
-            <input class="form-control" type="hidden" id="password" name="password"  value="{{ $input["password"] }}" required autocomplete="new-password">
-        </div>
+            <div class="md-form">
+                <!-- <label for="password">パスワード</label> -->
+                <label for="password"><dt class="item"><span>パスワード</span></dt></label>
+                <dd class="input-item">{{ $input["password"] }}</dd>
+                <input class="form-control" type="hidden" id="password" name="password"  value="{{ $input["password"] }}" required autocomplete="new-password">
+            </div>
 
         <div class="md-form">
             <label for="password-confirm"></label>

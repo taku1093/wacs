@@ -136,12 +136,14 @@
             @endforelse
         </section>
     </div>
-</div>
 
-<div class="list_return mt-4 mb-4">
+    <div class="list_return mt-4 mb-4">
     <a href="{{ route('qanda.index') }}" class="btn btn-info">
         一覧に戻る
     </a>
+    </div>
 </div>
+
+
 @endsection
  

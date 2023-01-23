@@ -29,9 +29,6 @@
       {{--  ハンバーガーなど  --}}
       <div class="box1">
         <div class="back"></div>
-        <div class="mypage">
-          <div class=" border-bottom">マイページ</div>                
-        </div>
 
         {{--  ハンバーガーメニュー  --}}
         @if (auth()->user()->id === $user->id)
@@ -77,8 +74,13 @@
             </div>
           </div>
         @endif
-        
       </div>
+
+      @if (auth()->user()->id === $user->id)
+      <div class="mypage">
+          <div class=" border-bottom">マイページ</div>                
+      </div>
+      @endif
       
       {{--  ユーザ  --}}
       <div class="user">
@@ -146,7 +148,7 @@
                       <p class=" text-light">フォローされています</p>
                   </div>
               @endif
-                <div class="">
+                <div class="btn-set">
                     @if (auth()->user()->isFollowing($user->id))
                         <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="POST" class="btn-top">
                             {{ csrf_field() }}
@@ -211,20 +213,7 @@
 
                             {{--  詳細  --}}
                             <!-- ホーム画面のサムネイルの場合には以下を通報のみにしてください。マイページのサムネイルの場合には通報以外を表示するような処理が必要です。-->
-                            <div class="dropdown">
-                              <button class="dropdown__btn" id="dropdown__btn1">
-                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="64"/><circle cx="256" cy="448" r="64"/><circle cx="256" cy="64" r="64"/></svg>
-                              </button>
-                              <div class="dropdown__body">
-                                  <ul class="dropdown__list">
-                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link">編集する</a></li>
-                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link">共有する</a></li>
-                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link">通報</a></li>
-                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link red" style="color: red;">投稿を削除</a></li>
-                                  </ul>
-                              </div>
-                            </div>
-                            <!-- ここまで (dropdown)-->
+
                           </div>
                                     
                           {{--  投稿画像  --}}
@@ -314,7 +303,6 @@
 
               </ul>
             </div>  --}}
-            <button class="more"></button>
               
           </div>
         </div>
@@ -351,7 +339,7 @@
                     @else
                         @if (auth()->user()->isFollowed($user_following->id))
                             <div class="px-2">
-                                <span class="">フォローされています</span>
+                                <span class="follow-character">フォローされています</span>
                             </div>
                             
                         @endif
@@ -385,7 +373,61 @@
         {{--  タブフォロワー  --}}
         <div class="tabcontent" id="tabcontent3">
           <h1>フォロワー</h1>
-        <!-- 中身あると表示されないので一旦消してます -->
+          <div class="infobox"><!-- 内部スクロール化 -->
+          @if (empty($follower_ids))
+            <p class="follow-message">まだフォロワーはいません</p>
+          @else
+            @foreach ($user_followers as $user_follower)
+              <div class="flex-container">
+                {{--  アイコン  --}}
+                <div class="card-icon">
+                  <a  class="" href="{{ url('users/' .$user_follower->id) }}" >
+                      @if ($user_follower->user_icon == null)
+                          {{--  デフォルトアイコン  --}}
+                      <img src="{{asset('img/default_icon.png') }}" alt="デフォルトアイコン" class="circle-image">
+                      @else
+                          {{--  任意アイコン  --}}
+                      <img src="{{ asset('storage/user_icon/' .$user_follower->user_icon) }}"  class="circle-image">
+                      @endif
+                  </a>
+                </div>
+
+                {{--  ユーザネーム  --}}
+                <h5>{{$user_follower->user_screen_name }}</h5>
+
+                {{--  フォロー  --}}
+                <div class="card-follow">
+                  @if (auth()->user()->id === $user_follower->id)
+                  
+                  @else
+                    @if (auth()->user()->isFollowed($user_follower->id))
+                      <div class="px-2">
+                        <span class="follow-character">フォローされています</span>
+                      </div>
+                    @endif
+                      <div class="d-flex justify-content-end flex-grow-1">
+                          @if (auth()->user()->isFollowing($user_follower->id))
+                              <form action="{{ route('unfollow', ['id' => $user_follower->id]) }}" method="POST" class="btn-top">
+                                  {{ csrf_field() }}
+                                  {{ method_field('DELETE') }}
+                                  
+                                  {{--  <button type="submit" class="btn-follow">フォロー解除</button>  --}}
+                              </form>
+                          @else
+                          <form action="{{ route('follow', ['id' => $user_following->id]) }}" method="POST">
+                            {{ csrf_field() }}
+
+                            <button type="submit" class="follow">フォローする</button>
+                          </form>
+                          @endif
+                      </div>
+                    @endif
+                </div>
+              </div>
+            @endforeach
+          @endif
+
+          </div>
         </div>
         
         {{--  タブいいね  --}}
@@ -424,20 +466,6 @@
 
                             {{--  詳細  --}}
                             <!-- ホーム画面のサムネイルの場合には以下を通報のみにしてください。マイページのサムネイルの場合には通報以外を表示するような処理が必要です。-->
-                            <div class="dropdown">
-                              <button class="dropdown__btn" id="dropdown__btn1">
-                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="64"/><circle cx="256" cy="448" r="64"/><circle cx="256" cy="64" r="64"/></svg>
-                              </button>
-                              <div class="dropdown__body">
-                                  <ul class="dropdown__list">
-                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link">編集する</a></li>
-                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link">共有する</a></li>
-                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link">通報</a></li>
-                                      <li class="dropdown__item"><a href="#" class="dropdown__item-link red" style="color: red;">投稿を削除</a></li>
-                                  </ul>
-                              </div>
-                            </div>
-                            <!-- ここまで (dropdown)-->
                           </div>
                                     
                           {{--  投稿画像  --}}
@@ -529,6 +557,7 @@
             <button class="more"></button>
           </div>
         </div>
+        
       </div>
     </main>
 

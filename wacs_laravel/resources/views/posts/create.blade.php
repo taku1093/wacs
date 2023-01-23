@@ -105,15 +105,21 @@
                         <textarea id="method" class="method validate[required,maxSize[400]]" name="method" value="{{ old('method') }}"></textarea>
                     </dd>
 
-                    {{--  タグ  --}}
-                    <dt><span class="required-tag">タグ</span></dt>
+                    {{--  カテゴリー  --}}
+                    <dt><span class="required-tag">カテゴリー</span></dt>
                     <dd class="border_line">
                         <select id="post_tag1" class="validate[required]" name="post_tag1">
-                            <option value="" selected="selected">タグを選択</option>
+                            <option value="" selected="selected">カテゴリーを選択</option>
                             <option value="椅子" data-pref-id="1">椅子</option>
                             <option value="机" data-pref-id="2">机</option>
                             <option value="棚" data-pref-id="3">棚</option>
-                            <option value="その他" data-pref-id="4">その他</option>
+                            <option value="テラス" data-pref-id="4">テラス</option>
+                            <option value="ベランダ/バルコニー" data-pref-id="5">ベランダ/バルコニー</option>
+                            <option value="ペット" data-pref-id="6">ペット</option>
+                            <option value="ポスト/表札" data-pref-id="7">ポスト/表札</option>
+                            <option value="キッチン" data-pref-id="8">キッチン</option>
+                            <option value="100均DIY" data-pref-id="9">100均DIY</option>
+                            <option value="その他" data-pref-id="10">その他</option>
                             <label for="post_tag1"></label>
                         </select> 
                         <select id="post_tag2" class="" name="post_tag2">
@@ -121,7 +127,13 @@
                             <option value="椅子" data-pref-id="1">椅子</option>
                             <option value="机" data-pref-id="2">机</option>
                             <option value="棚" data-pref-id="3">棚</option>
-                            <option value="その他" data-pref-id="4">その他</option>
+                            <option value="テラス" data-pref-id="4">テラス</option>
+                            <option value="ベランダ/バルコニー" data-pref-id="5">ベランダ/バルコニー</option>
+                            <option value="ペット" data-pref-id="6">ペット</option>
+                            <option value="ポスト/表札" data-pref-id="7">ポスト/表札</option>
+                            <option value="キッチン" data-pref-id="8">キッチン</option>
+                            <option value="100均DIY" data-pref-id="9">100均DIY</option>
+                            <option value="その他" data-pref-id="10">その他</option>
                             <label for="post_tag2"></label>
                         </select> 
                         <select id="post_tag3" class="" name="post_tag3">
@@ -129,7 +141,13 @@
                             <option value="椅子" data-pref-id="1">椅子</option>
                             <option value="机" data-pref-id="2">机</option>
                             <option value="棚" data-pref-id="3">棚</option>
-                            <option value="その他" data-pref-id="4">その他</option>
+                            <option value="テラス" data-pref-id="4">テラス</option>
+                            <option value="ベランダ/バルコニー" data-pref-id="5">ベランダ/バルコニー</option>
+                            <option value="ペット" data-pref-id="6">ペット</option>
+                            <option value="ポスト/表札" data-pref-id="7">ポスト/表札</option>
+                            <option value="キッチン" data-pref-id="8">キッチン</option>
+                            <option value="100均DIY" data-pref-id="9">100均DIY</option>
+                            <option value="その他" data-pref-id="10">その他</option>
                             <label for="post_tag3"></label>
                         </select> 
                     </dd>

@@ -1,0 +1,13 @@
+.container {
+    position: relative;
+    top: 45px;
+}
+
+.border{ 
+    border:1px solid #dee2e6;
+}
+
+.py-4 {
+    padding-top: 110px!important;
+    padding-bottom: 110px!important;
+}

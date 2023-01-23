@@ -254,9 +254,42 @@ dl dd.post_good, dd.material_num {
     text-align: center;
 }
 
-.card-header, .card-exp, .card-material, .card-method, .card-tool{
-    padding: 30px;
+.card-header {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
+
+.card-exp {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.card-material {
+    padding-top: 0;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.card-method {
+    padding-top: 0;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.card-tool {
+    padding-top: 0;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
 
 .card-header::after, .card-exp::after, .card-material::after, .card-method::after, .card-tool::after{
     content: '';

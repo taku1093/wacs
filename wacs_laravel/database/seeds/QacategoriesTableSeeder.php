@@ -19,7 +19,7 @@ class QacategoriesTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
                 'is_deleted' => 0,
-                'name' => 'DIY',
+                'name' => '椅子',
 
             ]);
 
@@ -28,7 +28,7 @@ class QacategoriesTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
                 'is_deleted' => 0,
-                'name' => 'Laravel',
+                'name' => '机',
 
             ]);
 
@@ -37,7 +37,7 @@ class QacategoriesTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
                 'is_deleted' => 0,
-                'name' => 'WEBサービス',
+                'name' => '棚',
             ]);
 
             Qacategory::create([
@@ -45,7 +45,7 @@ class QacategoriesTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
                 'is_deleted' => 0,
-                'name' => 'カメラ',
+                'name' => 'テラス',
             ]);
 
             Qacategory::create([
@@ -53,7 +53,49 @@ class QacategoriesTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
                 'is_deleted' => 0,
-                'name' => 'Javascript',
+                'name' => 'ベランダ/バルコニー',
+            ]);
+
+            Qacategory::create([
+                
+                'created_at' => now(),
+                'updated_at' => now(),
+                'is_deleted' => 0,
+                'name' => 'ペット',
+
+            ]);
+
+            Qacategory::create([
+            
+                'created_at' => now(),
+                'updated_at' => now(),
+                'is_deleted' => 0,
+                'name' => 'ポスト/表札',
+
+            ]);
+
+            Qacategory::create([
+
+                'created_at' => now(),
+                'updated_at' => now(),
+                'is_deleted' => 0,
+                'name' => 'キッチン',
+            ]);
+
+            Qacategory::create([
+
+                'created_at' => now(),
+                'updated_at' => now(),
+                'is_deleted' => 0,
+                'name' => '100均DIY',
+            ]);
+
+            Qacategory::create([
+
+                'created_at' => now(),
+                'updated_at' => now(),
+                'is_deleted' => 0,
+                'name' => 'その他',
             ]);
         // }   
     }

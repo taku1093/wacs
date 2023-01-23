@@ -62,6 +62,7 @@
           {{--  タイトル・いいね  --}}
           <div class="card-header">
               <dl class="post-header">
+                
                   {{--  投稿タイトル  --}}
                   <dt class="title"><h2 class="mb-0 res-mb-0">四角い青い椅子</h2></dt>
               </dl>
@@ -76,7 +77,10 @@
           {{--  投稿材料  --}}
           <div  class="card-material">
               <h2>[材料]</h2></dt>
-              <p class="mb-0"></p>
+              <p class="mb-0">
+                ・木材30cm <br>
+                ・釘200本
+              </p>
 
           </div>
           

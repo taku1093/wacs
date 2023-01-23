@@ -57,10 +57,13 @@
                         @else 
                             {{--  ログイン時表示  --}}
                             <li><a href="{{ route('DIY_home') }}" id="navline">ホーム</a></li>
-                            <li><a href="./ranking.html" id="navline">ランキング</a></li>
+                            <li><a href="{{ route('ranking_all') }}" id="navline">ランキング</a></li>
                             <li><a href="{{ route('simulation') }}" id="navline">シミュレーション</a></li>
                             <!-- <li><a href="./rental.html" id="navline">レンタル</a></li> -->
                             <li><a href="{{ url('qanda') }}" id="navline">Q & A</a></li>
+                            @if (auth()->user()->user_admin == 1)
+                                <li><a href=“./admin_home” id=“navline”>管理者</a></li>
+                            @endif
                             <li><a href="{{ route('contact') }}"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
                             <li><a href="{{ url('posts/create') }}"><button class="styled-button_t" type="button">新規投稿</button></a></li>
                         @endif
@@ -130,10 +133,13 @@
                             @else 
                             <ul>
                                 <li><a href="{{ route('DIY_home') }}" id="navline-f">ホーム</a></li>
-                                <li><a href="./ranking.html" id="navline-f">ランキング</a></li>
+                                <li><a href="{{ route('ranking_all') }}" id="navline-f">ランキング</a></li>
                                 <li><a href="{{ route('simulation') }}" id="navline-f">シミュレーション</a></li>
                                 <!-- <li><a href="./rental.html" id="navline">レンタル</a></li> -->
                                 <li><a href="{{ url('qanda') }}" id="navline-f">Q & A</a></li>
+                                @if (auth()->user()->user_admin == 1)
+                                    <li><a href=“./admin_home” id=“”>管理者</a></li>
+                                @endif
                             </ul>
                             @endif
                         @endauth

@@ -173,6 +173,10 @@ body {
       background-color: #f4dd64;   /* タブの背景色：淡い黄色 */
    }
 
+  .pb-4, .py-4 {
+    padding-bottom: 0px!important;
+  }
+
   /* ▼タブ機能を制御するラジオボタン(非表示にする) */
   .tabbox input { display: none; }
 
@@ -408,9 +412,7 @@ body {
 .box1{
   display: flex;
   width:auto;
-  height:40px;
-   margin:30px auto;
-  
+  margin: -20px auto;
 }
 
 .mypage{

@@ -34,7 +34,7 @@ class CreatePostsTable extends Migration
             $table->string('post_tag2')->nullable()->comment('タグ2');
             $table->string('post_tag3')->nullable()->comment('タグ3');
 
-            $table->softDeletes();
+            // $table->softDeletes();
             $table->timestamps();
 
             // 索引用設定

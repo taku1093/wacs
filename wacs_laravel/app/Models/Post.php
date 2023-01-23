@@ -11,7 +11,7 @@ use phpDocumentor\Reflection\Types\String_;
 class Post extends Model
 {
     //
-    use SoftDeletes;
+    // use SoftDeletes;
 
     protected $fillable = [
         'post_title',
@@ -158,6 +158,7 @@ class Post extends Model
 
     public function postDestroy(Int $user_id, Int $post_id)
     {
-        return $this->where('user_id', $user_id)->where('id', $post_id)->delete();
+        // return $this->where('user_id', $user_id)->where('id', $post_id)->delete();
+        return $this->where('user_id', $user_id)->delete();
     }
 }

@@ -915,3 +915,15 @@ h5{
   border-radius: 50%;
  
 }
+
+ul.dropdown__list{
+  width: 120px;
+
+}
+
+.dropdown__body{
+  width: 115px !important;
+  left: -130px;
+  top: 50px;
+}
+

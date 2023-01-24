@@ -21,6 +21,10 @@
     {{--  ハートマーク用  --}}
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
+
+    {{--  確認css  --}}
+    <link rel="stylesheet" href="{{ asset('css\kakunin.css')}}">
+    <link rel="stylesheet" href="{{ asset('css\ress.css')}}">
 </head>
 
 <body>
@@ -197,13 +201,40 @@
                                             {{--  <a href="{{ url('posts/' .$post->id .'/destroy') }}" class="dropdown-item">
                                                 <button type="submit" class="btn-post-delete">削除</button>
                                             </a>  --}}
-                                            <form method="POST" action="{{ url('posts/' .$post->id) }}" class="mb-0">
+                                            {{--  <form method="POST" action="{{ url('posts/' .$post->id) }}" class="mb-0">  --}}
+                                                
+    
+                                            <label class="" for="pop-up">
+                                                {{--  <a class="check">  --}}
+                                                    <button type="submit" class="btn-post-delete">削除</button>
+                                                    <span>削除</span>
+                                                {{--  </a>  --}}
+                                            </label>
+                                            <form method="POST" action="{{ url('posts/' .$post->id) }}" class="delete">
                                                 @csrf
                                                 @method('DELETE')
-    
-                                                <button type="submit" class="btn-post-delete">削除</button>
+                                                    <input type="checkbox" id="pop-up">
+                                                    <div class="overlay">
+                                                    <div class="window">
+                                                        <label class="close" for="pop-up">×</label>
+                                                        <div class="text">
+                                                            <div style="text-align: center">
+                                                                <h1>
+                                                                    確認画面                        
+                                                                </h1>
+                                                                <h4>
+                                                                    本当に削除しますか
+                                                                </h4>
+                                                                <ul>
+                                                                <li class="kakunin_item">
+                                                                    <button class="check" type="submit">削除する</button>
+                                                                </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
                                             </form>
-    
                                         </dd>
                                     </dl>
                                     @else
@@ -242,9 +273,9 @@
                                     <dl class="post-header">
                                         {{--  投稿タイトル  --}}
                                         @if ($post->post_title === null)
-                                        <dt class="title"><h1 class="mb-0">タイトル</h1></dt>
+                                        <dt class="title"><h2 class="mb-0">タイトル</h2></dt>
                                         @else
-                                            <dt class="title"><h1 class="mb-0">{{ $post->post_title }}</h1></dt>
+                                            <dt class="title"><h2 class="mb-0">{{ $post->post_title }}</h2></dt>
                                         @endif
                                         {{--   いいね  --}}
                                         <dd class="post_good">

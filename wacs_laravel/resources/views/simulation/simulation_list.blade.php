@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="./css/sim_slide.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred_simulation_list.css')}}">
         <meta charset="utf-8">
+        <title>シミュレーション | WACS</title>
     </head>
 
     <body>

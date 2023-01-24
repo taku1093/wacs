@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
+        <title>モデル2 | WACS</title>
     </head>
   
     <body>
@@ -79,14 +79,21 @@
           {{--  投稿材料  --}}
           <div  class="card-material">
               <h2>[材料]</h2></dt>
-              <p class="mb-0"></p>
+              <p class="mb-0">
+                ・木材
+              </p>
 
           </div>
           
           {{--  作り方  --}}
           <div class="card-method">
               <h2>[作り方]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">
+              1. 直径 1m の円形の木材にトリマーを用いて切断加工をする。<br>
+              2. 脚として用いるために長さ 10cm 程度のものを 4 本、長さ 30 ㎝の<br>
+              &emsp;木材と先ほど加工したものを写真のようにビスで固定する。<br>
+              3. 油性ウレタン着色ニスを刷毛で塗った後に、タオルで馴染ませる。
+              </p>
           </div>
           
           {{--  投稿道具  --}}
@@ -96,7 +103,9 @@
                 ・のこぎり<br>
                 ・インパクトドライバー<br>
                 ・ビス打ち<br>
-                ・電動サンダー
+                ・電動サンダー<br>
+                ・油性ウレタン着色ニス<br> 
+                ・トリマー
             </p>
           </div>
 

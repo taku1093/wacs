@@ -74,7 +74,7 @@
         </style>
 
 
-        <title>TOP | WACS</title>
+        <title>週間ランキング | WACS</title>
 
 
         {{--  <!-- Fonts -->

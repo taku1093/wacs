@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{asset('css\app.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
     <link rel="stylesheet" href="{{asset('css\qanda\create.css')}}">
+    <title>Q&A新規質問作成 | WACS</title>
 </header>
 
 <div class="container mt-4">

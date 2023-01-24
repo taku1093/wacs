@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{asset('css\app.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
     <link rel="stylesheet" href="{{asset('css\qanda\show.css')}}">
+    <title>Q&A詳細 | WACS</title>
 </header>
 
 <div class="container mt-4">  

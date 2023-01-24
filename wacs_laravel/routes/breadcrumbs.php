@@ -45,6 +45,12 @@ Breadcrumbs::for('post_create', function ($trail) {
     $trail->push('新規投稿', route('DIY_home'));
 });
 
+// Home > DIYhome > 投稿一覧 > コメント
+Breadcrumbs::for('kome', function ($trail) {
+    $trail->parent('post_all');
+    $trail->push('コメント', route('DIY_home'));
+});
+
 // Home > 問い合わせ
 Breadcrumbs::for('contact', function ($trail) {
     $trail->parent('home');

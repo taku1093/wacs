@@ -295,27 +295,7 @@
             </div>
           
 
-            <div class="txt-hide">
-              <ul class="product-list">
-            
-                <li><!-- 1つのliが1つの投稿を指す -->
-                  <a href="https://www.kochi-tech.ac.jp/index.html"><!-- 閲覧画面 -->
-                    <img src="https://3.bp.blogspot.com/-shGNRiV5CTw/WTd4lpwf2eI/AAAAAAABEoo/bpVr6YyILvkUcFqwHtDn5UOt8JfexPiDQCLcB/s800/gakkou_isu_chair.png" alt=""><!-- 画像 -->
-                    <p>タイトル</p>
-                    <p>文章</p>
-                  </a>
-                </li>
-                <li><!-- 1つのliが1つの投稿を指す -->
-                  <a href="https://www.kochi-tech.ac.jp/index.html"><!-- 閲覧画面 -->
-                    <img src="https://3.bp.blogspot.com/-shGNRiV5CTw/WTd4lpwf2eI/AAAAAAABEoo/bpVr6YyILvkUcFqwHtDn5UOt8JfexPiDQCLcB/s800/gakkou_isu_chair.png" alt=""><!-- 画像 -->
-                    <p>タイトル</p>
-                    <p>文章</p>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <button class="more"></button>
-              
+                      
           </div>
         </div>
         
@@ -560,19 +540,19 @@
               </div>
             </div>
           
-            <div class="txt-hide">
+            {{--  <div class="txt-hide">
               
             </div>
-            <button class="more"></button>
+            <button class="more"></button>  --}}
           </div>
         </div>
       </div>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    {{--  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="{{ asset('js/user/Mypage.js') }}"></script>
+    <script src="{{ asset('js/user/Mypage.js') }}"></script>  --}}
     {{--  <script src="{{ mix('js/Mypage.js') }}"></script>   --}}
       
   </body>

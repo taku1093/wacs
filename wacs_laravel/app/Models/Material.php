@@ -122,7 +122,7 @@ class Material extends Model
                 return $this->with('post')->where('post_id', $material_id)->get();
         }
 
-        public function materialUpdate(Int $material_id, Array $data)
+        public function materialUpdate(Array $material_id, Array $data)
     {
         $this->id = $material_id;
         
@@ -136,6 +136,16 @@ class Material extends Model
     public function getEditMaterial(Int $post_id)
     {
         return $this->where('post_id', $post_id)->first();
+    }
+
+    // 材料id取得
+    public function materialIds(Int $post_id)
+    {
+        return $this->where('post_id', $post_id)->get();
+    }
+    public function getUsergoodTimeLine(Array $post_id)
+    {
+        return $this->whereIn('id', $post_id)->orderBy('created_at', 'DESC')->get();
     }
 
 }

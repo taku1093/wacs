@@ -161,4 +161,6 @@ class Post extends Model
         // return $this->where('user_id', $user_id)->where('id', $post_id)->delete();
         return $this->where('user_id', $user_id)->delete();
     }
+
+    
 }

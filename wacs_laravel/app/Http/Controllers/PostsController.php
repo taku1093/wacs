@@ -263,6 +263,7 @@ class PostsController extends Controller
         $material = $material->getMaterial($post->id);
         $comments = $comment->getComments($post->id);
 
+        
         return view('posts.show', [
             'user'     => $user,
             'eval_results' => $eval_results,
@@ -287,6 +288,10 @@ class PostsController extends Controller
         $posts = $post->getEditPost($user->id, $post->id);
         $materials = $material->getEditMaterial($post->id);
 
+        $post_id = $post->id;
+        $material_id = $material->id;
+
+
 
         if (!isset($posts)) {
             return redirect('posts');
@@ -308,6 +313,12 @@ class PostsController extends Controller
      */
     public function update(Request $request, Post $post, Material $material, Tool $tool)
     {
+        
+        $post_id = $post->id;
+        $material_id = $material->id;
+        
+        
+        
         $data = $request->all();
         $materials = $material->getEditMaterial($post->id);
         
@@ -328,10 +339,14 @@ class PostsController extends Controller
     //     // 'material_num1'  => ['required', 'integer', 'max:20'],
     // ]);
 
+        // $material_id = $material->materialIds($post->id);
+        // $materials_id = $material_id->pluck('id')->toArray();
+        // $timeline_goods = $post->getMaterial($goods_id);
+
         $validator->validate();
         $post->postUpdate($post->id, $data);
         // if($request->has("material_name1")){
-        $material->materialUpdate($material->id, $data);
+        $material->materialUpdate($materials->id, $data);
         // }
         // $tool->toolUpdate($tool->id, $data);
         return redirect('posts');

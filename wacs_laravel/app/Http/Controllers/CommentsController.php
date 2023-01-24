@@ -59,6 +59,7 @@ class CommentsController extends Controller
     public function show(Comment $comment, Reply $reply)
     {
         //
+        $comment_id = $comment->id;
         $user = auth()->user();
         $comments = $comment->getshowComments($comment->id);
         $replies = $reply->getReplies($comment->id);

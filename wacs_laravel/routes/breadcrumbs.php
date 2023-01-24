@@ -51,6 +51,12 @@ Breadcrumbs::for('contact', function ($trail) {
     $trail->push('お問い合わせ', route('DIY_home'));
 });
 
+// Home > DIYホーム > ランキング
+Breadcrumbs::for('ranking', function ($trail) {
+    $trail->parent('DIY_home');
+    $trail->push('ランキング', route('ranking_all'));
+});
+
 // Home > シミュレーション
 Breadcrumbs::for('simulation', function ($trail) {
     $trail->parent('DIY_home');
@@ -85,4 +91,16 @@ Breadcrumbs::for('QA_edit', function ($trail) {
 Breadcrumbs::for('QA_create', function ($trail) {
     $trail->parent('QA');
     $trail->push('Q&A新規作成', route('DIY_home'));
+});
+
+// Home > マイページ
+Breadcrumbs::for('mypezi', function ($trail) {
+    $trail->parent('home');
+    $trail->push('マイページ', 'http://localhost/project/wacs/wacs_laravel/public/users/1');
+});
+
+// Home > マイページ > マイページ編集
+Breadcrumbs::for('mypezi_edit', function ($trail) {
+    $trail->parent('mypezi');
+    $trail->push('アカウント・マイページ情報編集', route('DIY_home'));
 });

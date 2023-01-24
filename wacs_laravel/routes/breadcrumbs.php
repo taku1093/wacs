@@ -104,3 +104,9 @@ Breadcrumbs::for('mypezi_edit', function ($trail) {
     $trail->parent('mypezi');
     $trail->push('アカウント・マイページ情報編集', route('DIY_home'));
 });
+
+// Home > メンテナンス画面
+Breadcrumbs::for('mainte', function ($trail) {
+    $trail->parent('home');
+    $trail->push('メンテナンス中', route('DIY_home'));
+});

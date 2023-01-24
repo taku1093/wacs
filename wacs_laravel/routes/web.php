@@ -17,10 +17,13 @@ Route::get('/', 'WelcomeController@index')->name('welcome');;
 Route::get('maintenance', 'WelcomeController@maintenance')->name('maintenance');;
 
 
+
+
 // ログイン認証
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('password_forget', 'Auth\LoginController@password_forget')->name('password_forget');;
 
 
 // 新規登録確認

@@ -201,42 +201,13 @@
                                             {{--  <a href="{{ url('posts/' .$post->id .'/destroy') }}" class="dropdown-item">
                                                 <button type="submit" class="btn-post-delete">削除</button>
                                             </a>  --}}
-                                            {{--  <form method="POST" action="{{ url('posts/' .$post->id) }}" class="mb-0">  --}}
-                                                
-    
-                                            <label class="" for="pop-up-post">
-                                                {{--  <a class="check">  --}}
-                                                    <button type="submit" id="" class="btn-post-delete">削除</button>
-                                                    {{--  <span>削除</span>  --}}
-                                                {{--  </a>  --}}
-                                            </label>
-
-
-                                            <form method="POST" action="{{ url('posts/' .$post->id) }}" class="delete">
+                                            <form method="POST" action="{{ url('posts/' .$post->id) }}" class="mb-0">
                                                 @csrf
                                                 @method('DELETE')
-                                                    <input type="checkbox" id="pop-up">
-                                                    <div class="overlay">
-                                                    <div class="window">
-                                                        <label class="close" for="pop-up">×</label>
-                                                        <div class="text">
-                                                            <div style="text-align: center">
-                                                                <h1>
-                                                                    確認画面                        
-                                                                </h1>
-                                                                <h4>
-                                                                    本当に削除しますか
-                                                                </h4>
-                                                                <ul>
-                                                                <li class="kakunin_item">
-                                                                    <button class="check" type="submit">削除する</button>
-                                                                </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    </div>
+    
+                                                <button type="submit" class="btn-post-delete">削除</button>
                                             </form>
+    
                                         </dd>
                                     </dl>
                                     @else

@@ -1,3 +1,5 @@
+{{ Breadcrumbs::render('ranking') }}
+
 @extends('layouts.app')
 
 @section('content')
@@ -87,8 +89,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
         <link href="{{ asset('css/welcome_in.css') }}" rel="stylesheet">
-
+        <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <link rel="stylesheet" href="./css/ranking/style.css">
+        <link rel="stylesheet" href="./css/ranking/bread_ranking.css">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
         
         

@@ -95,7 +95,12 @@
         </p>  
         <ul class="item-list">
             <li>
+                @auth
                 <a href="{{ route('DIY_home') }}"><img class="home-img"src="./img/DIY.jpg" alt="DIYのロゴ"></a>
+                @endauth
+                @guest
+                <a href="{{ route('login') }}"><img class="home-img"src="./img/DIY.jpg" alt="DIYのロゴ"></a>
+                @endguest
                 <dl>
                     <dt>DIY</dt>
                     <dd></dd>

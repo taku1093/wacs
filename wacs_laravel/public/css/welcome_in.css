@@ -28,7 +28,7 @@ a { /*リンクの文字色と下線を無くす*/
 
 body {
     font-family: sans-serif; /*サンセリフ体*/
-    font-size: 16px;
+    /* font-size: 16px; */
     color: #000000;
     line-height: 1;
     background-color: #ffffff;

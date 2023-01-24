@@ -1,3 +1,5 @@
+{{ Breadcrumbs::render('mypezi_edit') }}
+
 @extends('layouts.app')
 
 @section('content')
@@ -8,6 +10,7 @@
     <title>HOME | WACS</title>
     {{--  css  --}}
     
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ asset('js/post/create.js') }}" type="text/javascript"></script>

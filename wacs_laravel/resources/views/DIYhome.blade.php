@@ -77,7 +77,10 @@
         transform: translateY(-2px);
         box-shadow: 0 15px 30px -5px rgb(0 0 0 / 15%), 0 0 5px rgb(0 0 0 / 10%);
     }
-            </style>
+    .button_solid002 {
+        width: 120px;
+    }
+    </style>
     
     {{--  <link rel="stylesheet" href="{{ asset('./css/headder_fotter.css') }}">  --}}
 </head>

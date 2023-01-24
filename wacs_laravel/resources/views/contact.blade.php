@@ -52,6 +52,7 @@
                                 <option value="シミュレーションについて">シミュレーションについて</option>
                                 <option value="Q＆Aについて">Q&Aについて</option>
                                 <option value="アカウント退会について">アカウント退会について</option>
+                                <option value="パスワード変更のお問い合わせ">パスワード変更のお問い合わせ</option>
                                 <option value="その他">その他</option>
                             </select>
                         </dd>

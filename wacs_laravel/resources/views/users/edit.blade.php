@@ -141,7 +141,7 @@
 
                         <dt><span class="">自己紹介文</span></dt>
                         <dd>
-                            <textarea class=" prof validate[maxSize[255]]" type="text" name="user_intro" id="user_intro" value="">{{ old('user_intro') ? : $user->user_intro }}</textarea>
+                            <textarea class=" prof validate[maxSize[255]]" type="text" name="user_intro" id="user_intro" placeholder="150文字以内" value="">{{ old('user_intro') ? : $user->user_intro }}</textarea>
                         </dd> 
 
                         

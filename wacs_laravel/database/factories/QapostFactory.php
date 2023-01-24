@@ -12,6 +12,6 @@ $factory->define(Qapost::class, function (Faker $faker) {
         'subject' => $faker->realText(16),    // 16文字のテキスト
         'message' => $faker->realText(200),    // 200文字のテキスト
         'name' => $faker->name,    // 氏名
-        'qacategory_id' => $faker->numberBetween(1,5),    // 1〜5のランダムな整数
+        'qacategory_id' => $faker->numberBetween(1,10),    // 1〜10のランダムな整数
     ];
 });

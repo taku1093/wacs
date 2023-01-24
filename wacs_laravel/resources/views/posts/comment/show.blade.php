@@ -1,3 +1,5 @@
+{{ Breadcrumbs::render('kome') }}
+
 @extends('layouts.app')
 
 @section('content')
@@ -10,7 +12,8 @@
     {{--  css  --}}
     
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link href="{{ asset('css/post/comment/show.css') }}" rel="stylesheet" type="text/css">  
+    <link href="{{ asset('css/post/comment/show.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">  
     {{--  ハートマーク用  --}}
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>

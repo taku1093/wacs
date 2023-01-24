@@ -46,5 +46,10 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function password_forget()
+    {
+        return view('password_forget');
+    }
+
 
 }

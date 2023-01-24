@@ -54,7 +54,7 @@
                 </span>
                 {{-- <div class="pw-view"><i class="fa fa-eye"></i></div> --}}
                 <p class="forget">
-                    <a href="#" ><small>> パスワードを忘れた方はこちら</small></a>
+                    <a href="{{ route('password_forget') }}" ><small>> パスワードを忘れた方はこちら</small></a>
                 </p>  
                 <p class="pull-left">
                     <a href="{{ route('register') }}"><small>> 新規アカウント作成</small></a>

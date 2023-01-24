@@ -9,11 +9,26 @@
     display: none; /* label でコントロールするので input は非表示に */
 }
 
+#pop-up-post {
+    display: none; /* label でコントロールするので input は非表示に */
+}
+
 .overlay {
     display: none; /* input にチェックが入るまでは非表示に */
 }
 
 #pop-up:checked + .overlay {
+    display: block;
+    z-index: 9999;
+    background-color: #00000070;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+#pop-up-post:active + .overlay {
     display: block;
     z-index: 9999;
     background-color: #00000070;
@@ -126,4 +141,17 @@ h1 {
     border: double;
 }
 */
+
+/* #pop-up-post:checked + .overlay {
+    display: block;
+    z-index: 9999;
+    background-color: #00000070;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+} */
+
+
 

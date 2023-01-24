@@ -204,12 +204,14 @@
                                             {{--  <form method="POST" action="{{ url('posts/' .$post->id) }}" class="mb-0">  --}}
                                                 
     
-                                            <label class="" for="pop-up">
+                                            <label class="" for="pop-up-post">
                                                 {{--  <a class="check">  --}}
-                                                    <button type="submit" class="btn-post-delete">削除</button>
-                                                    <span>削除</span>
+                                                    <button type="submit" id="" class="btn-post-delete">削除</button>
+                                                    {{--  <span>削除</span>  --}}
                                                 {{--  </a>  --}}
                                             </label>
+
+
                                             <form method="POST" action="{{ url('posts/' .$post->id) }}" class="delete">
                                                 @csrf
                                                 @method('DELETE')

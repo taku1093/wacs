@@ -191,25 +191,54 @@
                                 {{--  フォロー  --}}
                                 <div class="card-follow">
                                     @if (auth()->user()->id === $post->user->id)
-                                    <dl class="follow-area">
-                                        <dd class="follow-btn">
-                                            <a href="{{ url('posts/' .$post->id .'/edit') }}" class="dropdown-item">
-                                                <button type="submit" class="btn-post-edit">編集</button>
-                                            </a>
-                                        </dd>
-                                        <dd class="delete-btn">
-                                            {{--  <a href="{{ url('posts/' .$post->id .'/destroy') }}" class="dropdown-item">
-                                                <button type="submit" class="btn-post-delete">削除</button>
-                                            </a>  --}}
-                                            <form method="POST" action="{{ url('posts/' .$post->id) }}" class="mb-0">
+                                        <dl class="follow-area">
+                                            {{--  <dd class="follow-btn">
+                                                <a href="{{ url('posts/' .$post->id .'/edit') }}" class="dropdown-item">
+                                                    <button type="submit" class="btn-post-edit">編集</button>
+                                                </a>
+                                            </dd>  --}}
+                                            <dd class="delete-btn">
+                                                {{--  <a href="{{ url('posts/' .$post->id .'/destroy') }}" class="dropdown-item">
+                                                    <button type="submit" class="btn-post-delete">削除</button>
+                                                </a>  --}}
+
+                                                <label class="" for="pop-up">
+                                                    <div class="check">投稿削除</div>
+                                                </label>
+                                                <form method="POST" action="{{ url('posts/' .$post->id) }}" class="mb-0">
                                                 @csrf
                                                 @method('DELETE')
-    
-                                                <button type="submit" class="btn-post-delete">削除</button>
-                                            </form>
-    
-                                        </dd>
-                                    </dl>
+                                                    <input type="checkbox" id="pop-up">
+                                                    <div class="overlay">
+                                                    <div class="window">
+                                                        <label class="close" for="pop-up">×</label>
+                                                        <div class="text">
+                                                            <div style="text-align: center">
+                                                                <h1>
+                                                                    確認画面                        
+                                                                </h1>
+                                                                <h4>
+                                                                    本当に削除しますか
+                                                                </h4>
+                                                                <ul>
+                                                                <li class="kakunin_item">
+                                                                    <button class="check" type="submit">削除する</button>
+                                                                </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </form>
+                                                {{--  <form method="POST" action="{{ url('posts/' .$post->id) }}" class="mb-0">
+                                                    @csrf
+                                                    @method('DELETE')
+        
+                                                    <button type="submit" class="btn-post-delete">削除</button>
+                                                </form>  --}}
+        
+                                            </dd>
+                                        </dl>
                                     @else
                                         @if (auth()->user()->isFollowed($post->user->id))
                                             <div class="px-2">

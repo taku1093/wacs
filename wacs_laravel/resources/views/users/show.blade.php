@@ -253,12 +253,11 @@
                                     {{--    編集  --}}
                                     {{--  ログイン時  --}}
                                     @auth
-                                        @if ($timeline->user_id == auth()->user()->id)
-                                            {{--  <a href="{{ url('posts/' .$timeline->id .'/edit') }"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>  --}}
+                                        {{--  @if ($timeline->user_id == auth()->user()->id)
                                             <a href="{{ url('posts/' .$timeline->id .'/edit') }}" >
                                                 <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
                                             </a>
-                                        @endif
+                                        @endif  --}}
                                         {{--   いいね  --}}
                                         @if (!in_array($user->id, array_column($timeline->post_goods->toArray(), 'user_id'), TRUE))
                                             <form method="POST" action="{{ url('post_goods/') }}">
@@ -500,12 +499,11 @@
                                     {{--    編集  --}}
                                     {{--  ログイン時  --}}
                                     @auth
-                                        @if ($timeline_good->user_id == auth()->user()->id)
-                                            {{--  <a href="{{ url('posts/' .$timeline_good->id .'/edit') }"><button type="button" class="btn btn-sm btn-outline-secondary">編集</button></a>  --}}
+                                        {{--  @if ($timeline_good->user_id == auth()->user()->id)
                                             <a href="{{ url('posts/' .$timeline_good->id .'/edit') }}" >
                                                 <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
                                             </a>
-                                        @endif
+                                        @endif  --}}
                                         {{--   いいね  --}}
                                         @if (!in_array($user->id, array_column($timeline_good->post_goods->toArray(), 'user_id'), TRUE))
                                             <form method="POST" action="{{ url('post_goods/') }}">

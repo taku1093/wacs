@@ -9,9 +9,7 @@
     display: none; /* label でコントロールするので input は非表示に */
 }
 
-#pop-up-post {
-    display: none; /* label でコントロールするので input は非表示に */
-}
+
 
 .overlay {
     display: none; /* input にチェックが入るまでは非表示に */
@@ -28,16 +26,6 @@
     left: 0;
 }
 
-#pop-up-post:active + .overlay {
-    display: block;
-    z-index: 9999;
-    background-color: #00000070;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-}
 
 .window {
     width: 90vw;
@@ -103,7 +91,7 @@ a.check {
     padding: 12px 24px;
     font-weight: bold;
     border-radius: 4px;
-    background-color: #0f8cff;
+    background-color: red;
     box-shadow: 0px 2px 2px 1px #dcdcdc;
     border-bottom: solid 5px #0c579d;
     text-decoration: none;

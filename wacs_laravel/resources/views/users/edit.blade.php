@@ -55,12 +55,34 @@
                             <span>{{ $user->user_gen}}</span>
                         </dt>
                         <dd>
-                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="男姓" @if('男性' === $user->user_gen)checked @endif>
+                            @if ($user->user_gen == "女性")
+                                <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="男姓">
+                                    <label for="user_gen">男性</label>
+                                <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="女性" checked >
+                                    <label for="user_gen">女性</label>
+                                <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="回答しない">
+                                    <label for="user_gen">回答しない</label>
+                            @elseif ($user->user_gen == "回答しない")
+                                <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="男姓">
+                                    <label for="user_gen">男性</label>
+                                <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="女性">
+                                    <label for="user_gen">女性</label>
+                                <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="回答しない" checked>
+                                    <label for="user_gen">回答しない</label>
+                            @else
+                                <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="男姓" checked>
+                                    <label for="user_gen">男性</label>
+                                <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="女性">
+                                    <label for="user_gen">女性</label>
+                                <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="回答しない">
+                                    <label for="user_gen">回答しない</label>
+                            @endif
+                            {{--  <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="男姓" @if('男性' === $user->user_gen) checked @endif>
                                 <label for="user_gen">男性</label>
                             <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="女性" @if('女性' === $user->user_gen) checked @endif>
                                 <label for="user_gen">女性</label>
                             <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="回答しない" @if('回答しない' === $user->user_gen) checked @endif>
-                                <label for="user_gen">回答しない</label>
+                                <label for="user_gen">回答しない</label>  --}}
 
                         </dd>
                         

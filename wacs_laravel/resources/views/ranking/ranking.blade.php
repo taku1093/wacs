@@ -72,7 +72,7 @@
         </style>
 
 
-        <title>TOP | WACS</title>
+        <title>総合ランキング | WACS</title>
 
 
         {{--  <!-- Fonts -->

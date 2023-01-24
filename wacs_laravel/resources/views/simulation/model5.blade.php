@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
+        <title>モデル5 | WACS</title>
     </head>
   
     <body>

@@ -70,11 +70,6 @@
     box-shadow: 0 15px 30px -5px rgb(0 0 0 / 15%), 0 0 5px rgb(0 0 0 / 10%);
 }
         </style>
-
-
-        <title>TOP | WACS</title>
-
-
         {{--  <!-- Fonts -->
         <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> -->
 
@@ -90,6 +85,7 @@
 
         <link rel="stylesheet" href="{{ asset('css/ranking/style.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <title>月間ランキング | WACS</title>
         
         
 

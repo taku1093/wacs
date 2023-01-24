@@ -2,21 +2,13 @@
 
 @extends('layouts.app')
 
-
-
- 
-{{--  @include('layouts.qandaheader')
- 
-@section('content')  --}}
-
-
 @section('content')
 
 <header>
     <link rel="stylesheet" href="{{('css\app.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\qanda\index.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
-    
+    <title>Q&A | WACS</title>
 </header>
 {{--  ページタイトル  --}}
 <p class="pagetitle">Q&A</p>

@@ -509,6 +509,8 @@ body {
   top:180px;
   font-size:25px;
   white-space: pre-wrap;
+  height: 0px;
+  z-index: -9999;
 }
 /* .user-card{
   z-index: 999999;

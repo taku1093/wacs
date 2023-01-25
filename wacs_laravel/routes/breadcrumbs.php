@@ -102,7 +102,7 @@ Breadcrumbs::for('QA_create', function ($trail) {
 // Home > マイページ
 Breadcrumbs::for('mypezi', function ($trail) {
     $trail->parent('home');
-    $trail->push('マイページ', 'http://localhost/project/wacs/wacs_laravel/public/users/1');
+    $trail->push('マイページ', 'http://localhost/project/wacs/wacs_laravel/public/users/' .auth()->user()->id);
 });
 
 // Home > マイページ > マイページ編集

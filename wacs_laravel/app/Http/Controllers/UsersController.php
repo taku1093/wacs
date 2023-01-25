@@ -159,7 +159,7 @@ class UsersController extends Controller
 
             // $post->postDestroy($user->id, $post->id);
 
-            return redirect('DIY_home');
+            return redirect('/');
         }
 
         // 確認画面

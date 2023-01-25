@@ -107,7 +107,7 @@ return [
     */
 
     // 'faker_locale' => 'en_US',//テストデータ英語
-    'faker_locale' => 'jp_JP',//テストデータ日本語
+    'faker_locale' => 'ja_JP',//テストデータ日本語
     
 
     /*

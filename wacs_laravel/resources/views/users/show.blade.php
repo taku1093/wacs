@@ -259,7 +259,7 @@
                                             </a>
                                         @endif  --}}
                                         {{--   いいね  --}}
-                                        @if (!in_array($user->id, array_column($timeline->post_goods->toArray(), 'user_id'), TRUE))
+                                        @if (!in_array(auth()->user()->id, array_column($timeline->post_goods->toArray(), 'user_id'), TRUE))
                                             <form method="POST" action="{{ url('post_goods/') }}">
                                                 @csrf
 
@@ -267,7 +267,7 @@
                                                 <button type="submit" class="btn p-0 border-0 text-primary"><i class="far fa-heart like-btn"></i>{{ count($timeline->post_goods) }}</button>
                                             </form>
                                         @else
-                                            <form method="POST" action="{{ url('post_goods/' .array_column($timeline->post_goods->toArray(), 'id', 'user_id')[$user->id]) }}" class="mb-0">
+                                            <form method="POST" action="{{ url('post_goods/' .array_column($timeline->post_goods->toArray(), 'id', 'user_id')[auth()->user()->id]) }}" class="mb-0">
                                                 @csrf
                                                 @method('DELETE')
 

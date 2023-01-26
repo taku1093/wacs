@@ -42,6 +42,23 @@
     transform: translate(-50%, -50%);
 }
 
+/* 規約用 */
+.window-term {
+    width: 100%;
+    max-width: 85%;
+    height: 80%;
+    background-color: #ffffff;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+}
+
 .text {
     font-size: 18px;
     margin: 0;
@@ -54,6 +71,15 @@
     top: 4px;
     right: 4px;
     font-size: 20px;
+}
+
+/* 規約用 */
+.close-term {
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 50px;
 }
 /*
 .kakunin_item {

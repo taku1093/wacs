@@ -8,7 +8,7 @@
     <link href="{{ asset('css/newaccount_terms.css') }}" rel="stylesheet" type="text/css">  
 </head>
 <body>
-    <h2>利用規約</h2>
+    <h2 class="term-title1">利用規約</h2>
     
     <div id="area" class="box">
         <p class="section">利用規約</p>
@@ -102,7 +102,7 @@
         <p class="subsection">2. 本サービスに関して紛争が生じた場合には，当社の本店所在地を管轄する裁判所を専属的合意管轄とします。</p>
     </div>
 
-    <h2>プライバシーポリシー</h2>
+    <h2  class="term-title2">プライバシーポリシー</h2>
     
     <div id="area" class="box2">
         <p class="section">プライバシーポリシー</p>
@@ -164,13 +164,13 @@
     </div>
 
 
-    <form action="{{ route('register') }}" method="get">     
+    {{--  <form action="{{ route('register') }}" method="get">     
         <dl class="form-area">
             <dt><input id="check" type="checkbox" name="kiyaku" disabled> 利用規約に同意する</dt>
             <div class="back"><dt><input id="submit" type="submit" value="アカウント情報登録ページへ"></dt></div>
             <!-- <dt><input id="submit" type="submit" value="アカウント情報登録ページへ"></dt> -->
         </dl>
-    </form>
+    </form>  --}}
 
     <script>
         let box = document.getElementsByClassName('box');
@@ -180,5 +180,9 @@
             }       
         }
     </script>
+    {{--  <input id="check" type="checkbox" name="kiyaku" disabled> 利用規約に同意する  --}}
+    <main class="py-4">
+        @yield('term')
+    </main>
 </body>
 </html>

@@ -5,6 +5,7 @@
     padding: 30px;
     /* display: flex; */
     flex-wrap: wrap;
+    width: 90%;
 }
 
 #check {
@@ -17,16 +18,37 @@
     margin-top: 20px;
 }
 
-body h2 {
-    padding-top: 70px;
-    padding-bottom: 40px;
+
+body h2.term-title1 {
+    padding-top: 120px;
+    /* padding-bottom: 40px; */
     font-size: 25px;
     font-weight: bold;
     line-height: 30px;
     text-align: center;
 }
 
-body h2::after {
+body h2.term-title1::after {
+    content: '';
+    display: block;
+    width: 76px;
+    height: 3px;
+    background-color: #f4dd64;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body h2.term-title2 {
+    padding-top: 20px;
+    /* padding-bottom: 40px; */
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+}
+
+body h2.term-title2::after {
     content: '';
     display: block;
     width: 76px;
@@ -62,10 +84,12 @@ body h2::after {
 .section {
     font-weight: bold;
     font-size: 14px;
+    text-align: left;
 }
 
 .subsection {
     font-size: 12px;
+    text-align: left;
 }
 
 input[type='ckeckbox'] {

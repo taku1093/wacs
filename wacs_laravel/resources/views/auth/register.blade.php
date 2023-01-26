@@ -14,7 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="./css/newaccount_create.css" rel="stylesheet">
 
-    
+    {{--  確認css  --}}
+    <link rel="stylesheet" href="{{ asset('css\kakunin.css')}}">
+    {{--  <link rel="stylesheet" href="{{ asset('css\ress.css')}}">  --}}
 
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js?ver=1.12.4' id='jquery-core-js'></script>
     {{--  <script src='./garlic.js'></script>  --}}
@@ -46,27 +48,57 @@
 
                     <dt><span class="required">性別</span></dt>
                     <dd>
-                        <input type="radio" id="user_gen" class="validate[required]" name="user_gen" value="男姓" checked />
-                            <label for="user_gen">男性</label>
-                        <input type="radio" id="user_gen" class="validate[required]" name="user_gen" value="女性" />
-                            <label for="user_gen">女性</label>
-                        <input type="radio" id="user_gen" class="validate[required]" name="user_gen" value="回答しない" />
-                            <label for="user_gen">回答しない</label>
+                        @if ( old('user_gen')  == "女性")
+                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="男姓">
+                                <label for="user_gen">男性</label>
+                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="女性" checked >
+                                <label for="user_gen">女性</label>
+                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="回答しない">
+                                <label for="user_gen">回答しない</label>
+                        @elseif ( old('user_gen') == "回答しない")
+                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="男姓">
+                                <label for="user_gen">男性</label>
+                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="女性">
+                                <label for="user_gen">女性</label>
+                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="回答しない" checked>
+                                <label for="user_gen">回答しない</label>
+                        @else
+                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="男姓" checked>
+                                <label for="user_gen">男性</label>
+                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="女性">
+                                <label for="user_gen">女性</label>
+                            <input type="radio" id="user_gen" class="validate[]" name="user_gen" value="回答しない">
+                                <label for="user_gen">回答しない</label>
+                        @endif
                     </dd>
 
                     <dt><span for="birth" class="required">生年月日</span></dt>
                     <dd>
-                        <select id="year" class="validate[required]" name="year"><option value="">----</option></select> 
+                        @if (old('year') == null)
+                        <select id="year" class="validate[]" name="year"><option value="">----</option></select> 
                             <label for="year">年</label>
-                        <select id="month" class="validate[required]" name="month"><option value="">--</option></select> 
+                        <select id="month" class="validate[]" name="month"><option value="">--</option></select> 
                             <label for="month">月</label>
-                        <select id="date" class="validate[required]" name="date"><option value="">--</option></select> 
+                        <select id="date" class="validate[]" name="date"><option value="">--</option></select> 
                             <label for="date">日</label>
+                        @else
+                            <select id="year" class="validate[]" name="year"><option value="{{ old('year')}}">{{ old('year')}}</option></select> 
+                                <label for="year">年</label>
+                            <select id="month" class="validate[]" name="month"><option value="{{ old('month') }}">{{ old('month')}}</option></select> 
+                                <label for="month">月</label>
+                            <select id="date" class="validate[]" name="date"><option value="{{ old('date')  }}">{{ old('date')}}</option></select> 
+                                <label for="date">日</label>
+                        @endif
+
                     </dd>
 
                     <dt><span class="required">住所(都道府県)</span></dt>
                     <dd><select name="user_pre" id="user_pre" class="input-text validate[required]">
-                        <option value="" selected="selected">都道府県を選択</option>
+                        @if (old('user_pre') == null)
+                            <option value="" selected="selected">都道府県を選択</option>
+                        @else
+                            <option value="{{ old('user_pre')  }}" selected="selected">{{ old('user_pre')  }}</option>
+                        @endif
                         <option value="北海道" data-pref-id="1">北海道</option>
                         <option value="青森県" data-pref-id="2">青森県</option>
                         <option value="岩手県" data-pref-id="3">岩手県</option>
@@ -144,8 +176,38 @@
                             <input id="password-confirm" type="password" class="form-control input-text validate[required,equals[password]]" name="password_confirmation" required autocomplete="new-password">
                     </dd>
 
-                    <dt><span class="required">利用規約</span></dt>
-                    <dd><input type="checkbox" class="validate[minCheckbox[1]]" name="kiyaku" id="mincheck1" value="yes"> <a href="{{ route('terms') }}" id="kiyaku">利用規約</a>に同意します。 </dd>
+                    {{--  <form id="accountform"  method="POST" action="{{ route('terms') }}" >
+                        @csrf  --}}
+                        <dt><span class="required">利用規約</span></dt>
+                        <dd><input type="checkbox" class="validate[minCheckbox[1]]" name="kiyaku" id="mincheck1" value="yes"> 
+                            {{--  <button type="submit" id="kiyaku">利用規約</button>に同意します。   --}}
+                            <label class="" for="pop-up"><a class="check" id="kiyaku">利用規約</a>に同意します。</label>
+                                <input type="checkbox" id="pop-up">
+                                <div class="overlay">
+                                    <div class="window-term">
+                                        <label class="close-term" for="pop-up">×</label>
+                                        <div class="text">
+                                            <div style="text-align: center">
+                                            {{--  <h1>
+                                                確認画面                        
+                                            </h1>
+                                            <h4>
+                                                本当に退会しますか
+                                            </h4>
+                                            <ul>
+                                                <li class="kakunin_item">
+                                                <button class="check" type="submit">退会する</button>
+                                                </li>
+                                            </ul>  --}}
+                                            @extends('auth.newaccount_terms')
+                                            @section('term')
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{--  <a href="{{ route('terms') }}" id="kiyaku">利用規約</a>に同意します。   --}}
+                        </dd>
+                    {{--  </form>  --}}
                 </dl>
 
                     <script type="text/javascript">

@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <title>モデル14 | WACS</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
     </head>
   
     <body>
@@ -70,20 +70,21 @@
           {{--  投稿説明  --}}
           <div class="card-exp">
               <h2>[説明]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">とても古風な雰囲気のある机です。エイジング加工のやり方について説明します.</p>
           </div>
 
           {{--  投稿材料  --}}
           <div  class="card-material">
               <h2>[材料]</h2></dt>
-              <p class="mb-0"></p>
+              <p class="mb-0">机</p>
 
           </div>
           
           {{--  作り方  --}}
           <div class="card-method">
               <h2>[作り方]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">机に水性塗料を塗り、のこやすり、のこぎり、ねじを使用してダメージを加えます。やすりで整
+えた後、ワックスやオイルを塗る。</p>
           </div>
           
           {{--  投稿道具  --}}
@@ -91,9 +92,12 @@
             <h2>[道具]</h2>
             <p class="mb-0">
                 ・のこぎり<br>
-                ・インパクトドライバー<br>
-                ・定規<br>
-                ・
+                ・のこやすり<br>
+                ・ねじ<br>
+                ・水性塗料<br>
+・紙やすり<br>
+・ワックス<br>
+・オイル<br>
             </p>
           </div>
 

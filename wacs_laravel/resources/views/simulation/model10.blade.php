@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <title>モデル10 | WACS</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
     </head>
   
     <body>
@@ -70,20 +70,29 @@
           {{--  投稿説明  --}}
           <div class="card-exp">
               <h2>[説明]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">子供が喜ぶようなタンスです</p>
           </div>
 
           {{--  投稿材料  --}}
           <div  class="card-material">
               <h2>[材料]</h2></dt>
-              <p class="mb-0"></p>
+              <p class="mb-0">木材 100cm×70cm 2 枚<br>
+木材(底) 120cm×70cm 2 枚<br>
+木材 120cm×100cm 1 枚<br>
+引き出し用<br>
+木材１ 120cm×30cm 6 枚<br>
+木材２ 120cm×70cm 3 枚<br>
+木材３ 30cm×70cm 6 枚</p>
 
           </div>
           
           {{--  作り方  --}}
           <div class="card-method">
               <h2>[作り方]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">まず引き出しを作る。引き出し用の木材 1,2,3 をそれぞれ、2 枚,1 枚,2 枚使い写真のように作成
+して引き出しを３つ作成する。残りの木材で写真のように直方体を作った後、引き出しを取り付
+ければ完成！
+</p>
           </div>
           
           {{--  投稿道具  --}}
@@ -93,7 +102,6 @@
                 ・のこぎり<br>
                 ・インパクトドライバー<br>
                 ・定規<br>
-                ・
             </p>
           </div>
 

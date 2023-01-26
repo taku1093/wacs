@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <title>モデル3 | WACS</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
     </head>
   
     <body>
@@ -70,44 +70,38 @@
           {{--  投稿説明  --}}
           <div class="card-exp">
               <h2>[説明]</h2>
-              <p class="mb-0">
-              椅子を収納することが出来る大きな机です。
-              </p>
+              <p class="mb-0">椅子を収納することが出来る大きな机です。</p>
           </div>
 
           {{--  投稿材料  --}}
           <div  class="card-material">
               <h2>[材料]</h2></dt>
               <p class="mb-0">
-                ・テーブルの脚  4 つ <br>
-                ・木板１   50cm×80cm  4 枚 <br>
-                ・木板2    70cm×80cm  4 枚 <br>
-                ・木板3    50cm×70cm  2 枚 <br>
-                ・木板4    70cm×180cm 1 枚
-              </p>
+                テーブルの脚 4 つ<br>
+木板１ 50cm×80cm 4 枚<br>
+木板 2 70cm×80cm 4 枚<br>
+木板 3 50cm×70cm 2 枚<br>
+木板 4 70cm×180cm 1 枚
+</p>
 
           </div>
           
           {{--  作り方  --}}
           <div class="card-method">
               <h2>[作り方]</h2>
-              <p class="mb-0">
-              1. 木板1と木板2で上下穴の開いた直方体を作り、ボンドで固定しビスで固定する。<br>
-              1. 木板1と木板2で上下穴の開いた直方体を作り、ボンドで固定しビスで固定する。<br>
-              2. これを２つ作り、下の穴のほうを木板３でふさぎ、ボンドで固定しビスで固定する。<br>
-              3. モデルのように木板4を乗せボンドで固定しビスで固定する。<br>
-              4. 白色のペンキで色を塗る。<br>
-              5. テーブルの脚を下に４つ付ければ完成。
-              </p>
+              <p class="mb-0">木板 1 と木板 2 上下穴の開いた直方体を作り、ボンドで固定しビスで固定する。これを２つ作り、
+下の穴のほうを木板３でふさぎ、ボンドで固定しビスで固定する。写真のように木板 4 を乗せボ
+ンドで固定しビスで固定する。白色のペンキで色を塗る。テーブルの脚を下に４つ付ければ完成。</p>
           </div>
           
           {{--  投稿道具  --}}
           <div class="card-tool">
             <h2>[道具]</h2>
             <p class="mb-0">
-                ・インパクトドライバー <br>
-                ・定規 <br>
-                ・白色のペンキ<br>
+                ・のこぎり<br>
+                ・インパクトドライバー<br>
+                ・定規<br>
+                ・白色のペンキ
             </p>
           </div>
 

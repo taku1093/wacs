@@ -76,6 +76,10 @@
                   <li>
                       <a href="{{ url('users/' .$user->id .'/edit') }}" >アカウント・マイページ情報編集</a>
                   </li>
+
+                  <li>
+                    <a href="{{ route('coupon') }}" >クーポン一覧</a>
+                </li>
               </ul>
             </div>
           </div>

@@ -33,7 +33,10 @@ Route::post('register/confirm', 'Auth\RegisterController@register')->name('user.
 Route::get('terms', 'Auth\RegisterController@terms')->name('terms');;
 
 // お問い合わせ
-Route::get('contact', 'ContactController@index')->name('contact');
+// Route::get('contact', 'ContactController@index')->name('contact');
+    Route::get('contact', 'ContactController@index')->name('contact');
+    Route::get('contact_store', 'ContactController@store')->name('contact_store');
+    Route::post('contact_store', 'ContactController@store')->name('contact_store');
 
 
 // DIY
@@ -75,6 +78,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('ranking_all', 'RankingController@all')->name('ranking_all');
     Route::get('ranking_week', 'RankingController@week')->name('ranking_week');
     Route::get('ranking_month', 'RankingController@month')->name('ranking_month');
+
+    // クーポン
+    Route::get('coupon', 'CouponController@index')->name('coupon');
 });
 
 //Q&A
@@ -105,3 +111,59 @@ Route::resource('qacomment', 'QacommentsController', ['only' => ['store']]);
     Route::get('simulation/model15', 'SimulationController@model15')->name('simu_model15');
     Route::get('simulation/model16', 'SimulationController@model16')->name('simu_model16');
 
+
+
+
+    Route::group(['middleware' => 'auth'], function() {
+        Route::get('/admin_home', 'AdminController@home')->name('admin_home');
+        Route::post('/admin_home', 'AdminController@home')->name('admin_home');
+        Route::get('/post_manage', 'AdminController@post_manage')->name('post_manage');
+        Route::get('post_delete_ready{id}', 'AdminController@post_delete_ready');
+        Route::post('post_delete_ready{id}', 'AdminController@post_delete_ready');
+        Route::get('post_delete_comp{id}', 'AdminController@post_delete_comp');
+        Route::post('post_delete_comp{id}', 'AdminController@post_delete_comp');
+        Route::get('/user_manage', 'AdminController@user_manage')->name('user_manage');
+        Route::post('/user_manage', 'AdminController@user_manage')->name('user_manage');
+        Route::get('user_manage{id}', 'AdminController@user_edit');
+        Route::post('user_manage{id}', 'AdminController@user_edit');
+        Route::get('user_delete_ready{id}', 'AdminController@user_delete_ready');
+        Route::post('user_delete_ready{id}', 'AdminController@user_delete_ready');
+        Route::get('user_delete_comp{id}', 'AdminController@user_delete_comp');
+        Route::post('user_delete_comp{id}', 'AdminController@user_delete_comp');
+        Route::get('/ad_manage', 'AdminController@ad_manage')->name('ad_manage');
+        Route::get('/ad_create', 'AdminController@ad_create')->name('ad_create');
+        Route::get('/ad_store', 'AdminController@ad_store')->name('ad_store');
+        Route::post('/ad_store', 'AdminController@ad_store')->name('ad_store');
+        Route::get('ad_manage{id}', 'AdminController@ad_edit');
+        Route::post('ad_manage{id}', 'AdminController@ad_edit');
+        Route::get('ad_delete_ready{id}', 'AdminController@ad_delete_ready');
+        Route::post('ad_delete_ready{id}', 'AdminController@ad_delete_ready');
+        Route::get('ad_delete_comp{id}', 'AdminController@ad_delete_comp');
+        Route::post('ad_delete_comp{id}', 'AdminController@ad_delete_comp');
+        Route::get('/coupon_manage', 'AdminController@coupon_manage')->name('coupon_manage');
+        Route::get('/coupon_create', 'AdminController@coupon_create')->name('coupon_create');
+        Route::get('/coupon_store', 'AdminController@coupon_store')->name('coupon_store');
+        Route::post('/coupon_store', 'AdminController@coupon_store')->name('coupon_store');
+        Route::get('coupon_manage{id}', 'AdminController@coupon_edit');
+        Route::post('coupon_manage{id}', 'AdminController@coupon_edit');
+        Route::get('coupon_delete_ready{id}', 'AdminController@coupon_delete_ready');
+        Route::post('coupon_delete_ready{id}', 'AdminController@coupon_delete_ready');
+        Route::get('coupon_delete_comp{id}', 'AdminController@coupon_delete_comp');
+        Route::post('coupon_delete_comp{id}', 'AdminController@coupon_delete_comp');
+        Route::get('/ranking_manage', 'AdminController@ranking_manage')->name('ranking_manage');
+        Route::get('/ranking_update_ready', 'AdminController@ranking_update_ready')->name('ranking_update_ready');
+        Route::get('/ranking_update_comp', 'AdminController@ranking_update_comp')->name('ranking_update_comp');
+        Route::post('/ranking_update_comp', 'AdminController@ranking_update_comp')->name('ranking_update_comp');
+        Route::get('/contact_manage', 'AdminController@contact_manage')->name('contact_manage');
+        Route::get('contact_manage{id}', 'AdminController@contact_edit');
+        Route::post('contact_manage{id}', 'AdminController@contact_edit');
+        Route::get('contact_delete_ready{id}', 'AdminController@contact_delete_ready');
+        Route::post('contact_delete_ready{id}', 'AdminController@contact_delete_ready');
+        Route::get('contact_delete_comp{id}', 'AdminController@contact_delete_comp');
+        Route::post('contact_delete_comp{id}', 'AdminController@contact_delete_comp');
+        Route::get('/logout', 'AdminController@logout')->name('logout');
+        Route::post('/logout', 'AdminController@logout')->name('logout');
+    }
+);
+
+    

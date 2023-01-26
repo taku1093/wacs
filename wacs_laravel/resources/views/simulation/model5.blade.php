@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <title>モデル5 | WACS</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
     </head>
   
     <body>
@@ -78,9 +78,9 @@
           <div  class="card-material">
               <h2>[材料]</h2></dt>
               <p class="mb-0">
-                ・丸棒  24Ф×1620mm <br>
-                ・フック  9 個 <br>
-                ・木板2 枚 600mm×100mm 
+                丸棒　24Ф×1620mm<br>
+                フック　9個<br>
+                木板2枚 600mm×100mm
               </p>
 
           </div>
@@ -88,10 +88,7 @@
           {{--  作り方  --}}
           <div class="card-method">
               <h2>[作り方]</h2>
-              <p class="mb-0">
-                1. 木板の真ん中を削り、十字状となっている木を作成する。<br>
-                2. 先ほど作成したもの交点に丸棒をビスで固定し適した高さにフックを取り付ける。
-              </p>
+              <p class="mb-0">木板の真ん中を削り、十字状となっている木を作成する。先ほど作成したもの交点に丸棒をビスで固定し適した高さにフックを取り付ける。</p>
           </div>
           
           {{--  投稿道具  --}}
@@ -100,7 +97,7 @@
             <p class="mb-0">
                 ・のこぎり<br>
                 ・インパクトドライバー<br>
-                ・定規
+                ・定規<br>
             </p>
           </div>
 

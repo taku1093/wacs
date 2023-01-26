@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <title>モデル9 | WACS</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
     </head>
   
     <body>
@@ -70,20 +70,36 @@
           {{--  投稿説明  --}}
           <div class="card-exp">
               <h2>[説明]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">とても収納が出来るおしゃれな棚です。
+</p>
           </div>
 
           {{--  投稿材料  --}}
           <div  class="card-material">
               <h2>[材料]</h2></dt>
-              <p class="mb-0"></p>
+              <p class="mb-0">
+              テーブルの脚 4 本<br>
+白い木板 1 60cm×160cm 2 枚<br>
+白い木板 2 60cm×80cm ３枚<br>
+白い木板 3 80cm×160cm 1 枚<br>
+白い木板 4 45cm×80cm 2 枚<br>
+引き出し 1 横 70cm 縦 20cm 奥行 60cm 2 個<br>
+引き出し 2 横 70cm 縦 40cm 奥行 60cm 1 個<br>
+取っ手 2 個<br>
+
+              </p>
 
           </div>
           
           {{--  作り方  --}}
           <div class="card-method">
               <h2>[作り方]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">白い木板 1 が底、白い木板 2,3 が側面にして直方体を組み立て、ボンドで固定しビスで固定。残
+った木板 2 を底面の右から 70cm のところで固定する。また、底面にはテーブルの脚を取り付け
+る。右の部分に引き出し１、２を取り付ける。(引き出し２が一番下)左の部分には白い木板 4 を
+取り付け、それぞれ真ん中の部分は固定せずドアのようにする。(写真参照)真ん中の部分に取っ
+手をつける。
+</p>
           </div>
           
           {{--  投稿道具  --}}
@@ -93,7 +109,6 @@
                 ・のこぎり<br>
                 ・インパクトドライバー<br>
                 ・定規<br>
-                ・
             </p>
           </div>
 

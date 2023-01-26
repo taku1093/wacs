@@ -62,7 +62,7 @@
                             <!-- <li><a href="./rental.html" id="navline">レンタル</a></li> -->
                             <li><a href="{{ url('qanda') }}" id="navline">Q & A</a></li>
                             @if (auth()->user()->user_admin == 1)
-                                <li><a href=“./admin_home” id=“navline”>管理者</a></li>
+                                <li><a href="{{ url('admin_home') }}" id=“navline”>管理者</a></li>
                             @endif
                             <li><a href="{{ route('contact') }}"><button class="styled-button" type="button">お問い合わせ</button></a></li> 
                             <li><a href="{{ url('posts/create') }}"><button class="styled-button_t" type="button">新規投稿</button></a></li>
@@ -138,7 +138,7 @@
                                 <!-- <li><a href="./rental.html" id="navline">レンタル</a></li> -->
                                 <li><a href="{{ url('qanda') }}" id="navline-f">Q & A</a></li>
                                 @if (auth()->user()->user_admin == 1)
-                                    <li><a href=“./admin_home” id=“”>管理者</a></li>
+                                    <li><a href="{{ url('admin_home') }}" id=“”>管理者</a></li>
                                 @endif
                             </ul>
                             @endif

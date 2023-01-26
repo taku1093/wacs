@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <title>モデル4 | WACS</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
     </head>
   
     <body>
@@ -70,29 +70,22 @@
           {{--  投稿説明  --}}
           <div class="card-exp">
               <h2>[説明]</h2>
-              <p class="mb-0">
-              とても使いやすく、作成しやすいので、初心者におすすめです。<br>
-              また、シンプルなので大体の雰囲気にぴったりな机です。
-              </p>
+              <p class="mb-0">とても使いやすく、作成しやすいので、初心者におすすめです。また、シンプルなので
+大体の雰囲気にぴったりな机です。</p>
           </div>
 
           {{--  投稿材料  --}}
           <div  class="card-material">
               <h2>[材料]</h2></dt>
-              <p class="mb-0">
-              ・机の脚(長め) 4 つ <br>
-              ・木板  80cm×160cm 
-              </p>
+              <p class="mb-0">机の脚(長め) 4 つ<br>
+木板 80cm×160cm</p>
 
           </div>
           
           {{--  作り方  --}}
           <div class="card-method">
               <h2>[作り方]</h2>
-              <p class="mb-0">
-                1. 木材に机の脚を固定していく。<br>
-                2. お好みで色を付けたり、電動ルータで形を変えたりしてください。 
-              </p>
+              <p class="mb-0">木材に机の脚を固定していく。お好みで色を付けたり、電動ルータで形を変えたりしてください。</p>
           </div>
           
           {{--  投稿道具  --}}

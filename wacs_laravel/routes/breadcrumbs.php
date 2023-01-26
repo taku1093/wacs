@@ -116,3 +116,9 @@ Breadcrumbs::for('mainte', function ($trail) {
     $trail->parent('home');
     $trail->push('メンテナンス中', route('DIY_home'));
 });
+
+// Home > メンテナンス画面
+Breadcrumbs::for('coupon', function ($trail) {
+    $trail->parent('mypezi');
+    $trail->push('クーポン', route('DIY_home'));
+});

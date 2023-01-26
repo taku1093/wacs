@@ -1,0 +1,72 @@
+.tab_container {
+    width: 800px;
+    padding-bottom: 1em;
+    background-color: #f4dd64;
+    border:1px solid #f4dd64;
+    margin: 0 auto;}
+  .tab_item {
+    width: calc(100%/2);    /*100%/4を100%/2に変更*/
+    padding:15px 0;
+    border-bottom: 3px solid #f4dd64;
+    background-color: #d9d9d9;
+    text-align: center;
+    color: #565656 ;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  .tab_item:hover {
+    opacity: 0.75;
+  }
+  input[name="tab_item"] {
+    display: none;
+  }
+  .tab_content {
+    display: none;
+    padding: 1em 1em 0;
+    clear: both;
+    overflow: hidden;
+  }
+  #tab1:checked ~ #tab1_content,
+  #tab2:checked ~ #tab2_content {  /*, #tab3:checked ~ #tab3_content , #tab4:checked ~ #tab4_contentを削除*/
+    display: block;
+  }
+  .tab_container input:checked + .tab_item {
+    background-color: #f4dd64 ;
+    color: #eb4f32;
+  }
+
+  .pagetitle{
+    padding-top: 70px;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+  }
+  
+  .pagetitle::after {
+    content: '';
+    display: block;
+    width: 76px;
+    height: 3px;
+    background-color: #f4dd64;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ヘッダーの調整コード */
+.site-menu ul li {
+  margin-top: 19px;
+}
+
+button {
+  font-size: inherit;
+}
+
+.dropdown__list { /* デフォルトスタイル リセット */
+  margin-top: -19px;
+}
+  

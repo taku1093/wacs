@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <title>モデル8 | WACS</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
     </head>
   
     <body>
@@ -76,14 +76,16 @@
           {{--  投稿材料  --}}
           <div  class="card-material">
               <h2>[材料]</h2></dt>
-              <p class="mb-0"></p>
+              <p class="mb-0">木板 1 60cm×180cm 2 枚<br>
+木板 2 60cm×80cm 6 枚
+</p>
 
           </div>
           
           {{--  作り方  --}}
           <div class="card-method">
               <h2>[作り方]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">木板１に 36cm 毎に目印をして、その目印に合わせて木板２をビスで固定していく。</p>
           </div>
           
           {{--  投稿道具  --}}
@@ -93,7 +95,6 @@
                 ・のこぎり<br>
                 ・インパクトドライバー<br>
                 ・定規<br>
-                ・
             </p>
           </div>
 

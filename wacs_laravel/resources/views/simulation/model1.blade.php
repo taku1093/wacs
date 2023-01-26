@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <title>モデル1 | WACS</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
     </head>
   
     <body>
@@ -62,7 +62,6 @@
           {{--  タイトル・いいね  --}}
           <div class="card-header">
               <dl class="post-header">
-                
                   {{--  投稿タイトル  --}}
                   <dt class="title"><h2 class="mb-0 res-mb-0">四角い青い椅子</h2></dt>
               </dl>
@@ -78,10 +77,10 @@
           <div  class="card-material">
               <h2>[材料]</h2></dt>
               <p class="mb-0">
-                ・布(100cm×100cm)<br>
-                ・木材 150cm×150cm<br>
-                ・鉄足 2個<br>
-                ・釘30本
+                ・布<br>
+                ・木材<br>
+                ・鉄足
+                
               </p>
 
           </div>
@@ -90,12 +89,10 @@
           <div class="card-method">
               <h2>[作り方]</h2>
               <p class="mb-0">
-                1.木材を400mm×400mm にカットし、それを６個作ります <br>
-                2.カットした木材を組み立てさいころのようなものを作り、<br>
-                &emsp;木工用ボンドで固定し木工用ボンドが乾いてから、ドリルで<br>
-                &emsp;下穴をあけ、ビスで固定します。<br> 
-                3.組み立てたものに布をかぶせます。 <br>
-                4.鉄足をくっつけ、ビスで固定します。
+                    1.木材を400mm×400mmにカットし、それを６個作ります<br>
+                    2.カットした木材を組み立てさいころのようなものを作り、木工用ボンドで固定し木工用ボンドが乾いてから、ドリルで下穴をあけ、ビスで固定します。<br>
+                    3.組み立てたものに布をかぶせます。<br>
+                    4.鉄足をくっつけ、ビスで固定する
               </p>
           </div>
           
@@ -105,7 +102,7 @@
             <p class="mb-0">
                 ・のこぎり<br>
                 ・インパクトドライバー<br>
-                ・定規
+                ・定規<br>
             </p>
           </div>
 

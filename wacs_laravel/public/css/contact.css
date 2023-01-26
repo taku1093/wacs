@@ -20,6 +20,11 @@
     margin-right: auto;
     }
 
+    .contact-con{
+        padding-bottom: 90px;
+        padding-top: 90px;
+    }
+
 .main h2 {
     font-size: 22px;
     font-weight: bold;
@@ -189,3 +194,16 @@
     font-size: inherit;
   }
   
+
+  /* ヘッダーの調整コード */
+.site-menu ul li {
+    margin-top: 19px;
+}
+
+button {
+    font-size: inherit;
+}
+
+.dropdown__list { /* デフォルトスタイル リセット */
+    margin-top: -19px;
+  }

@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <title>モデル12 | WACS</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
     </head>
   
     <body>
@@ -70,20 +70,26 @@
           {{--  投稿説明  --}}
           <div class="card-exp">
               <h2>[説明]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">お庭におくととてもおしゃれなベンチです。</p>
           </div>
 
           {{--  投稿材料  --}}
           <div  class="card-material">
-              <h2>[材料]</h2></dt>
-              <p class="mb-0"></p>
+              <h2>[材料]</h2>
+              <p class="mb-0">
+                木材
+              </p>
 
           </div>
           
           {{--  作り方  --}}
           <div class="card-method">
               <h2>[作り方]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">
+                木材を2種類の用途でカットしたものを紙やすりで整えた後、写真のようにビスで固定していく<br>
+                座面・・・200mm×1000mm<br>
+                脚・・・30mm×50mm 長さ140mm
+              </p>
           </div>
           
           {{--  投稿道具  --}}
@@ -93,7 +99,7 @@
                 ・のこぎり<br>
                 ・インパクトドライバー<br>
                 ・定規<br>
-                ・
+                ・木工用紙やすり
             </p>
           </div>
 

@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <title>モデル15 | WACS</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
     </head>
   
     <body>
@@ -70,30 +70,38 @@
           {{--  投稿説明  --}}
           <div class="card-exp">
               <h2>[説明]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">靴を収納できる棚です。中は３段になっています。大きさは横80cm,縦30cm,高さ90cmとなっております
+
+
+              </p>
           </div>
 
           {{--  投稿材料  --}}
           <div  class="card-material">
               <h2>[材料]</h2></dt>
-              <p class="mb-0"></p>
+              <p class="mb-0">
+                木板4枚(横80cm,縦30cm)<br>
+                木板2枚(横50cm,縦30cm)<br>
+                木板2枚(横80cm,縦50cm)<br>
+                木棒4本（脚用)
+            </p>
 
           </div>
           
           {{--  作り方  --}}
           <div class="card-method">
               <h2>[作り方]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">材料に書いてある通りの大きさに木材をカットした後、木板を組み合わせていきビスで固定した後、底に木棒もビスで固定する。</p>
           </div>
           
           {{--  投稿道具  --}}
           <div class="card-tool">
             <h2>[道具]</h2>
             <p class="mb-0">
-                ・のこぎり<br>
+                ・電動糸のこぎり<br>
                 ・インパクトドライバー<br>
                 ・定規<br>
-                ・
+                ・紙やすり
             </p>
           </div>
 

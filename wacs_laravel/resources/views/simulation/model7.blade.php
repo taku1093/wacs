@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css\bred.css')}}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- レスポンシブデザイン  -->
-        <title>モデル7 | WACS</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/9-6-3.css"> -->
     </head>
   
     <body>
@@ -76,14 +76,20 @@
           {{--  投稿材料  --}}
           <div  class="card-material">
               <h2>[材料]</h2></dt>
-              <p class="mb-0"></p>
+              <p class="mb-0">
+                木板2枚(400mm×400mm)、鉄の棒（合計の長さ2.4ｍ）
+              </p>
 
           </div>
           
           {{--  作り方  --}}
           <div class="card-method">
               <h2>[作り方]</h2>
-              <p class="mb-0"></p>
+              <p class="mb-0">
+                ①1枚の木板をのこぎりを使用して縦の長さを半分にする<br>
+                ②鉄の棒を切断し、400mmの長さのものを6本用意する。また末端は金属やすりで危なくないようにする。<br>
+                ③それぞれをインパクトドライバーを使って固定し、椅子の足の部分は床を傷つけないよう布をまいたりする。
+              </p>
           </div>
           
           {{--  投稿道具  --}}
@@ -93,7 +99,7 @@
                 ・のこぎり<br>
                 ・インパクトドライバー<br>
                 ・定規<br>
-                ・
+                ・金属やすり
             </p>
           </div>
 

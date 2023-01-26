@@ -448,6 +448,10 @@ form.mb-0{
         margin: 0 auto;
       }
 
+    .py-4 {
+        padding-top: 0;
+    }
+
     /* ARボタン */
     .AR_position {
         display: none;
@@ -461,11 +465,19 @@ form.mb-0{
         display: none;
     }
 
+    .site-menu {
+        display: none;
+    }
+
     .header-logo {
         display: block; /*ロゴのサイズ指定をできるように*/
-        width: 100px;
-        margin-left: 100px;
+        /* width: 100px; */
+        margin-left: 70px;
         pointer-events: none;
+    }
+
+    .breadcrumb {
+            top: -110px!important;
     }
 
     .footer-logo { /*フッターのロゴサイズを調整*/

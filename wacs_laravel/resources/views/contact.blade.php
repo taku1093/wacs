@@ -35,7 +35,7 @@
             <div class="contact">
                 <h2>お問い合わせフォーム</h2>
 
-                <form action="#"> <!--action属性はフォーム送信のためのプログラムファイルにリンク-->
+                <form action="{{ route('contact_store') }}"> <!--action属性はフォーム送信のためのプログラムファイルにリンク-->
                     <dl class="form-area">
                         <dt><span class="required">お名前</span></dt>
                         <dd><input class="input-text" type="text" name="name" required></dd> <!--name属性はフォームを受信したプログラムが各項目を判別するための属性、requiredは必須項目なので入力がなければ警告を表示-->
@@ -58,9 +58,9 @@
                         </dd>
                         <dt>お客様について</dt>
                         <dd>
-                            <label class="radio-button"><input type="radio" name="user-type" value="一般のお客様" checked>一般のお客様</label>
-                            <label class="radio-button"><input type="radio" name="user-type" value="企業様">企業様</label>
-                            <label class="radio-button"><input type="radio" name="user-type" value="その他">その他</label>
+                            <label class="radio-button"><input type="radio" name="user_type" value="一般のお客様" checked>一般のお客様</label>
+                            <label class="radio-button"><input type="radio" name="user_type" value="企業様">企業様</label>
+                            <label class="radio-button"><input type="radio" name="user_type" value="その他">その他</label>
                         </dd>
                         <dt><span class="required">お問い合わせ内容</span></dt>
                         <dd><textarea class="message" name="message" required></textarea></dd>

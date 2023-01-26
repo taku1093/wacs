@@ -19,6 +19,7 @@ class CreateRankingsTable extends Migration
             $table->datetime('week_finish')->comment('週期間');
             $table->datetime('month_start')->comment('月期間');
             $table->datetime('month_finish')->comment('月期間');
+            $table->timestamps();
         });
     }
 
